@@ -17,7 +17,7 @@ const { compact = false } = Astro.props;
       <p>Balıkçılık, avcılık, kamp ve outdoor tutkunları için doğru ekipman, güvenilir marka ve deneyimli destek.</p>
     </div>
     <div><h2>Sayfalar</h2><ul>{navLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul></div>
-    <div><h2>Bize Ulaşın</h2><ul class="contact-list"><li><Icon name="phone" size={18}/><a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phone}</a></li><li><Icon name="whatsapp" size={18}/><a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener">WhatsApp</a></li><li><Icon name="pin" size={18}/><span>{siteConfig.address}</span></li></ul></div>
+    <div><h2>Bize Ulaşın</h2><ul class="contact-list"><li><Icon name="phone" size={18}/><a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phone}</a></li><li><Icon name="whatsapp" size={18}/><a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener">WhatsApp</a></li><li><Icon name="pin" size={18}/><a href={siteConfig.mapUrl} target="_blank" rel="noopener">Mağaza Konumunu Görüntüle</a></li></ul></div>
     <div><h2>Çalışma Saatleri</h2>{siteConfig.hours.map((item) => <p class="hours"><span>{item.days}</span><b>{item.time}</b></p>)}<div class="socials"><a href={siteConfig.socials.instagram} aria-label="Instagram"><Icon name="instagram"/></a><a href={siteConfig.socials.facebook} aria-label="Facebook"><Icon name="facebook"/></a></div></div>
   </div>
   <div class="container footer-bottom"><span>© {year} {siteConfig.name}. Tüm hakları saklıdır.</span><span>Doğaya saygıyla.</span></div>

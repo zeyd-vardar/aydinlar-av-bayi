@@ -34,6 +34,8 @@ h1,h2,h3 { line-height:1.08; letter-spacing:-.035em; }
 .btn-light { background:white; color:#111713; }
 .btn-light:hover { background:#f4f1ea; }
 .btn-outline { border-color:rgba(255,255,255,.52); color:white; background:rgba(255,255,255,.04); }
+.btn-outline-dark { border-color:#294332; color:#1c3425; background:transparent; }
+.btn-outline-dark:hover { color:white; background:#1c3425; }
 .btn-dark { background:var(--forest); color:white; }
 .text-link { display:inline-flex; align-items:center; gap:10px; font-size:.82rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; border-bottom:1px solid currentColor; padding-bottom:5px; }
 
@@ -193,6 +195,10 @@ h1,h2,h3 { line-height:1.08; letter-spacing:-.035em; }
 .contact-card p,.contact-card a { margin:0; font-weight:650; }
 .map-placeholder { min-height:560px; display:grid; place-items:center; text-align:center; padding:30px; border-radius:5px; color:white; background:linear-gradient(180deg,rgba(17,31,22,.25),rgba(9,17,12,.68)),url('/images/hero-fishing.jpg') center/cover no-repeat; }
 .map-placeholder span { padding:12px 18px; background:rgba(13,22,16,.78); font-size:.7rem; letter-spacing:.15em; }
+.map-link { align-content:center; gap:14px; transition:filter .2s ease; }
+.map-link:hover { filter:brightness(1.1); }
+.map-link strong { font-size:1rem; }
+.map-text-link { display:inline-block; margin-top:9px; color:#245337; font-size:.78rem; font-weight:750; text-decoration:underline; text-underline-offset:3px; }
 .brand-showcase .brands-row { gap:12px; border:0; }
 .brand-showcase .brand-tile { min-height:180px; display:flex; flex-direction:column; align-items:flex-start; justify-content:space-between; border:1px solid var(--line); border-radius:5px; background:white; }
 .brand-showcase .brand-tile small { color:#919a92; font-size:.64rem; letter-spacing:.14em; }

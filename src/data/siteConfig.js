@@ -3,16 +3,14 @@ export const siteConfig = {
   shortName: 'AYDINLAR',
   tagline: 'Balıkçılık, avcılık ve outdoor dünyası',
   url: 'https://aydinlar-av-bayi.probaly61.chatgpt.site',
-  phone: '+90 555 000 00 00',
-  phoneHref: '+905550000000',
-  whatsapp: '905550000000',
+  phone: '0549 477 01 61',
+  phoneHref: '+905494770161',
+  whatsapp: '905494770161',
   email: 'merhaba@aydinlaravbayi.com',
-  address: 'Mağaza adresi buraya eklenecektir.',
-  city: 'Türkiye',
-  coordinates: { latitude: '39.9334', longitude: '32.8597' },
+  address: 'Google Maps üzerinden mağaza konumumuzu görüntüleyin.',
+  mapUrl: 'https://share.google/ZjbMq8m2D5KrIdKmy',
   hours: [
-    { days: 'Pazartesi – Cumartesi', time: '09.00 – 19.00' },
-    { days: 'Pazar', time: 'Kapalı' }
+    { days: 'Her gün', time: '08.30 – 20.30' }
   ],
   socials: { instagram: '#', facebook: '#' }
 };
