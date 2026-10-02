@@ -134,44 +134,70 @@ h1,h2,h3 { line-height:1.08; letter-spacing:-.035em; }
 .contact-actions .btn { justify-content:flex-start; }
 
 /* Inner pages */
-.page-hero { min-height:430px; display:flex; align-items:flex-end; padding:150px 0 70px; color:white; background:radial-gradient(circle at 80% 20%,rgba(145,157,127,.25),transparent 25%),linear-gradient(135deg,#101a14,#26392b); }
-.page-hero h1 { max-width:850px; font-size:clamp(3rem,7vw,6rem); font-weight:590; margin:18px 0 16px; }
-.page-hero p { max-width:670px; color:rgba(255,255,255,.68); font-size:1.06rem; }
-.catalog-block { padding:80px 0; border-bottom:1px solid var(--line); }
-.catalog-title { display:grid; grid-template-columns:.7fr 1.3fr; gap:60px; margin-bottom:38px; }
-.catalog-title h2 { font-size:clamp(2.2rem,4vw,3.8rem); margin:8px 0; }
-.catalog-items { display:grid; grid-template-columns:repeat(4,1fr); border-left:1px solid var(--line); border-top:1px solid var(--line); }
-.catalog-items a { min-height:95px; padding:20px; display:flex; align-items:center; justify-content:space-between; gap:12px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:white; font-weight:650; }
-.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.product-card { border:1px solid var(--line); background:white; border-radius:4px; overflow:hidden; }
-.product-image { aspect-ratio:4/3; display:grid; place-items:center; color:rgba(255,255,255,.58); font-size:.62rem; letter-spacing:.17em; background:linear-gradient(140deg,#3e4c42,#18231c); }
-.product-copy { padding:25px; }
+.page-hero { min-height:500px; display:flex; align-items:flex-end; padding:160px 0 72px; color:white; position:relative; isolation:isolate; overflow:hidden; background:#17231b; }
+.page-hero > img { position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; }
+.page-hero::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(6,12,10,.88),rgba(6,12,10,.45) 48%,rgba(6,12,10,.18)),linear-gradient(0deg,rgba(6,12,10,.55),transparent 60%); }
+.page-hero .container { position:relative; }
+.page-hero h1 { max-width:850px; font-size:clamp(3rem,6.2vw,5.8rem); font-weight:670; margin:18px 0 16px; }
+.page-hero p { max-width:620px; color:rgba(255,255,255,.78); font-size:1rem; }
+.catalog-block { padding:76px 0; border-bottom:1px solid #e5e3dc; background:var(--paper); }
+.catalog-block.alt { background:#f0eee7; }
+.catalog-title { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:end; margin-bottom:34px; }
+.catalog-title h2 { font-size:clamp(2.2rem,3.8vw,3.6rem); margin:8px 0 0; }
+.catalog-title > p { max-width:590px; margin:0 0 4px; color:#69716b; font-size:.9rem; }
+.catalog-items { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.catalog-items a { min-height:88px; padding:18px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; border:1px solid rgba(17,23,19,.1); border-radius:4px; background:white; font-size:.86rem; font-weight:680; transition:.2s ease; }
+.catalog-items a svg { color:#778179; }
+.catalog-items a:hover { color:white; background:var(--forest); border-color:var(--forest); transform:translateY(-2px); }
+.catalog-items a:hover svg { color:white; }
+.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.product-card { border:1px solid var(--line); background:white; border-radius:5px; overflow:hidden; transition:.25s ease; }
+.product-card:hover { transform:translateY(-4px); box-shadow:0 18px 38px rgba(17,25,19,.1); }
+.product-image { aspect-ratio:4/3; background-image:linear-gradient(180deg,transparent 50%,rgba(6,10,8,.32)),url('/images/category-atlas.jpg'); background-size:auto 100%,400% 100%; background-repeat:no-repeat; }
+.product-image-0 { background-position:center,0 50%; }
+.product-image-1 { background-position:center,33.333% 50%; }
+.product-image-2 { background-position:center,66.666% 50%; }
+.product-image-3 { background-position:center,100% 50%; }
+.product-copy { padding:24px; }
 .product-copy .meta { color:#778078; font-size:.69rem; text-transform:uppercase; letter-spacing:.14em; }
 .product-copy h3 { font-size:1.25rem; margin:9px 0; }
-.product-copy p { color:#687168; font-size:.86rem; margin:0; }
+.product-copy p { color:#687168; font-size:.84rem; margin:0 0 18px; }
+.product-copy a { display:inline-flex; align-items:center; gap:8px; color:#34473a; font-size:.7rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
 .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:8vw; align-items:center; }
-.story-image { min-height:560px; border-radius:4px; position:relative; background:linear-gradient(140deg,rgba(12,20,14,.2),rgba(12,20,14,.75)),linear-gradient(45deg,#6c725f,#253329); }
-.story-image::after { content:"MAĞAZA FOTOĞRAFI"; position:absolute; bottom:24px; left:24px; color:rgba(255,255,255,.66); font-size:.64rem; letter-spacing:.2em; }
+.story-image { width:100%; min-height:560px; border-radius:5px; object-fit:cover; }
 .story-copy h2 { font-size:clamp(2.3rem,4.8vw,4.3rem); margin:18px 0; }
 .story-copy p { color:#616b63; }
 .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.value-card { padding:34px; border:1px solid var(--line); background:white; min-height:260px; }
-.value-card span { color:#8b977f; font-size:.7rem; letter-spacing:.15em; }
-.value-card h3 { font-size:1.35rem; margin:45px 0 12px; }
+.value-card { padding:34px; border:0; border-radius:5px; color:white; background:var(--forest); min-height:260px; }
+.value-card span { color:#d9bc77; font-size:.7rem; letter-spacing:.15em; }
+.value-card h3 { font-size:1.35rem; margin:48px 0 12px; }
 .value-card p { color:#69716b; font-size:.88rem; }
+.value-card p { color:rgba(255,255,255,.62); }
 .gallery-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
-.gallery-item { grid-column:span 4; min-height:320px; border-radius:4px; display:flex; align-items:flex-end; padding:22px; color:white; background:linear-gradient(145deg,rgba(28,45,33,.25),rgba(8,13,9,.74)),linear-gradient(45deg,#647060,#1d2d22); }
+.gallery-item { grid-column:span 4; min-height:320px; border-radius:5px; display:flex; align-items:flex-end; padding:22px; color:white; overflow:hidden; background-color:#26352c; background-image:linear-gradient(180deg,transparent 45%,rgba(6,11,8,.78)),url('/images/category-atlas.jpg'); background-size:auto 100%,400% 100%; background-repeat:no-repeat; transition:.25s ease; }
+.gallery-item:hover { transform:translateY(-3px); box-shadow:0 18px 38px rgba(17,25,19,.12); }
 .gallery-item:nth-child(1),.gallery-item:nth-child(5) { grid-column:span 8; }
-.gallery-item:nth-child(2) { background:linear-gradient(145deg,rgba(29,43,35,.15),rgba(8,13,9,.7)),linear-gradient(45deg,#334e52,#142a30); }
-.gallery-item:nth-child(3) { background:linear-gradient(145deg,rgba(29,43,35,.15),rgba(8,13,9,.7)),linear-gradient(45deg,#766650,#322b22); }
+.gallery-item-1 { background-image:linear-gradient(180deg,transparent 45%,rgba(6,11,8,.75)),url('/images/store-interior.jpg'); background-size:cover; background-position:center; }
+.gallery-item-2 { background-position:center,0 50%; }
+.gallery-item-3 { background-position:center,66.666% 50%; }
+.gallery-item-4 { background-position:center,33.333% 50%; }
+.gallery-item-5 { background-image:linear-gradient(180deg,transparent 45%,rgba(6,11,8,.75)),url('/images/hunting-banner.jpg'); background-size:cover; background-position:center; }
+.gallery-item-6 { background-position:center,100% 50%; }
 .gallery-item span { font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
-.contact-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; }
+.contact-grid { display:grid; grid-template-columns:.82fr 1.18fr; gap:42px; }
 .contact-cards { display:grid; gap:12px; }
-.contact-card { padding:24px; display:flex; align-items:flex-start; gap:16px; border:1px solid var(--line); background:white; }
+.contact-card { padding:22px; display:flex; align-items:flex-start; gap:16px; border:1px solid var(--line); border-radius:4px; background:white; transition:.2s ease; }
+.contact-card:hover { border-color:#839084; transform:translateX(3px); }
+.contact-card > svg { color:#556a59; }
 .contact-card h3 { font-size:.76rem; text-transform:uppercase; letter-spacing:.12em; margin:0 0 7px; color:#7b857c; }
 .contact-card p,.contact-card a { margin:0; font-weight:650; }
-.map-placeholder { min-height:560px; display:grid; place-items:center; text-align:center; padding:30px; color:white; background:radial-gradient(circle at 50% 50%,#667368 0 4px,transparent 5px),repeating-linear-gradient(25deg,transparent 0 70px,rgba(255,255,255,.08) 71px 73px),linear-gradient(145deg,#405146,#1b2b21); }
+.map-placeholder { min-height:560px; display:grid; place-items:center; text-align:center; padding:30px; border-radius:5px; color:white; background:linear-gradient(180deg,rgba(17,31,22,.25),rgba(9,17,12,.68)),url('/images/hero-fishing.jpg') center/cover no-repeat; }
 .map-placeholder span { padding:12px 18px; background:rgba(13,22,16,.78); font-size:.7rem; letter-spacing:.15em; }
+.brand-showcase .brands-row { gap:12px; border:0; }
+.brand-showcase .brand-tile { min-height:180px; display:flex; flex-direction:column; align-items:flex-start; justify-content:space-between; border:1px solid var(--line); border-radius:5px; background:white; }
+.brand-showcase .brand-tile small { color:#919a92; font-size:.64rem; letter-spacing:.14em; }
+.brand-showcase .brand-tile strong { align-self:center; font-size:1.35rem; }
+.brand-showcase .brand-tile span { color:#7a837c; font-size:.7rem; }
 .whatsapp-float { position:fixed; right:22px; bottom:22px; z-index:90; min-height:50px; display:flex; align-items:center; gap:9px; padding:0 18px; border-radius:30px; color:white; background:#1d7d4c; box-shadow:0 10px 28px rgba(0,0,0,.22); font-size:.78rem; font-weight:750; }
 
 /* Footer */

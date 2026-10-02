@@ -2,9 +2,8 @@
 import { navLinks, siteConfig } from '../data/siteConfig.js';
 import Icon from './Icon.astro';
 const current = Astro.url.pathname;
-const isHome = current === '/';
 ---
-<header class:list={['site-header', { 'over-hero': isHome }]} data-header>
+<header class="site-header over-hero" data-header>
   <div class="container nav-wrap">
     <a class="brand" href="/" aria-label={`${siteConfig.name} ana sayfa`}>
       <span class="brand-mark">A</span><span><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span>
