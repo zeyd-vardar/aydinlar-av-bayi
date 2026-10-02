@@ -3,6 +3,7 @@ import Icon from './Icon.astro';
 const { category } = Astro.props;
 ---
 <a class:list={['category-card', `tone-${category.tone}`]} href={`/urun-gruplari#${category.slug}`}>
-  <div class="visual" role="img" aria-label={`${category.title} için görsel alanı`}><span>{category.number}</span></div>
-  <div class="category-copy"><div><h3>{category.title}</h3><p>{category.short}</p></div><span class="circle-arrow"><Icon name="arrow" size={18}/></span></div>
+  <span class="category-image" role="img" aria-label={`${category.title} görseli`}></span>
+  <span class="category-shade"></span>
+  <span class="category-copy"><span><small>{category.number}</small><strong>{category.title}</strong></span><span class="circle-arrow"><Icon name="arrow" size={17}/></span></span>
 </a>

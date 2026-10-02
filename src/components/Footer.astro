@@ -2,8 +2,15 @@
 import { navLinks, siteConfig } from '../data/siteConfig.js';
 import Icon from './Icon.astro';
 const year = new Date().getFullYear();
+const { compact = false } = Astro.props;
 ---
-<footer class="site-footer">
+{compact ? <footer class="site-footer compact-footer">
+  <div class="container compact-footer-inner">
+    <a class="brand light" href="/"><span class="brand-mark">A</span><span><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span></a>
+    <nav aria-label="Alt menü">{navLinks.map((link) => <a href={link.href}>{link.label}</a>)}</nav>
+    <a class="btn btn-light" href="/iletisim"><Icon name="pin" size={17}/> Mağazamıza Ulaşın</a>
+  </div>
+</footer> : <footer class="site-footer">
   <div class="container footer-main">
     <div class="footer-intro">
       <a class="brand light" href="/"><span class="brand-mark">A</span><span><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span></a>
@@ -14,4 +21,4 @@ const year = new Date().getFullYear();
     <div><h2>Çalışma Saatleri</h2>{siteConfig.hours.map((item) => <p class="hours"><span>{item.days}</span><b>{item.time}</b></p>)}<div class="socials"><a href={siteConfig.socials.instagram} aria-label="Instagram"><Icon name="instagram"/></a><a href={siteConfig.socials.facebook} aria-label="Facebook"><Icon name="facebook"/></a></div></div>
   </div>
   <div class="container footer-bottom"><span>© {year} {siteConfig.name}. Tüm hakları saklıdır.</span><span>Doğaya saygıyla.</span></div>
-</footer>
+</footer>}
