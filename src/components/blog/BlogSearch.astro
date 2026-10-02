@@ -1,24 +1,26 @@
 ---
-const categories = ['Tümü', 'Balıkçılık', 'Avcılık', 'Kampçılık', 'Outdoor', 'Ekipman Rehberleri', 'Başlangıç Rehberleri'];
+import type { CollectionEntry } from 'astro:content';
+interface Props { posts: CollectionEntry<'blog'>[]; }
+const { posts } = Astro.props;
+const categorySlug = (value: string) => value === 'Balıkçılık' ? 'balikcilik' : value === 'Avcılık' ? 'avcilik' : 'kampcilik';
 ---
 <div class="blog-discovery" data-blog-discovery>
   <form class="blog-search" role="search" data-blog-search-form>
-    <label for="blog-search-input">Blog içeriklerinde arayın</label>
+    <label for="blog-search-input">Bilgi merkezinde arayın</label>
     <div class="blog-search-field">
       <span aria-hidden="true">⌕</span>
-      <input id="blog-search-input" type="search" name="q" placeholder="Ne öğrenmek istiyorsunuz?" autocomplete="off" data-blog-search-input />
+      <input id="blog-search-input" type="search" name="q" placeholder="Merak ettiğiniz konuyu arayın..." autocomplete="off" data-blog-search-input />
       <button type="submit">Ara</button>
     </div>
-    <p>Örn. “Levrek hangi yemlerle tutulur?” veya “Spin kamış nasıl seçilir?”</p>
   </form>
-  <div class="blog-categories" aria-label="Blog kategorileri" data-blog-categories>
-    {categories.map((category, index) => <button type="button" class:list={{active:index===0}} data-category-filter={category} aria-pressed={index===0 ? 'true':'false'}>{category}</button>)}
-  </div>
   <div class="blog-results-summary" aria-live="polite" data-results-summary hidden></div>
+  <ul class="knowledge-results" data-search-results hidden>
+    {posts.map((post) => <li data-search-result data-search={[post.data.title,post.data.description,post.data.mainCategory,post.data.subCategory,...post.data.tags,...post.data.keywords].join(' ')}><a href={`/blog/${categorySlug(post.data.mainCategory)}/${post.data.slug}`}><span>{post.data.mainCategory} / {post.data.subCategory}</span><strong>{post.data.title}</strong></a></li>)}
+  </ul>
   <div class="blog-empty" data-blog-empty hidden>
     <h2>Aradığınız konuyla ilgili henüz bir içerik bulunamadı.</h2>
-    <p>Farklı bir kelime deneyebilir veya tüm içeriklere göz atabilirsiniz.</p>
-    <button class="btn btn-dark" type="button" data-reset-search>Tüm Yazıları Göster</button>
+    <p>Farklı bir kelime deneyebilir veya bilgi dizinine geri dönebilirsiniz.</p>
+    <button class="btn btn-dark" type="button" data-reset-search>Bilgi Dizinini Göster</button>
   </div>
 </div>
 
@@ -29,45 +31,37 @@ const categories = ['Tümü', 'Balıkçılık', 'Avcılık', 'Kampçılık', 'Ou
   const empty = root?.querySelector<HTMLElement>('[data-blog-empty]');
   const summary = root?.querySelector<HTMLElement>('[data-results-summary]');
   const reset = root?.querySelector<HTMLButtonElement>('[data-reset-search]');
-  const filters = [...(root?.querySelectorAll<HTMLButtonElement>('[data-category-filter]') ?? [])];
-  const cards = [...document.querySelectorAll<HTMLElement>('[data-blog-card]')];
-  let activeCategory = 'Tümü';
+  const resultsRoot = root?.querySelector<HTMLElement>('[data-search-results]');
+  const results = [...(root?.querySelectorAll<HTMLElement>('[data-search-result]') ?? [])];
+  const directory = document.querySelector<HTMLElement>('[data-knowledge-directory]');
+  const categorySections = [...document.querySelectorAll<HTMLElement>('[data-main-category]')];
   const normalize = (value: string) => value.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
   const apply = (updateUrl = true) => {
     const query = input?.value.trim() ?? '';
     const normalizedQuery = normalize(query);
-    const visibleIds = new Set<string>();
-    cards.forEach((card) => {
-      const matchesQuery = !normalizedQuery || normalize(card.dataset.search ?? '').includes(normalizedQuery);
-      const matchesCategory = activeCategory === 'Tümü' || card.dataset.category === activeCategory;
-      const show = matchesQuery && matchesCategory;
-      card.hidden = !show;
-      if (show) visibleIds.add(card.dataset.postId ?? '');
+    let count = 0;
+    results.forEach((result) => {
+      const show = Boolean(normalizedQuery) && normalize(result.dataset.search ?? '').includes(normalizedQuery);
+      result.hidden = !show;
+      if (show) count += 1;
     });
-    const count = visibleIds.size;
-    if (empty) empty.hidden = count > 0;
+    if (directory) directory.hidden = Boolean(normalizedQuery);
+    if (resultsRoot) resultsRoot.hidden = !normalizedQuery;
+    if (empty) empty.hidden = !normalizedQuery || count > 0;
     if (summary) {
-      summary.hidden = !query && activeCategory === 'Tümü';
-      summary.textContent = query ? `“${query}” için ${count} içerik bulundu.` : `${activeCategory} kategorisinde ${count} içerik bulundu.`;
+      summary.hidden = !normalizedQuery;
+      summary.textContent = `“${query}” için ${count} içerik bulundu.`;
     }
     if (updateUrl) {
       const url = new URL(window.location.href);
       query ? url.searchParams.set('q', query) : url.searchParams.delete('q');
-      activeCategory !== 'Tümü' ? url.searchParams.set('category', normalize(activeCategory).replaceAll(' ','-')) : url.searchParams.delete('category');
       history.replaceState({}, '', url);
     }
   };
   form?.addEventListener('submit', (event) => { event.preventDefault(); apply(); });
   input?.addEventListener('input', () => apply());
-  filters.forEach((button) => button.addEventListener('click', () => {
-    activeCategory = button.dataset.categoryFilter ?? 'Tümü';
-    filters.forEach((item) => { const selected = item === button; item.classList.toggle('active', selected); item.setAttribute('aria-pressed', String(selected)); });
-    apply();
-  }));
   reset?.addEventListener('click', () => {
     if (input) input.value = '';
-    activeCategory = 'Tümü';
-    filters.forEach((item, index) => { item.classList.toggle('active', index === 0); item.setAttribute('aria-pressed', String(index === 0)); });
     apply(); input?.focus();
   });
   const params = new URLSearchParams(window.location.search);
@@ -75,8 +69,7 @@ const categories = ['Tümü', 'Balıkçılık', 'Avcılık', 'Kampçılık', 'Ou
   const initialCategory = params.get('category');
   if (input) input.value = initialQuery;
   if (initialCategory) {
-    const match = filters.find((button) => normalize(button.dataset.categoryFilter ?? '').replaceAll(' ','-') === initialCategory);
-    if (match) { activeCategory = match.dataset.categoryFilter ?? 'Tümü'; filters.forEach((item) => { const selected = item === match; item.classList.toggle('active', selected); item.setAttribute('aria-pressed', String(selected)); }); }
+    categorySections.forEach((section) => { section.hidden = section.dataset.mainCategory !== initialCategory; });
   }
-  if (initialQuery || initialCategory) apply(false);
+  if (initialQuery) apply(false);
 </script>

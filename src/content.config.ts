@@ -7,7 +7,9 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(['Balıkçılık', 'Avcılık', 'Kampçılık', 'Outdoor', 'Ekipman Rehberleri', 'Başlangıç Rehberleri']),
+    mainCategory: z.enum(['Balıkçılık', 'Avcılık', 'Kampçılık']),
+    subCategory: z.string(),
+    slug: z.string(),
     tags: z.array(z.string()),
     keywords: z.array(z.string()),
     publishedAt: z.coerce.date(),
@@ -15,10 +17,13 @@ const blog = defineCollection({
     author: z.string().default('Aydınlar Av Bayi'),
     image: z.string(),
     imageAlt: z.string(),
-    featured: z.boolean().default(false),
     readingTime: z.number().int().positive(),
-    related: z.array(z.string()).default([]),
-    faq: z.array(z.object({ question: z.string(), answer: z.string() })).optional()
+    officialNotice: z.boolean().default(false),
+    sources: z.array(z.object({
+      institution: z.string(),
+      page: z.string(),
+      url: z.string().url()
+    })).default([])
   })
 });
 

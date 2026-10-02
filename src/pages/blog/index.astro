@@ -2,23 +2,37 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogSearch from '../../components/blog/BlogSearch.astro';
-import BlogCard from '../../components/blog/BlogCard.astro';
-import Icon from '../../components/Icon.astro';
 
-const posts = (await getCollection('blog')).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
-const featured = posts.filter((post) => post.data.featured).slice(0,3);
-const popularTopics = ['Spin Balıkçılığı','Olta Kamışı Seçimi','Makine Seçimi','Sahte Yemler','Levrek','Kamp Çadırları','Uyku Tulumları','Outdoor Giyim'];
-const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Blog',url:'/blog'}];
+const categoryOrder = ['Balıkçılık', 'Avcılık', 'Kampçılık'] as const;
+const posts = (await getCollection('blog')).sort((a,b) => a.data.title.localeCompare(b.data.title, 'tr'));
+const groups = categoryOrder.map((mainCategory) => {
+  const categoryPosts = posts.filter((post) => post.data.mainCategory === mainCategory);
+  const subCategories = [...new Set(categoryPosts.map((post) => post.data.subCategory))].sort((a,b) => a.localeCompare(b,'tr'));
+  return { mainCategory, subCategories: subCategories.map((subCategory) => ({ subCategory, posts: categoryPosts.filter((post) => post.data.subCategory === subCategory) })) };
+});
+const slugify = (value: string) => value.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Bilgi Merkezi',url:'/blog'}];
 ---
-<BaseLayout title="Blog ve Bilgi Merkezi | Aydınlar Av Bayi" description="Balıkçılık, avcılık, kampçılık ve outdoor hakkında doğru, anlaşılır ve faydalı rehberlere ulaşın." breadcrumbs={crumbs} compactFooter>
-  <section class="blog-hero">
-    <img src="/images/hero-fishing.jpg" alt="" width="1920" height="1004" fetchpriority="high" />
-    <div class="container"><span class="eyebrow light">Blog · Bilgi Merkezi</span><h1>Doğaya Dair<br/>Merak Ettikleriniz</h1><p>Balıkçılık, avcılık ve kampçılık hakkında doğru, güvenilir ve faydalı bilgilere kolayca ulaşın.</p><BlogSearch /></div>
-  </section>
-
-  <section class="blog-featured section"><div class="container"><div class="section-head"><span class="eyebrow">Öne Çıkan İçerikler</span><h2>Başlangıç için en faydalı rehberler</h2></div><div class="featured-blog-grid">{featured.map((post,index) => <BlogCard post={post} featured={index===0} index={index}/>)}</div></div></section>
-
-  <section class="popular-topics"><div class="container"><span>Popüler Konular</span><div>{popularTopics.map((topic) => <a href={`/blog?q=${encodeURIComponent(topic)}`}>{topic}<Icon name="arrow" size={14}/></a>)}</div></div></section>
-
-  <section class="section blog-all" id="tum-yazilar"><div class="container"><div class="section-head"><span class="eyebrow">Son Eklenen Yazılar</span><h2>Bilginizi sahada güçlendirin</h2><p>Temel kavramlardan ekipman seçimine kadar, kolay okunabilen pratik içerikler.</p></div><div class="blog-grid" data-blog-grid>{posts.map((post,index) => <BlogCard post={post} index={index}/>)}</div></div></section>
+<BaseLayout title="Balıkçılık, Avcılık ve Kampçılık Bilgi Merkezi | Aydınlar Av Bayi" description="Balıkçılık, avcılık, kampçılık ve doğa yaşamı hakkında merak ettiğiniz konulara güvenilir ve anlaşılır bilgilerle ulaşın." breadcrumbs={crumbs} compactFooter>
+  <header class="knowledge-hero">
+    <div class="container">
+      <span class="eyebrow light">Bilgi Merkezi</span>
+      <h1>Balıkçılık, Avcılık ve Kampçılık Bilgi Merkezi</h1>
+      <p>Balıkçılık, avcılık, kampçılık ve doğa yaşamı hakkında merak ettiğiniz konulara güvenilir ve anlaşılır bilgilerle ulaşın.</p>
+      <BlogSearch posts={posts} />
+    </div>
+  </header>
+  <main class="knowledge-directory section" data-knowledge-directory>
+    <div class="container">
+      {groups.map((group) => <section class="knowledge-main" id={slugify(group.mainCategory)} data-main-category={slugify(group.mainCategory)}>
+        <div class="knowledge-main-heading"><span>Bilgi Alanı</span><h2>{group.mainCategory}</h2><p>{group.subCategories.reduce((total, item) => total + item.posts.length, 0)} başlık</p></div>
+        <div class="knowledge-subtopics">
+          {group.subCategories.map((grouping, index) => <details open={index < 2} id={`${slugify(group.mainCategory)}-${slugify(grouping.subCategory)}`}>
+            <summary><span>{grouping.subCategory}</span><small>{grouping.posts.length}</small></summary>
+            <ul>{grouping.posts.map((post) => <li><a href={`/blog/${slugify(post.data.mainCategory)}/${post.data.slug}`}><span>{post.data.title}</span><b aria-hidden="true">→</b></a></li>)}</ul>
+          </details>)}
+        </div>
+      </section>)}
+    </div>
+  </main>
 </BaseLayout>

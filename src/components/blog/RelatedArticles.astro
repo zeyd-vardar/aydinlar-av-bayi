@@ -1,7 +1,7 @@
 ---
-import BlogCard from './BlogCard.astro';
 import type { CollectionEntry } from 'astro:content';
 interface Props { posts: CollectionEntry<'blog'>[]; }
 const { posts } = Astro.props;
+const categorySlug = (value: string) => value === 'Balıkçılık' ? 'balikcilik' : value === 'Avcılık' ? 'avcilik' : 'kampcilik';
 ---
-{posts.length > 0 && <section class="related-articles" aria-labelledby="related-title"><div class="container"><div class="section-head"><span class="eyebrow">İlgili İçerikler</span><h2 id="related-title">Bunlar da ilginizi çekebilir</h2></div><div class="blog-grid compact">{posts.map((post, index) => <BlogCard post={post} index={index}/>)}</div></div></section>}
+{posts.length > 0 && <section class="related-articles" aria-labelledby="related-title"><div class="container"><span class="eyebrow">İlgili İçerikler</span><h2 id="related-title">Bunlar da ilginizi çekebilir</h2><ul>{posts.map((post) => <li><a href={`/blog/${categorySlug(post.data.mainCategory)}/${post.data.slug}`}><span>{post.data.subCategory}</span><strong>{post.data.title}</strong><b aria-hidden="true">→</b></a></li>)}</ul></div></section>}
