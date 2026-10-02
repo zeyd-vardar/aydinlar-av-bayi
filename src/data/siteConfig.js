@@ -7,8 +7,9 @@ export const siteConfig = {
   phoneHref: '+905494770161',
   whatsapp: '905494770161',
   email: 'merhaba@aydinlaravbayi.com',
-  address: 'Google Maps üzerinden mağaza konumumuzu görüntüleyin.',
-  mapUrl: 'https://share.google/ZjbMq8m2D5KrIdKmy',
+  address: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C 61080 Ortahisar/Trabzon',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon',
+  mapEmbedUrl: 'https://www.google.com/maps?q=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon&output=embed',
   hours: [
     { days: 'Her gün', time: '08.30 – 20.30' }
   ],

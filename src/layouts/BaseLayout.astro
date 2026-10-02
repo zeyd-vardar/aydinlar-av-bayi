@@ -13,6 +13,7 @@ const localBusiness = {
   '@context': 'https://schema.org', '@type': 'SportingGoodsStore', name: siteConfig.name,
   description: siteConfig.tagline, url: siteConfig.url, telephone: siteConfig.phoneHref,
   image: imageUrl.href, logo: new URL('/favicon.svg', siteConfig.url).href,
+  address: { '@type': 'PostalAddress', streetAddress: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C', postalCode: '61080', addressLocality: 'Ortahisar', addressRegion: 'Trabzon', addressCountry: 'TR' },
   hasMap: siteConfig.mapUrl,
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '08:30', closes: '20:30' }],
   sameAs: Object.values(siteConfig.socials).filter((url) => url !== '#')
