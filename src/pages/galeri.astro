@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Galeri',url:'/galeri'}];
+const items = ['Mağazamız','Balıkçılık Dünyası','Outdoor Seçkisi','Avcılık Ekipmanları','Kamp Hazırlığı','Detaylar'];
+---
+<BaseLayout title="Galeri | Aydınlar Av Bayi" description="Mağazamızdan, balıkçılık ve avcılık ürün gruplarımızdan, outdoor ve kamp dünyasından kareleri inceleyin." breadcrumbs={crumbs}>
+  <PageHero eyebrow="Galeri" title="Mağazadan ve doğadan kareler" text="Gerçek mağaza, ürün ve saha fotoğraflarının yerleştirileceği hızlı ve duyarlı görsel alan." />
+  <section class="section"><div class="container"><SectionHeader eyebrow="Görsel Günlük" title="Tutkunun ayrıntılarına yakından bakın" text="Yer tutucu alanlar gerçek fotoğraflar eklendiğinde farklı ekran ölçülerine uyum sağlayacak biçimde hazırlanmıştır."/><div class="gallery-grid">{items.map((item) => <div class="gallery-item" role="img" aria-label={`${item} fotoğraf alanı`}><span>{item}</span></div>)}</div></div></section>
+</BaseLayout>

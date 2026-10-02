@@ -1,0 +1,40 @@
+---
+import { navLinks, siteConfig } from '../data/siteConfig.js';
+import Icon from './Icon.astro';
+const current = Astro.url.pathname;
+const isHome = current === '/';
+---
+<header class:list={['site-header', { 'over-hero': isHome }]} data-header>
+  <div class="container nav-wrap">
+    <a class="brand" href="/" aria-label={`${siteConfig.name} ana sayfa`}>
+      <span class="brand-mark">A</span><span><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Ana menü">
+      {navLinks.map((link) => <a href={link.href} aria-current={current === link.href ? 'page' : undefined}>{link.label}</a>)}
+    </nav>
+    <a class="btn btn-gold nav-cta" href="/iletisim">Mağazamız <Icon name="arrow" size={17} /></a>
+    <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><Icon name="menu" /></button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" aria-label="Mobil menü" data-mobile-menu hidden>
+    <div class="container">
+      {navLinks.map((link) => <a href={link.href} aria-current={current === link.href ? 'page' : undefined}>{link.label}</a>)}
+      <a class="btn btn-gold" href={`tel:${siteConfig.phoneHref}`}><Icon name="phone" size={18} /> Bizi Arayın</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const menu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+  const setScrolled = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+  setScrolled();
+  window.addEventListener('scroll', setScrolled, { passive: true });
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menüyü aç' : 'Menüyü kapat');
+    if (menu) menu.hidden = open;
+    document.body.classList.toggle('menu-open', !open);
+  });
+</script>

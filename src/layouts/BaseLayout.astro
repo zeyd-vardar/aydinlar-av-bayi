@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { siteConfig } from '../data/siteConfig.js';
+
+interface Props { title: string; description: string; image?: string; breadcrumbs?: { name: string; url: string }[]; }
+const { title, description, image = '/og.jpg', breadcrumbs = [] } = Astro.props;
+const canonical = new URL(Astro.url.pathname, siteConfig.url);
+const imageUrl = new URL(image, siteConfig.url);
+const localBusiness = {
+  '@context': 'https://schema.org', '@type': 'SportingGoodsStore', name: siteConfig.name,
+  description: siteConfig.tagline, url: siteConfig.url, telephone: siteConfig.phoneHref,
+  image: imageUrl.href, logo: new URL('/favicon.svg', siteConfig.url).href,
+  address: { '@type': 'PostalAddress', streetAddress: siteConfig.address, addressCountry: 'TR' },
+  geo: { '@type': 'GeoCoordinates', latitude: siteConfig.coordinates.latitude, longitude: siteConfig.coordinates.longitude },
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '09:00', closes: '19:00' }],
+  sameAs: Object.values(siteConfig.socials).filter((url) => url !== '#')
+};
+const breadcrumbSchema = breadcrumbs.length ? {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, item: new URL(item.url, siteConfig.url).href }))
+} : null;
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#142019" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <Header />
+    <main id="icerik"><slot /></main>
+    <Footer />
+    <WhatsAppButton />
+  </body>
+</html>

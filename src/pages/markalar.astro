@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Icon from '../components/Icon.astro';
+import { brands } from '../data/brands.js';
+const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Markalar',url:'/markalar'}];
+---
+<BaseLayout title="Markalarımız | Aydınlar Av Bayi" description="Balıkçılık, avcılık ve outdoor dünyasının güvenilir markalarını Aydınlar Av Bayi'nde keşfedin." breadcrumbs={crumbs}>
+  <PageHero eyebrow="Markalar" title="Performansını kanıtlamış güvenilir isimler" text="Ürün seçiminde kalite, dayanıklılık ve servis gücünü önemsiyor; farklı ihtiyaçlara hitap eden markaları bir araya getiriyoruz." />
+  <section class="section"><div class="container"><SectionHeader eyebrow="Marka Portföyü" title="Alanında öne çıkan üreticiler" text="Logo alanları gerçek marka görselleri eklendiğinde kolayca güncellenebilecek şekilde hazırlanmıştır."/><div class="brands-row">{brands.map((brand) => <div class="brand-tile">{brand}</div>)}</div></div></section>
+  <section class="section dark"><div class="container contact-band"><div><span class="eyebrow light">Aradığınız marka burada mı?</span><h2>Güncel marka ve ürün bilgisi alın.</h2><p>Stoklarımız ve yeni gelen ürünler hakkında en hızlı bilgiyi mağazamızdan veya WhatsApp hattımızdan alabilirsiniz.</p></div><div><a class="btn btn-gold" href="/iletisim">Bize Ulaşın <Icon name="arrow" size={18}/></a></div></div></section>
+</BaseLayout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aydinlar-av-bayi.probaly61.chatgpt.site/sitemap-index.xml
