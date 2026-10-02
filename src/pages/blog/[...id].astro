@@ -1,0 +1,41 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogBreadcrumb from '../../components/blog/BlogBreadcrumb.astro';
+import TableOfContents from '../../components/blog/TableOfContents.astro';
+import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import Icon from '../../components/Icon.astro';
+import { siteConfig } from '../../data/siteConfig.js';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({ params: { id: post.id }, props: { post, allPosts: posts } }));
+}
+
+const { post, allPosts } = Astro.props;
+const { Content, headings } = await render(post);
+const relatedIds = new Set(post.data.related);
+const related = allPosts.filter((item) => item.id !== post.id && (relatedIds.has(item.id) || item.data.category === post.data.category)).slice(0,3);
+const published = post.data.publishedAt.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+const updated = post.data.updatedAt.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+const articleUrl = new URL(`/blog/${post.id}`, siteConfig.url).href;
+const articleSchema = {
+  '@context':'https://schema.org','@type':'BlogPosting', headline:post.data.title, description:post.data.description,
+  image:new URL(post.data.image,siteConfig.url).href, author:{'@type':'Organization',name:post.data.author},
+  publisher:{'@type':'Organization',name:siteConfig.name,logo:{'@type':'ImageObject',url:new URL('/favicon.svg',siteConfig.url).href}},
+  datePublished:post.data.publishedAt.toISOString(), dateModified:post.data.updatedAt.toISOString(), mainEntityOfPage:articleUrl
+};
+const faqSchema = post.data.faq?.length ? {'@context':'https://schema.org','@type':'FAQPage',mainEntity:post.data.faq.map((item) => ({'@type':'Question',name:item.question,acceptedAnswer:{'@type':'Answer',text:item.answer}}))} : null;
+const categorySlug = post.data.category.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll(' ','-');
+const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Blog',url:'/blog'},{name:post.data.category,url:`/blog?category=${categorySlug}`},{name:post.data.title,url:`/blog/${post.id}`}];
+---
+<BaseLayout title={`${post.data.title} | Aydınlar Av Bayi`} description={post.data.description} image={post.data.image} breadcrumbs={crumbs} compactFooter ogType="article" publishedAt={post.data.publishedAt} updatedAt={post.data.updatedAt}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <article class="blog-article">
+    <header class="article-header"><div class="container"><BlogBreadcrumb category={post.data.category} title={post.data.title}/><span class="eyebrow light">{post.data.category}</span><h1>{post.data.title}</h1><p class="article-intro">{post.data.description}</p><div class="article-meta"><span>{post.data.author}</span><span>{published}</span><span>{post.data.readingTime} dk okuma</span></div></div></header>
+    <div class="article-cover container"><img src={post.data.image} alt={post.data.imageAlt} width="1600" height="900" /></div>
+    <div class="article-layout container"><aside><TableOfContents headings={headings}/><a class="article-store-link" href="/urun-gruplari">Ürün gruplarını inceleyin <Icon name="arrow" size={15}/></a></aside><div class="article-main"><div class="article-updated">Yayın: {published} · Son güncelleme: {updated}</div><div class="blog-prose"><Content /></div>{post.data.faq && <section class="article-faq" aria-labelledby="faq-title"><h2 id="faq-title">Sık Sorulan Sorular</h2>{post.data.faq.map((item) => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</section>}</div></div>
+  </article>
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  <RelatedArticles posts={related}/>
+</BaseLayout>

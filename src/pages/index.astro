@@ -1,7 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 import Icon from '../components/Icon.astro';
+import BlogCard from '../components/blog/BlogCard.astro';
 import { categories } from '../data/categories.js';
 import { brands } from '../data/brands.js';
 const features = [
@@ -10,6 +12,7 @@ const features = [
   ['settings','Geniş Ürün Yelpazesi','Balıkçılık, avcılık, outdoor ve daha fazlası.'],
   ['pin','Kolay Ulaşım','Merkezi konumda rahat erişim.']
 ] as const;
+const homePosts = (await getCollection('blog')).filter((post) => post.data.featured).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()).slice(0,3);
 ---
 <BaseLayout title="Aydınlar Av Bayi | Balıkçılık, Avcılık ve Outdoor" description="Balıkçılık, avcılık, kamp ve outdoor ekipmanlarında geniş ürün yelpazesi, güvenilir markalar ve uzman destek için mağazamızı keşfedin." compactFooter>
   <section class="hero" aria-labelledby="hero-title">
@@ -38,6 +41,8 @@ const features = [
   </section>
 
   <section class="hunt-banner" aria-labelledby="hunt-title"><div class="container"><div class="content"><h2 id="hunt-title">Avcılıkta<br/>Doğayla Biriz</h2><p>Doğada güvenle ve özgürce zaman geçirmeniz için kaliteli avcılık ekipmanları mağazamızda.</p><a class="btn btn-light" href="/urun-gruplari#avcilik">Avcılık Ürünlerini İncele <Icon name="arrow" size={18}/></a></div></div></section>
+
+  <section class="home-blog"><div class="container"><div class="home-blog-head"><div><span class="eyebrow">Bilgi Merkezi</span><h2>Doğaya Dair Bilgi Rehberi</h2><p>Balıkçılık, avcılık ve kampçılık hakkında faydalı rehberler.</p></div><a class="text-link" href="/blog">Tüm Yazıları Gör <Icon name="arrow" size={16}/></a></div><div class="blog-grid compact">{homePosts.map((post,index) => <BlogCard post={post} index={index}/>)}</div></div></section>
 
   <section class="home-features" aria-label="Mağaza avantajları"><div class="container"><div class="features-grid">{features.map(([icon,title,text]) => <article class="feature"><span class="feature-icon"><Icon name={icon} size={28}/></span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 </BaseLayout>

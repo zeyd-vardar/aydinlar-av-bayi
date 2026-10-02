@@ -1,0 +1,10 @@
+---
+interface Heading { depth: number; slug: string; text: string; }
+interface Props { headings: Heading[]; }
+const { headings } = Astro.props;
+const visible = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+---
+<details class="table-of-contents" open>
+  <summary>İçindekiler</summary>
+  <ol>{visible.map((heading) => <li class:list={{sub:heading.depth===3}}><a href={`#${heading.slug}`}>{heading.text}</a></li>)}</ol>
+</details>

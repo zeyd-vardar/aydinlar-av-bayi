@@ -1,0 +1,7 @@
+---
+import BlogCard from './BlogCard.astro';
+import type { CollectionEntry } from 'astro:content';
+interface Props { posts: CollectionEntry<'blog'>[]; }
+const { posts } = Astro.props;
+---
+{posts.length > 0 && <section class="related-articles" aria-labelledby="related-title"><div class="container"><div class="section-head"><span class="eyebrow">İlgili İçerikler</span><h2 id="related-title">Bunlar da ilginizi çekebilir</h2></div><div class="blog-grid compact">{posts.map((post, index) => <BlogCard post={post} index={index}/>)}</div></div></section>}

@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { siteConfig } from '../data/siteConfig.js';
 
-interface Props { title: string; description: string; image?: string; breadcrumbs?: { name: string; url: string }[]; compactFooter?: boolean; }
-const { title, description, image = '/og.jpg', breadcrumbs = [], compactFooter = false } = Astro.props;
+interface Props { title: string; description: string; image?: string; breadcrumbs?: { name: string; url: string }[]; compactFooter?: boolean; ogType?: 'website'|'article'; publishedAt?: Date; updatedAt?: Date; }
+const { title, description, image = '/og.jpg', breadcrumbs = [], compactFooter = false, ogType = 'website', publishedAt, updatedAt } = Astro.props;
 const canonical = new URL(Astro.url.pathname, siteConfig.url);
 const imageUrl = new URL(image, siteConfig.url);
 const localBusiness = {
@@ -33,17 +33,20 @@ const breadcrumbSchema = breadcrumbs.length ? {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:locale" content="tr_TR" />
     <meta property="og:site_name" content={siteConfig.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={imageUrl} />
+    {ogType === 'article' && publishedAt && <meta property="article:published_time" content={publishedAt.toISOString()} />}
+    {ogType === 'article' && updatedAt && <meta property="article:modified_time" content={updatedAt.toISOString()} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <slot name="head" />
     <script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   </head>
