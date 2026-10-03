@@ -13,7 +13,7 @@ export const siteConfig = {
   hours: [
     { days: 'Her gün', time: '08.30 – 20.30' }
   ],
-  socials: { instagram: '#', facebook: '#' }
+  socials: { instagram: 'https://www.instagram.com/aydinlarav/' }
 };
 
 export const navLinks = [
