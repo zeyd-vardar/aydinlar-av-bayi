@@ -1,6 +1,6 @@
 ---
 title: "Rulman Sayısı Ne Anlama Gelir?"
-description: "Rulmanlar hareketli parçaların daha akıcı çalışmasına yardımcı olur."
+description: "Rulmanlar hareketli parçaların daha akıcı çalışmasına yardımcı olur. Ancak rulman sayısının fazla olması tek başına kaliteli makine anlamına gelmez."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Makineleri"
 slug: "rulman-sayisi-ne-anlama-gelir"

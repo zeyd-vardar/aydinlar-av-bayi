@@ -1,6 +1,6 @@
 ---
 title: "Av Botu Nasıl Seçilir?"
-description: "Av Botu Nasıl Seçilir?"
+description: "Av Botu Nasıl Seçilir? Taban tutuşu, bilek desteği, su dayanımı, nefes alabilirlik ve ayakla uyum gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Avcılık"
 subCategory: "Av Giyimi"
 slug: "av-botu-nasil-secilir"

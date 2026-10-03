@@ -1,6 +1,6 @@
 ---
 title: "Levrek için hangi yem kullanılır?"
-description: "Levrek küçük balık ve kabuklularla beslenen yırtıcı bir balıktır."
+description: "Levrek için hangi yem kullanılır: doğal yem, silikon, sert yapay yem ve farklı at-çek yemleri. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "levrek-icin-hangi-yem-kullanilir"

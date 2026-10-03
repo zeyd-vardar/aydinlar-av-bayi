@@ -11,8 +11,8 @@ export default defineConfig({
   output: 'static',
   outDir: './dist/client',
   redirects: {
-    '/galeri': '/magazamiz'
+    '/galeri': '/magazamiz',
   },
   integrations: [sitemap()],
-  vite: { plugins: [tailwindcss()] }
+  vite: { plugins: [tailwindcss()] },
 });

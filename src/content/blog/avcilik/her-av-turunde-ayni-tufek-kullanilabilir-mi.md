@@ -1,6 +1,6 @@
 ---
 title: "Her av türünde aynı tüfek kullanılabilir mi?"
-description: "Hayır. Avlanacak tür, kullanılan tüfek türü ve bazı durumlarda kalibre/çap gibi teknik şartlar resmi düzenlemelerde ayrıca belirlenebilir. Örneğin DKMP’nin av turizmi uygul…"
+description: "Her av türünde aynı tüfek kullanılabilir mi? Hayır. Avlanacak tür, kullanılan tüfek türü ve bazı durumlarda kalibre/çap gibi teknik şartlar resmi düzenlemelerde ayrıca belirlenebilir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "her-av-turunde-ayni-tufek-kullanilabilir-mi"

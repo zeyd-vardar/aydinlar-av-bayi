@@ -1,6 +1,6 @@
 ---
 title: "Sazan"
-description: "Göl, gölet ve yavaş akan sularda yaşayan tatlı su balıklarından biridir."
+description: "Sazan: Göl, gölet ve yavaş akan sularda yaşayan tatlı su balıklarından biridir. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "sazan"

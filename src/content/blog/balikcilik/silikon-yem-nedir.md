@@ -1,6 +1,6 @@
 ---
 title: "Silikon Yem Nedir?"
-description: "Esnek malzemeden üretilen balık, karides veya farklı canlıları taklit eden yapay yemdir."
+description: "Silikon Yem Nedir? Esnek malzemeden üretilen balık, karides veya farklı canlıları taklit eden yapay yemdir."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "silikon-yem-nedir"

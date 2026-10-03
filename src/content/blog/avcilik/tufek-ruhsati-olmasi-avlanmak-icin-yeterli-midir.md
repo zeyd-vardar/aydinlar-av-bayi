@@ -1,6 +1,6 @@
 ---
 title: "Tüfek ruhsatı olması avlanmak için yeterli midir?"
-description: "Hayır. Tüfeğin yasal olarak ruhsatlı olması ile avlanma hakkı aynı şey değildir.\nTürkiye’de avcılık için ayrıca:\n- avcılık belgesi,\n- gerekli vize ve izinler,\n- güncel avla…"
+description: "Tüfek ruhsatı avlanmak için tek başına yeterli değildir. Avcılık belgesi, izinler, güncel avlanma ve avlak kuralları ayrıca karşılanmalıdır."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "tufek-ruhsati-olmasi-avlanmak-icin-yeterli-midir"

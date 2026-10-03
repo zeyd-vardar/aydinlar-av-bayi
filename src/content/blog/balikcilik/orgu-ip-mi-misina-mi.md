@@ -1,6 +1,6 @@
 ---
 title: "Örgü ip mi misina mı?"
-description: "Örgü ip daha az esneme ve daha yüksek hassasiyet sağlar."
+description: "Örgü ip daha az esneme ve daha yüksek hassasiyet sağlar. Tek kat misina daha fazla esneyebilir ve kullanım kolaylığı sağlayabilir. Seçim yönteme göre yapılmalıdır."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "orgu-ip-mi-misina-mi"

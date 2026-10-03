@@ -1,6 +1,6 @@
 ---
 title: "Katmanlı Giyim"
-description: "İç katman:\nNemi uzaklaştırır."
+description: "Katmanlı Giyim: İç katman: Nemi uzaklaştırır. Orta katman: Yalıtım sağlar. Dış katman: Rüzgâr ve yağıştan korur."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Giyimi"
 slug: "katmanli-giyim"

@@ -1,6 +1,6 @@
 ---
 title: "Uyku tulumundaki derece ne anlama gelir?"
-description: "Konfor, alt sınır ve aşırı sınır gibi değerler olabilir."
+description: "Uyku tulumundaki derece ne anlama gelir? Konfor, alt sınır ve aşırı sınır gibi değerler olabilir. Normal seçimde konfor değeri esas alınmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Uyku Tulumu"
 slug: "uyku-tulumundaki-derece-ne-anlama-gelir"

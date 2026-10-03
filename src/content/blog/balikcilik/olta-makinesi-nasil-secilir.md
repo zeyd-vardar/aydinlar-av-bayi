@@ -1,6 +1,6 @@
 ---
 title: "Olta Makinesi Nasıl Seçilir?"
-description: "birlikte değerlendirilmelidir."
+description: "Olta Makinesi Nasıl Seçilir? Kamış, hedef balık, makinenin ağırlığı, misina kapasitesi ve fren gücü gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Makineleri"
 slug: "olta-makinesi-nasil-secilir"

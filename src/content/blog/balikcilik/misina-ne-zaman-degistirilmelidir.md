@@ -1,6 +1,6 @@
 ---
 title: "Misina Ne Zaman Değiştirilmelidir?"
-description: "kontrol edilmeli ve gerektiğinde değiştirilmelidir."
+description: "Misina Ne Zaman Değiştirilmelidir: aşınmışsa, çatlak veya deformasyon varsa, düğüm bölgelerinde zayıflamışsa ve uzun süre güneş ve tuzlu suya maruz kalmışsa."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "misina-ne-zaman-degistirilmelidir"

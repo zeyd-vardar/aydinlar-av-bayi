@@ -7,5 +7,5 @@ await writeFile(
   async fetch(request, env) {
     return env.ASSETS.fetch(request);
   }
-};\n`
+};\n`,
 );

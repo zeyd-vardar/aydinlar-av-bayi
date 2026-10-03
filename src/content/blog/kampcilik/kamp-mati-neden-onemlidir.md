@@ -1,6 +1,6 @@
 ---
 title: "Kamp Matı Neden Önemlidir?"
-description: "Mat yalnızca zemini yumuşatmaz."
+description: "Mat yalnızca zemini yumuşatmaz. Vücudun zeminle olan ısı kaybını azaltır. Bu nedenle uyku sisteminin önemli parçasıdır."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Matı"
 slug: "kamp-mati-neden-onemlidir"

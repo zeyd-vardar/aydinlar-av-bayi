@@ -1,6 +1,6 @@
 ---
 title: "Kamp Botu Nasıl Seçilir?"
-description: "Kamp Botu Nasıl Seçilir?"
+description: "Kamp Botu Nasıl Seçilir? Taban tutuşu, bilek desteği, su dayanımı, ayağa uyum ve nefes alabilirlik gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Giyimi"
 slug: "kamp-botu-nasil-secilir"

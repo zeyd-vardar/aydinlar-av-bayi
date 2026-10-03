@@ -1,6 +1,6 @@
 ---
 title: "10–30 gram kamış ne demek?"
-description: "Kamışın yaklaşık 10–30 gram ağırlığındaki yem veya takım için tasarlandığını ifade eder."
+description: "Kamışın yaklaşık 10–30 gram ağırlığındaki yem veya takım için tasarlandığını ifade eder. Balığın kilosunu göstermez."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "10-30-gram-kamis-ne-demek"

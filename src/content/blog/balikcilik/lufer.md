@@ -1,6 +1,6 @@
 ---
 title: "Lüfer"
-description: "Lüfer hareketli ve yırtıcı bir balıktır."
+description: "Lüfer hareketli ve yırtıcı bir balıktır. Sürü halinde yem balıklarını takip edebilir. Marmara, İstanbul Boğazı ve Karadeniz Türkiye'de önemli bölgeler arasındadır."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "lufer"

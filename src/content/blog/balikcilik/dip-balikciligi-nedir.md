@@ -1,6 +1,6 @@
 ---
 title: "Dip Balıkçılığı Nedir?"
-description: "Yemin tabana veya tabana yakın bölgede sunulduğu yöntemdir."
+description: "Dip Balıkçılığı Nedir? Yemin tabana veya tabana yakın bölgede sunulduğu yöntemdir. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Yöntemleri"
 slug: "dip-balikciligi-nedir"

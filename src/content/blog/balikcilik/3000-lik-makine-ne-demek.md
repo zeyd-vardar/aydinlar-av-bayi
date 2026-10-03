@@ -1,6 +1,6 @@
 ---
 title: "3000'lik makine ne demek?"
-description: "Makinenin genel boyut ve kapasite sınıfıdır."
+description: "Makinenin genel boyut ve kapasite sınıfıdır. Markalar arasında tam standardı yoktur. Üreticinin teknik özelliklerine bakılmalıdır."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Makineleri"
 slug: "3000-lik-makine-ne-demek"

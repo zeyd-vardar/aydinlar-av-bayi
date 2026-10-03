@@ -1,6 +1,6 @@
 ---
 title: "Yağmurluk Nasıl Seçilir?"
-description: "Su geçirmezlik kadar nefes alabilirlik de önemlidir."
+description: "Yağmurluk Nasıl Seçilir? Su geçirmezlik kadar nefes alabilirlik de önemlidir. Hareket sırasında oluşan nem dışarı atılabilmelidir."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Giyimi"
 slug: "yagmurluk-nasil-secilir"

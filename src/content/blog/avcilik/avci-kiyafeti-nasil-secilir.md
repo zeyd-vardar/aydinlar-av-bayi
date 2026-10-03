@@ -1,6 +1,6 @@
 ---
 title: "Avcı Kıyafeti Nasıl Seçilir?"
-description: "Arazi ve hava şartları değerlendirilmelidir."
+description: "Avcı kıyafetini arazi ve hava koşullarına göre seçin; hareket özgürlüğü, hava koruması, nefes alabilirlik, dayanıklılık ve görünürlüğü birlikte değerlendirin."
 mainCategory: "Avcılık"
 subCategory: "Av Giyimi"
 slug: "avci-kiyafeti-nasil-secilir"

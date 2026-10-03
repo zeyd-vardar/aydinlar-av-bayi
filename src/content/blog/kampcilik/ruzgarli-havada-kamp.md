@@ -1,6 +1,6 @@
 ---
 title: "Rüzgârlı Havada Kamp"
-description: "açısından tehlike oluşturabilir."
+description: "Rüzgârlı havada kamp yaparken çadırı doğru yönde ve sağlam biçimde sabitleyin; kırılabilecek dallardan ve devrilebilecek nesnelerden uzak durun."
 mainCategory: "Kampçılık"
 subCategory: "Hava Koşulları"
 slug: "ruzgarli-havada-kamp"

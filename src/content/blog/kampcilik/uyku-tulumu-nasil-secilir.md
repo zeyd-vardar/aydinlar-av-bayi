@@ -1,6 +1,6 @@
 ---
 title: "Uyku Tulumu Nasıl Seçilir?"
-description: "Beklenen gece sıcaklığı en önemli kriterlerden biridir."
+description: "Uyku Tulumu Nasıl Seçilir? Dolgu, ağırlık, paket boyutu ve kişinin soğuğa hassasiyeti gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Kampçılık"
 subCategory: "Uyku Tulumu"
 slug: "uyku-tulumu-nasil-secilir"

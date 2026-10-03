@@ -1,6 +1,6 @@
 ---
 title: "Parçalı Kamış mı Teleskopik Kamış mı?"
-description: "Parçalı kamışlar ayrı parçaların birleştirilmesiyle kullanılır."
+description: "Parçalı kamışlar ayrı parçaların birleştirilmesiyle kullanılır. Teleskopik kamışlar iç içe geçerek kapanır. Teleskopik kamışın en önemli avantajlarından biri taşıma kolaylığıdır."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "parcali-kamis-mi-teleskopik-kamis-mi"

@@ -1,6 +1,6 @@
 ---
 title: "Kaç Kişilik Çadır Alınmalı?"
-description: "Üretici kapasitesi çoğunlukla kişilerin uyuma alanını ifade eder."
+description: "Kaç Kişilik Çadır Alınmalı? Üretici kapasitesi çoğunlukla kişilerin uyuma alanını ifade eder. Ekipman için daha fazla alan isteyenler daha büyük kapasite tercih edebilir."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "kac-kisilik-cadir-alinmali"

@@ -1,6 +1,6 @@
 ---
 title: "Tabanca bulundurma ruhsatı nedir?"
-description: "Bulundurma ruhsatı, ruhsatta belirtilen mesken veya işyerinde silah bulundurmaya izin verir. Bu ruhsat, silahın günlük olarak dışarıda taşınmasına izin veren bir taşıma ruh…"
+description: "Bulundurma ruhsatı, ruhsatta belirtilen mesken veya işyerinde silah bulundurmaya izin verir. Bu ruhsat, silahın günlük olarak dışarıda taşınmasına izin veren bir taşıma ruhsatı değildir."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "tabanca-bulundurma-ruhsati-nedir"

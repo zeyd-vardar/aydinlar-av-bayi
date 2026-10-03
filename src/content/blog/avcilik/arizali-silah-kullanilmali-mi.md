@@ -1,6 +1,6 @@
 ---
 title: "Arızalı silah kullanılmalı mı?"
-description: "Hayır. Olağandışı mekanik davranış, çatlak, hasar veya çalışma problemi fark edilirse kullanım bırakılmalı ve yetkili silah tamircisine başvurulmalıdır."
+description: "Arızalı silah kullanılmalı mı? Hayır. Olağandışı mekanik davranış, çatlak, hasar veya çalışma problemi fark edilirse kullanım bırakılmalı ve yetkili silah tamircisine başvurulmalıdır."
 mainCategory: "Avcılık"
 subCategory: "Silah Güvenliği"
 slug: "arizali-silah-kullanilmali-mi"

@@ -1,7 +1,24 @@
 ---
-const { eyebrow, title, text, image = '/images/hero-fishing.jpg', position = 'center' } = Astro.props;
+const {
+  eyebrow,
+  title,
+  text,
+  image = '/images/hero-fishing.jpg',
+  position = 'center',
+} = Astro.props;
 ---
+
 <section class="page-hero">
-  <img src={image} alt="" width="1920" height="1004" style={`object-position:${position}`} loading="eager" fetchpriority="high" />
-  <div class="container"><span class="eyebrow light">{eyebrow}</span><h1>{title}</h1><p>{text}</p></div>
+  <img
+    src={image}
+    alt=""
+    width="1920"
+    height="1004"
+    style={`object-position:${position}`}
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="container">
+    <span class="eyebrow light">{eyebrow}</span><h1>{title}</h1><p>{text}</p>
+  </div>
 </section>

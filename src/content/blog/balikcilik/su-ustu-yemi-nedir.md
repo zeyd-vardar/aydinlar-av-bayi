@@ -1,6 +1,6 @@
 ---
 title: "Su Üstü Yemi Nedir?"
-description: "Su yüzeyinde veya yüzeye yakın bölgede çalışmak üzere tasarlanan yemlerdir."
+description: "Su Üstü Yemi Nedir? Su yüzeyinde veya yüzeye yakın bölgede çalışmak üzere tasarlanan yemlerdir. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "su-ustu-yemi-nedir"

@@ -1,6 +1,6 @@
 ---
 title: "Uzun Mesafe Kıyı Balıkçılığı Nedir?"
-description: "Yemli takımın uzun kamış ve uygun ağırlıkla kıyıdan uzağa atılması esasına dayanır."
+description: "Yemli takımın uzun kamış ve uygun ağırlıkla kıyıdan uzağa atılması esasına dayanır. Surf casting adı da yaygın olarak kullanılmaktadır."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Yöntemleri"
 slug: "uzun-mesafe-kiyi-balikciligi-nedir"

@@ -1,6 +1,6 @@
 ---
 title: "Yağmurlu Havada Kamp"
-description: "Çadır su toplamayan yüksek zemine kurulmalıdır."
+description: "Yağmurlu Havada Kamp: Çadır su toplamayan yüksek zemine kurulmalıdır. Dış tente düzgün gerilmelidir. Islak ekipman mümkün olduğunca yaşam alanından ayrılmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Hava Koşulları"
 slug: "yagmurlu-havada-kamp"

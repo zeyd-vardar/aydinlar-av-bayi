@@ -1,6 +1,6 @@
 ---
 title: "Ön Fren ve Arka Fren Arasındaki Fark"
-description: "Ön fren sistemi makaranın ön bölümünden ayarlanır."
+description: "Ön fren sistemi makaranın ön bölümünden ayarlanır. Arka fren gövdenin arka bölümündedir. Bir sistemin yalnızca konumu kalite göstergesi değildir."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Makineleri"
 slug: "on-fren-ve-arka-fren-arasindaki-fark"

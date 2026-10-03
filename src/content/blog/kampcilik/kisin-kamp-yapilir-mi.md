@@ -1,6 +1,6 @@
 ---
 title: "Kışın kamp yapılır mı?"
-description: "Kışın kamp yapılır mı?"
+description: "Kışın kamp yapılır mı? Uygun çadır, yalıtımlı mat, uygun uyku tulumu, giyim ve deneyim özelliklerini ve kullanım farklarını karşılaştırın."
 mainCategory: "Kampçılık"
 subCategory: "Hava Koşulları"
 slug: "kisin-kamp-yapilir-mi"

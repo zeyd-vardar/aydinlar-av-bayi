@@ -1,6 +1,6 @@
 ---
 title: "Tek Kat Misina Nedir?"
-description: "Genellikle naylon esaslı tek lifli balıkçılık hattıdır."
+description: "Tek Kat Misina Nedir? Ekonomik, düğüm kullanımının kolay olması ve belirli seviyede esnemesi gibi temel özellikleri kısa ve anlaşılır biçimde öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "tek-kat-misina-nedir"

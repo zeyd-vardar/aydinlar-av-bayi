@@ -1,6 +1,6 @@
 ---
 title: "Evde silah nasıl saklanmalı?"
-description: "Yetkisiz kişilerin erişemeyeceği kilitli bir yerde tutulmalıdır. Özellikle çocuk bulunan evlerde güvenli muhafaza kritik öneme sahiptir."
+description: "Evde silah nasıl saklanmalı? Yetkisiz kişilerin erişemeyeceği kilitli bir yerde tutulmalıdır. Özellikle çocuk bulunan evlerde güvenli muhafaza kritik öneme sahiptir."
 mainCategory: "Avcılık"
 subCategory: "Silah Güvenliği"
 slug: "evde-silah-nasil-saklanmali"

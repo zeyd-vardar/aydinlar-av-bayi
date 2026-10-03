@@ -1,6 +1,6 @@
 ---
 title: "Yaban Hayvanlarına Yiyecek Verilir mi?"
-description: "İnsan yiyecekleri yaban hayvanları için uygun olmayabilir ve doğal davranışlarını değiştirebilir."
+description: "İnsan yiyecekleri yaban hayvanları için uygun olmayabilir ve doğal davranışlarını değiştirebilir. Ekipman, hazırlık ve doğada güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Kampçılık"
 subCategory: "Doğaya Saygılı Kamp"
 slug: "yaban-hayvanlarina-yiyecek-verilir-mi"

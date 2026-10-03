@@ -1,6 +1,6 @@
 ---
 title: "Çadır Nasıl Temizlenir?"
-description: "Üretici talimatına göre temizlenmelidir."
+description: "Çadır Nasıl Temizlenir? Üretici talimatına göre temizlenmelidir. Sert deterjanlar kaplamaya zarar verebilir. Nemli halde uzun süre saklanmamalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "cadir-nasil-temizlenir"

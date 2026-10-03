@@ -1,6 +1,6 @@
 ---
 title: "Kaz Tüyü mü Sentetik mi?"
-description: "Kaz Tüyü mü Sentetik mi?"
+description: "Kaz Tüyü mü Sentetik mi? Yüksek ısı/ağırlık oranı, iyi sıkışabilirlik, nemli ortamda avantaj, kolay bakım ve daha uygun fiyat özelliklerini ve kullanım farklarını karşılaştırın."
 mainCategory: "Kampçılık"
 subCategory: "Uyku Tulumu"
 slug: "kaz-tuyu-mu-sentetik-mi"

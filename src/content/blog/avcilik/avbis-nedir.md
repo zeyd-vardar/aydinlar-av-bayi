@@ -1,6 +1,6 @@
 ---
 title: "AVBİS Nedir?"
-description: "Avcılık işlemleri ve avlak bilgileri için Doğa Koruma ve Milli Parklar tarafından kullanılan sistemdir."
+description: "AVBİS Nedir? Avcılık işlemleri ve avlak bilgileri için Doğa Koruma ve Milli Parklar tarafından kullanılan sistemdir."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "avbis-nedir"

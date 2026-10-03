@@ -1,6 +1,6 @@
 ---
 title: "Silah ruhsatı ile avcılık belgesi aynı şey midir?"
-description: "Hayır.\nSilah ruhsatı: Silahın edinilmesi, bulundurulması veya taşınmasına ilişkin mevzuatla ilgilidir.\nAvcılık belgesi: Kara avcılığı yapabilmek için gereken ayrı belgedir.…"
+description: "Silah ruhsatı ile avcılık belgesi aynı şey midir? Hayır. Silah ruhsatı: Silahın edinilmesi, bulundurulması veya taşınmasına ilişkin mevzuatla ilgilidir."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "silah-ruhsati-ile-avcilik-belgesi-ayni-sey-midir"

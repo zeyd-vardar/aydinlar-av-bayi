@@ -1,6 +1,6 @@
 ---
 title: "Şok nedir?"
-description: "Yivsiz tüfeklerde şok, namlu çıkışındaki daralma yapısıyla saçma dağılımını etkileyen bir özelliktir. Sabit veya değiştirilebilir sistemler bulunabilir.\nAncak tüfeğin şok s…"
+description: "Şok nedir? Yivsiz tüfeklerde şok, namlu çıkışındaki daralma yapısıyla saçma dağılımını etkileyen bir özelliktir. Sabit veya değiştirilebilir sistemler bulunabilir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "sok-nedir"

@@ -1,6 +1,6 @@
 ---
 title: "Olta Kamışı Nasıl Seçilir?"
-description: "Önce hangi balıkçılık yönteminin kullanılacağı belirlenmelidir."
+description: "Olta Kamışı Nasıl Seçilir? Önce hangi balıkçılık yönteminin kullanılacağı belirlenmelidir. Doğru ekipman ve güvenli kullanım için temel bilgileri inceleyin."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "olta-kamisi-nasil-secilir"

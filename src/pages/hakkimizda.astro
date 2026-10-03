@@ -2,17 +2,52 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Hakkımızda',url:'/hakkimizda'}];
-const values = [['01','Sahadan Gelen Deneyim','Ürünleri yalnızca raf üzerinde değil, kullanım alanındaki karşılığıyla değerlendiriyoruz.'],['02','İhtiyaca Göre Rehberlik','Her kullanıcıya aynı ürünü değil, beklentisine ve kullanımına uygun seçeneği öneriyoruz.'],['03','Uzun Vadeli Güven','Satış öncesinden kullanım sonrasına uzanan samimi ve güvenilir bir ilişki kuruyoruz.']];
+const crumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Hakkımızda', url: '/hakkimizda' },
+];
+const values = [
+  [
+    '01',
+    'Sahadan Gelen Deneyim',
+    'Ürünleri yalnızca raf üzerinde değil, kullanım alanındaki karşılığıyla değerlendiriyoruz.',
+  ],
+  [
+    '02',
+    'İhtiyaca Göre Rehberlik',
+    'Her kullanıcıya aynı ürünü değil, beklentisine ve kullanımına uygun seçeneği öneriyoruz.',
+  ],
+  [
+    '03',
+    'Uzun Vadeli Güven',
+    'Satış öncesinden kullanım sonrasına uzanan samimi ve güvenilir bir ilişki kuruyoruz.',
+  ],
+];
 ---
-<BaseLayout title="Hakkımızda | Aydınlar Av Bayi" description="Aydınlar Av Bayi'nin doğa tutkusu, deneyimi, geniş ürün yaklaşımı ve müşterilerine sunduğu uzman desteği yakından tanıyın." breadcrumbs={crumbs} compactFooter>
-  <PageHero eyebrow="Hakkımızda" title="Doğaya duyulan tutkudan doğan bir mağaza" text="Balıkçılık, avcılık ve outdoor kültürünü doğru ekipman ve sahici deneyimle buluşturuyoruz." image="/images/hunting-banner.jpg" position="center" />
+
+<BaseLayout
+  title="Hakkımızda | Aydınlar Av Bayi"
+  description="Trabzon'da balıkçılık, avcılık ve kamp ekipmanları sunan Aydınlar Av Bayi'nin mağazacılık yaklaşımını, ürün gruplarını ve müşteri desteğini tanıyın."
+  breadcrumbs={crumbs}
+  compactFooter
+>
+  <PageHero
+    eyebrow="Hakkımızda"
+    title="Doğaya duyulan tutkudan doğan bir mağaza"
+    text="Balıkçılık, avcılık ve outdoor kültürünü doğru ekipman ve sahici deneyimle buluşturuyoruz."
+    image="/images/hunting-banner.jpg"
+    position="center"
+  />
   <section class="section about-video-section">
     <div class="container about-video-grid">
       <div class="about-video-copy">
         <span class="eyebrow">Misyonumuz</span>
         <h2>Doğaya çıkarken yanınızda güven olsun.</h2>
-        <p>Aydınlar Av Bayi olarak doğa tutkunlarını doğru ekipman, sahadan gelen deneyim ve güvenilir hizmet anlayışıyla buluşturuyoruz. Mağazamızın yaklaşımını ve bizi harekete geçiren değerleri videomuzdan izleyebilirsiniz.</p>
+        <p>
+          Aydınlar Av Bayi olarak doğa tutkunlarını doğru ekipman, sahadan gelen deneyim ve
+          güvenilir hizmet anlayışıyla buluşturuyoruz. Mağazamızın yaklaşımını ve bizi harekete
+          geçiren değerleri videomuzdan izleyebilirsiniz.
+        </p>
       </div>
       <div class="about-video-frame">
         <iframe
@@ -26,5 +61,24 @@ const values = [['01','Sahadan Gelen Deneyim','Ürünleri yalnızca raf üzerind
       </div>
     </div>
   </section>
-  <section class="section alt"><div class="container"><SectionHeader eyebrow="Yaklaşımımız" title="Uzmanlık, samimiyet ve doğru yönlendirme"/><div class="values-grid">{values.map(([n,t,p]) => <article class="value-card"><span>{n}</span><h3>{t}</h3><p>{p}</p></article>)}</div></div></section>
+  <section class="section alt">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Yaklaşımımız"
+        title="Uzmanlık, samimiyet ve doğru yönlendirme"
+      /><div class="values-grid">
+        {
+          values.map(([n, t, p]) => (
+            <article class="value-card">
+              <>
+                <span>{n}</span>
+                <h3>{t}</h3>
+                <p>{p}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>

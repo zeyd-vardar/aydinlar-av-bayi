@@ -1,6 +1,6 @@
 ---
 title: "Tek kırma, çift kırma ve yarı otomatik av tüfeği nedir?"
-description: "Bunlar yivsiz tüfeklerin farklı mekanik yapılarını ifade eder.\nTek kırma: Tek namlu ve tek fişek yatağı bulunan basit sistemdir.\nÇift kırma: İki namlulu yapıdır; namlular y…"
+description: "Bunlar yivsiz tüfeklerin farklı mekanik yapılarını ifade eder. Tek kırma: Tek namlu ve tek fişek yatağı bulunan basit sistemdir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "tek-kirma-cift-kirma-ve-yari-otomatik-av-tufegi-nedir"

@@ -19,12 +19,16 @@ const blog = defineCollection({
     imageAlt: z.string(),
     readingTime: z.number().int().positive(),
     officialNotice: z.boolean().default(false),
-    sources: z.array(z.object({
-      institution: z.string(),
-      page: z.string(),
-      url: z.string().url()
-    })).default([])
-  })
+    sources: z
+      .array(
+        z.object({
+          institution: z.string(),
+          page: z.string(),
+          url: z.string().url(),
+        }),
+      )
+      .default([]),
+  }),
 });
 
 export const collections = { blog };

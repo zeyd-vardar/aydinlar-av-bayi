@@ -4,37 +4,85 @@ import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import Icon from '../components/Icon.astro';
 import { brandGroups } from '../data/brands.js';
-const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Markalar',url:'/markalar'}];
+const crumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Markalar', url: '/markalar' },
+];
 ---
-<BaseLayout title="Markalarımız | Aydınlar Av Bayi" description="Balıkçılık, avcılık ve outdoor dünyasının güvenilir markalarını Aydınlar Av Bayi'nde keşfedin." breadcrumbs={crumbs} compactFooter>
-  <PageHero eyebrow="Markalar" title="Güven, performans ve sahada kanıtlanmış kalite" text="Doğru ekipman deneyiminin güvenilir üreticilerle başladığına inanıyoruz." image="/images/store-interior.jpg" position="center 42%" />
+
+<BaseLayout
+  title="Markalarımız | Aydınlar Av Bayi"
+  description="Aydınlar Av Bayi'nde bulunan balıkçılık, avcılık, kamp ve outdoor markalarını inceleyin; aradığınız ürün ve stok bilgisi için mağazamızla iletişime geçin."
+  breadcrumbs={crumbs}
+  compactFooter
+>
+  <PageHero
+    eyebrow="Markalar"
+    title="Güven, performans ve sahada kanıtlanmış kalite"
+    text="Doğru ekipman deneyiminin güvenilir üreticilerle başladığına inanıyoruz."
+    image="/images/store-interior.jpg"
+    position="center 42%"
+  />
   <section class="section brand-showcase">
     <div class="container">
-      <SectionHeader eyebrow="Marka Rehberi" title="Türkiye’de öne çıkan markalar" text="Balıkçılık, avcılık ve kampçılıkta yaygın ürün çeşitliliğiyle öne çıkan markaları kategori bazında keşfedin."/>
+      <SectionHeader
+        eyebrow="Marka Rehberi"
+        title="Türkiye’de öne çıkan markalar"
+        text="Balıkçılık, avcılık ve kampçılıkta yaygın ürün çeşitliliğiyle öne çıkan markaları kategori bazında keşfedin."
+      />
       <div class="brand-groups">
-        {brandGroups.map((group) => (
-          <section class="brand-group" id={group.id} aria-labelledby={`${group.id}-title`}>
-            <div class="brand-group-head">
-              <div>
-                <span class="eyebrow">{group.eyebrow}</span>
-                <h2 id={`${group.id}-title`}>{group.title}</h2>
-              </div>
-              <p>{group.description}</p>
-            </div>
-            <div class="brands-row">
-              {group.brands.map((brand, index) => (
-                <div class="brand-tile">
-                  <small>{String(index + 1).padStart(2,'0')}</small>
-                  <strong>{brand}</strong>
-                  <span>Marka ve stok bilgisi alın</span>
+        {
+          brandGroups.map((group) => (
+            <section
+              class="brand-group"
+              id={group.id}
+              aria-labelledby={`${group.id}-title`}
+            >
+              <div class="brand-group-head">
+                <div>
+                  <span class="eyebrow">{group.eyebrow}</span>
+                  <h2 id={`${group.id}-title`}>{group.title}</h2>
                 </div>
-              ))}
-            </div>
-          </section>
-        ))}
+                <p>{group.description}</p>
+              </div>
+              <div class="brands-row">
+                {group.brands.map((brand, index) => (
+                  <div class="brand-tile">
+                    <small>{String(index + 1).padStart(2, '0')}</small>
+                    <strong>{brand}</strong>
+                    <span>Marka ve stok bilgisi alın</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))
+        }
       </div>
-      <p class="brand-note">Marka ve ürün bulunurluğu dönemsel olarak değişebilir. Güncel stok bilgisi için mağazamızla iletişime geçebilirsiniz.</p>
+      <p class="brand-note">
+        Marka ve ürün bulunurluğu dönemsel olarak değişebilir. Güncel stok bilgisi için mağazamızla
+        iletişime geçebilirsiniz.
+      </p>
     </div>
   </section>
-  <section class="section dark"><div class="container contact-band"><div><span class="eyebrow light">Aradığınız marka burada mı?</span><h2>Güncel marka ve ürün bilgisi alın.</h2><p>Stoklarımız ve yeni gelen ürünler hakkında en hızlı bilgiyi mağazamızdan veya WhatsApp hattımızdan alabilirsiniz.</p></div><div><a class="btn btn-gold" href="/iletisim">Bize Ulaşın <Icon name="arrow" size={18}/></a></div></div></section>
+  <section class="section dark">
+    <div class="container contact-band">
+      <div>
+        <span class="eyebrow light">Aradığınız marka burada mı?</span><h2>
+          Güncel marka ve ürün bilgisi alın.
+        </h2><p>
+          Stoklarımız ve yeni gelen ürünler hakkında en hızlı bilgiyi mağazamızdan veya WhatsApp
+          hattımızdan alabilirsiniz.
+        </p>
+      </div><div>
+        <a
+          class="btn btn-gold"
+          href="/iletisim"
+          >Bize Ulaşın <Icon
+            name="arrow"
+            size={18}
+          /></a
+        >
+      </div>
+    </div>
+  </section>
 </BaseLayout>

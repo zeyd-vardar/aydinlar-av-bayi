@@ -1,6 +1,6 @@
 ---
 title: "Sıcak Havada Kamp"
-description: "Gölge ve yeterli içme suyu sağlanmalıdır."
+description: "Gölge ve yeterli içme suyu sağlanmalıdır. Aşırı sıcaklarda sıcak çarpması riski vardır. Bilinç değişikliği ve ciddi belirtilerde 112 aranmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Hava Koşulları"
 slug: "sicak-havada-kamp"

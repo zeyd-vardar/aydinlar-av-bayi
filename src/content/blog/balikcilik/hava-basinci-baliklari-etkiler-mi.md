@@ -1,6 +1,6 @@
 ---
 title: "Hava Basıncı Balıkları Etkiler mi?"
-description: "Hava basıncı değişiklikleri diğer hava olaylarıyla birlikte gerçekleşebilir."
+description: "Hava basıncı değişiklikleri diğer hava olaylarıyla birlikte gerçekleşebilir. Balık davranışında etkileri gözlenebilse de tek bir ideal basınç değeri vermek doğru değildir."
 mainCategory: "Balıkçılık"
 subCategory: "Mevsim ve Hava"
 slug: "hava-basinci-baliklari-etkiler-mi"

@@ -1,6 +1,6 @@
 ---
 title: "Kamış Bakımı Nasıl Yapılır?"
-description: "Özellikle tuzlu su kullanımından sonra kamış temiz tatlı suyla durulanmalıdır."
+description: "Olta kamışını özellikle tuzlu su sonrası tatlı suyla durulayıp kurutun; halkaları çatlak, aşınma, pas ve misinayı kesebilecek yüzeyler için kontrol edin."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "kamis-bakimi-nasil-yapilir"

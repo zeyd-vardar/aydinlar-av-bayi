@@ -1,6 +1,6 @@
 ---
 title: "Florokarbon Misina Nedir?"
-description: "Özellikle öncü misina olarak kullanılan, aşınma dayanımı yüksek bir misina türüdür."
+description: "Özellikle öncü misina olarak kullanılan, aşınma dayanımı yüksek bir misina türüdür. Su altındaki optik özellikleri nedeniyle tercih edilir. Ancak “suda tamamen görünmez” ifadesi doğru değildir."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "florokarbon-misina-nedir"

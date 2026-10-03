@@ -1,4 +1,5 @@
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://aydinlar-av-bayi.probaly61.chatgpt.site';
+const siteUrl =
+  import.meta.env.PUBLIC_SITE_URL ?? 'https://aydinlar-av-bayi.probaly61.chatgpt.site';
 
 export const siteConfig = {
   name: 'Aydınlar Av Bayi',
@@ -10,12 +11,12 @@ export const siteConfig = {
   whatsapp: '905494770161',
   email: 'merhaba@aydinlaravbayi.com',
   address: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C 61080 Ortahisar/Trabzon',
-  mapUrl: 'https://www.google.com/maps/search/?api=1&query=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon',
-  mapEmbedUrl: 'https://www.google.com/maps?q=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon&output=embed',
-  hours: [
-    { days: 'Her gün', time: '08.30 – 20.30' }
-  ],
-  socials: { instagram: 'https://www.instagram.com/aydinlarav/' }
+  mapUrl:
+    'https://www.google.com/maps/search/?api=1&query=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon',
+  mapEmbedUrl:
+    'https://www.google.com/maps?q=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon&output=embed',
+  hours: [{ days: 'Her gün', time: '08.30 – 20.30' }],
+  socials: { instagram: 'https://www.instagram.com/aydinlarav/' },
 };
 
 export const navLinks = [
@@ -25,5 +26,5 @@ export const navLinks = [
   { href: '/markalar', label: 'Markalar' },
   { href: '/blog', label: 'Blog' },
   { href: '/magazamiz', label: 'Mağazamız' },
-  { href: '/iletisim', label: 'İletişim' }
+  { href: '/iletisim', label: 'İletişim' },
 ];

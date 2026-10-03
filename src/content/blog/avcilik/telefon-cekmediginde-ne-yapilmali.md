@@ -1,6 +1,6 @@
 ---
 title: "Telefon Çekmediğinde Ne Yapılmalı?"
-description: "Telefon Çekmediğinde Ne Yapılmalı?"
+description: "Telefon Çekmediğinde Ne Yapılmalı: çevrimdışı harita indir, rotayı bir yakına bildir, telefon pilini koru, taşınabilir şarj cihazı taşı ve mümkünse harita ve pusula bulundur."
 mainCategory: "Avcılık"
 subCategory: "Doğada Yön Bulma"
 slug: "telefon-cekmediginde-ne-yapilmali"

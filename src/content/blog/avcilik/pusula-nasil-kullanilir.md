@@ -1,6 +1,6 @@
 ---
 title: "Pusula Nasıl Kullanılır?"
-description: "Pusula manyetik kuzeyi gösterir."
+description: "Pusula manyetik kuzeyi gösterir. Haritayla birlikte kullanıldığında rota belirlemeye yardımcı olur. Elektronik cihazların çalışmaması ihtimaline karşı temel pusula ve harita bilgisi önemlidir."
 mainCategory: "Avcılık"
 subCategory: "Doğada Yön Bulma"
 slug: "pusula-nasil-kullanilir"

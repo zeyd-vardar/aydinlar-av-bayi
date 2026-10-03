@@ -1,6 +1,6 @@
 ---
 title: "Dere Kenarında Kamp Yapılır mı?"
-description: "Dere yatağında veya çok yakınında kamp yapılmamalıdır."
+description: "Dere yatağında veya çok yakınında kamp yapılmamalıdır. Uzak bölgelerde oluşan yağış ani su yükselmesine neden olabilir."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Alanı"
 slug: "dere-kenarinda-kamp-yapilir-mi"

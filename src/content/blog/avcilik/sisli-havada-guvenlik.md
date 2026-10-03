@@ -1,6 +1,6 @@
 ---
 title: "Sisli Havada Güvenlik"
-description: "Sis görüşü ciddi şekilde düşürür."
+description: "Sisli Havada Güvenlik: Sis görüşü ciddi şekilde düşürür. Rota kaybı riskini artırır. Yoğun siste güvenli alana dönmek veya koşulların düzelmesini beklemek daha doğru olabilir."
 mainCategory: "Avcılık"
 subCategory: "Hava ve Arazi"
 slug: "sisli-havada-guvenlik"

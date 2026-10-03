@@ -1,6 +1,6 @@
 ---
 title: "Kefal"
-description: "Kıyı, liman ve haliç gibi çok farklı ortamlarda görülebilir."
+description: "Kefal: Kıyı, liman ve haliç gibi çok farklı ortamlarda görülebilir. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "kefal"

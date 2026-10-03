@@ -1,6 +1,6 @@
 ---
 title: "Gece Balıkçılığı"
-description: "Yedek aydınlatma, dolu telefon ve uygun kıyafet bulundurulmalıdır."
+description: "Gece Balıkçılığı: Yedek aydınlatma, dolu telefon ve uygun kıyafet bulundurulmalıdır. Tek başına riskli kayalık bölgelerde bulunmamak daha güvenlidir."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Güvenliği"
 slug: "gece-balikciligi"

@@ -1,6 +1,6 @@
 ---
 title: "Çapari Nedir?"
-description: "Ana beden üzerinde birden fazla köstek ve iğnenin bulunduğu takım türüdür."
+description: "Çapari Nedir? Ana beden üzerinde birden fazla köstek ve iğnenin bulunduğu takım türüdür. Türkiye'deki iğne sayısı ve kullanım kuralları için güncel amatör balıkçılık mevzuatı kontrol edilmelidir."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Yöntemleri"
 slug: "capari-nedir"

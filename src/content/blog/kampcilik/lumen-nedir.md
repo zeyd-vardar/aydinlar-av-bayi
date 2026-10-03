@@ -1,6 +1,6 @@
 ---
 title: "Lümen Nedir?"
-description: "Bir ışık kaynağının toplam ışık çıkışını ifade eder."
+description: "Bir ışık kaynağının toplam ışık çıkışını ifade eder. Daha yüksek lümen her zaman daha uygun kullanım anlamına gelmez. Yakın mesafe görevlerinde düşük güç modu yeterli olabilir."
 mainCategory: "Kampçılık"
 subCategory: "Aydınlatma"
 slug: "lumen-nedir"

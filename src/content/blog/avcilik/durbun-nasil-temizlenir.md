@@ -1,6 +1,6 @@
 ---
 title: "Dürbün Nasıl Temizlenir?"
-description: "Kum ve toz doğrudan bezle silinmemelidir."
+description: "Dürbün Nasıl Temizlenir? Kum ve toz doğrudan bezle silinmemelidir. Önce uygun fırça veya hava yardımıyla uzaklaştırılmalı, daha sonra optik yüzeye uygun bez kullanılmalıdır."
 mainCategory: "Avcılık"
 subCategory: "Dürbün"
 slug: "durbun-nasil-temizlenir"

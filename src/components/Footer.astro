@@ -4,21 +4,165 @@ import Icon from './Icon.astro';
 const year = new Date().getFullYear();
 const { compact = false } = Astro.props;
 ---
-{compact ? <footer class="site-footer compact-footer">
-  <div class="container compact-footer-inner">
-    <a class="brand light" href="/"><span class="brand-mark">A</span><span><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span></a>
-    <nav aria-label="Alt menü">{navLinks.map((link) => <a href={link.href}>{link.label}</a>)}</nav>
-    <div class="compact-social"><span>Sosyal Medya Hesaplarımız</span><a href={siteConfig.socials.instagram} target="_blank" rel="noopener" aria-label="Instagram hesabımız"><Icon name="instagram" size={16}/></a></div>
-  </div>
-</footer> : <footer class="site-footer">
-  <div class="container footer-main">
-    <div class="footer-intro">
-      <a class="brand light" href="/"><span class="brand-mark">A</span><span><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span></a>
-      <p>Balıkçılık, avcılık, kamp ve outdoor tutkunları için doğru ekipman, güvenilir marka ve deneyimli destek.</p>
-    </div>
-    <div><h2>Sayfalar</h2><ul>{navLinks.map((link) => <li><a href={link.href}>{link.label}</a></li>)}</ul></div>
-    <div><h2>Bize Ulaşın</h2><ul class="contact-list"><li><Icon name="phone" size={18}/><a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phone}</a></li><li><Icon name="whatsapp" size={18}/><a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener">WhatsApp</a></li><li><Icon name="pin" size={18}/><a href={siteConfig.mapUrl} target="_blank" rel="noopener">Mağaza Konumunu Görüntüle</a></li></ul></div>
-    <div><h2>Çalışma Saatleri</h2>{siteConfig.hours.map((item) => <p class="hours"><span>{item.days}</span><b>{item.time}</b></p>)}<div class="socials"><span>Sosyal Medya Hesaplarımız</span><a href={siteConfig.socials.instagram} target="_blank" rel="noopener" aria-label="Instagram hesabımız"><Icon name="instagram" size={16}/></a></div></div>
-  </div>
-  <div class="container footer-bottom"><span>© {year} {siteConfig.name}. Tüm hakları saklıdır.</span><span>Doğaya saygıyla.</span></div>
-</footer>}
+
+{
+  compact ? (
+    <footer class="site-footer compact-footer">
+      <div class="container compact-footer-inner">
+        <a
+          class="brand light"
+          href="/"
+        >
+          <>
+            <span class="brand-mark">A</span>
+            <span>
+              <>
+                <b>{siteConfig.shortName}</b>
+                <small>AV • BALIK • OUTDOOR</small>
+              </>
+            </span>
+          </>
+        </a>
+        <nav aria-label="Alt menü">
+          {navLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+        <div class="compact-social">
+          <>
+            <span>Sosyal Medya Hesaplarımız</span>
+            <a
+              href={siteConfig.socials.instagram}
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram hesabımız"
+            >
+              <Icon
+                name="instagram"
+                size={16}
+              />
+            </a>
+          </>
+        </div>
+      </div>
+    </footer>
+  ) : (
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-intro">
+          <a
+            class="brand light"
+            href="/"
+          >
+            <>
+              <span class="brand-mark">A</span>
+              <span>
+                <>
+                  <b>{siteConfig.shortName}</b>
+                  <small>AV • BALIK • OUTDOOR</small>
+                </>
+              </span>
+            </>
+          </a>
+          <p>
+            Balıkçılık, avcılık, kamp ve outdoor tutkunları için doğru ekipman, güvenilir marka ve
+            deneyimli destek.
+          </p>
+        </div>
+        <div>
+          <>
+            <h2>Sayfalar</h2>
+            <ul>
+              {navLinks.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        </div>
+        <div>
+          <>
+            <h2>Bize Ulaşın</h2>
+            <ul class="contact-list">
+              <>
+                <li>
+                  <>
+                    <Icon
+                      name="phone"
+                      size={18}
+                    />
+                    <a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phone}</a>
+                  </>
+                </li>
+                <li>
+                  <>
+                    <Icon
+                      name="whatsapp"
+                      size={18}
+                    />
+                    <a
+                      href={`https://wa.me/${siteConfig.whatsapp}`}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      WhatsApp
+                    </a>
+                  </>
+                </li>
+                <li>
+                  <>
+                    <Icon
+                      name="pin"
+                      size={18}
+                    />
+                    <a
+                      href={siteConfig.mapUrl}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Mağaza Konumunu Görüntüle
+                    </a>
+                  </>
+                </li>
+              </>
+            </ul>
+          </>
+        </div>
+        <div>
+          <h2>Çalışma Saatleri</h2>
+          {siteConfig.hours.map((item) => (
+            <p class="hours">
+              <span>{item.days}</span>
+              <b>{item.time}</b>
+            </p>
+          ))}
+          <div class="socials">
+            <>
+              <span>Sosyal Medya Hesaplarımız</span>
+              <a
+                href={siteConfig.socials.instagram}
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram hesabımız"
+              >
+                <Icon
+                  name="instagram"
+                  size={16}
+                />
+              </a>
+            </>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <>
+          <span>
+            © {year} {siteConfig.name}. Tüm hakları saklıdır.
+          </span>
+          <span>Doğaya saygıyla.</span>
+        </>
+      </div>
+    </footer>
+  )
+}

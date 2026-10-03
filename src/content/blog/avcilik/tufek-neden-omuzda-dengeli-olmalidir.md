@@ -1,6 +1,6 @@
 ---
 title: "Tüfek neden omuzda dengeli olmalıdır?"
-description: "Tüfeğin boyut ve ağırlığının kullanıcıya uygun olması güvenli kontrol ve rahat kullanım açısından önemlidir. Kullanıcıya fiziksel olarak uygun olmayan bir tüfek güvenli kul…"
+description: "Tüfeğin boyut ve ağırlığının kullanıcıya uygun olması güvenli kontrol ve rahat kullanım açısından önemlidir. Kullanıcıya fiziksel olarak uygun olmayan bir tüfek güvenli kullanımını zorlaştırabilir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "tufek-neden-omuzda-dengeli-olmalidir"

@@ -1,6 +1,6 @@
 ---
 title: "Avına İzin Verilen Türler"
-description: "gibi kuralları belirler."
+description: "Avına izin verilen türler, dönemler, günlük limitler, avlanma günleri ve yasak alanlar Merkez Av Komisyonunun güncel kararından kontrol edilmelidir."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "avina-izin-verilen-turler"

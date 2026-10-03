@@ -1,6 +1,6 @@
 ---
 title: "Makine Devir Oranı Nedir?"
-description: "oranı kolun bir tam dönüşünde rotorun yaklaşık 5,2 tur dönmesi anlamına gelir."
+description: "oranı kolun bir tam dönüşünde rotorun yaklaşık 5,2 tur dönmesi anlamına gelir. Gerçekte bir turda kaç santimetre misina toplandığını makara çapı da etkiler."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Makineleri"
 slug: "makine-devir-orani-nedir"

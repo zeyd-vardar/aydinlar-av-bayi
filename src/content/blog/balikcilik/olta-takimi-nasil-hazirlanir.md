@@ -1,6 +1,6 @@
 ---
 title: "Olta Takımı Nasıl Hazırlanır?"
-description: "Kamış ve makine birbiriyle dengeli olmalıdır."
+description: "Olta Takımı Nasıl Hazırlanır? Öncü misina, klips, fırdöndü, kurşun ve şamandıra gibi parçaları hedef türe ve yönteme uygun sırayla birleştirin."
 mainCategory: "Balıkçılık"
 subCategory: "Başlangıç Bilgileri"
 slug: "olta-takimi-nasil-hazirlanir"

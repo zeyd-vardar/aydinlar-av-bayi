@@ -1,6 +1,6 @@
 ---
 title: "Tüfeğin namlusu tıkalıysa kullanılabilir mi?"
-description: "Hayır. Namlu içinde yabancı madde olduğundan şüpheleniliyorsa silah kesinlikle kullanılmamalıdır. Güvenli kontrol veya yetkili servis gerekir."
+description: "Tüfeğin namlusu tıkalıysa kullanılabilir mi? Hayır. Namlu içinde yabancı madde olduğundan şüpheleniliyorsa silah kesinlikle kullanılmamalıdır. Güvenli kontrol veya yetkili servis gerekir."
 mainCategory: "Avcılık"
 subCategory: "Silah Güvenliği"
 slug: "tufegin-namlusu-tikaliysa-kullanilabilir-mi"

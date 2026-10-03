@@ -6,7 +6,7 @@ export const brands = [
   'Huğlu',
   'ATA Arms',
   'Naturehike',
-  'Nurgaz'
+  'Nurgaz',
 ];
 
 export const brandGroups = [
@@ -14,7 +14,8 @@ export const brandGroups = [
     id: 'balikcilik',
     eyebrow: 'Olta ve su üstü ekipmanları',
     title: 'Balıkçılık',
-    description: 'Kamış, makine, misina ve yapay yem kategorilerinde Türkiye pazarında yaygın olarak bulunan markalar.',
+    description:
+      'Kamış, makine, misina ve yapay yem kategorilerinde Türkiye pazarında yaygın olarak bulunan markalar.',
     brands: [
       'Shimano',
       'Daiwa',
@@ -27,14 +28,15 @@ export const brandGroups = [
       'Kendo',
       'Captain',
       'Berkley',
-      'Major Craft'
-    ]
+      'Major Craft',
+    ],
   },
   {
     id: 'avcilik',
     eyebrow: 'Yerli ve uluslararası üreticiler',
     title: 'Avcılık',
-    description: 'Türkiye’de geniş model seçeneğiyle öne çıkan yerli üreticiler ve dünyaca bilinen av tüfeği markaları.',
+    description:
+      'Türkiye’de geniş model seçeneğiyle öne çıkan yerli üreticiler ve dünyaca bilinen av tüfeği markaları.',
     brands: [
       'Huğlu',
       'ATA Arms',
@@ -47,14 +49,15 @@ export const brandGroups = [
       'Beretta',
       'Benelli',
       'Browning',
-      'Winchester'
-    ]
+      'Winchester',
+    ],
   },
   {
     id: 'kampcilik',
     eyebrow: 'Kamp ve outdoor ekipmanları',
     title: 'Kampçılık',
-    description: 'Çadırdan uyku sistemlerine, kamp mutfağından termos ve aksesuarlara uzanan popüler markalar.',
+    description:
+      'Çadırdan uyku sistemlerine, kamp mutfağından termos ve aksesuarlara uzanan popüler markalar.',
     brands: [
       'Naturehike',
       'Husky',
@@ -67,7 +70,7 @@ export const brandGroups = [
       'Evolite',
       'Thermos',
       'Ledlenser',
-      'Leatherman'
-    ]
-  }
+      'Leatherman',
+    ],
+  },
 ];

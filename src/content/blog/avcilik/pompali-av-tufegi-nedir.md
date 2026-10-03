@@ -1,6 +1,6 @@
 ---
 title: "Pompalı av tüfeği nedir?"
-description: "Pompalı tüfekte her atış sonrasında el kundağı kullanıcı tarafından hareket ettirilerek mekanizma çalıştırılır. Teknik olarak bir yivsiz tüfek mekanizmasıdır. Kullanım ve r…"
+description: "Pompalı tüfekte her atış sonrasında el kundağı kullanıcı tarafından hareket ettirilerek mekanizma çalıştırılır. Teknik olarak bir yivsiz tüfek mekanizmasıdır."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "pompali-av-tufegi-nedir"

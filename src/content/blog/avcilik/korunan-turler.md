@@ -1,6 +1,6 @@
 ---
 title: "Korunan Türler"
-description: "Korunan yaban hayvanlarının avlanması yasaktır."
+description: "Korunan yaban hayvanlarının avlanması yasaktır. Güncel koruma statüsü resmi kaynaktan kontrol edilmelidir."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "korunan-turler"

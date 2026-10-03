@@ -1,6 +1,6 @@
 ---
 title: "Soğuk Havada Kamp"
-description: "Zemin yalıtımı çok önemlidir."
+description: "Soğuk Havada Kamp: R değerli mat, uyku tulumu, kuru kıyafet ve katmanlı giyim. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Kampçılık"
 subCategory: "Hava Koşulları"
 slug: "soguk-havada-kamp"

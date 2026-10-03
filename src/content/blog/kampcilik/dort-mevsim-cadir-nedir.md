@@ -1,6 +1,6 @@
 ---
 title: "Dört Mevsim Çadır Nedir?"
-description: "Daha sert kış ve rüzgâr koşullarına yönelik daha dayanıklı modellerdir."
+description: "Daha sert kış ve rüzgâr koşullarına yönelik daha dayanıklı modellerdir. Ancak “dört mevsim” ifadesi sınırsız hava dayanımı anlamına gelmez. Üretici teknik sınırları dikkate alınmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "dort-mevsim-cadir-nedir"

@@ -1,6 +1,6 @@
 ---
 title: "Kamp için hangi mat alınmalı?"
-description: "Mevsime uygun yalıtım sağlayan mat seçilmelidir."
+description: "Kamp için hangi mat alınmalı? Mevsime uygun yalıtım sağlayan mat seçilmelidir. R değeri yükseldikçe genel olarak ısı yalıtımı artar."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Matı"
 slug: "kamp-icin-hangi-mat-alinmali"

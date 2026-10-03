@@ -1,6 +1,6 @@
 ---
 title: "Kurşun Ne İşe Yarar?"
-description: "sağlamaya yardımcı olan ağırlıktır."
+description: "Balıkçılıkta kurşun, yemin veya takımın batmasına, belirli derinlikte kalmasına ve uzağa atılmasına yardım eder; ağırlık yönteme göre seçilir."
 mainCategory: "Balıkçılık"
 subCategory: "İğneler ve Bağlantılar"
 slug: "kursun-ne-ise-yarar"

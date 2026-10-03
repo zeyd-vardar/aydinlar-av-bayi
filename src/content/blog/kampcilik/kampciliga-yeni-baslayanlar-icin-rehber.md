@@ -1,6 +1,6 @@
 ---
 title: "Kampçılığa Yeni Başlayanlar İçin Rehber"
-description: "İlk kampta mümkünse ulaşımı kolay ve kontrollü bir kamp alanı seçilmelidir."
+description: "Kampçılığa Yeni Başlayanlar İçin Rehber: hava, ulaşım, su, yiyecek ve çadır. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Kampçılık"
 subCategory: "Başlangıç"
 slug: "kampciliga-yeni-baslayanlar-icin-rehber"

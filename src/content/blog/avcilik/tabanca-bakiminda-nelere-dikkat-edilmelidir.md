@@ -1,6 +1,6 @@
 ---
 title: "Tabanca bakımında nelere dikkat edilmelidir?"
-description: "Bakım yalnızca üretici talimatına göre ve silahın boş olduğundan emin olunarak yapılmalıdır. Aşırı yağlama, yanlış kimyasal veya üreticinin önermediği müdahaleler mekanizma…"
+description: "Tabanca bakımında nelere dikkat edilmelidir? Bakım yalnızca üretici talimatına göre ve silahın boş olduğundan emin olunarak yapılmalıdır."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "tabanca-bakiminda-nelere-dikkat-edilmelidir"

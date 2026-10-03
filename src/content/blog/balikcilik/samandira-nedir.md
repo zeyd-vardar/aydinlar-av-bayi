@@ -1,6 +1,6 @@
 ---
 title: "Şamandıra Nedir?"
-description: "Yemi belirli derinlikte tutmaya ve balığın yeme temasının fark edilmesine yardımcı olur."
+description: "Şamandıra Nedir? Yemi belirli derinlikte tutmaya ve balığın yeme temasının fark edilmesine yardımcı olur."
 mainCategory: "Balıkçılık"
 subCategory: "İğneler ve Bağlantılar"
 slug: "samandira-nedir"

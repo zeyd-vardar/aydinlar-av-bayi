@@ -1,6 +1,6 @@
 ---
 title: "Örgü İp Nedir?"
-description: "Birden fazla lifin örülmesiyle üretilir."
+description: "Örgü İp Nedir? Düşük esneme, yüksek hassasiyet ve ince çapta yüksek dayanım gibi temel özellikleri kısa ve anlaşılır biçimde öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "orgu-ip-nedir"

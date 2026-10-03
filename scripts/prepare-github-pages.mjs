@@ -12,10 +12,14 @@ const rewriteRootUrl = (match, quote, path) => {
 
 const walk = async (directory) => {
   const entries = await readdir(directory, { withFileTypes: true });
-  return (await Promise.all(entries.map((entry) => {
-    const path = join(directory, entry.name);
-    return entry.isDirectory() ? walk(path) : [path];
-  }))).flat();
+  return (
+    await Promise.all(
+      entries.map((entry) => {
+        const path = join(directory, entry.name);
+        return entry.isDirectory() ? walk(path) : [path];
+      }),
+    )
+  ).flat();
 };
 
 for (const file of await walk(outputDirectory)) {
@@ -24,11 +28,11 @@ for (const file of await walk(outputDirectory)) {
   const content = await readFile(file, 'utf8');
   const updated = file.endsWith('.html')
     ? content
-      .replace(/\b(href|src)="\/([^"]*)"/g, (match, attribute, path) => {
-        if (path.startsWith('/') || path.startsWith(basePath.slice(1))) return match;
-        return `${attribute}="${publicBase}${path}"`;
-      })
-      .replace(/url\((['"]?)\/([^'")]+)\1\)/g, rewriteRootUrl)
+        .replace(/\b(href|src)="\/([^"]*)"/g, (match, attribute, path) => {
+          if (path.startsWith('/') || path.startsWith(basePath.slice(1))) return match;
+          return `${attribute}="${publicBase}${path}"`;
+        })
+        .replace(/url\((['"]?)\/([^'")]+)\1\)/g, rewriteRootUrl)
     : content.replace(/url\((['"]?)\/([^'")]+)\1\)/g, rewriteRootUrl);
 
   if (updated !== content) await writeFile(file, updated);

@@ -1,6 +1,6 @@
 ---
 title: "Kafa Feneri Nasıl Seçilir?"
-description: "Kafa fenerinin avantajı elleri serbest bırakmasıdır."
+description: "Kafa Feneri Nasıl Seçilir? Lümen, pil ömrü, ağırlık, pil sistemi ve su dayanımı gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Kampçılık"
 subCategory: "Aydınlatma"
 slug: "kafa-feneri-nasil-secilir"

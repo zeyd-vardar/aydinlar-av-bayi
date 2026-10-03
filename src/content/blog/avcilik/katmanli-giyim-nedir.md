@@ -1,6 +1,6 @@
 ---
 title: "Katmanlı Giyim Nedir?"
-description: "İç katman:\nNemi ciltten uzaklaştırır."
+description: "Katmanlı Giyim Nedir? İç katman: Nemi ciltten uzaklaştırır. Orta katman: Isı yalıtımı sağlar. Dış katman: Rüzgâr ve yağışa karşı koruma sağlar."
 mainCategory: "Avcılık"
 subCategory: "Av Giyimi"
 slug: "katmanli-giyim-nedir"

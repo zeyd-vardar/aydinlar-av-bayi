@@ -1,6 +1,6 @@
 ---
 title: "Turna"
-description: "Güçlü tatlı su yırtıcılarından biridir."
+description: "Turna: Güçlü tatlı su yırtıcılarından biridir. Bitki örtüsü bulunan bölgelerde pusu kurarak avlanabilir. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "turna"

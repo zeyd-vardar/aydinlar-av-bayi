@@ -1,6 +1,6 @@
 ---
 title: "Kampta Yiyecek Nasıl Saklanır?"
-description: "Çiğ ve pişmiş ürünler ayrı tutulmalıdır."
+description: "Çiğ ve pişmiş ürünler ayrı tutulmalıdır. Bozulabilecek ürünler uygun sıcaklıkta saklanmalıdır. Yiyecekler hayvanların erişemeyeceği şekilde kapalı tutulmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Mutfağı"
 slug: "kampta-yiyecek-nasil-saklanir"

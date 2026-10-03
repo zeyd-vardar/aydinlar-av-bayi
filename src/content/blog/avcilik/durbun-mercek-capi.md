@@ -1,6 +1,6 @@
 ---
 title: "Dürbün Mercek Çapı"
-description: "42 gibi ikinci sayı objektif çapıdır."
+description: "42 gibi ikinci sayı objektif çapıdır. Büyük objektif daha fazla ışık toplayabilir ancak ağırlığı ve boyutu artırabilir."
 mainCategory: "Avcılık"
 subCategory: "Dürbün"
 slug: "durbun-mercek-capi"

@@ -1,6 +1,6 @@
 ---
 title: "LRF ile at-çek arasındaki fark nedir?"
-description: "LRF olarak bilinen hafif takım balıkçılığı çok daha küçük yemler ve hafif ekipman kullanılan bir at-çek yaklaşımıdır."
+description: "LRF ile at-çek arasındaki fark nedir? LRF olarak bilinen hafif takım balıkçılığı çok daha küçük yemler ve hafif ekipman kullanılan bir at-çek yaklaşımıdır."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Yöntemleri"
 slug: "lrf-ile-at-cek-arasindaki-fark-nedir"

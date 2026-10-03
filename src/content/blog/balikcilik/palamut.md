@@ -1,6 +1,6 @@
 ---
 title: "Palamut"
-description: "Sürü halinde hareket edebilen hızlı bir deniz balığıdır."
+description: "Palamut: Sürü halinde hareket edebilen hızlı bir deniz balığıdır. Özellikle Karadeniz ve Marmara'daki mevsimsel hareketleri önemlidir."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "palamut"

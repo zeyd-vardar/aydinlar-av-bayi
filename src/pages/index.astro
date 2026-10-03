@@ -6,10 +6,10 @@ import { categories } from '../data/categories.js';
 import { brandGroups } from '../data/brands.js';
 const brands = [...new Set(brandGroups.flatMap((group) => group.brands))];
 const features = [
-  ['shield','Güvenilir Markalar','Dünyaca ünlü markalar tek çatı altında.'],
-  ['users','Uzman Destek','Tecrübeli ekibimiz her zaman yanınızda.'],
-  ['settings','Geniş Ürün Yelpazesi','Balıkçılık, avcılık, outdoor ve daha fazlası.'],
-  ['pin','Kolay Ulaşım','Merkezi konumda rahat erişim.']
+  ['shield', 'Güvenilir Markalar', 'Dünyaca ünlü markalar tek çatı altında.'],
+  ['users', 'Uzman Destek', 'Tecrübeli ekibimiz her zaman yanınızda.'],
+  ['settings', 'Geniş Ürün Yelpazesi', 'Balıkçılık, avcılık, outdoor ve daha fazlası.'],
+  ['pin', 'Kolay Ulaşım', 'Merkezi konumda rahat erişim.'],
 ] as const;
 const heroSlides = [
   {
@@ -22,7 +22,7 @@ const heroSlides = [
     cta: 'Balıkçılık Ürünleri',
     image: '/images/hero-fishing.jpg',
     imageClass: 'hero-image-fishing',
-    alt: 'Gün batımında kayalık kıyıda olta atan balıkçı'
+    alt: 'Gün batımında kayalık kıyıda olta atan balıkçı',
   },
   {
     category: 'Avcılık',
@@ -34,7 +34,7 @@ const heroSlides = [
     cta: 'Avcılık Ürünleri',
     image: '/images/hunting-banner.jpg',
     imageClass: 'hero-image-hunting',
-    alt: 'Dağlık arazide avcılık yapan doğa tutkunu'
+    alt: 'Dağlık arazide avcılık yapan doğa tutkunu',
   },
   {
     category: 'Outdoor',
@@ -46,7 +46,7 @@ const heroSlides = [
     cta: 'Outdoor Ürünleri',
     image: '/images/hero-outdoor.jpg',
     imageClass: 'hero-image-outdoor',
-    alt: 'Dağ manzarasında yürüyüş yapan iki outdoor tutkunu'
+    alt: 'Dağ manzarasında yürüyüş yapan iki outdoor tutkunu',
   },
   {
     category: 'Kamp',
@@ -58,63 +58,281 @@ const heroSlides = [
     cta: 'Kamp Ürünleri',
     image: '/images/hero-camp.jpg',
     imageClass: 'hero-image-camp',
-    alt: 'Gün batımında dağ kampı, çadır ve kamp ateşi'
-  }
+    alt: 'Gün batımında dağ kampı, çadır ve kamp ateşi',
+  },
 ] as const;
 ---
-<BaseLayout title="Aydınlar Av Bayi | Balıkçılık, Avcılık ve Outdoor" description="Balıkçılık, avcılık, kamp ve outdoor ekipmanlarında geniş ürün yelpazesi, güvenilir markalar ve uzman destek için mağazamızı keşfedin." compactFooter>
-  <section class="hero" aria-roledescription="carousel" aria-label="Ürün kategorileri" data-hero-carousel>
-    <div class="hero-track" data-hero-track>
-      {heroSlides.map((slide, index) => (
-        <article class="hero-slide" role="group" aria-roledescription="slide" aria-label={`${index + 1} / ${heroSlides.length}: ${slide.category}`} aria-hidden={index === 0 ? 'false' : 'true'} data-hero-slide>
-          <div class:list={['hero-image', slide.imageClass]} style={`background-image:url('${slide.image}')`} role="img" aria-label={slide.alt}></div>
-          <div class="container hero-copy">
-            <span class="eyebrow light">{slide.eyebrow}</span>
-            {index === 0 ? <h1 id="hero-title">{slide.title}<br/>{slide.accent}</h1> : <h2>{slide.title}<br/>{slide.accent}</h2>}
-            <p>{slide.text}</p>
-            <div class="hero-actions"><a class="btn btn-light" href={slide.href}>{slide.cta} <Icon name="arrow" size={18}/></a><a class="btn btn-outline" href="/magazamiz">Mağazamız <Icon name="arrow" size={18}/></a></div>
-          </div>
-        </article>
-      ))}
+
+<BaseLayout
+  title="Trabzon Av Bayi | Balıkçılık, Avcılık ve Kamp"
+  description="Trabzon Ortahisar'da balıkçılık, avcılık ve kamp ekipmanları; güvenilir markalar ve ürün seçimine yardımcı uzman destek için Aydınlar Av Bayi'ni keşfedin."
+  compactFooter
+>
+  <section
+    class="hero"
+    aria-roledescription="carousel"
+    aria-label="Ürün kategorileri"
+    data-hero-carousel
+  >
+    <div
+      class="hero-track"
+      data-hero-track
+    >
+      {
+        heroSlides.map((slide, index) => (
+          <article
+            class="hero-slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${index + 1} / ${heroSlides.length}: ${slide.category}`}
+            aria-hidden={index === 0 ? 'false' : 'true'}
+            data-hero-slide
+          >
+            <div
+              class:list={['hero-image', slide.imageClass]}
+              style={`background-image:url('${slide.image}')`}
+              role="img"
+              aria-label={slide.alt}
+            />
+            <div class="container hero-copy">
+              <span class="eyebrow light">{slide.eyebrow}</span>
+              {index === 0 ? (
+                <h1 id="hero-title">
+                  {slide.title}
+                  <br />
+                  {slide.accent}
+                </h1>
+              ) : (
+                <h2>
+                  {slide.title}
+                  <br />
+                  {slide.accent}
+                </h2>
+              )}
+              <p>{slide.text}</p>
+              <div class="hero-actions">
+                <>
+                  <a
+                    class="btn btn-light"
+                    href={slide.href}
+                  >
+                    {slide.cta}{' '}
+                    <Icon
+                      name="arrow"
+                      size={18}
+                    />
+                  </a>
+                  <a
+                    class="btn btn-outline"
+                    href="/magazamiz"
+                  >
+                    Mağazamız{' '}
+                    <Icon
+                      name="arrow"
+                      size={18}
+                    />
+                  </a>
+                </>
+              </div>
+            </div>
+          </article>
+        ))
+      }
     </div>
     <div class="hero-controls">
-      <button class="hero-arrow" type="button" aria-label="Önceki kategori" data-hero-prev><span aria-hidden="true">←</span></button>
-      <div class="hero-pagination" aria-label="Kategori seçin">
-        {heroSlides.map((slide, index) => <button type="button" aria-label={`${slide.category} slaydını göster`} aria-current={index === 0 ? 'true' : undefined} data-hero-dot></button>)}
+      <button
+        class="hero-arrow"
+        type="button"
+        aria-label="Önceki kategori"
+        data-hero-prev
+        ><span aria-hidden="true">←</span></button
+      >
+      <div
+        class="hero-pagination"
+        aria-label="Kategori seçin"
+      >
+        {
+          heroSlides.map((slide, index) => (
+            <button
+              type="button"
+              aria-label={`${slide.category} slaydını göster`}
+              aria-current={index === 0 ? 'true' : undefined}
+              data-hero-dot
+            />
+          ))
+        }
       </div>
-      <button class="hero-arrow" type="button" aria-label="Sonraki kategori" data-hero-next><span aria-hidden="true">→</span></button>
+      <button
+        class="hero-arrow"
+        type="button"
+        aria-label="Sonraki kategori"
+        data-hero-next
+        ><span aria-hidden="true">→</span></button
+      >
     </div>
-    <p class="sr-only" aria-live="polite" aria-atomic="true" data-hero-status></p>
+    <p
+      class="sr-only"
+      aria-live="polite"
+      aria-atomic="true"
+      data-hero-status
+    >
+    </p>
   </section>
 
-  <section class="home-categories" aria-label="Ürün kategorileri"><div class="container">
-    <div class="categories-grid">{categories.map((category) => <CategoryCard category={category} />)}</div>
-  </div></section>
-
-  <section class="home-brands" aria-labelledby="brands-title"><div class="container">
-    <p class="brands-label" id="brands-title">Çalıştığımız Markalar</p>
-    <div class="brands-marquee">
-      <div class="brands-marquee-track" style={`--brands-duration:${brands.length * 4}s`}>
-        <div class="brands-marquee-group">{brands.map((brand) => <a href="/markalar">{brand}</a>)}</div>
-        <div class="brands-marquee-group brands-marquee-copy" aria-hidden="true">{brands.map((brand) => <a href="/markalar" tabindex="-1">{brand}</a>)}</div>
+  <section
+    class="home-categories"
+    aria-label="Ürün kategorileri"
+  >
+    <div class="container">
+      <div class="categories-grid">
+        {categories.map((category) => <CategoryCard category={category} />)}
       </div>
     </div>
-  </div></section>
+  </section>
 
-  <section class="store-showcase" aria-labelledby="store-title">
+  <section
+    class="home-brands"
+    aria-labelledby="brands-title"
+  >
+    <div class="container">
+      <p
+        class="brands-label"
+        id="brands-title"
+      >
+        Çalıştığımız Markalar
+      </p>
+      <div class="brands-marquee">
+        <div
+          class="brands-marquee-track"
+          style={`--brands-duration:${brands.length * 4}s`}
+        >
+          <div class="brands-marquee-group">
+            {brands.map((brand) => <a href="/markalar">{brand}</a>)}
+          </div>
+          <div
+            class="brands-marquee-group brands-marquee-copy"
+            aria-hidden="true"
+          >
+            {
+              brands.map((brand) => (
+                <a
+                  href="/markalar"
+                  tabindex="-1"
+                >
+                  {brand}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="store-showcase"
+    aria-labelledby="store-title"
+  >
     <div class="container">
       <div class="store-frame">
-        <img class="store-visual" src="/images/aydinlar-magaza.jpg" alt="Aydınlar Av Bayii mağazasının turuncu tabelalı gerçek dış cephesi" width="1682" height="784" loading="lazy" />
-        <div class="store-content"><h2 id="store-title">Tutkunuzu<br/>Yerinde Deneyimleyin</h2><p>Balıkçılık, avcılık ve outdoor ekipmanlarını yakından inceleyin; ihtiyacınıza uygun ürünü seçerken deneyimli ekibimizden destek alın.</p><a class="btn btn-dark" href="/iletisim">Mağazamızı Ziyaret Edin <Icon name="arrow" size={18}/></a></div>
+        <img
+          class="store-visual"
+          src="/images/aydinlar-magaza.jpg"
+          alt="Aydınlar Av Bayii mağazasının turuncu tabelalı gerçek dış cephesi"
+          width="1682"
+          height="784"
+          loading="lazy"
+        />
+        <div class="store-content">
+          <h2 id="store-title">Tutkunuzu<br />Yerinde Deneyimleyin</h2><p>
+            Balıkçılık, avcılık ve outdoor ekipmanlarını yakından inceleyin; ihtiyacınıza uygun
+            ürünü seçerken deneyimli ekibimizden destek alın.
+          </p><a
+            class="btn btn-dark"
+            href="/iletisim"
+            >Mağazamızı Ziyaret Edin <Icon
+              name="arrow"
+              size={18}
+            /></a
+          >
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="hunt-banner" aria-labelledby="hunt-title"><div class="container"><div class="content"><h2 id="hunt-title">Avcılıkta<br/>Doğayla Biriz</h2><p>Doğada güvenle ve özgürce zaman geçirmeniz için kaliteli avcılık ekipmanları mağazamızda.</p><a class="btn btn-light" href="/urun-gruplari#avcilik">Avcılık Ürünlerini İncele <Icon name="arrow" size={18}/></a></div></div></section>
+  <section
+    class="hunt-banner"
+    aria-labelledby="hunt-title"
+  >
+    <div class="container">
+      <div class="content">
+        <h2 id="hunt-title">Avcılıkta<br />Doğayla Biriz</h2><p>
+          Doğada güvenle ve özgürce zaman geçirmeniz için kaliteli avcılık ekipmanları mağazamızda.
+        </p><a
+          class="btn btn-light"
+          href="/urun-gruplari#avcilik"
+          >Avcılık Ürünlerini İncele <Icon
+            name="arrow"
+            size={18}
+          /></a
+        >
+      </div>
+    </div>
+  </section>
 
-  <section class="home-knowledge"><div class="container"><div class="home-knowledge-head"><span class="eyebrow">BLOG</span><h2>Doğaya Dair BLOG</h2><p>Balıkçılık, avcılık ve kampçılık hakkında merak ettiğiniz bilgilere ulaşın.</p></div><nav class="home-knowledge-links" aria-label="BLOG kategorileri"><a href="/blog?category=balikcilik"><span>01</span><strong>Balıkçılık</strong><b aria-hidden="true">→</b></a><a href="/blog?category=avcilik"><span>02</span><strong>Avcılık</strong><b aria-hidden="true">→</b></a><a href="/blog?category=kampcilik"><span>03</span><strong>Kampçılık</strong><b aria-hidden="true">→</b></a></nav><a class="btn btn-dark" href="/blog">Tüm Bilgilere Ulaş <Icon name="arrow" size={18}/></a></div></section>
+  <section class="home-knowledge">
+    <div class="container">
+      <div class="home-knowledge-head">
+        <span class="eyebrow">BLOG</span><h2>Doğaya Dair BLOG</h2><p>
+          Balıkçılık, avcılık ve kampçılık hakkında merak ettiğiniz bilgilere ulaşın.
+        </p>
+      </div><nav
+        class="home-knowledge-links"
+        aria-label="BLOG kategorileri"
+      >
+        <a href="/blog?category=balikcilik"
+          ><span>01</span><strong>Balıkçılık</strong><b aria-hidden="true">→</b></a
+        ><a href="/blog?category=avcilik"
+          ><span>02</span><strong>Avcılık</strong><b aria-hidden="true">→</b></a
+        ><a href="/blog?category=kampcilik"
+          ><span>03</span><strong>Kampçılık</strong><b aria-hidden="true">→</b></a
+        >
+      </nav><a
+        class="btn btn-dark"
+        href="/blog"
+        >Tüm Bilgilere Ulaş <Icon
+          name="arrow"
+          size={18}
+        /></a
+      >
+    </div>
+  </section>
 
-  <section class="home-features" aria-label="Mağaza avantajları"><div class="container"><div class="features-grid">{features.map(([icon,title,text]) => <article class="feature"><span class="feature-icon"><Icon name={icon} size={28}/></span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+  <section
+    class="home-features"
+    aria-label="Mağaza avantajları"
+  >
+    <div class="container">
+      <div class="features-grid">
+        {
+          features.map(([icon, title, text]) => (
+            <article class="feature">
+              <>
+                <span class="feature-icon">
+                  <Icon
+                    name={icon}
+                    size={28}
+                  />
+                </span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <script>
@@ -144,7 +362,8 @@ const heroSlides = [
       if (dotIndex === activeIndex) dot.setAttribute('aria-current', 'true');
       else dot.removeAttribute('aria-current');
     });
-    if (announce && status) status.textContent = slides[activeIndex]?.getAttribute('aria-label') ?? '';
+    if (announce && status)
+      status.textContent = slides[activeIndex]?.getAttribute('aria-label') ?? '';
   };
 
   const stopAutoplay = () => {
@@ -185,8 +404,12 @@ const heroSlides = [
     pointerStart = undefined;
     if (Math.abs(distance) > 48) selectSlide(activeIndex + (distance < 0 ? 1 : -1));
   });
-  carousel?.addEventListener('pointercancel', () => { pointerStart = undefined; });
-  document.addEventListener('visibilitychange', () => document.hidden ? stopAutoplay() : startAutoplay());
+  carousel?.addEventListener('pointercancel', () => {
+    pointerStart = undefined;
+  });
+  document.addEventListener('visibilitychange', () =>
+    document.hidden ? stopAutoplay() : startAutoplay(),
+  );
 
   showSlide(0);
   startAutoplay();

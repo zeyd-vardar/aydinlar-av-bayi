@@ -1,6 +1,6 @@
 ---
 title: "Etik Avcılık Nedir?"
-description: "gibi ilkeleri içerir."
+description: "Etik Avcılık Nedir? Yasal kurallara uyma, doğaya zarar vermeme, av limitlerine uyma, korunan türlerden uzak durma ve atıkları doğada bırakmama gibi temel özellikleri kısa ve anlaşılır biçimde öğrenin."
 mainCategory: "Avcılık"
 subCategory: "Başlangıç"
 slug: "etik-avcilik-nedir"

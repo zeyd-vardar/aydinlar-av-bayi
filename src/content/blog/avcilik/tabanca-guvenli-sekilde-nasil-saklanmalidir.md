@@ -1,6 +1,6 @@
 ---
 title: "Tabanca güvenli şekilde nasıl saklanmalıdır?"
-description: "Yetkisiz kişilerin, özellikle çocukların erişemeyeceği kilitli ve güvenli bir yerde saklanmalıdır. Silah ile mühimmatın güvenli muhafazasına önem verilmelidir. İşyerinde bu…"
+description: "Yetkisiz kişilerin, özellikle çocukların erişemeyeceği kilitli ve güvenli bir yerde saklanmalıdır. Silah ile mühimmatın güvenli muhafazasına önem verilmelidir."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "tabanca-guvenli-sekilde-nasil-saklanmalidir"

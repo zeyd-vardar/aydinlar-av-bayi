@@ -1,6 +1,6 @@
 ---
 title: "Üç Mevsim Çadır Nedir?"
-description: "koşulları için tasarlanır."
+description: "Üç mevsim çadırlar genellikle ilkbahar, yaz ve sonbahar koşulları için tasarlanır. Sert kış, yoğun kar ve çok güçlü rüzgâr için uygun olmayabilir."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "uc-mevsim-cadir-nedir"

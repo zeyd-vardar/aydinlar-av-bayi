@@ -1,6 +1,6 @@
 ---
 title: "Tüfek üzerinde yazan fişek yatağı bilgisi neden önemlidir?"
-description: "Tüfek yalnızca üreticinin belirttiği teknik özelliklerle uyumlu mühimmatla kullanılmalıdır. Tüfeğin veya mühimmatın işaretleri konusunda tereddüt varsa tahmin yürütülmemeli…"
+description: "Tüfek yalnızca üreticinin belirttiği teknik özelliklerle uyumlu mühimmatla kullanılmalıdır. Güvenli ve sorumlu uygulama için temel bilgileri inceleyin."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "tufek-uzerinde-yazan-fisek-yatagi-bilgisi-neden-onemlidir"

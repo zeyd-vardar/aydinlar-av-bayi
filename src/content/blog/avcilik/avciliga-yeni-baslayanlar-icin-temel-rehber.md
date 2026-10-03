@@ -1,6 +1,6 @@
 ---
 title: "Avcılığa Yeni Başlayanlar İçin Temel Rehber"
-description: "Türkiye'de avcılık mevzuata tabi bir faaliyettir."
+description: "Avcılığa Yeni Başlayanlar İçin Temel Rehber: gerekli belgeler, izinler, avlaklar, dönemler ve korunan türler. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Avcılık"
 subCategory: "Başlangıç"
 slug: "avciliga-yeni-baslayanlar-icin-temel-rehber"

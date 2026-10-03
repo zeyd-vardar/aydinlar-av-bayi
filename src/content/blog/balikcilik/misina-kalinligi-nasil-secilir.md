@@ -1,6 +1,6 @@
 ---
 title: "Misina Kalınlığı Nasıl Seçilir?"
-description: "Kalın misina her zaman daha iyi değildir."
+description: "Misina kalınlığını hedef balık, avlak, yem ve takım gücüne göre seçin; kalınlık arttıkça dayanım, atış mesafesi ve yem hareketi değişebilir."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "misina-kalinligi-nasil-secilir"

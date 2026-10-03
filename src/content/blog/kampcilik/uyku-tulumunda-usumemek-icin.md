@@ -1,6 +1,6 @@
 ---
 title: "Uyku Tulumunda Üşümemek İçin"
-description: "Yalnızca tulum yeterli değildir."
+description: "Yalnızca tulum yeterli değildir. Zeminle vücut arasındaki ısı kaybını azaltmak için uygun mat kullanılmalıdır. Kuru kıyafetlerle uyumak önemlidir."
 mainCategory: "Kampçılık"
 subCategory: "Uyku Tulumu"
 slug: "uyku-tulumunda-usumemek-icin"

@@ -1,6 +1,6 @@
 ---
 title: "Çadır Nereye Kurulmalı?"
-description: "Dere yatağı ve çukur alanlardan uzak durulmalıdır."
+description: "Çadırı düz, sağlam ve su biriktirmeyen zemine kurun; dere yatağı, çukur alan, düşebilecek dal ve hava koşullarına açık riskli noktalardan kaçının."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "cadir-nereye-kurulmali"

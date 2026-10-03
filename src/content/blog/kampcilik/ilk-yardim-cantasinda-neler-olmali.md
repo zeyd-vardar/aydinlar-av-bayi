@@ -1,6 +1,6 @@
 ---
 title: "İlk Yardım Çantasında Neler Olmalı?"
-description: "İlk yardım eğitimi almak ekipman taşımak kadar önemlidir."
+description: "Kamp ilk yardım çantasında steril gazlı bez, bandaj, yara örtüsü, antiseptik, eldiven, makas ve kişisel ilaçlar bulunmalı; içerik düzenli kontrol edilmelidir."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Güvenliği"
 slug: "ilk-yardim-cantasinda-neler-olmali"

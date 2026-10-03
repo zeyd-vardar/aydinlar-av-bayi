@@ -1,6 +1,6 @@
 ---
 title: "Yem Rengi Nasıl Seçilir?"
-description: "Kesin bir renk kuralı yoktur."
+description: "Yem Rengi Nasıl Seçilir? Kesin bir renk kuralı yoktur. Genel yaklaşım olarak: Balığın davranışı, su derinliği ve ışık şartları sonucu değiştirebilir."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "yem-rengi-nasil-secilir"

@@ -1,6 +1,6 @@
 ---
 title: "Kamış Gücü Nedir?"
-description: "Kamış gücü, yük karşısındaki genel direnç sınıfını ifade eder."
+description: "Kamış Gücü Nedir? Çok hafif, hafif, orta hafif, orta ve orta ağır gibi temel özellikleri kısa ve anlaşılır biçimde öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "kamis-gucu-nedir"

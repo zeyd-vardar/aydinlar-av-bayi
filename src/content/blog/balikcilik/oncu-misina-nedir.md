@@ -1,6 +1,6 @@
 ---
 title: "Öncü Misina Nedir?"
-description: "Ana misina ile yem veya iğne arasındaki son bağlantı bölümüdür."
+description: "Ana misina ile yem veya iğne arasındaki son bağlantı bölümüdür. Aşınmaya karşı koruma ve daha uygun sunum sağlayabilir."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "oncu-misina-nedir"

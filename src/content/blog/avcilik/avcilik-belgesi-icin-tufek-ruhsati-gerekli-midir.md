@@ -1,6 +1,6 @@
 ---
 title: "Avcılık belgesi için tüfek ruhsatı gerekli midir?"
-description: "DKMP’nin yayımladığı başvuru bilgilerinde yivli veya yivsiz tüfek ruhsatnamesi başvuru belgeleri arasında sayılmaktadır. Ruhsatı bulunmayanlar için de ayrıca sağlık ve adli…"
+description: "DKMP’nin yayımladığı başvuru bilgilerinde yivli veya yivsiz tüfek ruhsatnamesi başvuru belgeleri arasında sayılmaktadır."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "avcilik-belgesi-icin-tufek-ruhsati-gerekli-midir"

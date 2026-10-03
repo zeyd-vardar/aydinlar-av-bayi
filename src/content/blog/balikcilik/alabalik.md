@@ -1,6 +1,6 @@
 ---
 title: "Alabalık"
-description: "Temiz, serin ve oksijen bakımından zengin sularda yaşayan türleri içerir."
+description: "Temiz, serin ve oksijen bakımından zengin sularda yaşayan türleri içerir. Türkiye'de alabalık avcılığına ilişkin güncel dönem ve yöntem kısıtları resmi mevzuattan kontrol edilmelidir."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "alabalik"

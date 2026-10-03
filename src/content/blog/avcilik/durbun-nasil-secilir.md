@@ -1,6 +1,6 @@
 ---
 title: "Dürbün Nasıl Seçilir?"
-description: "42:\nÖn objektif çapıdır ve milimetre cinsinden belirtilir."
+description: "Dürbün Nasıl Seçilir? 8: Büyütme oranıdır. 42: Ön objektif çapıdır ve milimetre cinsinden belirtilir. Güvenlik, yasal sorumluluklar ve doğru uygulamalarla ilgili temel bilgileri öğrenin."
 mainCategory: "Avcılık"
 subCategory: "Dürbün"
 slug: "durbun-nasil-secilir"

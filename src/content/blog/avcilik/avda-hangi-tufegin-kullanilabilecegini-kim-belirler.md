@@ -1,6 +1,6 @@
 ---
 title: "Avda hangi tüfeğin kullanılabileceğini kim belirler?"
-description: "Kara avcılığı kuralları Tarım ve Orman Bakanlığı / Doğa Koruma ve Milli Parklar Genel Müdürlüğü ile Merkez Av Komisyonu kararları çerçevesinde düzenlenir. Tür, dönem, avlak…"
+description: "Avda hangi tüfeğin kullanılabileceğini kim belirler. Güvenli ve sorumlu uygulama için temel bilgileri inceleyin."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "avda-hangi-tufegin-kullanilabilecegini-kim-belirler"

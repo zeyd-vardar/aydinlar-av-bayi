@@ -1,6 +1,6 @@
 ---
 title: "Kamp Çadırı Nasıl Seçilir?"
-description: "Kamp Çadırı Nasıl Seçilir?"
+description: "Kamp Çadırı Nasıl Seçilir? Kişi sayısı, mevsim, yağış, rüzgâr ve taşıma biçimi gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "kamp-cadiri-nasil-secilir"

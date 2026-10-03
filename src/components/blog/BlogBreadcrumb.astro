@@ -1,5 +1,29 @@
 ---
 const { mainCategory, subCategory, title } = Astro.props;
-const categorySlug = mainCategory.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll(' ','-');
+const categorySlug = mainCategory
+  .toLocaleLowerCase('tr-TR')
+  .replace(/ı/g, 'i')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replaceAll(' ', '-');
 ---
-<nav class="blog-breadcrumb" aria-label="İçerik yolu"><ol><li><a href="/">Ana Sayfa</a></li><li><a href="/blog">BLOG</a></li><li><a href={`/blog?category=${categorySlug}`}>{mainCategory}</a></li><li><a href={`/blog?category=${categorySlug}#${categorySlug}-${subCategory.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-')}`}>{subCategory}</a></li><li aria-current="page">{title}</li></ol></nav>
+
+<nav
+  class="blog-breadcrumb"
+  aria-label="İçerik yolu"
+>
+  <ol>
+    <li><a href="/">Ana Sayfa</a></li><li><a href="/blog">BLOG</a></li><li>
+      <a href={`/blog?category=${categorySlug}`}>{mainCategory}</a>
+    </li><li>
+      <a
+        href={`/blog?category=${categorySlug}#${categorySlug}-${subCategory
+          .toLocaleLowerCase('tr-TR')
+          .replace(/ı/g, 'i')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-z0-9]+/g, '-')}`}>{subCategory}</a
+      >
+    </li><li aria-current="page">{title}</li>
+  </ol>
+</nav>

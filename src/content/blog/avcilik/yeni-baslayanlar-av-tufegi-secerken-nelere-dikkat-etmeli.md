@@ -1,6 +1,6 @@
 ---
 title: "Yeni başlayanlar av tüfeği seçerken nelere dikkat etmeli?"
-description: "Öncelik:\n- yasal uygunluk,\n- güvenli kullanım,\n- kullanıcıya fiziksel uyum,\n- üretici ve servis desteği,\n- tüfeğin kullanım amacı,\n- güvenilir marka ve teknik belge\nolmalıd…"
+description: "Yeni başlayanlar av tüfeği seçerken nelere dikkat etmeli: yasal uygunluk, güvenli kullanım, kullanıcıya fiziksel uyum, üretici ve servis desteği ve tüfeğin kullanım amacı."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "yeni-baslayanlar-av-tufegi-secerken-nelere-dikkat-etmeli"

@@ -1,6 +1,6 @@
 ---
 title: "Sıcaklık Değerleri"
-description: "Konfor:\nRahat uyku için esas alınan sıcaklık."
+description: "Uyku tulumlarında: Konfor: Rahat uyku için esas alınan sıcaklık. Alt sınır: Daha düşük konforla kullanılabilecek sınır."
 mainCategory: "Kampçılık"
 subCategory: "Uyku Tulumu"
 slug: "sicaklik-degerleri"

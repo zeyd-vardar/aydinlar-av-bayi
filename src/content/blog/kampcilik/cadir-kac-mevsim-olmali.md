@@ -1,6 +1,6 @@
 ---
 title: "Çadır kaç mevsim olmalı?"
-description: "Ilıman ilkbahar, yaz ve sonbaharda üç mevsim çadır yeterli olabilir."
+description: "Ilıman ilkbahar, yaz ve sonbaharda üç mevsim çadır yeterli olabilir. Sert kış koşullarında buna uygun daha dayanıklı çadır gerekir."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "cadir-kac-mevsim-olmali"

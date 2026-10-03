@@ -1,6 +1,6 @@
 ---
 title: "Balıkçılığa Yeni Başlayanlar İçin Başlangıç Rehberi"
-description: "Balıkçılığa başlarken önce nerede ve hangi balık türünü hedefleyerek avlanacağınızı belirlemek gerekir. Deniz kıyısı, göl, akarsu ve tekne balıkçılığında kullanılan ekipman…"
+description: "Balıkçılığa başlarken önce nerede ve hangi balık türünü hedefleyerek avlanacağınızı belirlemek gerekir."
 mainCategory: "Balıkçılık"
 subCategory: "Başlangıç Bilgileri"
 slug: "balikciliga-yeni-baslayanlar-icin-baslangic-rehberi"

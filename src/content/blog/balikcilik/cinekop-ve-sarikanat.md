@@ -1,6 +1,6 @@
 ---
 title: "Çinekop ve Sarıkanat"
-description: "Türkiye'de lüferin farklı büyüklük dönemleri için kullanılan geleneksel adlardır."
+description: "Çinekop ve Sarıkanat: Türkiye'de lüferin farklı büyüklük dönemleri için kullanılan geleneksel adlardır. Yasal boy sınırları mutlaka güncel mevzuattan kontrol edilmelidir."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "cinekop-ve-sarikanat"

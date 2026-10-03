@@ -1,6 +1,6 @@
 ---
 title: "Kamışın Atış Aralığı Ne Anlama Gelir?"
-description: "yazıyorsa bu değer üreticinin kamışı yaklaşık bu ağırlık aralığındaki yem veya takımlar için tasarladığını belirtir."
+description: "yazıyorsa bu değer üreticinin kamışı yaklaşık bu ağırlık aralığındaki yem veya takımlar için tasarladığını belirtir. 10–30 gram ibaresi balığın ağırlığı anlamına gelmez."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "kamisin-atis-araligi-ne-anlama-gelir"

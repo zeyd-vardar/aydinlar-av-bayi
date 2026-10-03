@@ -1,6 +1,6 @@
 ---
 title: "Jig Başı Nedir?"
-description: "Silikon yemlerle kullanılan ağırlıklı iğne sistemidir."
+description: "Jig Başı Nedir? Silikon yemlerle kullanılan ağırlıklı iğne sistemidir. Yemin batışını ve hareketini etkiler."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "jig-basi-nedir"

@@ -1,6 +1,6 @@
 ---
 title: "Kamış Uzunluğu Nasıl Seçilir?"
-description: "Uzun kamışlar bazı koşullarda daha geniş atış hareketi ve mesafe sağlayabilir."
+description: "Kamış uzunluğunu balıkçılık yöntemi, kıyı veya tekne kullanımı, alan genişliği ve kontrol ihtiyacına göre seçin; mesafeyi tek başına uzunluk belirlemez."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "kamis-uzunlugu-nasil-secilir"

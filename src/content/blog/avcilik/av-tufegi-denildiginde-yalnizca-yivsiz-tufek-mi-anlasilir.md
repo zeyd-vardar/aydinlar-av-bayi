@@ -1,6 +1,6 @@
 ---
 title: "Av tüfeği denildiğinde yalnızca yivsiz tüfek mi anlaşılır?"
-description: "Hayır. Avcılıkta hem yivli hem yivsiz tüfekler belirli şartlarda kullanılabilir. Ancak hangi türün hangi avda kullanılabileceği güncel av mevzuatına bağlıdır. DKMP düzenlem…"
+description: "Av tüfeği denildiğinde yalnızca yivsiz tüfek mi anlaşılır? Hayır. Avcılıkta hem yivli hem yivsiz tüfekler belirli şartlarda kullanılabilir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "av-tufegi-denildiginde-yalnizca-yivsiz-tufek-mi-anlasilir"

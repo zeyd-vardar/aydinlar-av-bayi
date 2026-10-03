@@ -1,6 +1,6 @@
 ---
 title: "Çadırda Yoğuşma Neden Olur?"
-description: "İnsan nefesi ve ıslak malzemeler çadır içindeki nemi artırır."
+description: "İnsan nefesi ve ıslak malzemeler çadır içindeki nemi artırır. Soğuk yüzeyle karşılaşan nem yoğunlaşabilir. Havalandırma açıklıklarını kullanmak yoğuşmayı azaltabilir."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "cadirda-yogusma-neden-olur"

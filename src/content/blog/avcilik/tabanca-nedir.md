@@ -1,6 +1,6 @@
 ---
 title: "Tabanca nedir?"
-description: "Tabanca, kısa namlulu ateşli silah sınıfında yer alan bir silahtır. Emniyet Genel Müdürlüğünün sivil kullanım amaçlı silahlar dokümanında tabancalar kısa namlulu ateşli sil…"
+description: "Tabanca, kısa namlulu ateşli silah sınıfında yer alan bir silahtır. Güvenli ve sorumlu uygulama için temel bilgileri inceleyin."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "tabanca-nedir"

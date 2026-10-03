@@ -1,6 +1,6 @@
 ---
 title: "Av tüfeği satın alırken nelere dikkat edilmelidir?"
-description: "Silah yalnızca yasal satış kanalları üzerinden edinilmeli ve gerekli ruhsat işlemleri yapılmalıdır.\nÜrünün:\n- üretici bilgisi,\n- seri numarası,\n- garanti durumu,\n- kullanım…"
+description: "Av tüfeği satın alırken yasal satış kanalı, ruhsat işlemleri, seri numarası, garanti, kullanım kılavuzu ve yetkili servis desteğini kontrol edin."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "av-tufegi-satin-alirken-nelere-dikkat-edilmelidir"

@@ -1,6 +1,6 @@
 ---
 title: "Kamp Ocağı Çadır İçinde Kullanılır mı?"
-description: "Yakıtla çalışan ocaklar kapalı çadır içinde kullanılmamalıdır."
+description: "Yakıtla çalışan ocaklar kapalı çadır içinde kullanılmamalıdır. Yangın ve karbonmonoksit zehirlenmesi riski vardır. İyi havalandırılan güvenli açık alanda kullanılmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Mutfağı"
 slug: "kamp-ocagi-cadir-icinde-kullanilir-mi"

@@ -1,6 +1,6 @@
 ---
 title: "Bulundurma ruhsatı ile taşıma ruhsatı arasındaki fark nedir?"
-description: "Bulundurma ruhsatı silahın belirlenen mesken veya işyerinde tutulmasına yöneliktir. Taşıma ruhsatı ise mevzuattaki şartları sağlayan kişilere silahı ruhsatın izin verdiği ç…"
+description: "Bulundurma ruhsatı silahın belirlenen mesken veya işyerinde tutulmasına yöneliktir. Güvenli ve sorumlu uygulama için temel bilgileri inceleyin."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "bulundurma-ruhsati-ile-tasima-ruhsati-arasindaki-fark-nedir"

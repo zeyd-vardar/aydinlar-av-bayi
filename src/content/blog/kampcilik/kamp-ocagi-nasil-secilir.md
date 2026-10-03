@@ -1,6 +1,6 @@
 ---
 title: "Kamp Ocağı Nasıl Seçilir?"
-description: "Kamp Ocağı Nasıl Seçilir?"
+description: "Kamp Ocağı Nasıl Seçilir? Yakıt türü, taşıma, sıcaklık, kullanım süresi ve pişirme ihtiyacı gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Mutfağı"
 slug: "kamp-ocagi-nasil-secilir"

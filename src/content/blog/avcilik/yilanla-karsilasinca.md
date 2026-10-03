@@ -1,6 +1,6 @@
 ---
 title: "Yılanla Karşılaşınca"
-description: "Yılana yaklaşılmamalıdır."
+description: "Yılanla Karşılaşınca: Yılana yaklaşılmamalıdır. Yakalamaya veya hareket ettirmeye çalışılmamalıdır. Taş altı ve oyuklara çıplak elle uzanılmamalıdır."
 mainCategory: "Avcılık"
 subCategory: "Doğa Güvenliği"
 slug: "yilanla-karsilasinca"

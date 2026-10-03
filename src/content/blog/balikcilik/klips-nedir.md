@@ -1,6 +1,6 @@
 ---
 title: "Klips Nedir?"
-description: "Yemlerin veya takım parçalarının hızlı şekilde değiştirilmesine yardımcı olur."
+description: "Yemlerin veya takım parçalarının hızlı şekilde değiştirilmesine yardımcı olur. Aşırı büyük klipsler küçük yemlerin hareketini olumsuz etkileyebilir."
 mainCategory: "Balıkçılık"
 subCategory: "İğneler ve Bağlantılar"
 slug: "klips-nedir"

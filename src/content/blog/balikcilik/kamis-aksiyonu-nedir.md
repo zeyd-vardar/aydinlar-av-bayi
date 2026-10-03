@@ -1,6 +1,6 @@
 ---
 title: "Kamış Aksiyonu Nedir?"
-description: "Kamış aksiyonu yük altında kamışın hangi kısmının eğildiğini anlatır."
+description: "Kamış aksiyonu yük altında kamışın hangi kısmının eğildiğini anlatır. Hızlı aksiyon: Daha çok uç bölümü çalışır. Orta aksiyon: Kamışın daha geniş bir kısmı çalışır."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "kamis-aksiyonu-nedir"

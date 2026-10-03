@@ -1,6 +1,6 @@
 ---
 title: "Çipura"
-description: "Kumluk, taşlık ve deniz çayırlarının bulunduğu alanlarda görülebilir."
+description: "Çipura: Kumluk, taşlık ve deniz çayırlarının bulunduğu alanlarda görülebilir. Kabuklular ve farklı dip canlılarıyla beslenebilir."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "cipura"

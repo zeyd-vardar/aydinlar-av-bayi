@@ -1,6 +1,6 @@
 ---
 title: "Ateşli silahlarda en temel güvenlik kuralı nedir?"
-description: "Her silah, aksi kesin olarak doğrulanana kadar dolu kabul edilmelidir.\nSilahın namlusu hiçbir zaman insana veya zarar vermek istenmeyen bir noktaya yöneltilmemelidir."
+description: "Ateşli silahlarda en temel güvenlik kuralı nedir? Her silah, aksi kesin olarak doğrulanana kadar dolu kabul edilmelidir."
 mainCategory: "Avcılık"
 subCategory: "Silah Güvenliği"
 slug: "atesli-silahlarda-en-temel-guvenlik-kurali-nedir"

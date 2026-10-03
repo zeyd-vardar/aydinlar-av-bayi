@@ -1,6 +1,6 @@
 ---
 title: "Karagöz"
-description: "Taşlık ve kayalık bölgelerde karşılaşılabilen dip balıklarındandır."
+description: "Karagöz: Taşlık ve kayalık bölgelerde karşılaşılabilen dip balıklarındandır. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "karagoz"

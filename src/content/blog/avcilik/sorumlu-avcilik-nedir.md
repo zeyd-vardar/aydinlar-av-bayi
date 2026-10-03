@@ -1,6 +1,6 @@
 ---
 title: "Sorumlu Avcılık Nedir?"
-description: "Sorumlu Avcılık Nedir?"
+description: "Sorumlu avcılık; yasal sınırlara uymayı, yaban hayatını ve yaşam alanlarını korumayı, doğayı kirletmemeyi ve başkalarının güvenliğini gözetmeyi kapsar."
 mainCategory: "Avcılık"
 subCategory: "Başlangıç"
 slug: "sorumlu-avcilik-nedir"

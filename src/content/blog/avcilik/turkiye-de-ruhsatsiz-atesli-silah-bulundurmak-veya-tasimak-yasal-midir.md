@@ -1,6 +1,6 @@
 ---
 title: "Türkiye’de ruhsatsız ateşli silah bulundurmak veya taşımak yasal mıdır?"
-description: "Hayır. 6136 sayılı Kanun kapsamındaki ateşli silahların mevzuata aykırı satın alınması, taşınması veya bulundurulması cezai sonuç doğurabilir. Emniyet Genel Müdürlüğü"
+description: "Türkiye’de ruhsatsız ateşli silah bulundurmak veya taşımak yasal mıdır. Güvenli ve sorumlu uygulama için temel bilgileri inceleyin."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "turkiye-de-ruhsatsiz-atesli-silah-bulundurmak-veya-tasimak-yasal-midir"

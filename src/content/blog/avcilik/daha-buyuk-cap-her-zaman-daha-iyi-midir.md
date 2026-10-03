@@ -1,6 +1,6 @@
 ---
 title: "Daha büyük çap her zaman daha iyi midir?"
-description: "Hayır. “Daha büyük” veya “daha güçlü” seçim tek başına avantaj değildir. Silahın kullanım amacı, kullanıcının deneyimi, tüfeğin ağırlığı, uygun mühimmat ve yasal kullanım ş…"
+description: "Daha büyük çap her zaman daha iyi midir? Hayır. “Daha büyük” veya “daha güçlü” seçim tek başına avantaj değildir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "daha-buyuk-cap-her-zaman-daha-iyi-midir"

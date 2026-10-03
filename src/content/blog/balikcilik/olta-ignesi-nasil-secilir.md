@@ -1,6 +1,6 @@
 ---
 title: "Olta İğnesi Nasıl Seçilir?"
-description: "Büyük iğne her zaman büyük balık anlamına gelmez."
+description: "Olta İğnesi Nasıl Seçilir? Hedef balık, balığın ağız yapısı, yem ve kullanılan yöntem gibi temel ölçütleri karşılaştırın; kullanımınıza uygun seçeneği belirleyin."
 mainCategory: "Balıkçılık"
 subCategory: "İğneler ve Bağlantılar"
 slug: "olta-ignesi-nasil-secilir"

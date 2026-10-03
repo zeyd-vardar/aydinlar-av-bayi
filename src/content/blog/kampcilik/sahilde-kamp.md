@@ -1,6 +1,6 @@
 ---
 title: "Sahilde Kamp"
-description: "Dalga ve fırtına riski dikkate alınmalıdır."
+description: "Dalga ve fırtına riski dikkate alınmalıdır. Çadır denizin hemen kenarına kurulmaz. Bölgenin kamp yasağı olup olmadığı kontrol edilmelidir."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Alanı"
 slug: "sahilde-kamp"

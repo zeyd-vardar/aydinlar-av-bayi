@@ -1,6 +1,6 @@
 ---
 title: "Herkes tabanca taşıma ruhsatı alabilir mi?"
-description: "Hayır. Taşıma ruhsatı mevzuatta belirtilen şartlara ve kişi gruplarına bağlıdır. Bulundurma ruhsatıyla taşıma ruhsatı birbirinden farklı şartlara sahiptir. Güncel başvuru ş…"
+description: "Herkes tabanca taşıma ruhsatı alabilir mi? Hayır. Taşıma ruhsatı mevzuatta belirtilen şartlara ve kişi gruplarına bağlıdır. Bulundurma ruhsatıyla taşıma ruhsatı birbirinden farklı şartlara sahiptir."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "herkes-tabanca-tasima-ruhsati-alabilir-mi"

@@ -1,6 +1,6 @@
 ---
 title: "Kamp İçin Gerekli Temel Malzemeler"
-description: "Kamp İçin Gerekli Temel Malzemeler"
+description: "Kamp İçin Gerekli Temel Malzemeler: çadır, uyku tulumu, mat, kafa feneri ve yedek pil. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Kampçılık"
 subCategory: "Başlangıç"
 slug: "kamp-icin-gerekli-temel-malzemeler"

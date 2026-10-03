@@ -1,6 +1,6 @@
 ---
 title: "Kaşık Yem Nedir?"
-description: "Metal yapıdaki, hareket sırasında titreşim ve ışık yansıması oluşturan yapay yemdir."
+description: "Kaşık Yem Nedir? Metal yapıdaki, hareket sırasında titreşim ve ışık yansıması oluşturan yapay yemdir. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "kasik-yem-nedir"

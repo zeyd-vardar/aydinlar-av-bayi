@@ -1,6 +1,6 @@
 ---
 title: "Fırdöndü Nedir?"
-description: "Takımın dönmesi sonucunda misinada oluşabilecek burulmayı azaltmaya yardımcı olan bağlantı elemanıdır."
+description: "Fırdöndü Nedir? Takımın dönmesi sonucunda misinada oluşabilecek burulmayı azaltmaya yardımcı olan bağlantı elemanıdır."
 mainCategory: "Balıkçılık"
 subCategory: "İğneler ve Bağlantılar"
 slug: "firdondu-nedir"

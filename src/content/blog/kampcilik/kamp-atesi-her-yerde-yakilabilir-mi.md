@@ -1,6 +1,6 @@
 ---
 title: "Kamp Ateşi Her Yerde Yakılabilir mi?"
-description: "Yerel resmi duyurular kontrol edilmelidir."
+description: "Kamp Ateşi Her Yerde Yakılabilir mi? Orman yangını riskine göre ateş yakmak: Yerel resmi duyurular kontrol edilmelidir."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Ateşi"
 slug: "kamp-atesi-her-yerde-yakilabilir-mi"

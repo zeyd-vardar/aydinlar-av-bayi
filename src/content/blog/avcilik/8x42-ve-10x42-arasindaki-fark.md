@@ -1,6 +1,6 @@
 ---
 title: "8x42 ve 10x42 Arasındaki Fark"
-description: "10x daha yüksek büyütme sağlar."
+description: "8x42 ve 10x42 Arasındaki Fark: 10x daha yüksek büyütme sağlar. Ancak elde oluşan titreşim daha belirgin hale gelebilir. 8x dürbünler genel doğa gözlemlerinde daha kolay sabit tutulabilir."
 mainCategory: "Avcılık"
 subCategory: "Dürbün"
 slug: "8x42-ve-10x42-arasindaki-fark"

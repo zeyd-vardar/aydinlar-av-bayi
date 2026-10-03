@@ -1,6 +1,6 @@
 ---
 title: "Kamp Çantası Nasıl Hazırlanır?"
-description: "Ağır eşyalar sırta yakın yerleştirilmelidir."
+description: "Kamp Çantası Nasıl Hazırlanır? Ağır eşyalar sırta yakın yerleştirilmelidir. Sık kullanılan malzemeler kolay erişilecek yerde olmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Başlangıç"
 slug: "kamp-cantasi-nasil-hazirlanir"

@@ -1,26 +1,86 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-interface Props { posts: CollectionEntry<'blog'>[]; }
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
 const { posts } = Astro.props;
-const categorySlug = (value: string) => value === 'Balıkçılık' ? 'balikcilik' : value === 'Avcılık' ? 'avcilik' : 'kampcilik';
+const categorySlug = (value: string) =>
+  value === 'Balıkçılık' ? 'balikcilik' : value === 'Avcılık' ? 'avcilik' : 'kampcilik';
 ---
-<div class="blog-discovery" data-blog-discovery>
-  <form class="blog-search" role="search" data-blog-search-form>
+
+<div
+  class="blog-discovery"
+  data-blog-discovery
+>
+  <form
+    class="blog-search"
+    role="search"
+    data-blog-search-form
+  >
     <label for="blog-search-input">BLOG'da arayın</label>
     <div class="blog-search-field">
       <span aria-hidden="true">⌕</span>
-      <input id="blog-search-input" type="search" name="q" placeholder="Merak ettiğiniz konuyu arayın..." autocomplete="off" data-blog-search-input />
+      <input
+        id="blog-search-input"
+        type="search"
+        name="q"
+        placeholder="Merak ettiğiniz konuyu arayın..."
+        autocomplete="off"
+        data-blog-search-input
+      />
       <button type="submit">Ara</button>
     </div>
   </form>
-  <div class="blog-results-summary" aria-live="polite" data-results-summary hidden></div>
-  <ul class="knowledge-results" data-search-results hidden>
-    {posts.map((post) => <li data-search-result data-search={[post.data.title,post.data.description,post.data.mainCategory,post.data.subCategory,...post.data.tags,...post.data.keywords].join(' ')}><a href={`/blog/${categorySlug(post.data.mainCategory)}/${post.data.slug}`}><span>{post.data.mainCategory} / {post.data.subCategory}</span><strong>{post.data.title}</strong></a></li>)}
+  <div
+    class="blog-results-summary"
+    aria-live="polite"
+    data-results-summary
+    hidden
+  >
+  </div>
+  <ul
+    class="knowledge-results"
+    data-search-results
+    hidden
+  >
+    {
+      posts.map((post) => (
+        <li
+          data-search-result
+          data-search={[
+            post.data.title,
+            post.data.description,
+            post.data.mainCategory,
+            post.data.subCategory,
+            ...post.data.tags,
+            ...post.data.keywords,
+          ].join(' ')}
+        >
+          <a href={`/blog/${categorySlug(post.data.mainCategory)}/${post.data.slug}`}>
+            <>
+              <span>
+                {post.data.mainCategory} / {post.data.subCategory}
+              </span>
+              <strong>{post.data.title}</strong>
+            </>
+          </a>
+        </li>
+      ))
+    }
   </ul>
-  <div class="blog-empty" data-blog-empty hidden>
+  <div
+    class="blog-empty"
+    data-blog-empty
+    hidden
+  >
     <h2>Aradığınız konuyla ilgili henüz bir içerik bulunamadı.</h2>
     <p>Farklı bir kelime deneyebilir veya bilgi dizinine geri dönebilirsiniz.</p>
-    <button class="btn btn-dark" type="button" data-reset-search>Bilgi Dizinini Göster</button>
+    <button
+      class="btn btn-dark"
+      type="button"
+      data-reset-search
+      >Bilgi Dizinini Göster</button
+    >
   </div>
 </div>
 
@@ -35,13 +95,20 @@ const categorySlug = (value: string) => value === 'Balıkçılık' ? 'balikcilik
   const results = [...(root?.querySelectorAll<HTMLElement>('[data-search-result]') ?? [])];
   const directory = document.querySelector<HTMLElement>('[data-knowledge-directory]');
   const categorySections = [...document.querySelectorAll<HTMLElement>('[data-main-category]')];
-  const normalize = (value: string) => value.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const normalize = (value: string) =>
+    value
+      .toLocaleLowerCase('tr-TR')
+      .replace(/ı/g, 'i')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
   const apply = (updateUrl = true) => {
     const query = input?.value.trim() ?? '';
     const normalizedQuery = normalize(query);
     let count = 0;
     results.forEach((result) => {
-      const show = Boolean(normalizedQuery) && normalize(result.dataset.search ?? '').includes(normalizedQuery);
+      const show =
+        Boolean(normalizedQuery) &&
+        normalize(result.dataset.search ?? '').includes(normalizedQuery);
       result.hidden = !show;
       if (show) count += 1;
     });
@@ -58,18 +125,24 @@ const categorySlug = (value: string) => value === 'Balıkçılık' ? 'balikcilik
       history.replaceState({}, '', url);
     }
   };
-  form?.addEventListener('submit', (event) => { event.preventDefault(); apply(); });
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    apply();
+  });
   input?.addEventListener('input', () => apply());
   reset?.addEventListener('click', () => {
     if (input) input.value = '';
-    apply(); input?.focus();
+    apply();
+    input?.focus();
   });
   const params = new URLSearchParams(window.location.search);
   const initialQuery = params.get('q') ?? '';
   const initialCategory = params.get('category');
   if (input) input.value = initialQuery;
   if (initialCategory) {
-    categorySections.forEach((section) => { section.hidden = section.dataset.mainCategory !== initialCategory; });
+    categorySections.forEach((section) => {
+      section.hidden = section.dataset.mainCategory !== initialCategory;
+    });
   }
   if (initialQuery) apply(false);
 </script>

@@ -1,6 +1,6 @@
 ---
 title: "İğne Numaraları Ne Anlama Gelir?"
-description: "İğne numaralandırması üreticiler ve kullanılan sistemler arasında değişebilir."
+description: "İğne numaralandırması üreticiler ve kullanılan sistemler arasında değişebilir. Sadece numaraya değil gerçek ölçü ve iğnenin yapısına da bakılmalıdır."
 mainCategory: "Balıkçılık"
 subCategory: "İğneler ve Bağlantılar"
 slug: "igne-numaralari-ne-anlama-gelir"

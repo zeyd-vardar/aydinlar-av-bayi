@@ -1,6 +1,6 @@
 ---
 title: "Ay Durumu Balıkçılığı Etkiler mi?"
-description: "Ay denizlerde gelgit sistemini etkiler."
+description: "Ay Durumu Balıkçılığı Etkiler mi? Su sıcaklığı, hava, akıntı, besin ve bölgesel koşullar özelliklerini ve kullanım farklarını karşılaştırın."
 mainCategory: "Balıkçılık"
 subCategory: "Mevsim ve Hava"
 slug: "ay-durumu-balikciligi-etkiler-mi"

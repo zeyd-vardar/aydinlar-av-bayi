@@ -1,6 +1,6 @@
 ---
 title: "Dürbündeki 10x42 ne demek?"
-description: "42:\nÖn objektif çapının milimetre cinsinden değeridir."
+description: "Dürbündeki 10x42 ne demek? 10: Büyütme oranı. 42: Ön objektif çapının milimetre cinsinden değeridir. Güvenlik, yasal sorumluluklar ve doğru uygulamalarla ilgili temel bilgileri öğrenin."
 mainCategory: "Avcılık"
 subCategory: "Dürbün"
 slug: "durbundeki-10x42-ne-demek"

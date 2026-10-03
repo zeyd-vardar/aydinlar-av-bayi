@@ -1,6 +1,6 @@
 ---
 title: "At-Çek Balıkçılığı Nedir?"
-description: "Yapay yemin sürekli atılıp geri sarılması esasına dayanan aktif yöntemdir."
+description: "At-Çek Balıkçılığı Nedir? Yapay yemin sürekli atılıp geri sarılması esasına dayanan aktif yöntemdir. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Yöntemleri"
 slug: "at-cek-balikciligi-nedir"

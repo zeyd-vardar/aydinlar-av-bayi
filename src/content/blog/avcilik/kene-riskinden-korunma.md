@@ -1,6 +1,6 @@
 ---
 title: "Kene Riskinden Korunma"
-description: "kullanılması faydalı olabilir."
+description: "Kene riskine karşı uzun kollu, açık renkli kıyafet ve kapalı ayakkabı kullanın; doğadan döndükten sonra vücudu dikkatle kontrol edin."
 mainCategory: "Avcılık"
 subCategory: "Doğa Güvenliği"
 slug: "kene-riskinden-korunma"

@@ -1,6 +1,6 @@
 ---
 title: "İkinci el tüfek alırken nelere dikkat edilmelidir?"
-description: "Devir işlemi resmi mevzuata uygun yapılmalıdır. Kayıt dışı veya belgesiz silah satın alınmamalıdır.\nSilahın teknik durumu da yetkili ve yetkin kişilerce kontrol edilmelidir."
+description: "Devir işlemi resmi mevzuata uygun yapılmalıdır. Kayıt dışı veya belgesiz silah satın alınmamalıdır. Silahın teknik durumu da yetkili ve yetkin kişilerce kontrol edilmelidir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "ikinci-el-tufek-alirken-nelere-dikkat-edilmelidir"

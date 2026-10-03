@@ -1,6 +1,6 @@
 ---
 title: "Yivsiz tüfek ruhsatnamesi nedir?"
-description: "Yivsiz av tüfeğinin yasal olarak edinilmesi ve bulundurulması için kullanılan resmi belgedir. Avcılık belgesi başvurularında da geçerli yivli veya yivsiz tüfek ruhsatnamesi…"
+description: "Yivsiz av tüfeğinin yasal olarak edinilmesi ve bulundurulması için kullanılan resmi belgedir. Avcılık belgesi başvurularında da geçerli yivli veya yivsiz tüfek ruhsatnamesi istenebilmektedir."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "yivsiz-tufek-ruhsatnamesi-nedir"

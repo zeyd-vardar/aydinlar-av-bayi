@@ -1,6 +1,6 @@
 ---
 title: "Misina mı Örgü İp mi?"
-description: "Kullanım amacına göre seçim yapılmalıdır."
+description: "Misina ve örgü ipi esneme, hassasiyet, çap, dayanım ve kullanım kolaylığı açısından karşılaştırın; seçimi balıkçılık yönteminize göre yapın."
 mainCategory: "Balıkçılık"
 subCategory: "Misina ve Örgü İp"
 slug: "misina-mi-orgu-ip-mi"

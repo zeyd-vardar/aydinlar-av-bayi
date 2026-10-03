@@ -1,6 +1,6 @@
 ---
 title: "İz Bırakmadan Kamp Nedir?"
-description: "Temel düşünce doğada mümkün olduğunca iz bırakmamaktır."
+description: "İz bırakmadan kamp; atıkları geri götürmeyi, bitkilere ve yaban hayatına zarar vermemeyi, doğal alanı bulduğunuz gibi bırakmayı amaçlar."
 mainCategory: "Kampçılık"
 subCategory: "Doğaya Saygılı Kamp"
 slug: "iz-birakmadan-kamp-nedir"

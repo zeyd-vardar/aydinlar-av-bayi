@@ -1,6 +1,6 @@
 ---
 title: "Şamandıralı Balıkçılık Nedir?"
-description: "Yemin belirli derinlikte tutulduğu ve balığın teması şamandıra hareketinden takip edilen yöntemdir."
+description: "Şamandıralı Balıkçılık Nedir? Yemin belirli derinlikte tutulduğu ve balığın teması şamandıra hareketinden takip edilen yöntemdir."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Yöntemleri"
 slug: "samandirali-balikcilik-nedir"

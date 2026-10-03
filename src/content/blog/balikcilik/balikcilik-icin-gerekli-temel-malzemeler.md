@@ -1,6 +1,6 @@
 ---
 title: "Balıkçılık İçin Gerekli Temel Malzemeler"
-description: "Gece balıkçılığında kafa feneri, riskli kıyılarda ve teknede uygun can güvenliği ekipmanları önemlidir."
+description: "Balıkçılık İçin Gerekli Temel Malzemeler: kamış, olta makinesi, misina veya örgü ip, öncü misina ve iğne. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Balıkçılık"
 subCategory: "Başlangıç Bilgileri"
 slug: "balikcilik-icin-gerekli-temel-malzemeler"

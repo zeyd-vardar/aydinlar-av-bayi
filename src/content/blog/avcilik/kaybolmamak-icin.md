@@ -1,6 +1,6 @@
 ---
 title: "Kaybolmamak İçin"
-description: "Rota önceden planlanmalı."
+description: "Kaybolmamak İçin: Rota önceden planlanmalı. Belirgin arazi noktaları takip edilmelidir. Kaybolunduğu fark edildiğinde kontrolsüz şekilde ilerlemek yerine konum değerlendirilmelidir."
 mainCategory: "Avcılık"
 subCategory: "Doğada Yön Bulma"
 slug: "kaybolmamak-icin"

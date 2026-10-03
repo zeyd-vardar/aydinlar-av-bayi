@@ -1,6 +1,6 @@
 ---
 title: "Ormanda Kamp"
-description: "Her ormanda kamp yapmak serbest değildir."
+description: "Her ormanda kamp yapmak serbest değildir. Yangın riskinin yüksek olduğu dönemlerde geçici yasaklar uygulanabilir. Yerel valilik ve Orman Genel Müdürlüğü duyuruları kontrol edilmelidir."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Alanı"
 slug: "ormanda-kamp"

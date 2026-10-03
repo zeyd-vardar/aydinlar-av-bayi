@@ -1,6 +1,6 @@
 ---
 title: "Tabanca ruhsatları ne kadar süre geçerlidir?"
-description: "Genel kural olarak taşıma ve bulundurma ruhsatları onay tarihinden itibaren beş yıl geçerlidir ve şartların devam etmesi halinde yenilenir. Bazı özel statüler için istisnal…"
+description: "Genel kural olarak taşıma ve bulundurma ruhsatları onay tarihinden itibaren beş yıl geçerlidir ve şartların devam etmesi halinde yenilenir. Bazı özel statüler için istisnalar bulunur."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "tabanca-ruhsatlari-ne-kadar-sure-gecerlidir"

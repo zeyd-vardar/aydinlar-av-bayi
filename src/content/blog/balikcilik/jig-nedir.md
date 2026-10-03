@@ -1,6 +1,6 @@
 ---
 title: "Jig Nedir?"
-description: "Çoğunlukla metal veya ağırlıklı yapıda olan, farklı su derinliklerinde hareket ettirilerek kullanılan yem grubudur."
+description: "Jig Nedir? Çoğunlukla metal veya ağırlıklı yapıda olan, farklı su derinliklerinde hareket ettirilerek kullanılan yem grubudur."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "jig-nedir"

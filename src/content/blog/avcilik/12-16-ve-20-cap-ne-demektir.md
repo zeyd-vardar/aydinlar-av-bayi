@@ -1,6 +1,6 @@
 ---
 title: "12, 16 ve 20 çap ne demektir?"
-description: "Yivsiz tüfeklerde “12”, “16” ve “20” gibi ifadeler namlu/fişek sistemiyle ilişkili geleneksel çap sınıflandırmalarıdır. Bu sistem milimetre cinsinden doğrudan namlu çapı de…"
+description: "12, 16 ve 20 çap ne demektir? Yivsiz tüfeklerde “12”, “16” ve “20” gibi ifadeler namlu/fişek sistemiyle ilişkili geleneksel çap sınıflandırmalarıdır."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "12-16-ve-20-cap-ne-demektir"

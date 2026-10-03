@@ -1,6 +1,6 @@
 ---
 title: "Çadır Su Geçirmezlik Değeri"
-description: "Kumaşın su basıncına dayanımı birçok üründe milimetre cinsinden ifade edilir."
+description: "Çadır Su Geçirmezlik Değeri: dikiş yapısı, dikiş bandı, dış tente, çadır zemini ve doğru kurulum. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "cadir-su-gecirmezlik-degeri"

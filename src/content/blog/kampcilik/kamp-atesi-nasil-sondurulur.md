@@ -1,6 +1,6 @@
 ---
 title: "Kamp Ateşi Nasıl Söndürülür?"
-description: "Ateş tamamen söndürülmeden alan terk edilmemelidir."
+description: "Kamp Ateşi Nasıl Söndürülür? Ateş tamamen söndürülmeden alan terk edilmemelidir. Közlerin de tamamen soğuduğu kontrol edilmelidir. Yangın riski yüksek veya rüzgârlı havalarda ateş yakılmamalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Ateşi"
 slug: "kamp-atesi-nasil-sondurulur"

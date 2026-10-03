@@ -1,6 +1,6 @@
 ---
 title: "Avcılık mevzuatı neden her yıl kontrol edilmelidir?"
-description: "Avlanabilecek türler, dönemler, avlanma günleri, limitler ve avlak kuralları dönemsel olarak değişebilir. Bu nedenle geçmiş sezon bilgileri güncel sezon için doğrudan kulla…"
+description: "Avlanabilecek türler, dönemler, avlanma günleri, limitler ve avlak kuralları dönemsel olarak değişebilir. Bu nedenle geçmiş sezon bilgileri güncel sezon için doğrudan kullanılmamalıdır."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "avcilik-mevzuati-neden-her-yil-kontrol-edilmelidir"

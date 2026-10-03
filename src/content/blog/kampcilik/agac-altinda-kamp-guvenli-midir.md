@@ -1,6 +1,6 @@
 ---
 title: "Ağaç Altında Kamp Güvenli midir?"
-description: "Kuru veya kırılabilecek dallar risk oluşturabilir."
+description: "Kuru veya kırılabilecek dallar risk oluşturabilir. Fırtına ve yıldırım durumunda yüksek ve tek başına duran ağaçların çevresinden uzak durulmalıdır."
 mainCategory: "Kampçılık"
 subCategory: "Çadır"
 slug: "agac-altinda-kamp-guvenli-midir"

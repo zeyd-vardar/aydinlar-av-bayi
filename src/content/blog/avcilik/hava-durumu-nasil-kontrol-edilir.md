@@ -1,6 +1,6 @@
 ---
 title: "Hava Durumu Nasıl Kontrol Edilir?"
-description: "Meteoroloji Genel Müdürlüğünün tahminleri ve uyarıları kontrol edilmelidir."
+description: "Hava durumunu MGM tahmin ve uyarılarından kontrol edin; fırtına, kuvvetli rüzgâr, yoğun yağış, yıldırım, sis ve aşırı sıcak risklerini değerlendirin."
 mainCategory: "Avcılık"
 subCategory: "Hava ve Arazi"
 slug: "hava-durumu-nasil-kontrol-edilir"

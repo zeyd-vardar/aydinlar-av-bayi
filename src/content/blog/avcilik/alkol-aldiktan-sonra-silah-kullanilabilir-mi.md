@@ -1,6 +1,6 @@
 ---
 title: "Alkol aldıktan sonra silah kullanılabilir mi?"
-description: "Hayır. Alkol veya muhakeme, dikkat ve refleksleri etkileyebilecek maddelerin etkisi altındayken ateşli silah kullanılmamalıdır."
+description: "Alkol aldıktan sonra silah kullanılabilir mi? Hayır. Alkol veya muhakeme, dikkat ve refleksleri etkileyebilecek maddelerin etkisi altındayken ateşli silah kullanılmamalıdır."
 mainCategory: "Avcılık"
 subCategory: "Silah Güvenliği"
 slug: "alkol-aldiktan-sonra-silah-kullanilabilir-mi"

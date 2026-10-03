@@ -1,6 +1,6 @@
 ---
 title: "Telefon Çekmeyen Bölgelerde"
-description: "Telefon Çekmeyen Bölgelerde"
+description: "Telefon Çekmeyen Bölgelerde: çevrimdışı harita indir, rotayı paylaş, pili koru, taşınabilir şarj cihazı taşı ve mümkünse harita/pusula bulundur."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Güvenliği"
 slug: "telefon-cekmeyen-bolgelerde"

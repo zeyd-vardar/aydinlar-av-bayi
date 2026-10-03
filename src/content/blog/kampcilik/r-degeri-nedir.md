@@ -1,6 +1,6 @@
 ---
 title: "R Değeri Nedir?"
-description: "Matın ısı geçişine karşı direncidir."
+description: "Matın ısı geçişine karşı direncidir. Genel olarak R değeri yükseldikçe zeminden yalıtım artar. Ekipman, hazırlık ve doğada güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Matı"
 slug: "r-degeri-nedir"

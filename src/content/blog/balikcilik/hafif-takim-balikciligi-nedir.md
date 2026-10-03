@@ -1,6 +1,6 @@
 ---
 title: "Hafif Takım Balıkçılığı Nedir?"
-description: "Küçük ve hafif yemlerin hafif ekipmanlarla kullanıldığı hassas balıkçılık yaklaşımıdır."
+description: "Küçük ve hafif yemlerin hafif ekipmanlarla kullanıldığı hassas balıkçılık yaklaşımıdır. Türkiye'de sıklıkla LRF adıyla bilinir."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Yöntemleri"
 slug: "hafif-takim-balikciligi-nedir"

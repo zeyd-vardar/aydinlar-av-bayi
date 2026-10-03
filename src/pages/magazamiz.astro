@@ -2,7 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Mağazamız',url:'/magazamiz'}];
+const crumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Mağazamız', url: '/magazamiz' },
+];
 const items = [
   { src: '/images/galer1.jpg' },
   { src: '/images/galeri2.jpg' },
@@ -22,8 +25,48 @@ const items = [
   { src: '/images/galeri16.jpg' },
   { src: '/images/galeri17.jpg' },
 ];
+const galleryOverlay = 'linear-gradient(180deg,transparent 45%,rgba(6,11,8,.78))';
+const galleryStyle = (image: string) =>
+  [
+    `background-image:${galleryOverlay},url('${image}')`,
+    'background-size:cover',
+    'background-position:center',
+  ].join(';');
 ---
-<BaseLayout title="Mağazamız | Aydınlar Av Bayi" description="Mağazamızdan, balıkçılık ve avcılık ürün gruplarımızdan, outdoor ve kamp dünyasından kareleri inceleyin." breadcrumbs={crumbs} compactFooter>
-  <PageHero eyebrow="Mağazamız" title="Mağazadan ve doğadan kareler" text="Ekipman, mağaza ve açık hava dünyamızı yakından keşfedin." image="/images/hero-fishing.jpg" position="center 60%" />
-  <section class="section"><div class="container"><SectionHeader eyebrow="Görsel Günlük" title="Tutkunun ayrıntılarına yakından bakın" text="Mağaza atmosferinden açık havadaki kullanım anlarına uzanan seçkimiz."/><div class="gallery-grid">{items.map((item, index) => <a class={`gallery-item gallery-item-${index + 1}`} href={item.src} target="_blank" rel="noopener" aria-label={`Mağazamızdan ${index + 1}. fotoğrafı aç`} style={`background-image:linear-gradient(180deg,transparent 45%,rgba(6,11,8,.78)),url('${item.src}');background-size:cover;background-position:center;`}></a>)}</div></div></section>
+
+<BaseLayout
+  title="Mağazamız | Aydınlar Av Bayi"
+  description="Trabzon Ortahisar'daki Aydınlar Av Bayi mağazasını; balıkçılık, avcılık, kamp ve outdoor ürünlerinin yer aldığı fotoğraf galerisiyle yakından inceleyin."
+  breadcrumbs={crumbs}
+  compactFooter
+>
+  <PageHero
+    eyebrow="Mağazamız"
+    title="Mağazadan ve doğadan kareler"
+    text="Ekipman, mağaza ve açık hava dünyamızı yakından keşfedin."
+    image="/images/hero-fishing.jpg"
+    position="center 60%"
+  />
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Görsel Günlük"
+        title="Tutkunun ayrıntılarına yakından bakın"
+        text="Mağaza atmosferinden açık havadaki kullanım anlarına uzanan seçkimiz."
+      /><div class="gallery-grid">
+        {
+          items.map((item, index) => (
+            <a
+              class={`gallery-item gallery-item-${index + 1}`}
+              href={item.src}
+              target="_blank"
+              rel="noopener"
+              aria-label={`Mağazamızdan ${index + 1}. fotoğrafı aç`}
+              style={galleryStyle(item.src)}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>

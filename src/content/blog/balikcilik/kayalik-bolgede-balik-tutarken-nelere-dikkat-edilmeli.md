@@ -1,6 +1,6 @@
 ---
 title: "Kayalık Bölgede Balık Tutarken Nelere Dikkat Edilmeli?"
-description: "Islak kayalar çok kaygan olabilir."
+description: "Islak kayalar çok kaygan olabilir. Dalga yüksekliği ve hava tahmini kontrol edilmelidir. Kaymaz tabanlı ayakkabı ve uygun koşullarda can yeleği önemli güvenlik avantajı sağlar."
 mainCategory: "Balıkçılık"
 subCategory: "Balıkçılık Güvenliği"
 slug: "kayalik-bolgede-balik-tutarken-nelere-dikkat-edilmeli"

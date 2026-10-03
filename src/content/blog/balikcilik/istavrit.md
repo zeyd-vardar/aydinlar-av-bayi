@@ -1,6 +1,6 @@
 ---
 title: "İstavrit"
-description: "Sürü halinde yaşayan ve Türkiye'de yaygın olarak çapari gibi takımlarla hedeflenen balıklardandır."
+description: "İstavrit: Sürü halinde yaşayan ve Türkiye'de yaygın olarak çapari gibi takımlarla hedeflenen balıklardandır."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "istavrit"

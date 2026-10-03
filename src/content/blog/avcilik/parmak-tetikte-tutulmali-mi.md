@@ -1,6 +1,6 @@
 ---
 title: "Parmak tetikte tutulmalı mı?"
-description: "Hayır. Ateş etme kararı verilmedikçe parmak tetikten ve tetik korkuluğunun içinden uzak tutulmalıdır."
+description: "Parmak tetikte tutulmalı mı? Hayır. Ateş etme kararı verilmedikçe parmak tetikten ve tetik korkuluğunun içinden uzak tutulmalıdır."
 mainCategory: "Avcılık"
 subCategory: "Silah Güvenliği"
 slug: "parmak-tetikte-tutulmali-mi"

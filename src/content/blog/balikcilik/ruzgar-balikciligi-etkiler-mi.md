@@ -1,6 +1,6 @@
 ---
 title: "Rüzgâr Balıkçılığı Etkiler mi?"
-description: "Yalnızca rüzgârın varlığı değil yönü ve şiddeti önemlidir."
+description: "Rüzgâr; dalga, yüzey hareketi, yem balığının konumu ve atış kontrolünü etkileyebilir. Yönü, şiddeti ve güvenlik koşullarını birlikte değerlendirin."
 mainCategory: "Balıkçılık"
 subCategory: "Mevsim ve Hava"
 slug: "ruzgar-balikciligi-etkiler-mi"

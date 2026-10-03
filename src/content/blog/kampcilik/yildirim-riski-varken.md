@@ -1,6 +1,6 @@
 ---
 title: "Yıldırım Riski Varken"
-description: "Yüksek ve açık noktalardan uzaklaşılmalıdır."
+description: "Yıldırım Riski Varken: Yüksek ve açık noktalardan uzaklaşılmalıdır. Tek başına yüksek ağaçlardan, metal yapılardan ve sudan uzak durulmalıdır. Güvenli yapı veya araç varsa tercih edilmelidir."
 mainCategory: "Kampçılık"
 subCategory: "Hava Koşulları"
 slug: "yildirim-riski-varken"

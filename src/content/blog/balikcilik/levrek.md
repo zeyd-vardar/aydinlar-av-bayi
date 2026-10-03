@@ -1,6 +1,6 @@
 ---
 title: "Levrek"
-description: "Levrek kıyıya yaklaşabilen yırtıcı deniz balıklarından biridir."
+description: "Levrek kıyıya yaklaşabilen yırtıcı deniz balıklarından biridir. Küçük balıklar ve kabuklularla beslenebilir. Kıyı yapısı, akıntı, dalga, su sıcaklığı ve yem balığının varlığı davranışını etkiler."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "levrek"

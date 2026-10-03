@@ -2,10 +2,67 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { categoryGroups } from '../data/categories.js';
-const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Ürün Grupları',url:'/urun-gruplari'}];
+const crumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Ürün Grupları', url: '/urun-gruplari' },
+];
 ---
-<BaseLayout title="Ürün Grupları | Aydınlar Av Bayi" description="Balıkçılık, avcılık, outdoor giyim ve kamp ekipmanı gruplarımızı keşfedin; ürünleri mağazamızda yakından inceleyin." breadcrumbs={crumbs} compactFooter>
-  <PageHero eyebrow="Ürün Grupları" title="Doğaya hazır olmanın başlangıç noktası" text="Balıkçılık, avcılık, outdoor ve kamp dünyası için özenle seçilmiş ürün gruplarını keşfedin." image="/images/category-atlas.jpg" position="center" />
-  {categoryGroups.map((group, index) => <section id={group.id} class:list={['catalog-block', {alt:index%2===1}]}><div class="container"><div class="catalog-title"><div><span class="eyebrow">{group.eyebrow}</span><h2>{group.title}</h2></div><p>Başlangıç seviyesinden deneyimli kullanıcılara kadar farklı beklentilere hitap eden {group.title.toLocaleLowerCase('tr-TR')} ürünlerini mağazamızda inceleyebilirsiniz.</p></div><ul class="catalog-items">{group.items.map((item) => <li>{item}</li>)}</ul></div></section>)}
-  <aside class="catalog-notice" aria-label="Ürün bilgisi"><div class="container"><span class="eyebrow">Detaylı Bilgi</span><p>Ürünlerimiz hakkında detaylı bilgi almak için bizimle iletişime geçebilir veya mağazamızı ziyaret edebilirsiniz.</p></div></aside>
+
+<BaseLayout
+  title="Ürün Grupları | Aydınlar Av Bayi"
+  description="Olta ve balıkçılık malzemeleri, av ekipmanları, kamp ürünleri ve outdoor giyim gruplarını inceleyin; seçenekleri Trabzon'daki mağazamızda keşfedin."
+  breadcrumbs={crumbs}
+  compactFooter
+>
+  <PageHero
+    eyebrow="Ürün Grupları"
+    title="Doğaya hazır olmanın başlangıç noktası"
+    text="Balıkçılık, avcılık, outdoor ve kamp dünyası için özenle seçilmiş ürün gruplarını keşfedin."
+    image="/images/category-atlas.jpg"
+    position="center"
+  />
+  {
+    categoryGroups.map((group, index) => (
+      <section
+        id={group.id}
+        class:list={['catalog-block', { alt: index % 2 === 1 }]}
+      >
+        <div class="container">
+          <>
+            <div class="catalog-title">
+              <>
+                <div>
+                  <>
+                    <span class="eyebrow">{group.eyebrow}</span>
+                    <h2>{group.title}</h2>
+                  </>
+                </div>
+                <p>
+                  Başlangıç seviyesinden deneyimli kullanıcılara kadar farklı beklentilere hitap
+                  eden {group.title.toLocaleLowerCase('tr-TR')} ürünlerini mağazamızda
+                  inceleyebilirsiniz.
+                </p>
+              </>
+            </div>
+            <ul class="catalog-items">
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </>
+        </div>
+      </section>
+    ))
+  }
+  <aside
+    class="catalog-notice"
+    aria-label="Ürün bilgisi"
+  >
+    <div class="container">
+      <span class="eyebrow">Detaylı Bilgi</span><p>
+        Ürünlerimiz hakkında detaylı bilgi almak için bizimle iletişime geçebilir veya mağazamızı
+        ziyaret edebilirsiniz.
+      </p>
+    </div>
+  </aside>
 </BaseLayout>

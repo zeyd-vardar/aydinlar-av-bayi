@@ -1,6 +1,6 @@
 ---
 title: "Tabanca ile avcılık yapılır mı?"
-description: "Türkiye’de normal kara avcılığı açısından tabanca, standart av silahı olarak değerlendirilmemelidir. Avda kullanılabilecek silah ve araçlar güncel av mevzuatına göre belirl…"
+description: "Türkiye’de normal kara avcılığı açısından tabanca, standart av silahı olarak değerlendirilmemelidir."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "tabanca-ile-avcilik-yapilir-mi"

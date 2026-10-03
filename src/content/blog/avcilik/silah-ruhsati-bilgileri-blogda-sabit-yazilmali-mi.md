@@ -1,6 +1,6 @@
 ---
 title: "Silah ruhsatı bilgileri blogda sabit yazılmalı mı?"
-description: "Ruhsat ücreti, gerekli belgeler ve bazı prosedürler zamanla değişebilir. Bu nedenle blogda sabit ücret veya değişebilir prosedür yazmak yerine:\n“Güncel şartlar için Emniyet…"
+description: "Ruhsat ücreti, gerekli belgeler ve bazı prosedürler zamanla değişebilir. Güvenli ve sorumlu uygulama için temel bilgileri inceleyin."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "silah-ruhsati-bilgileri-blogda-sabit-yazilmali-mi"

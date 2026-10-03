@@ -1,6 +1,6 @@
 ---
 title: "Şişme Mat mı Köpük Mat mı?"
-description: "ama delinme riski vardır."
+description: "Şişme ve köpük matları konfor, yalıtım, paket hacmi, dayanıklılık ve delinme riski açısından karşılaştırarak kamp koşullarınıza uygun olanı seçin."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Matı"
 slug: "sisme-mat-mi-kopuk-mat-mi"

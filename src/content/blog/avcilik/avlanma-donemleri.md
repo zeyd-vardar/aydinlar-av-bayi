@@ -1,6 +1,6 @@
 ---
 title: "Avlanma Dönemleri"
-description: "Her yıl Merkez Av Komisyonu kararıyla belirlenir."
+description: "Avlanma dönemleri, türler, günler ve limitler her yıl Merkez Av Komisyonu kararıyla belirlenir; ava çıkmadan önce güncel resmî kararı kontrol edin."
 mainCategory: "Avcılık"
 subCategory: "Türkiye'de Avcılık Mevzuatı"
 slug: "avlanma-donemleri"

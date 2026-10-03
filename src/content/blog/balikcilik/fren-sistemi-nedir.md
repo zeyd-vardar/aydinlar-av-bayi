@@ -1,6 +1,6 @@
 ---
 title: "Fren Sistemi Nedir?"
-description: "Fren, balık güçlü şekilde misinayı çektiğinde belirlenen direnç seviyesinden sonra kontrollü misina verilmesini sağlar."
+description: "Olta makinesindeki fren sistemi, balık misinayı çektiğinde ayarlanan dirençten sonra kontrollü misina verir; kopma ve ekipman yükü riskini azaltır."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Makineleri"
 slug: "fren-sistemi-nedir"

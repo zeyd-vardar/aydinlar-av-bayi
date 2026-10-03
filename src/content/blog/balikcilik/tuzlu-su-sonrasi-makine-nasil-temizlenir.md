@@ -1,6 +1,6 @@
 ---
 title: "Tuzlu Su Sonrası Makine Nasıl Temizlenir?"
-description: "Makine yüksek basınç uygulanmadan tatlı suyla hafifçe temizlenebilir."
+description: "Makine yüksek basınç uygulanmadan tatlı suyla hafifçe temizlenebilir. Daha sonra kurutulmalıdır. Basınçlı su tuzu ve kiri makinenin içine itebilir."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Makineleri"
 slug: "tuzlu-su-sonrasi-makine-nasil-temizlenir"

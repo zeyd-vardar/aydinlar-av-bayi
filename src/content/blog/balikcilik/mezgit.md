@@ -1,6 +1,6 @@
 ---
 title: "Mezgit"
-description: "Genellikle dip veya dibe yakın alanlarda yaşar."
+description: "Mezgit: Genellikle dip veya dibe yakın alanlarda yaşar. Karadeniz ve Marmara'da yaygındır. Ekipman seçimi, kullanım ve güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Balık Türleri"
 slug: "mezgit"

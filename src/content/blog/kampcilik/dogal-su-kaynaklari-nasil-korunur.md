@@ -1,6 +1,6 @@
 ---
 title: "Doğal Su Kaynakları Nasıl Korunur?"
-description: "Sabun, deterjan, yemek artığı veya kimyasal doğrudan su kaynaklarına bırakılmamalıdır."
+description: "Sabun, deterjan, yemek artığı veya kimyasal doğrudan su kaynaklarına bırakılmamalıdır. Ekipman, hazırlık ve doğada güvenlikle ilgili temel noktaları öğrenin."
 mainCategory: "Kampçılık"
 subCategory: "Doğaya Saygılı Kamp"
 slug: "dogal-su-kaynaklari-nasil-korunur"

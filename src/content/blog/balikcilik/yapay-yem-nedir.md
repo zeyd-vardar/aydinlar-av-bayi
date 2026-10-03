@@ -1,6 +1,6 @@
 ---
 title: "Yapay Yem Nedir?"
-description: "Balığın doğal avını taklit etmek veya renk, hareket, titreşim ve ses ile dikkat çekmek için tasarlanan yemdir."
+description: "Yapay Yem Nedir? Balığın doğal avını taklit etmek veya renk, hareket, titreşim ve ses ile dikkat çekmek için tasarlanan yemdir."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "yapay-yem-nedir"

@@ -1,6 +1,6 @@
 ---
 title: "Yivli tüfek ile yivsiz tüfek arasındaki temel fark nedir?"
-description: "Temel fark namlu yapısıdır.\nYivli tüfek: Namlu içinde yiv-set bulunur.\nYivsiz tüfek: Namlu içi genel olarak düzdür.\nBu fark kullanılan mühimmatın yapısını, kullanım alanını…"
+description: "Temel fark namlu yapısıdır. Yivli tüfek: Namlu içinde yiv-set bulunur. Yivsiz tüfek: Namlu içi genel olarak düzdür."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "yivli-tufek-ile-yivsiz-tufek-arasindaki-temel-fark-nedir"

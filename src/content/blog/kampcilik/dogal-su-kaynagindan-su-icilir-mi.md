@@ -1,6 +1,6 @@
 ---
 title: "Doğal Su Kaynağından Su İçilir mi?"
-description: "Berrak görünen doğal su mikroorganizma içerebilir."
+description: "Berrak görünen doğal su mikroorganizma içerebilir. İçmeden önce uygun filtreleme, arıtma veya dezenfeksiyon uygulayın; kaynağın güvenliğini değerlendirin."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Mutfağı"
 slug: "dogal-su-kaynagindan-su-icilir-mi"

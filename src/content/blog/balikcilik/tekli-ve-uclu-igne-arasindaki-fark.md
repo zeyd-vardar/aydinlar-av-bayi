@@ -1,6 +1,6 @@
 ---
 title: "Tekli ve Üçlü İğne Arasındaki Fark"
-description: "Tekli iğnede tek uç vardır."
+description: "Tekli iğnede tek uç vardır. Üçlü iğnede aynı gövdede üç uç vardır. Bazı yapay yemlerde üçlü iğne kullanılır."
 mainCategory: "Balıkçılık"
 subCategory: "İğneler ve Bağlantılar"
 slug: "tekli-ve-uclu-igne-arasindaki-fark"

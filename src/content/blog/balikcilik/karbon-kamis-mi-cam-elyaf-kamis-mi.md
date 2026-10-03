@@ -1,6 +1,6 @@
 ---
 title: "Karbon Kamış mı Cam Elyaf Kamış mı?"
-description: "Kompozit kamışlarda iki malzeme birlikte kullanılabilir."
+description: "Karbon ve cam elyaf kamışları ağırlık, hassasiyet, esneklik ve darbe toleransı açısından karşılaştırın; kullanımınıza uygun malzemeyi belirleyin."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "karbon-kamis-mi-cam-elyaf-kamis-mi"

@@ -1,6 +1,6 @@
 ---
 title: "Olta Kamışı Nedir?"
-description: "Olta kamışı atışı kontrol etmeye, yemi yönlendirmeye ve balıkla mücadele etmeye yardımcı olan esnek ekipmandır."
+description: "Olta Kamışı Nedir? Uzunluk, atış aralığı, güç, aksiyon ve ağırlık gibi temel özellikleri kısa ve anlaşılır biçimde öğrenin."
 mainCategory: "Balıkçılık"
 subCategory: "Olta Kamışları"
 slug: "olta-kamisi-nedir"

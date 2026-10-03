@@ -1,6 +1,6 @@
 ---
 title: "Yivsiz av tüfeği nedir?"
-description: "Yivsiz tüfekte namlu içinde yiv ve set bulunmaz. Türkiye’de yaygın olarak av ve spor amaçlı kullanılan yivsiz tüfekler 2521 sayılı Kanun kapsamında düzenlenmektedir. Emniye…"
+description: "Yivsiz tüfekte namlu içinde yiv ve set bulunmaz. Türkiye’de yaygın olarak av ve spor amaçlı kullanılan yivsiz tüfekler 2521 sayılı Kanun kapsamında düzenlenmektedir. Emniyet Genel Müdürlüğü"
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "yivsiz-av-tufegi-nedir"

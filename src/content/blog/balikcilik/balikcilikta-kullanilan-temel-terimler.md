@@ -1,6 +1,6 @@
 ---
 title: "Balıkçılıkta Kullanılan Temel Terimler"
-description: "Kamış: Oltanın ana taşıyıcı bölümüdür."
+description: "Kamış: Oltanın ana taşıyıcı bölümüdür. Olta makinesi: Misinanın veya ipin sarıldığı mekanizmadır. Misina: Balıkçılıkta kullanılan olta hattının genel adıdır."
 mainCategory: "Balıkçılık"
 subCategory: "Başlangıç Bilgileri"
 slug: "balikcilikta-kullanilan-temel-terimler"

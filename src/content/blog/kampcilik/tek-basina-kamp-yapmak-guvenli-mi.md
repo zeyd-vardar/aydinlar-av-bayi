@@ -1,6 +1,6 @@
 ---
 title: "Tek Başına Kamp Yapmak Güvenli mi?"
-description: "koşullarına göre değişir."
+description: "Tek başına kampın güvenliği deneyim, hava, arazi ve haberleşme imkânlarına bağlıdır. Rotanızı paylaşın, acil durum planı yapın ve riskli koşulları erteleyin."
 mainCategory: "Kampçılık"
 subCategory: "Kamp Güvenliği"
 slug: "tek-basina-kamp-yapmak-guvenli-mi"

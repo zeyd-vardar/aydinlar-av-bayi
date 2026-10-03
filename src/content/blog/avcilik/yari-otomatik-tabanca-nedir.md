@@ -1,6 +1,6 @@
 ---
 title: "Yarı otomatik tabanca nedir?"
-description: "Yarı otomatik tabancada her tetik hareketiyle bir atış gerçekleşir ve mekanizma bir sonraki fişeği ateşlemeye hazır hale getirir. “Yarı otomatik” ile “tam otomatik” aynı şe…"
+description: "Yarı otomatik tabancada her tetik hareketiyle bir atış gerçekleşir ve mekanizma bir sonraki fişeği ateşlemeye hazır hale getirir. “Yarı otomatik” ile “tam otomatik” aynı şey değildir."
 mainCategory: "Avcılık"
 subCategory: "Tabancalar"
 slug: "yari-otomatik-tabanca-nedir"

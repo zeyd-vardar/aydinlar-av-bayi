@@ -1,6 +1,6 @@
 ---
 title: "Yağmurda kamp yapılır mı?"
-description: "Uygun ekipman ve güvenli hava koşullarında yapılabilir."
+description: "Yağmurda kamp yapılır mı? Uygun ekipman ve güvenli hava koşullarında yapılabilir. Sel, yıldırım veya kuvvetli fırtına uyarısı varsa ertelenmelidir."
 mainCategory: "Kampçılık"
 subCategory: "Hava Koşulları"
 slug: "yagmurda-kamp-yapilir-mi"

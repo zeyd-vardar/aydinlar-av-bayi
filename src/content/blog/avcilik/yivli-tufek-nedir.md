@@ -1,6 +1,6 @@
 ---
 title: "Yivli tüfek nedir?"
-description: "Yivli tüfeğin namlu içinde merminin dönüş kazanmasını sağlayan yiv ve setler bulunur. Bu yapı merminin uçuş kararlılığını artırır. Yivli tüfekler Türkiye’de 6136 sayılı Kan…"
+description: "Yivli tüfeğin namlu içinde merminin dönüş kazanmasını sağlayan yiv ve setler bulunur. Bu yapı merminin uçuş kararlılığını artırır."
 mainCategory: "Avcılık"
 subCategory: "Tüfekler"
 slug: "yivli-tufek-nedir"

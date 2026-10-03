@@ -1,6 +1,6 @@
 ---
 title: "Yılan Isırmasında"
-description: "Kişi mümkün olduğunca sakin tutulmalıdır."
+description: "Yılan ısırmasında kişiyi sakin tutun, sıkabilecek eşyaları çıkarın ve 112’yi arayın; yarayı kesmeyin, emmeyin veya turnike uygulamayın."
 mainCategory: "Avcılık"
 subCategory: "Doğa Güvenliği"
 slug: "yilan-isirmasinda"

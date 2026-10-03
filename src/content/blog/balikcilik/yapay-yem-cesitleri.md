@@ -1,6 +1,6 @@
 ---
 title: "Yapay Yem Çeşitleri"
-description: "Yapay Yem Çeşitleri"
+description: "Yapay Yem Çeşitleri: sert yemler, silikon yemler, metal yemler, kaşıklar ve jigler. Konuyla ilgili temel noktaları kısa ve anlaşılır biçimde inceleyin."
 mainCategory: "Balıkçılık"
 subCategory: "Yemler"
 slug: "yapay-yem-cesitleri"
