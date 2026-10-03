@@ -26,7 +26,7 @@ const articleSchema = {
   articleSection:`${post.data.mainCategory} / ${post.data.subCategory}`, keywords:post.data.keywords.join(', ')
 };
 const categorySlug = post.data.mainCategory.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replaceAll(' ','-');
-const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Bilgi Merkezi',url:'/blog'},{name:post.data.mainCategory,url:`/blog?category=${categorySlug}`},{name:post.data.subCategory,url:`/blog?category=${categorySlug}`},{name:post.data.title,url:articlePath}];
+const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'BLOG',url:'/blog'},{name:post.data.mainCategory,url:`/blog?category=${categorySlug}`},{name:post.data.subCategory,url:`/blog?category=${categorySlug}`},{name:post.data.title,url:articlePath}];
 ---
 <BaseLayout title={`${post.data.title} | Aydınlar Av Bayi`} description={post.data.description} image={post.data.image} breadcrumbs={crumbs} compactFooter ogType="article" publishedAt={post.data.publishedAt} updatedAt={post.data.updatedAt}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

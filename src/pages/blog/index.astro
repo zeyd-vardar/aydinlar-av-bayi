@@ -11,13 +11,13 @@ const groups = categoryOrder.map((mainCategory) => {
   return { mainCategory, subCategories: subCategories.map((subCategory) => ({ subCategory, posts: categoryPosts.filter((post) => post.data.subCategory === subCategory) })) };
 });
 const slugify = (value: string) => value.toLocaleLowerCase('tr-TR').replace(/ı/g,'i').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'Bilgi Merkezi',url:'/blog'}];
+const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'BLOG',url:'/blog'}];
 ---
-<BaseLayout title="Balıkçılık, Avcılık ve Kampçılık Bilgi Merkezi | Aydınlar Av Bayi" description="Balıkçılık, avcılık, kampçılık ve doğa yaşamı hakkında merak ettiğiniz konulara güvenilir ve anlaşılır bilgilerle ulaşın." breadcrumbs={crumbs} compactFooter>
+<BaseLayout title="BLOG | Aydınlar Av Bayi" description="Balıkçılık, avcılık, kampçılık ve doğa yaşamı hakkında merak ettiğiniz konulara güvenilir ve anlaşılır bilgilerle ulaşın." breadcrumbs={crumbs} compactFooter>
   <header class="knowledge-hero">
     <div class="container">
-      <span class="eyebrow light">Bilgi Merkezi</span>
-      <h1>Balıkçılık, Avcılık ve Kampçılık Bilgi Merkezi</h1>
+      <span class="eyebrow light">BLOG</span>
+      <h1>BALIKÇILIK, AVCILIK VE KAMPÇILIK BLOGU</h1>
       <p>Balıkçılık, avcılık, kampçılık ve doğa yaşamı hakkında merak ettiğiniz konulara güvenilir ve anlaşılır bilgilerle ulaşın.</p>
       <BlogSearch posts={posts} />
     </div>

@@ -36,14 +36,14 @@ const features = [
     <div class="container">
       <div class="store-frame">
         <img class="store-visual" src="/images/aydinlar-magaza.jpg" alt="Aydınlar Av Bayii mağazasının turuncu tabelalı gerçek dış cephesi" width="1682" height="784" loading="lazy" />
-        <div class="store-content"><span class="eyebrow">Gerçek mağazamız</span><h2 id="store-title">Tutkunuzu<br/>Yerinde Deneyimleyin</h2><p>Balıkçılık, avcılık ve outdoor ekipmanlarını yakından inceleyin; ihtiyacınıza uygun ürünü seçerken deneyimli ekibimizden destek alın.</p><a class="btn btn-dark" href="/iletisim">Mağazamızı Ziyaret Edin <Icon name="arrow" size={18}/></a></div>
+        <div class="store-content"><h2 id="store-title">Tutkunuzu<br/>Yerinde Deneyimleyin</h2><p>Balıkçılık, avcılık ve outdoor ekipmanlarını yakından inceleyin; ihtiyacınıza uygun ürünü seçerken deneyimli ekibimizden destek alın.</p><a class="btn btn-dark" href="/iletisim">Mağazamızı Ziyaret Edin <Icon name="arrow" size={18}/></a></div>
       </div>
     </div>
   </section>
 
   <section class="hunt-banner" aria-labelledby="hunt-title"><div class="container"><div class="content"><h2 id="hunt-title">Avcılıkta<br/>Doğayla Biriz</h2><p>Doğada güvenle ve özgürce zaman geçirmeniz için kaliteli avcılık ekipmanları mağazamızda.</p><a class="btn btn-light" href="/urun-gruplari#avcilik">Avcılık Ürünlerini İncele <Icon name="arrow" size={18}/></a></div></div></section>
 
-  <section class="home-knowledge"><div class="container"><div class="home-knowledge-head"><span class="eyebrow">Bilgi Merkezi</span><h2>Doğaya Dair Bilgi Merkezi</h2><p>Balıkçılık, avcılık ve kampçılık hakkında merak ettiğiniz bilgilere ulaşın.</p></div><nav class="home-knowledge-links" aria-label="Bilgi merkezi kategorileri"><a href="/blog?category=balikcilik"><span>01</span><strong>Balıkçılık</strong><b aria-hidden="true">→</b></a><a href="/blog?category=avcilik"><span>02</span><strong>Avcılık</strong><b aria-hidden="true">→</b></a><a href="/blog?category=kampcilik"><span>03</span><strong>Kampçılık</strong><b aria-hidden="true">→</b></a></nav><a class="btn btn-dark" href="/blog">Tüm Bilgilere Ulaş <Icon name="arrow" size={18}/></a></div></section>
+  <section class="home-knowledge"><div class="container"><div class="home-knowledge-head"><span class="eyebrow">BLOG</span><h2>Doğaya Dair BLOG</h2><p>Balıkçılık, avcılık ve kampçılık hakkında merak ettiğiniz bilgilere ulaşın.</p></div><nav class="home-knowledge-links" aria-label="BLOG kategorileri"><a href="/blog?category=balikcilik"><span>01</span><strong>Balıkçılık</strong><b aria-hidden="true">→</b></a><a href="/blog?category=avcilik"><span>02</span><strong>Avcılık</strong><b aria-hidden="true">→</b></a><a href="/blog?category=kampcilik"><span>03</span><strong>Kampçılık</strong><b aria-hidden="true">→</b></a></nav><a class="btn btn-dark" href="/blog">Tüm Bilgilere Ulaş <Icon name="arrow" size={18}/></a></div></section>
 
   <section class="home-features" aria-label="Mağaza avantajları"><div class="container"><div class="features-grid">{features.map(([icon,title,text]) => <article class="feature"><span class="feature-icon"><Icon name={icon} size={28}/></span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 </BaseLayout>
