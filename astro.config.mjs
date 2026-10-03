@@ -2,8 +2,12 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
+const site = process.env.PUBLIC_SITE_URL ?? 'https://aydinlar-av-bayi.probaly61.chatgpt.site';
+const base = process.env.PUBLIC_BASE_PATH;
+
 export default defineConfig({
-  site: 'https://aydinlar-av-bayi.probaly61.chatgpt.site',
+  site,
+  base,
   output: 'static',
   outDir: './dist/client',
   redirects: {

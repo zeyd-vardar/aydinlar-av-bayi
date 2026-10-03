@@ -1,0 +1,52 @@
+name: GitHub Pages'e yayınla
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_SITE_URL: https://zeyd-vardar.github.io/aydinlar-av-bayi
+      PUBLIC_BASE_PATH: /aydinlar-av-bayi
+      GITHUB_PAGES_BASE: /aydinlar-av-bayi
+    steps:
+      - name: Kaynağı al
+        uses: actions/checkout@v4
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Bağımlılıkları kur
+        run: npm ci
+      - name: Siteyi oluştur
+        run: npx astro build
+      - name: Pages yolu için dosyaları hazırla
+        run: node scripts/prepare-github-pages.mjs
+      - name: Pages paketi yükle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages'e yayınla
+        id: deployment
+        uses: actions/deploy-pages@v4

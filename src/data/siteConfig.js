@@ -1,8 +1,10 @@
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://aydinlar-av-bayi.probaly61.chatgpt.site';
+
 export const siteConfig = {
   name: 'Aydınlar Av Bayi',
   shortName: 'AYDINLAR',
   tagline: 'Balıkçılık, avcılık ve outdoor dünyası',
-  url: 'https://aydinlar-av-bayi.probaly61.chatgpt.site',
+  url: siteUrl,
   phone: '0549 477 01 61',
   phoneHref: '+905494770161',
   whatsapp: '905494770161',
