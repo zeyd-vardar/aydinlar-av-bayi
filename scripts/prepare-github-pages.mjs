@@ -5,6 +5,10 @@ import { fileURLToPath } from 'node:url';
 const outputDirectory = fileURLToPath(new URL('../dist/client/', import.meta.url));
 const basePath = process.env.GITHUB_PAGES_BASE ?? '/aydinlar-av-bayi';
 const publicBase = `${basePath.replace(/\/$/, '')}/`;
+const rewriteRootUrl = (match, quote, path) => {
+  if (path.startsWith('/') || path.startsWith(basePath.slice(1))) return match;
+  return `url(${quote}${publicBase}${path}${quote})`;
+};
 
 const walk = async (directory) => {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -19,14 +23,13 @@ for (const file of await walk(outputDirectory)) {
 
   const content = await readFile(file, 'utf8');
   const updated = file.endsWith('.html')
-    ? content.replace(/\b(href|src)="\/([^"]*)"/g, (match, attribute, path) => {
-      if (path.startsWith('/') || path.startsWith(basePath.slice(1))) return match;
-      return `${attribute}="${publicBase}${path}"`;
-    })
-    : content.replace(/url\((['"]?)\/([^'")]+)\1\)/g, (match, quote, path) => {
-      if (path.startsWith('/') || path.startsWith(basePath.slice(1))) return match;
-      return `url(${quote}${publicBase}${path}${quote})`;
-    });
+    ? content
+      .replace(/\b(href|src)="\/([^"]*)"/g, (match, attribute, path) => {
+        if (path.startsWith('/') || path.startsWith(basePath.slice(1))) return match;
+        return `${attribute}="${publicBase}${path}"`;
+      })
+      .replace(/url\((['"]?)\/([^'")]+)\1\)/g, rewriteRootUrl)
+    : content.replace(/url\((['"]?)\/([^'")]+)\1\)/g, rewriteRootUrl);
 
   if (updated !== content) await writeFile(file, updated);
 }
