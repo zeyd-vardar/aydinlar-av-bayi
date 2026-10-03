@@ -152,11 +152,12 @@ h1,h2,h3 { line-height:1.08; letter-spacing:-.035em; }
 .catalog-title { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:end; margin-bottom:34px; }
 .catalog-title h2 { font-size:clamp(2.2rem,3.8vw,3.6rem); margin:8px 0 0; }
 .catalog-title > p { max-width:590px; margin:0 0 4px; color:#69716b; font-size:.9rem; }
-.catalog-items { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
-.catalog-items a { min-height:88px; padding:18px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; border:1px solid rgba(17,23,19,.1); border-radius:4px; background:white; font-size:.86rem; font-weight:680; transition:.2s ease; }
-.catalog-items a svg { color:#778179; }
-.catalog-items a:hover { color:white; background:var(--forest); border-color:var(--sand); transform:translateY(-2px); }
-.catalog-items a:hover svg { color:white; }
+.catalog-items { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:0; padding:0; list-style:none; }
+.catalog-items li { min-height:88px; padding:18px 20px; display:flex; align-items:center; border:1px solid rgba(17,23,19,.1); border-radius:4px; background:white; font-size:.86rem; font-weight:680; }
+.catalog-notice { padding:50px 0; color:white; background:var(--forest); }
+.catalog-notice .container { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:center; }
+.catalog-notice .eyebrow { color:var(--sand); }
+.catalog-notice p { max-width:690px; margin:0; font-family:var(--serif); font-size:clamp(1.45rem,2.6vw,2.35rem); line-height:1.25; }
 .product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .product-card { border:1px solid var(--line); background:white; border-radius:5px; overflow:hidden; transition:.25s ease; }
 .product-card:hover { transform:translateY(-4px); box-shadow:0 18px 38px rgba(17,25,19,.1); }
@@ -447,7 +448,8 @@ h1,h2,h3 { line-height:1.08; letter-spacing:-.035em; }
   .page-hero { min-height:390px; padding-top:125px; }
   .catalog-title { gap:14px; }
   .catalog-items { grid-template-columns:1fr 1fr; }
-  .catalog-items a { min-height:82px; font-size:.86rem; }
+  .catalog-items li { min-height:82px; font-size:.86rem; }
+  .catalog-notice .container { grid-template-columns:1fr; gap:12px; }
   .gallery-item,.gallery-item:nth-child(1),.gallery-item:nth-child(5) { grid-column:span 12; min-height:280px; }
   .map-placeholder { min-height:400px; }
   .map-embed iframe { min-height:400px; }
