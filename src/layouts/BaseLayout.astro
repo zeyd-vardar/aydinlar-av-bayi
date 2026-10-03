@@ -9,24 +9,42 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   breadcrumbs?: { name: string; url: string }[];
   compactFooter?: boolean;
   ogType?: 'website' | 'article';
   publishedAt?: Date;
   updatedAt?: Date;
+  author?: string;
+  articleSection?: string;
+  articleTags?: string[];
 }
 const {
   title,
   description,
   image = '/og.jpg',
+  imageAlt = `${siteConfig.name} — ${siteConfig.tagline}`,
   breadcrumbs = [],
   compactFooter = false,
   ogType = 'website',
   publishedAt,
   updatedAt,
+  author,
+  articleSection,
+  articleTags = [],
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, siteConfig.url);
 const imageUrl = new URL(image, siteConfig.url);
+const socialImageDetails: Record<
+  string,
+  { width: number; height: number; type: `image/${string}` }
+> = {
+  '/og.jpg': { width: 1200, height: 627, type: 'image/jpeg' },
+  '/images/category-atlas.jpg': { width: 2000, height: 711, type: 'image/jpeg' },
+  '/images/hero-fishing.jpg': { width: 1920, height: 1080, type: 'image/jpeg' },
+  '/images/hunting-banner.jpg': { width: 1920, height: 800, type: 'image/jpeg' },
+};
+const socialImage = socialImageDetails[image];
 const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'SportingGoodsStore',
@@ -121,7 +139,41 @@ const breadcrumbSchema = breadcrumbs.length
     />
     <meta
       property="og:image"
-      content={imageUrl}
+      content={imageUrl.href}
+    />
+    <meta
+      property="og:image:url"
+      content={imageUrl.href}
+    />
+    {
+      imageUrl.protocol === 'https:' && (
+        <meta
+          property="og:image:secure_url"
+          content={imageUrl.href}
+        />
+      )
+    }
+    {
+      socialImage && (
+        <>
+          <meta
+            property="og:image:type"
+            content={socialImage.type}
+          />
+          <meta
+            property="og:image:width"
+            content={String(socialImage.width)}
+          />
+          <meta
+            property="og:image:height"
+            content={String(socialImage.height)}
+          />
+        </>
+      )
+    }
+    <meta
+      property="og:image:alt"
+      content={imageAlt}
     />
     {
       ogType === 'article' && publishedAt && (
@@ -139,6 +191,30 @@ const breadcrumbSchema = breadcrumbs.length
         />
       )
     }
+    {
+      ogType === 'article' && author && (
+        <meta
+          name="author"
+          content={author}
+        />
+      )
+    }
+    {
+      ogType === 'article' && articleSection && (
+        <meta
+          property="article:section"
+          content={articleSection}
+        />
+      )
+    }
+    {
+      ogType === 'article' && articleTags.map((tag) => (
+        <meta
+          property="article:tag"
+          content={tag}
+        />
+      ))
+    }
     <meta
       name="twitter:card"
       content="summary_large_image"
@@ -153,7 +229,11 @@ const breadcrumbSchema = breadcrumbs.length
     />
     <meta
       name="twitter:image"
-      content={imageUrl}
+      content={imageUrl.href}
+    />
+    <meta
+      name="twitter:image:alt"
+      content={imageAlt}
     />
     <slot name="head" />
     <script

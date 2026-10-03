@@ -18,9 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_SITE_URL: https://zeyd-vardar.github.io/aydinlar-av-bayi
-      PUBLIC_BASE_PATH: /aydinlar-av-bayi
-      GITHUB_PAGES_BASE: /aydinlar-av-bayi
+      PUBLIC_SITE_URL: https://aydinlaravbayii.com
     steps:
       - name: Kaynağı al
         uses: actions/checkout@v4
@@ -33,8 +31,6 @@ jobs:
         run: npm ci
       - name: Siteyi oluştur
         run: npx astro build
-      - name: Pages yolu için dosyaları hazırla
-        run: node scripts/prepare-github-pages.mjs
       - name: Pages paketi yükle
         uses: actions/upload-pages-artifact@v3
         with:

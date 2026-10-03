@@ -1,5 +1,5 @@
 const siteUrl =
-  import.meta.env.PUBLIC_SITE_URL ?? 'https://aydinlar-av-bayi.probaly61.chatgpt.site';
+  import.meta.env.PUBLIC_SITE_URL ?? 'https://aydinlaravbayii.com';
 
 export const siteConfig = {
   name: 'Aydınlar Av Bayi',

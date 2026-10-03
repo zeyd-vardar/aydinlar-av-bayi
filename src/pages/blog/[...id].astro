@@ -87,11 +87,15 @@ const crumbs = [
   title={seoTitle}
   description={post.data.description}
   image={post.data.image}
+  imageAlt={post.data.imageAlt}
   breadcrumbs={crumbs}
   compactFooter
   ogType="article"
   publishedAt={post.data.publishedAt}
   updatedAt={post.data.updatedAt}
+  author={post.data.author}
+  articleSection={post.data.mainCategory}
+  articleTags={post.data.tags}
 >
   <script
     slot="head"
