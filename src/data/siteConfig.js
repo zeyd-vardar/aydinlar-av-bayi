@@ -22,6 +22,6 @@ export const navLinks = [
   { href: '/urun-gruplari', label: 'Ürün Grupları' },
   { href: '/markalar', label: 'Markalar' },
   { href: '/blog', label: 'Blog' },
-  { href: '/galeri', label: 'Galeri' },
+  { href: '/magazamiz', label: 'Mağazamız' },
   { href: '/iletisim', label: 'İletişim' }
 ];

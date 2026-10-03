@@ -5,5 +5,5 @@ const { category } = Astro.props;
 <a class:list={['category-card', `tone-${category.tone}`]} href={`/urun-gruplari#${category.slug}`}>
   <span class="category-image" role="img" aria-label={`${category.title} görseli`}></span>
   <span class="category-shade"></span>
-  <span class="category-copy"><span><small>{category.number}</small><strong>{category.title}</strong></span><span class="circle-arrow"><Icon name="arrow" size={17}/></span></span>
+  <span class="category-copy"><span><strong>{category.title}</strong></span><span class="circle-arrow"><Icon name="arrow" size={17}/></span></span>
 </a>

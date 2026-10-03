@@ -1,8 +1,8 @@
 export const categories = [
-  { slug: 'balikcilik', title: 'Balıkçılık Ekipmanları', short: 'Kamıştan yeme, suyla aranızdaki tüm bağ.', tone: 'water', number: '01' },
-  { slug: 'avcilik', title: 'Avcılık Ekipmanları', short: 'Doğaya saygılı, güvenli ve hazırlıklı.', tone: 'forest', number: '02' },
-  { slug: 'outdoor', title: 'Outdoor Giyim', short: 'Değişen koşullara uyum sağlayan katmanlar.', tone: 'earth', number: '03' },
-  { slug: 'kamp', title: 'Kamp Ekipmanları', short: 'Açık havada konforlu bir düzen için.', tone: 'night', number: '04' }
+  { slug: 'balikcilik', title: 'Balıkçılık Ekipmanları', short: 'Kamıştan yeme, suyla aranızdaki tüm bağ.', tone: 'water' },
+  { slug: 'avcilik', title: 'Avcılık Ekipmanları', short: 'Doğaya saygılı, güvenli ve hazırlıklı.', tone: 'forest' },
+  { slug: 'outdoor', title: 'Outdoor Giyim', short: 'Değişen koşullara uyum sağlayan katmanlar.', tone: 'earth' },
+  { slug: 'kamp', title: 'Kamp Ekipmanları', short: 'Açık havada konforlu bir düzen için.', tone: 'night' }
 ];
 
 export const categoryGroups = [

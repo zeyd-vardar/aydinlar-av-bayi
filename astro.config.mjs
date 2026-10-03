@@ -6,6 +6,9 @@ export default defineConfig({
   site: 'https://aydinlar-av-bayi.probaly61.chatgpt.site',
   output: 'static',
   outDir: './dist/client',
+  redirects: {
+    '/galeri': '/magazamiz'
+  },
   integrations: [sitemap()],
   vite: { plugins: [tailwindcss()] }
 });

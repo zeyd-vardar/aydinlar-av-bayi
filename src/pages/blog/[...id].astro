@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 }
 const { post, allPosts } = Astro.props;
 const { Content, headings } = await render(post);
+const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 const related = allPosts.filter((item) => item.id !== post.id && item.data.mainCategory === post.data.mainCategory).sort((a,b) => Number(b.data.subCategory === post.data.subCategory) - Number(a.data.subCategory === post.data.subCategory)).slice(0,5);
 const published = post.data.publishedAt.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
 const updated = post.data.updatedAt.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
@@ -32,7 +33,10 @@ const crumbs = [{name:'Ana Sayfa',url:'/'},{name:'BLOG',url:'/blog'},{name:post.
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <article class="blog-article">
     <header class="article-header"><div class="container"><BlogBreadcrumb mainCategory={post.data.mainCategory} subCategory={post.data.subCategory} title={post.data.title}/><span class="eyebrow light">{post.data.mainCategory} · {post.data.subCategory}</span><h1>{post.data.title}</h1><p class="article-intro">{post.data.description}</p><div class="article-meta"><span>{post.data.author}</span><span>{published}</span><span>{post.data.readingTime} dk okuma</span></div></div></header>
-    <div class="article-layout container"><aside><TableOfContents headings={headings}/></aside><div class="article-main"><div class="article-updated">Yayın: {published} · Son güncelleme: {updated}</div>{post.data.officialNotice && <aside class="official-notice" role="note"><strong>Resmî bilgi notu</strong><p>Güncel resmi düzenlemeyi kontrol edin.</p></aside>}<div class="blog-prose"><Content /></div>{post.data.sources.length > 0 && <section class="article-sources" aria-labelledby="sources-title"><h2 id="sources-title">Kaynaklar</h2><ul>{post.data.sources.map((source) => <li><a href={source.url} rel="noopener noreferrer" target="_blank"><strong>{source.institution}</strong><span>{source.page}</span></a></li>)}</ul></section>}</div></div>
+    <div class:list={['article-layout container', {'without-toc':tocHeadings.length === 0}]}>
+      {tocHeadings.length > 0 && <aside><TableOfContents headings={tocHeadings}/></aside>}
+      <div class="article-main"><div class="article-updated">Yayın: {published} · Son güncelleme: {updated}</div>{post.data.officialNotice && <aside class="official-notice" role="note"><strong>Resmî bilgi notu</strong><p>Güncel resmi düzenlemeyi kontrol edin.</p></aside>}<div class="blog-prose"><Content /></div>{post.data.sources.length > 0 && <section class="article-sources" aria-labelledby="sources-title"><h2 id="sources-title">Kaynaklar</h2><ul>{post.data.sources.map((source) => <li><a href={source.url} rel="noopener noreferrer" target="_blank"><strong>{source.institution}</strong><span>{source.page}</span></a></li>)}</ul></section>}</div>
+    </div>
   </article>
   <RelatedArticles posts={related}/>
 </BaseLayout>
