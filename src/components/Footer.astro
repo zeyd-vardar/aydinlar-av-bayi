@@ -14,7 +14,17 @@ const { compact = false } = Astro.props;
           class="brand light"
           href={withBase('/')}
         >
-          <span class="brand-mark">A</span>
+          <span class="brand-logo-frame">
+            <img
+              class="brand-logo"
+              src={withBase(siteConfig.logoPath)}
+              width={siteConfig.logo.width}
+              height={siteConfig.logo.height}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
           <span>
             <b>{siteConfig.shortName}</b>
             <small>AV • BALIK • OUTDOOR</small>
@@ -49,7 +59,17 @@ const { compact = false } = Astro.props;
             class="brand light"
             href={withBase('/')}
           >
-            <span class="brand-mark">A</span>
+            <span class="brand-logo-frame">
+              <img
+                class="brand-logo"
+                src={withBase(siteConfig.logoPath)}
+                width={siteConfig.logo.width}
+                height={siteConfig.logo.height}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
             <span>
               <b>{siteConfig.shortName}</b>
               <small>AV • BALIK • OUTDOOR</small>

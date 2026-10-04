@@ -8,7 +8,7 @@ export const siteConfig = {
   shortName: 'AYDINLAR',
   tagline: 'Balıkçılık, avcılık ve outdoor dünyası',
   url: siteUrl,
-  logoPath: '/images/brand/aydinlar-av-bayii-logo.png',
+  logoPath: '/images/brand/aydinlar-av-bayii-deer-silhouette.png',
   logo: { width: 471, height: 512, type: 'image/png' },
   phone: '0549 477 01 61',
   phoneHref: '+905494770161',
