@@ -1093,7 +1093,7 @@ h3 {
 }
 .value-card h3 {
   font-size: 1.35rem;
-  margin: 48px 0 12px;
+  margin: 0 0 12px;
 }
 .value-card p {
   color: #69716b;
@@ -2007,7 +2007,7 @@ h3 {
 }
 .home-knowledge-links a {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 16px;
   min-height: 92px;
@@ -2018,10 +2018,6 @@ h3 {
 }
 .home-knowledge-links a:hover {
   background: white;
-}
-.home-knowledge-links span {
-  color: #606961;
-  font-size: 0.65rem;
 }
 .home-knowledge-links strong {
   font-size: 1.15rem;
