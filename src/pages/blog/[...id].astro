@@ -59,6 +59,7 @@ const productGroupFor: Record<string, { label: string; href: string }> = {
   Kampçılık: { label: 'Kamp ürün gruplarını inceleyin', href: '/urun-gruplari#kamp' },
 };
 const productGroup = productGroupFor[post.data.mainCategory];
+const logoUrl = new URL(withBase(siteConfig.logoPath), siteConfig.url).href;
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -69,7 +70,13 @@ const articleSchema = {
   publisher: {
     '@type': 'Organization',
     name: siteConfig.name,
-    logo: { '@type': 'ImageObject', url: new URL(withBase('/favicon.svg'), siteConfig.url).href },
+    logo: {
+      '@type': 'ImageObject',
+      url: logoUrl,
+      width: siteConfig.logo.width,
+      height: siteConfig.logo.height,
+      encodingFormat: siteConfig.logo.type,
+    },
   },
   datePublished: post.data.publishedAt.toISOString(),
   dateModified: post.data.updatedAt.toISOString(),

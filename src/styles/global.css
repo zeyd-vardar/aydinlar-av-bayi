@@ -249,6 +249,24 @@ h3 {
   gap: 11px;
   min-width: max-content;
 }
+.brand-logo-frame {
+  width: 42px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  padding: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 182, 111, 0.72);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.94);
+}
+.brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .brand-mark {
   width: 37px;
   height: 37px;

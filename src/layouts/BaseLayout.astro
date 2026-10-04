@@ -51,6 +51,14 @@ const socialImageDetails: Record<
   '/images/hunting-banner.jpg': { width: 1920, height: 800, type: 'image/jpeg' },
 };
 const socialImage = socialImageDetails[image];
+const logoUrl = new URL(withBase(siteConfig.logoPath), siteConfig.url).href;
+const logoImage = {
+  '@type': 'ImageObject',
+  url: logoUrl,
+  width: siteConfig.logo.width,
+  height: siteConfig.logo.height,
+  encodingFormat: siteConfig.logo.type,
+};
 const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'SportingGoodsStore',
@@ -61,7 +69,7 @@ const localBusiness = {
   url: siteConfig.url,
   telephone: siteConfig.phoneHref,
   image: imageUrl.href,
-  logo: new URL(withBase('/favicon.svg'), siteConfig.url).href,
+  logo: logoImage,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C',

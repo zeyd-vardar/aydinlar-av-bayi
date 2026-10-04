@@ -16,9 +16,16 @@ const headerLinks = navLinks.filter((link) => link.href !== storePath);
       class="brand"
       href={withBase('/')}
     >
-      <span class="brand-mark">A</span><span
-        ><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span
-      >
+      <span class="brand-logo-frame"
+        ><img
+          class="brand-logo"
+          src={withBase(siteConfig.logoPath)}
+          width={siteConfig.logo.width}
+          height={siteConfig.logo.height}
+          alt=""
+          decoding="async"
+        /></span
+      ><span><b>{siteConfig.shortName}</b><small>AV • BALIK • OUTDOOR</small></span>
     </a>
     <nav
       class="desktop-nav"
