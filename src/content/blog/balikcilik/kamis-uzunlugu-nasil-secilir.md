@@ -8,7 +8,7 @@ tags: ["kamış","uzunluğu","nasıl","seçilir","balıkçılık","olta","kamı�
 keywords: ["kamış","uzunluğu","nasıl","seçilir","balıkçılık","olta","kamışları"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

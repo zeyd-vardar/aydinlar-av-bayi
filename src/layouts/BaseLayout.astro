@@ -18,6 +18,8 @@ interface Props {
   author?: string;
   articleSection?: string;
   articleTags?: string[];
+  includeLocalBusiness?: boolean;
+  includeWebSite?: boolean;
 }
 const {
   title,
@@ -32,6 +34,8 @@ const {
   author,
   articleSection,
   articleTags = [],
+  includeLocalBusiness = false,
+  includeWebSite = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, siteConfig.url);
 const imageUrl = new URL(image, siteConfig.url);
@@ -49,6 +53,8 @@ const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'SportingGoodsStore',
   name: siteConfig.name,
+  legalName: siteConfig.name,
+  alternateName: 'Trabzon Av Bayi',
   description: siteConfig.tagline,
   url: siteConfig.url,
   telephone: siteConfig.phoneHref,
@@ -72,6 +78,13 @@ const localBusiness = {
     },
   ],
   sameAs: Object.values(siteConfig.socials).filter((url) => url !== '#'),
+};
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteConfig.name,
+  alternateName: 'Trabzon Av Bayi',
+  url: siteConfig.url,
 };
 const breadcrumbSchema = breadcrumbs.length
   ? {
@@ -208,12 +221,13 @@ const breadcrumbSchema = breadcrumbs.length
       )
     }
     {
-      ogType === 'article' && articleTags.map((tag) => (
-        <meta
-          property="article:tag"
-          content={tag}
-        />
-      ))
+      ogType === 'article' &&
+        articleTags.map((tag) => (
+          <meta
+            property="article:tag"
+            content={tag}
+          />
+        ))
     }
     <meta
       name="twitter:card"
@@ -236,10 +250,22 @@ const breadcrumbSchema = breadcrumbs.length
       content={imageAlt}
     />
     <slot name="head" />
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(localBusiness)}
-    />
+    {
+      includeLocalBusiness && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(localBusiness)}
+        />
+      )
+    }
+    {
+      includeWebSite && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(websiteSchema)}
+        />
+      )
+    }
     {
       breadcrumbSchema && (
         <script

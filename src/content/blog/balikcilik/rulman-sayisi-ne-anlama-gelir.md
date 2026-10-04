@@ -8,7 +8,7 @@ tags: ["rulman","sayısı","anlama","gelir","balıkçılık","olta","makineleri"
 keywords: ["rulman","sayısı","anlama","gelir","balıkçılık","olta","makineleri"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

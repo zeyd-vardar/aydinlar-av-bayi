@@ -7,36 +7,29 @@ const crumbs = [
   { name: 'Mağazamız', url: '/magazamiz' },
 ];
 const items = [
-  { src: '/images/galer1.jpg' },
-  { src: '/images/galeri2.jpg' },
-  { src: '/images/galeri3.jpg' },
-  { src: '/images/galeri4.jpg' },
-  { src: '/images/galeri5.jpg' },
-  { src: '/images/galeri6.jpg' },
-  { src: '/images/galeri7.jpg' },
-  { src: '/images/galeri8.jpg' },
-  { src: '/images/galeri9.jpg' },
-  { src: '/images/galeri10.jpg' },
-  { src: '/images/galeri11.jpg' },
-  { src: '/images/galeri12.jpg' },
-  { src: '/images/galeri13.jpg' },
-  { src: '/images/galeri14.jpg' },
-  { src: '/images/galeri15.jpg' },
-  { src: '/images/galeri16.jpg' },
-  { src: '/images/galeri17.jpg' },
+  { src: '/images/galer1.webp', width: 1386, height: 1046 },
+  { src: '/images/galeri2.webp', width: 1386, height: 650 },
+  { src: '/images/galeri3.webp', width: 832, height: 1102 },
+  { src: '/images/galeri4.webp', width: 830, height: 1098 },
+  { src: '/images/galeri5.webp', width: 1396, height: 650 },
+  { src: '/images/galeri6.webp', width: 832, height: 1100 },
+  { src: '/images/galeri7.webp', width: 500, height: 1104 },
+  { src: '/images/galeri8.webp', width: 826, height: 1100 },
+  { src: '/images/galeri9.webp', width: 830, height: 1106 },
+  { src: '/images/galeri10.webp', width: 742, height: 990 },
+  { src: '/images/galeri11.webp', width: 824, height: 1098 },
+  { src: '/images/galeri12.webp', width: 830, height: 1104 },
+  { src: '/images/galeri13.webp', width: 828, height: 1100 },
+  { src: '/images/galeri14.webp', width: 826, height: 1108 },
+  { src: '/images/galeri15.webp', width: 826, height: 1102 },
+  { src: '/images/galeri16.webp', width: 826, height: 1096 },
+  { src: '/images/galeri17.webp', width: 1400, height: 638 },
 ];
-const galleryOverlay = 'linear-gradient(180deg,transparent 45%,rgba(6,11,8,.78))';
-const galleryStyle = (image: string) =>
-  [
-    `background-image:${galleryOverlay},url('${image}')`,
-    'background-size:cover',
-    'background-position:center',
-  ].join(';');
 ---
 
 <BaseLayout
-  title="Mağazamız | Aydınlar Av Bayi"
-  description="Trabzon Ortahisar'daki Aydınlar Av Bayi mağazasını; balıkçılık, avcılık, kamp ve outdoor ürünlerinin yer aldığı fotoğraf galerisiyle yakından inceleyin."
+  title="Mağazamız | Aydınlar Av Bayii"
+  description="Trabzon Ortahisar'daki Aydınlar Av Bayii mağazasını; balıkçılık, avcılık, kamp ve outdoor ürünlerinin yer aldığı fotoğraf galerisiyle yakından inceleyin."
   breadcrumbs={crumbs}
   compactFooter
 >
@@ -44,7 +37,7 @@ const galleryStyle = (image: string) =>
     eyebrow="Mağazamız"
     title="Mağazadan ve doğadan kareler"
     text="Ekipman, mağaza ve açık hava dünyamızı yakından keşfedin."
-    image="/images/hero-fishing.jpg"
+    image="/images/hero-fishing.webp"
     position="center 60%"
   />
   <section class="section">
@@ -62,8 +55,16 @@ const galleryStyle = (image: string) =>
               target="_blank"
               rel="noopener"
               aria-label={`Mağazamızdan ${index + 1}. fotoğrafı aç`}
-              style={galleryStyle(item.src)}
-            />
+            >
+              <img
+                src={item.src}
+                alt={`Aydınlar Av Bayii mağazasından ${index + 1}. görünüm`}
+                width={item.width}
+                height={item.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
           ))
         }
       </div>

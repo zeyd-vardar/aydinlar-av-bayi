@@ -8,7 +8,7 @@ tags: ["kamp","botu","nasıl","seçilir","kampçılık","giyimi"]
 keywords: ["kamp","botu","nasıl","seçilir","kampçılık","giyimi"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/category-atlas.jpg"
 imageAlt: "Dağlık alanda kamp görünümü"
 readingTime: 1

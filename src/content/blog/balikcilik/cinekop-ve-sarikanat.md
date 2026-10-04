@@ -8,7 +8,7 @@ tags: ["çinekop","sarıkanat","balıkçılık","balık","türleri"]
 keywords: ["çinekop","sarıkanat","balıkçılık","balık","türleri"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

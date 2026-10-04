@@ -8,7 +8,7 @@ tags: ["avda","hangi","tüfeğin","kullanılabileceğini","kim","belirler","avc�
 keywords: ["avda","hangi","tüfeğin","kullanılabileceğini","kim","belirler","avcılık","türkiye","mevzuatı"]
 publishedAt: "2026-10-03"
 updatedAt: "2026-10-03"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hunting-banner.jpg"
 imageAlt: "Doğada avcılık ekipmanlarıyla outdoor kullanıcı"
 readingTime: 1

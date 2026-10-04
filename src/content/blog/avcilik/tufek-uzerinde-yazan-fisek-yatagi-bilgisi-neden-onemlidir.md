@@ -8,7 +8,7 @@ tags: ["tüfek","üzerinde","yazan","fişek","yatağı","bilgisi","neden","önem
 keywords: ["tüfek","üzerinde","yazan","fişek","yatağı","bilgisi","neden","önemlidir","avcılık","tüfekler"]
 publishedAt: "2026-10-03"
 updatedAt: "2026-10-03"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hunting-banner.jpg"
 imageAlt: "Doğada avcılık ekipmanlarıyla outdoor kullanıcı"
 readingTime: 1

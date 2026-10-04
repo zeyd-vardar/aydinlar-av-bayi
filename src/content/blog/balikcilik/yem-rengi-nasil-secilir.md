@@ -8,7 +8,7 @@ tags: ["yem","rengi","nasıl","seçilir","balıkçılık","yemler"]
 keywords: ["yem","rengi","nasıl","seçilir","balıkçılık","yemler"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

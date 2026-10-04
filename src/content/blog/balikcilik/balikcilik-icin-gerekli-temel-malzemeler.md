@@ -8,7 +8,7 @@ tags: ["balıkçılık","için","gerekli","temel","malzemeler","başlangıç","b
 keywords: ["balıkçılık","için","gerekli","temel","malzemeler","başlangıç","bilgileri"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

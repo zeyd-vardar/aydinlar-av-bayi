@@ -8,7 +8,7 @@ tags: ["tüfeği","satın","alırken","nelere","dikkat","edilmelidir","avcılık
 keywords: ["tüfeği","satın","alırken","nelere","dikkat","edilmelidir","avcılık","tüfekler"]
 publishedAt: "2026-10-03"
 updatedAt: "2026-10-03"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hunting-banner.jpg"
 imageAlt: "Doğada avcılık ekipmanlarıyla outdoor kullanıcı"
 readingTime: 1

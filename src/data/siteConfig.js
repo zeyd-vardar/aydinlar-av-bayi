@@ -1,8 +1,7 @@
-const siteUrl =
-  import.meta.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
 
 export const siteConfig = {
-  name: 'Aydınlar Av Bayi',
+  name: 'Aydınlar Av Bayii',
   shortName: 'AYDINLAR',
   tagline: 'Balıkçılık, avcılık ve outdoor dünyası',
   url: siteUrl,

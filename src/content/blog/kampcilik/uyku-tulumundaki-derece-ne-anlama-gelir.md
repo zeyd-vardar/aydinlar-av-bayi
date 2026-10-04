@@ -8,7 +8,7 @@ tags: ["uyku","tulumundaki","derece","anlama","gelir","kampçılık","tulumu"]
 keywords: ["uyku","tulumundaki","derece","anlama","gelir","kampçılık","tulumu"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/category-atlas.jpg"
 imageAlt: "Dağlık alanda kamp görünümü"
 readingTime: 1

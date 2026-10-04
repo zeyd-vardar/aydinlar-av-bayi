@@ -8,7 +8,7 @@ tags: ["hafif","takım","balıkçılığı","nedir","balıkçılık","yöntemler
 keywords: ["hafif","takım","balıkçılığı","nedir","balıkçılık","yöntemleri"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

@@ -8,7 +8,7 @@ tags: ["örgü","misina","balıkçılık"]
 keywords: ["örgü","misina","balıkçılık"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

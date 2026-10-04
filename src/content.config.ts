@@ -14,7 +14,7 @@ const blog = defineCollection({
     keywords: z.array(z.string()),
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date(),
-    author: z.string().default('Aydınlar Av Bayi'),
+    author: z.string().default('Aydınlar Av Bayii'),
     image: z.string(),
     imageAlt: z.string(),
     readingTime: z.number().int().positive(),

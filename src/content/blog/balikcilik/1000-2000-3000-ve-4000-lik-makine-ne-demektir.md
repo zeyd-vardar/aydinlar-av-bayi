@@ -8,7 +8,7 @@ tags: ["1000","2000","3000","4000","lik","makine","demektir","balıkçılık","o
 keywords: ["1000","2000","3000","4000","lik","makine","demektir","balıkçılık","olta","makineleri"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

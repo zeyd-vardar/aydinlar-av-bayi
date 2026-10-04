@@ -8,7 +8,7 @@ tags: ["olta","makinesi","nedir","balıkçılık","makineleri"]
 keywords: ["olta","makinesi","nedir","balıkçılık","makineleri"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1

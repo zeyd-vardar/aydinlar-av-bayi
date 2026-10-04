@@ -8,7 +8,7 @@ tags: ["dürbün","mercek","çapı","avcılık"]
 keywords: ["dürbün","mercek","çapı","avcılık"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hunting-banner.jpg"
 imageAlt: "Doğada dürbünle gözlem yapan outdoor kullanıcısı"
 readingTime: 1

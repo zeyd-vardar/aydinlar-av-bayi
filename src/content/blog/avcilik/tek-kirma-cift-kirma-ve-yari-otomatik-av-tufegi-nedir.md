@@ -8,7 +8,7 @@ tags: ["tek","kırma","çift","yarı","otomatik","tüfeği","nedir","avcılık",
 keywords: ["tek","kırma","çift","yarı","otomatik","tüfeği","nedir","avcılık","tüfekler"]
 publishedAt: "2026-10-03"
 updatedAt: "2026-10-03"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hunting-banner.jpg"
 imageAlt: "Doğada avcılık ekipmanlarıyla outdoor kullanıcı"
 readingTime: 1

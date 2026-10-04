@@ -20,7 +20,9 @@ const heroSlides = [
     text: 'Denizde, gölde, nehirde… Doğru ekipmanla her atış yeni bir heyecana dönüşür.',
     href: '/urun-gruplari#balikcilik',
     cta: 'Balıkçılık Ürünleri',
-    image: '/images/hero-fishing.jpg',
+    image: '/images/hero-fishing.webp',
+    width: 1920,
+    height: 1080,
     imageClass: 'hero-image-fishing',
     alt: 'Gün batımında kayalık kıyıda olta atan balıkçı',
   },
@@ -32,7 +34,9 @@ const heroSlides = [
     text: 'Doğaya saygılı, güvenli ve hazırlıklı bir deneyim için aradığınız ekipmanlar burada.',
     href: '/urun-gruplari#avcilik',
     cta: 'Avcılık Ürünleri',
-    image: '/images/hunting-banner.jpg',
+    image: '/images/hunting-banner.webp',
+    width: 1920,
+    height: 800,
     imageClass: 'hero-image-hunting',
     alt: 'Dağlık arazide avcılık yapan doğa tutkunu',
   },
@@ -44,7 +48,9 @@ const heroSlides = [
     text: 'Değişen hava ve arazi koşullarında konforunuzu koruyan dayanıklı outdoor ürünlerini keşfedin.',
     href: '/urun-gruplari#outdoor',
     cta: 'Outdoor Ürünleri',
-    image: '/images/hero-outdoor.jpg',
+    image: '/images/hero-outdoor.webp',
+    width: 1672,
+    height: 941,
     imageClass: 'hero-image-outdoor',
     alt: 'Dağ manzarasında yürüyüş yapan iki outdoor tutkunu',
   },
@@ -56,7 +62,9 @@ const heroSlides = [
     text: 'Çadırdan aydınlatmaya, açık havada konforlu ve keyifli bir düzen için ihtiyacınız olan her şey.',
     href: '/urun-gruplari#kamp',
     cta: 'Kamp Ürünleri',
-    image: '/images/hero-camp.jpg',
+    image: '/images/hero-camp.webp',
+    width: 1672,
+    height: 941,
     imageClass: 'hero-image-camp',
     alt: 'Gün batımında dağ kampı, çadır ve kamp ateşi',
   },
@@ -64,8 +72,9 @@ const heroSlides = [
 ---
 
 <BaseLayout
-  title="Trabzon Av Bayi | Balıkçılık, Avcılık ve Kamp"
-  description="Trabzon Ortahisar'da balıkçılık, avcılık ve kamp ekipmanları; güvenilir markalar ve ürün seçimine yardımcı uzman destek için Aydınlar Av Bayi'ni keşfedin."
+  title="Aydınlar Av Bayii | Balıkçılık, Avcılık ve Kamp"
+  description="Trabzon Ortahisar'da balıkçılık, avcılık ve kamp ekipmanları; güvenilir markalar ve ürün seçimine yardımcı uzman destek için Aydınlar Av Bayii'ni keşfedin."
+  includeWebSite
   compactFooter
 >
   <section
@@ -88,11 +97,15 @@ const heroSlides = [
             aria-hidden={index === 0 ? 'false' : 'true'}
             data-hero-slide
           >
-            <div
+            <img
               class:list={['hero-image', slide.imageClass]}
-              style={`background-image:url('${slide.image}')`}
-              role="img"
-              aria-label={slide.alt}
+              src={slide.image}
+              alt={slide.alt}
+              width={slide.width}
+              height={slide.height}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchpriority={index === 0 ? 'high' : 'low'}
+              decoding="async"
             />
             <div class="container hero-copy">
               <span class="eyebrow light">{slide.eyebrow}</span>
@@ -235,11 +248,12 @@ const heroSlides = [
       <div class="store-frame">
         <img
           class="store-visual"
-          src="/images/aydinlar-magaza.jpg"
+          src="/images/aydinlar-magaza.webp"
           alt="Aydınlar Av Bayii mağazasının turuncu tabelalı gerçek dış cephesi"
           width="1682"
           height="784"
           loading="lazy"
+          decoding="async"
         />
         <div class="store-content">
           <h2 id="store-title">Tutkunuzu<br />Yerinde Deneyimleyin</h2><p>

@@ -6,7 +6,7 @@ import { extname, join, relative, sep } from 'node:path';
 
 const site = process.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
 const base = process.env.PUBLIC_BASE_PATH;
-const siteLastUpdated = new Date('2026-10-03');
+const siteLastUpdated = new Date('2026-10-04');
 
 function getBlogLastmodDates(directory) {
   const dates = new Map();

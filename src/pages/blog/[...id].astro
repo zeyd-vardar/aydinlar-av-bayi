@@ -29,9 +29,21 @@ const related = allPosts
 const published = formatTurkishDate(post.data.publishedAt);
 const updated = formatTurkishDate(post.data.updatedAt);
 const articlePath = getBlogPostPath(post.data.mainCategory, post.data.slug);
-const articleUrl = new URL(articlePath, siteConfig.url).href;
-const seoTitle =
-  post.data.title.length > 48 ? post.data.title : `${post.data.title} | Aydınlar Av Bayi`;
+const articleUrl = new URL(Astro.url.pathname, siteConfig.url).href;
+const conciseSeoTitles: Record<string, string> = {
+  'turkiye-de-ruhsatsiz-atesli-silah-bulundurmak-veya-tasimak-yasal-midir':
+    'Ruhsatsız Silah Taşımak Yasal mı?',
+  '1000-2000-3000-ve-4000-lik-makine-ne-demektir': '1000–4000’lik Makine Ne Demek?',
+};
+const conciseTitle = conciseSeoTitles[post.data.slug] ?? post.data.title;
+const brandedTitle = `${conciseTitle} | ${siteConfig.name}`;
+const seoTitle = brandedTitle.length <= 60 ? brandedTitle : conciseTitle;
+const productGroupFor: Record<string, { label: string; href: string }> = {
+  Balıkçılık: { label: 'Balıkçılık ürün gruplarını inceleyin', href: '/urun-gruplari#balikcilik' },
+  Avcılık: { label: 'Avcılık ürün gruplarını inceleyin', href: '/urun-gruplari#avcilik' },
+  Kampçılık: { label: 'Kamp ürün gruplarını inceleyin', href: '/urun-gruplari#kamp' },
+};
+const productGroup = productGroupFor[post.data.mainCategory];
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -114,7 +126,19 @@ const crumbs = [
               <p>Güncel resmi düzenlemeyi kontrol edin.</p>
             </aside>
           )
-        }<div class="blog-prose"><Content /></div>{
+        }<div class="blog-prose"><Content /></div>
+        <aside
+          class="article-context-links"
+          aria-label="İlgili bağlantılar"
+        >
+          <a href={productGroup.href}>{productGroup.label}<span aria-hidden="true">→</span></a>
+          <a href={`/blog#${categorySlug}`}
+            >Diğer {post.data.mainCategory.toLocaleLowerCase('tr-TR')} rehberleri<span
+              aria-hidden="true">→</span
+            ></a
+          >
+        </aside>
+        {
           post.data.sources.length > 0 && (
             <section
               class="article-sources"

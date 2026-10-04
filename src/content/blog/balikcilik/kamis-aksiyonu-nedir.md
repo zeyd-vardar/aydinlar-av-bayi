@@ -8,7 +8,7 @@ tags: ["kamış","aksiyonu","nedir","balıkçılık","olta","kamışları"]
 keywords: ["kamış","aksiyonu","nedir","balıkçılık","olta","kamışları"]
 publishedAt: "2026-10-02"
 updatedAt: "2026-10-02"
-author: "Aydınlar Av Bayi"
+author: "Aydınlar Av Bayii"
 image: "/images/hero-fishing.jpg"
 imageAlt: "Kıyıda balıkçılık görünümü"
 readingTime: 1
