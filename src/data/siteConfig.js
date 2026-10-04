@@ -1,5 +1,5 @@
 const siteUrl =
-  import.meta.env.PUBLIC_SITE_URL ?? 'https://www.trabzonavbayi.com';
+  import.meta.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
 
 export const siteConfig = {
   name: 'Aydınlar Av Bayi',

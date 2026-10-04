@@ -30,7 +30,7 @@ jobs:
       - name: Bağımlılıkları kur
         run: npm ci
       - name: Siteyi oluştur
-        run: npx astro build
+        run: npm run build
       - name: Pages paketi yükle
         uses: actions/upload-pages-artifact@v3
         with:
