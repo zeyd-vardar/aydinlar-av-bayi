@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogSearch from '../../components/blog/BlogSearch.astro';
 import { getBlogPostPath, slugifyTurkish } from '../../utils/blog';
+import { withBase } from '../../utils/paths';
 
 const categoryOrder = ['Balıkçılık', 'Avcılık', 'Kampçılık'] as const;
 const posts = (await getCollection('blog')).sort((a, b) =>
@@ -76,7 +77,7 @@ const crumbs = [
                   <ul>
                     {grouping.posts.map((post) => (
                       <li>
-                        <a href={getBlogPostPath(post.data.mainCategory, post.data.slug)}>
+                        <a href={withBase(getBlogPostPath(post.data.mainCategory, post.data.slug))}>
                           <span>{post.data.title}</span>
                           <b aria-hidden="true">→</b>
                         </a>

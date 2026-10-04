@@ -1,11 +1,12 @@
 ---
 import Icon from './Icon.astro';
+import { withBase } from '../utils/paths';
 const { category } = Astro.props;
 ---
 
 <a
   class:list={['category-card', `tone-${category.tone}`]}
-  href={`/urun-gruplari#${category.slug}`}
+  href={withBase(`/urun-gruplari#${category.slug}`)}
 >
   <span
     class="category-image"

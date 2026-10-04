@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { siteConfig } from '../data/siteConfig.js';
+import { withBase } from '../utils/paths';
 
 interface Props {
   title: string;
@@ -38,7 +39,7 @@ const {
   includeWebSite = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, siteConfig.url);
-const imageUrl = new URL(image, siteConfig.url);
+const imageUrl = new URL(withBase(image), siteConfig.url);
 const socialImageDetails: Record<
   string,
   { width: number; height: number; type: `image/${string}` }
@@ -59,7 +60,7 @@ const localBusiness = {
   url: siteConfig.url,
   telephone: siteConfig.phoneHref,
   image: imageUrl.href,
-  logo: new URL('/favicon.svg', siteConfig.url).href,
+  logo: new URL(withBase('/favicon.svg'), siteConfig.url).href,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C',
@@ -94,7 +95,7 @@ const breadcrumbSchema = breadcrumbs.length
         '@type': 'ListItem',
         position: i + 1,
         name: item.name,
-        item: new URL(item.url, siteConfig.url).href,
+        item: new URL(withBase(item.url), siteConfig.url).href,
       })),
     }
   : null;
@@ -124,7 +125,7 @@ const breadcrumbSchema = breadcrumbs.length
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/favicon.svg"
+      href={withBase('/favicon.svg')}
     />
     <meta
       property="og:type"

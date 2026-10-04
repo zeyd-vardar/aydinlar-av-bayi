@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/paths';
+
 const {
   eyebrow,
   title,
@@ -10,7 +12,7 @@ const {
 
 <section class="page-hero">
   <img
-    src={image}
+    src={withBase(image)}
     alt=""
     width="1920"
     height="1080"

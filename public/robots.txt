@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trabzonavbayi.com/sitemap-index.xml
+Sitemap: https://zeyd-vardar.github.io/aydinlar-av-bayi/sitemap-index.xml

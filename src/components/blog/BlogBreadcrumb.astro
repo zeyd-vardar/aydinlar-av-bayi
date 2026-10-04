@@ -1,5 +1,6 @@
 ---
 import { slugifyTurkish } from '../../utils/blog';
+import { withBase } from '../../utils/paths';
 
 const { mainCategory, subCategory, title } = Astro.props;
 const categorySlug = slugifyTurkish(mainCategory);
@@ -11,10 +12,11 @@ const subCategorySlug = slugifyTurkish(subCategory);
   aria-label="İçerik yolu"
 >
   <ol>
-    <li><a href="/">Ana Sayfa</a></li><li><a href="/blog">BLOG</a></li><li>
-      <a href={`/blog?category=${categorySlug}`}>{mainCategory}</a>
+    <li><a href={withBase('/')}>Ana Sayfa</a></li><li><a href={withBase('/blog')}>BLOG</a></li><li>
+      <a href={withBase(`/blog?category=${categorySlug}`)}>{mainCategory}</a>
     </li><li>
-      <a href={`/blog?category=${categorySlug}#${categorySlug}-${subCategorySlug}`}>{subCategory}</a
+      <a href={withBase(`/blog?category=${categorySlug}#${categorySlug}-${subCategorySlug}`)}
+        >{subCategory}</a
       >
     </li><li aria-current="page">{title}</li>
   </ol>

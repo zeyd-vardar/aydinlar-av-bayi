@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import Icon from '../components/Icon.astro';
 import { brandGroups } from '../data/brands.js';
+import { withBase } from '../utils/paths';
 const crumbs = [
   { name: 'Ana Sayfa', url: '/' },
   { name: 'Markalar', url: '/markalar' },
@@ -76,7 +77,7 @@ const crumbs = [
       </div><div>
         <a
           class="btn btn-gold"
-          href="/iletisim"
+          href={withBase('/iletisim')}
           >Bize Ulaşın <Icon
             name="arrow"
             size={18}

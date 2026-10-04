@@ -1,4 +1,7 @@
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
+import { withBase } from '../utils/paths';
+
+const siteOrigin = import.meta.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
+const siteUrl = new URL(import.meta.env.BASE_URL, siteOrigin).href;
 
 export const siteConfig = {
   name: 'Aydınlar Av Bayii',
@@ -19,11 +22,11 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { href: '/', label: 'Ana Sayfa' },
-  { href: '/hakkimizda', label: 'Hakkımızda' },
-  { href: '/urun-gruplari', label: 'Ürün Grupları' },
-  { href: '/markalar', label: 'Markalar' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/magazamiz', label: 'Mağazamız' },
-  { href: '/iletisim', label: 'İletişim' },
+  { href: withBase('/'), label: 'Ana Sayfa' },
+  { href: withBase('/hakkimizda'), label: 'Hakkımızda' },
+  { href: withBase('/urun-gruplari'), label: 'Ürün Grupları' },
+  { href: withBase('/markalar'), label: 'Markalar' },
+  { href: withBase('/blog'), label: 'Blog' },
+  { href: withBase('/magazamiz'), label: 'Mağazamız' },
+  { href: withBase('/iletisim'), label: 'İletişim' },
 ];

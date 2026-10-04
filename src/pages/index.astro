@@ -4,6 +4,7 @@ import CategoryCard from '../components/CategoryCard.astro';
 import Icon from '../components/Icon.astro';
 import { categories } from '../data/categories.js';
 import { brandGroups } from '../data/brands.js';
+import { withBase } from '../utils/paths';
 const brands = [...new Set(brandGroups.flatMap((group) => group.brands))];
 const features = [
   ['shield', 'Güvenilir Markalar', 'Dünyaca ünlü markalar tek çatı altında.'],
@@ -99,7 +100,7 @@ const heroSlides = [
           >
             <img
               class:list={['hero-image', slide.imageClass]}
-              src={slide.image}
+              src={withBase(slide.image)}
               alt={slide.alt}
               width={slide.width}
               height={slide.height}
@@ -126,7 +127,7 @@ const heroSlides = [
               <div class="hero-actions">
                 <a
                   class="btn btn-light"
-                  href={slide.href}
+                  href={withBase(slide.href)}
                 >
                   {slide.cta}{' '}
                   <Icon
@@ -136,7 +137,7 @@ const heroSlides = [
                 </a>
                 <a
                   class="btn btn-outline"
-                  href="/magazamiz"
+                  href={withBase('/magazamiz')}
                 >
                   Mağazamız{' '}
                   <Icon
@@ -218,7 +219,7 @@ const heroSlides = [
           style={`--brands-duration:${brands.length * 4}s`}
         >
           <div class="brands-marquee-group">
-            {brands.map((brand) => <a href="/markalar">{brand}</a>)}
+            {brands.map((brand) => <a href={withBase('/markalar')}>{brand}</a>)}
           </div>
           <div
             class="brands-marquee-group brands-marquee-copy"
@@ -227,7 +228,7 @@ const heroSlides = [
             {
               brands.map((brand) => (
                 <a
-                  href="/markalar"
+                  href={withBase('/markalar')}
                   tabindex="-1"
                 >
                   {brand}
@@ -248,7 +249,7 @@ const heroSlides = [
       <div class="store-frame">
         <img
           class="store-visual"
-          src="/images/aydinlar-magaza.webp"
+          src={withBase('/images/aydinlar-magaza.webp')}
           alt="Aydınlar Av Bayii mağazasının turuncu tabelalı gerçek dış cephesi"
           width="1682"
           height="784"
@@ -261,7 +262,7 @@ const heroSlides = [
             ürünü seçerken deneyimli ekibimizden destek alın.
           </p><a
             class="btn btn-dark"
-            href="/iletisim"
+            href={withBase('/iletisim')}
             >Mağazamızı Ziyaret Edin <Icon
               name="arrow"
               size={18}
@@ -282,7 +283,7 @@ const heroSlides = [
           Doğada güvenle ve özgürce zaman geçirmeniz için kaliteli avcılık ekipmanları mağazamızda.
         </p><a
           class="btn btn-light"
-          href="/urun-gruplari#avcilik"
+          href={withBase('/urun-gruplari#avcilik')}
           >Avcılık Ürünlerini İncele <Icon
             name="arrow"
             size={18}
@@ -302,16 +303,16 @@ const heroSlides = [
         class="home-knowledge-links"
         aria-label="BLOG kategorileri"
       >
-        <a href="/blog?category=balikcilik"
+        <a href={withBase('/blog?category=balikcilik')}
           ><span>01</span><strong>Balıkçılık</strong><b aria-hidden="true">→</b></a
-        ><a href="/blog?category=avcilik"
+        ><a href={withBase('/blog?category=avcilik')}
           ><span>02</span><strong>Avcılık</strong><b aria-hidden="true">→</b></a
-        ><a href="/blog?category=kampcilik"
+        ><a href={withBase('/blog?category=kampcilik')}
           ><span>03</span><strong>Kampçılık</strong><b aria-hidden="true">→</b></a
         >
       </nav><a
         class="btn btn-dark"
-        href="/blog"
+        href={withBase('/blog')}
         >Tüm Bilgilere Ulaş <Icon
           name="arrow"
           size={18}

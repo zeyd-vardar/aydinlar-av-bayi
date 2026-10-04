@@ -6,6 +6,7 @@ import { extname, join, relative, sep } from 'node:path';
 
 const site = process.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
 const base = process.env.PUBLIC_BASE_PATH;
+const basePath = base ? `/${base.replace(/^\/+|\/+$/g, '')}` : '';
 const siteLastUpdated = new Date('2026-10-04');
 
 function getBlogLastmodDates(directory) {
@@ -58,7 +59,7 @@ export default defineConfig({
   outDir: './dist/client',
   compressHTML: false,
   redirects: {
-    '/galeri': '/magazamiz',
+    '/galeri': `${basePath}/magazamiz`,
   },
   integrations: [
     sitemap({

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import { withBase } from '../utils/paths';
 const crumbs = [
   { name: 'Ana Sayfa', url: '/' },
   { name: 'Mağazamız', url: '/magazamiz' },
@@ -51,13 +52,13 @@ const items = [
           items.map((item, index) => (
             <a
               class={`gallery-item gallery-item-${index + 1}`}
-              href={item.src}
+              href={withBase(item.src)}
               target="_blank"
               rel="noopener"
               aria-label={`Mağazamızdan ${index + 1}. fotoğrafı aç`}
             >
               <img
-                src={item.src}
+                src={withBase(item.src)}
                 alt={`Aydınlar Av Bayii mağazasından ${index + 1}. görünüm`}
                 width={item.width}
                 height={item.height}

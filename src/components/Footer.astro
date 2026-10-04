@@ -1,6 +1,7 @@
 ---
 import { navLinks, siteConfig } from '../data/siteConfig.js';
 import Icon from './Icon.astro';
+import { withBase } from '../utils/paths';
 const year = new Date().getFullYear();
 const { compact = false } = Astro.props;
 ---
@@ -11,7 +12,7 @@ const { compact = false } = Astro.props;
       <div class="container compact-footer-inner">
         <a
           class="brand light"
-          href="/"
+          href={withBase('/')}
         >
           <span class="brand-mark">A</span>
           <span>
@@ -46,7 +47,7 @@ const { compact = false } = Astro.props;
         <div class="footer-intro">
           <a
             class="brand light"
-            href="/"
+            href={withBase('/')}
           >
             <span class="brand-mark">A</span>
             <span>

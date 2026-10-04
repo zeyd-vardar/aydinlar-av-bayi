@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getBlogPostPath } from '../../utils/blog';
+import { withBase } from '../../utils/paths';
 
 interface Props {
   posts: CollectionEntry<'blog'>[];
@@ -56,7 +57,7 @@ const { posts } = Astro.props;
             ...post.data.keywords,
           ].join(' ')}
         >
-          <a href={getBlogPostPath(post.data.mainCategory, post.data.slug)}>
+          <a href={withBase(getBlogPostPath(post.data.mainCategory, post.data.slug))}>
             <span>
               {post.data.mainCategory} / {post.data.subCategory}
             </span>

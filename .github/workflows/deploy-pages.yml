@@ -18,7 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_SITE_URL: https://trabzonavbayi.com
+      PUBLIC_SITE_URL: https://zeyd-vardar.github.io
+      PUBLIC_BASE_PATH: /aydinlar-av-bayi
     steps:
       - name: Kaynağı al
         uses: actions/checkout@v4
