@@ -1,14 +1,222 @@
 ---
-import LegalDraftPage from '../components/LegalDraftPage.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
+import { siteConfig } from '../data/siteConfig.js';
 ---
 
-<LegalDraftPage
-  title="Gizlilik Politikası"
-  description="Kişisel verilerin ve ziyaretçi bilgilerinin işlenmesine ilişkin bilgilendirme sayfası."
-  requiredItems={[
-    'İşlenen veri kategorileri ve işleme amaçları',
-    'Verilerin aktarılabileceği taraflar ve kullanılan hizmet sağlayıcılar',
-    'Saklama süreleri ve veri güvenliği tedbirleri',
-    'İlgili kişi başvuru yöntemi ve iletişim bilgileri',
-  ]}
-/>
+<BaseLayout
+  title={`Gizlilik Politikası | ${siteConfig.name}`}
+  description="Aydınlar Av Bayii internet sitesinin ziyaretçi gizliliği ve veri işleme uygulamaları."
+  compactFooter
+  noindex
+>
+  <article class="legal-page">
+    <header class="legal-page-header">
+      <div class="container legal-page-container">
+        <span class="eyebrow light">Yasal Bilgilendirme</span>
+        <h1>Gizlilik Politikası</h1>
+        <p>Son Güncelleme: <time datetime="2026-10-05">5 Ekim 2026</time></p>
+      </div>
+    </header>
+
+    <div class="container legal-page-container legal-page-content">
+      <p>
+        Aydınlar Av Bayii olarak internet sitemizi ziyaret eden kişilerin gizliliğine önem
+        veriyoruz.
+      </p>
+      <p>
+        Bu Gizlilik Politikası, internet sitesini kullanırken hangi bilgilerin işlenebileceğini ve
+        gizliliğinizi korumak amacıyla benimsediğimiz temel uygulamaları açıklamaktadır.
+      </p>
+
+      <section aria-labelledby="site-kapsami">
+        <h2 id="site-kapsami">1. İnternet Sitesinin Kapsamı</h2>
+        <p>
+          Bu internet sitesi Aydınlar Av Bayii'nin mağazası, ürün grupları, markaları, iletişim
+          bilgileri ve bilgilendirici içerikleri hakkında ziyaretçilere bilgi vermek amacıyla
+          hazırlanmış kurumsal bir tanıtım sitesidir.
+        </p>
+        <p>Site üzerinden;</p>
+        <ul>
+          <li>kullanıcı hesabı oluşturulmaz,</li>
+          <li>üyelik yapılmaz,</li>
+          <li>çevrim içi ödeme alınmaz,</li>
+          <li>sepet veya sipariş sistemi çalıştırılmaz,</li>
+          <li>kullanıcı profili oluşturulmaz,</li>
+          <li>ziyaretçilerden iletişim formu aracılığıyla kişisel bilgi talep edilmez.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="teknik-bilgiler">
+        <h2 id="teknik-bilgiler">2. Ziyaret Sırasında İşlenen Teknik Bilgiler</h2>
+        <p>
+          İnternet sitesinin çalışması ve güvenli biçimde sunulabilmesi için kullanılan hosting ve
+          teknik altyapı sağlayıcıları tarafından IP adresi, erişim zamanı, ziyaret edilen sayfa,
+          tarayıcı, cihaz veya benzeri teknik bağlantı bilgileri işlenebilir.
+        </p>
+        <p>
+          Bu bilgiler sitenin teknik olarak sunulması, güvenliğinin sağlanması, kötüye kullanımın
+          önlenmesi ve teknik sorunların giderilmesi amaçlarıyla kullanılabilir.
+        </p>
+      </section>
+
+      <section aria-labelledby="iletisim">
+        <h2 id="iletisim">3. Bizimle İletişim Kurduğunuzda</h2>
+        <p>
+          Telefon, e-posta, WhatsApp veya Instagram üzerinden bizimle iletişime geçmeniz halinde,
+          tercih ettiğiniz iletişim yöntemine bağlı olarak tarafınızca paylaşılan bilgiler
+          işlenebilir.
+        </p>
+        <p>Bunlar örneğin;</p>
+        <ul>
+          <li>ad ve soyadı,</li>
+          <li>telefon numarası,</li>
+          <li>e-posta adresi,</li>
+          <li>sosyal medya kullanıcı bilgisi,</li>
+          <li>mesaj veya talebin içeriği</li>
+        </ul>
+        <p>
+          Bu bilgiler yalnızca iletişim talebinizi değerlendirmek, sorularınızı yanıtlamak ve talep
+          ettiğiniz bilgiyi sağlamak amacıyla kullanılır.
+        </p>
+        <p>
+          İletişiminiz bakımından gerekli olmayan veya özel nitelikli kişisel verileri mesajlarınız
+          içerisinde paylaşmamanızı tavsiye ederiz.
+        </p>
+      </section>
+
+      <section aria-labelledby="google-maps">
+        <h2 id="google-maps">4. Google Maps</h2>
+        <p>
+          Mağaza konumuna ulaşabilmeniz için Google Maps'e yönlendiren bağlantılar kullanılabilir.
+        </p>
+        <p>
+          Harita içeriğinin site içerisinde görüntülenmesi halinde tarayıcınız Google'ın
+          sunucularıyla bağlantı kurabilir ve Google tarafından IP adresi, cihaz veya tarayıcıya
+          ilişkin teknik bilgiler gibi veriler işlenebilir.
+        </p>
+        <p>
+          Gizliliğin korunması amacıyla üçüncü taraf harita içeriğinin mümkün olduğunca yalnızca
+          kullanıcının açıkça görüntülemeyi tercih etmesinden sonra yüklenmesi tercih edilmektedir.
+        </p>
+        <p>Google hizmetlerini kullandığınızda Google'ın kendi gizlilik koşulları geçerlidir.</p>
+      </section>
+
+      <section aria-labelledby="whatsapp-instagram">
+        <h2 id="whatsapp-instagram">5. WhatsApp ve Instagram</h2>
+        <p>İnternet sitesinde WhatsApp ve Instagram'a yönlendiren bağlantılar bulunmaktadır.</p>
+        <p>
+          Bu bağlantılar yalnızca kullanıcı tarafından tıklandığında ilgili harici hizmete
+          yönlendirir.
+        </p>
+        <p>
+          WhatsApp veya Instagram üzerinden iletişim kurulması halinde Meta ve ilgili hizmetlerin
+          kendi gizlilik politikaları ile veri işleme kuralları geçerli olabilir.
+        </p>
+        <p>
+          Aydınlar Av Bayii, üçüncü taraf platformların kendi sistemlerinde gerçekleştirdiği
+          bağımsız veri işleme faaliyetlerini kontrol etmez.
+        </p>
+      </section>
+
+      <section aria-labelledby="web-analitigi">
+        <h2 id="web-analitigi">6. Web Analitiği</h2>
+        <p>
+          İnternet sitesinin teknik altyapısı gizlilik odaklı ve çerez kullanmayan analitik
+          sistemlerin kullanılmasına imkân verebilir.
+        </p>
+        <p>
+          Analitik hizmet etkinleştirilecek olması halinde, kullanılan sağlayıcı, işlenen veriler,
+          amaç ve veri saklama koşulları bu Gizlilik Politikası ve Çerez Politikası içerisinde
+          güncel şekilde açıklanır.
+        </p>
+        <p>
+          Ziyaretçileri reklam amacıyla siteler arasında takip eden analitik veya pazarlama
+          teknolojileri, gerekli hukuki değerlendirme ve kullanıcı tercih mekanizmaları sağlanmadan
+          etkinleştirilmez.
+        </p>
+      </section>
+
+      <section aria-labelledby="cerezler">
+        <h2 id="cerezler">7. Çerezler</h2>
+        <p>
+          İnternet sitesinde kullanılan çerezler ve benzer teknolojiler hakkında ayrıntılı bilgi
+          <a href={withBase('/cerez-politikasi/')}>Çerez Politikası</a> sayfasında yer almaktadır.
+        </p>
+      </section>
+
+      <section aria-labelledby="harici-baglantilar">
+        <h2 id="harici-baglantilar">8. Harici Bağlantılar</h2>
+        <p>
+          İnternet sitesinde Google Maps, WhatsApp, Instagram veya başka internet sitelerine
+          yönlendiren bağlantılar bulunabilir.
+        </p>
+        <p>
+          Harici bağlantıya tıkladığınız andan itibaren ziyaret ettiğiniz internet sitesi veya
+          hizmetin kendi gizlilik politikaları geçerlidir.
+        </p>
+        <p>
+          Harici hizmetlerin içerikleri ve bağımsız veri işleme uygulamaları Aydınlar Av Bayii'nin
+          kontrolü altında değildir.
+        </p>
+      </section>
+
+      <section aria-labelledby="veri-guvenligi">
+        <h2 id="veri-guvenligi">9. Kişisel Verilerin Güvenliği</h2>
+        <p>
+          Kişisel verilerin hukuka aykırı olarak işlenmesini veya erişilmesini önlemek ve verilerin
+          güvenliğini sağlamak amacıyla, işlenen verinin ve kullanılan sistemin niteliğine uygun
+          teknik ve idari tedbirlerin alınması hedeflenmektedir.
+        </p>
+        <p>
+          Site üzerinden gereksiz kişisel veri toplanmaması ve yalnızca ihtiyaç duyulan hizmetlerin
+          kullanılması temel yaklaşımımızdır.
+        </p>
+      </section>
+
+      <section aria-labelledby="verilerin-saklanmasi">
+        <h2 id="verilerin-saklanmasi">10. Verilerin Saklanması</h2>
+        <p>
+          Kişisel veriler yalnızca işleme amacının gerektirdiği süre boyunca ve ilgili mevzuatta
+          belirtilen saklama yükümlülükleriyle sınırlı olarak muhafaza edilir.
+        </p>
+        <p>
+          Verinin işlenmesini gerektiren sebebin ortadan kalkması halinde, başka bir hukuki saklama
+          sebebi bulunmadığı sürece ilgili veri silinir, yok edilir veya anonim hale getirilir.
+        </p>
+      </section>
+
+      <section aria-labelledby="kvkk-haklari">
+        <h2 id="kvkk-haklari">11. KVKK Kapsamındaki Haklar</h2>
+        <p>
+          Kişisel verilerinizle ilgili haklarınız ve veri sorumlusuna nasıl başvurabileceğiniz
+          hakkında ayrıntılı bilgiye
+          <a href={withBase('/kvkk-aydinlatma-metni/')}>KVKK Aydınlatma Metni</a> sayfasından ulaşabilirsiniz.
+        </p>
+      </section>
+
+      <section aria-labelledby="politika-degisiklikleri">
+        <h2 id="politika-degisiklikleri">12. Politika Değişiklikleri</h2>
+        <p>
+          İnternet sitesinde kullanılan teknolojiler veya veri işleme faaliyetleri değiştiğinde bu
+          Gizlilik Politikası da güncellenebilir.
+        </p>
+        <p>Politikanın en güncel sürümü bu sayfada yayımlanır.</p>
+      </section>
+
+      <section aria-labelledby="gizlilik-iletisim">
+        <h2 id="gizlilik-iletisim">13. İletişim</h2>
+        <p>Gizlilik uygulamalarımız hakkında sorularınız için:</p>
+        <address>
+          <strong>Aydınlar Av Bayii</strong><br />
+          Pelitli, Mehmet Akif Ersoy Cd. No:10/C<br />
+          61080 Ortahisar/Trabzon
+        </address>
+        <p>
+          <strong>Telefon:</strong> 0549 477 01 61<br />
+          <strong>E-posta:</strong> merhaba@aydinlaravbayi.com
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

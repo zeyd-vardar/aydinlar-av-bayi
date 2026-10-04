@@ -1,14 +1,224 @@
 ---
-import LegalDraftPage from '../components/LegalDraftPage.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/siteConfig.js';
 ---
 
-<LegalDraftPage
-  title="KVKK Aydınlatma Metni"
-  description="6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamındaki aydınlatma altyapısı."
-  requiredItems={[
-    'Veri sorumlusunun doğrulanmış kimliği ve iletişim bilgileri',
-    'Kişisel verilerin işlenme amaçları ve hukuki sebepleri',
-    'Veri toplama yöntemi ve aktarım yapılan taraflar',
-    'İlgili kişinin hakları ve başvuru kanalı',
-  ]}
-/>
+<BaseLayout
+  title={`KVKK Aydınlatma Metni | ${siteConfig.name}`}
+  description="Aydınlar Av Bayii kişisel verilerin işlenmesine ilişkin KVKK aydınlatma metni."
+  compactFooter
+  noindex
+>
+  <article class="legal-page">
+    <header class="legal-page-header">
+      <div class="container legal-page-container">
+        <span class="eyebrow light">Yasal Bilgilendirme</span>
+        <h1>KVKK Aydınlatma Metni</h1>
+        <p>Son Güncelleme: <time datetime="2026-10-05">5 Ekim 2026</time></p>
+      </div>
+    </header>
+
+    <div class="container legal-page-container legal-page-content">
+      <aside
+        class="legal-draft-note"
+        role="note"
+      >
+        <strong>Yayın öncesi doğrulama gerekli</strong>
+        <p>
+          Metindeki <strong>[RESMÎ UNVAN]</strong> alanı doldurulmalı; production ortamında kullanılacak
+          hosting hizmeti ve yurt dışı veri aktarım mekanizması doğrulanmalıdır.
+        </p>
+      </aside>
+
+      <p>
+        6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında, kişisel verilerinizin
+        işlenmesine ilişkin olarak sizleri bilgilendirmek isteriz.
+      </p>
+
+      <section aria-labelledby="veri-sorumlusu">
+        <h2 id="veri-sorumlusu">1. Veri Sorumlusu</h2>
+        <p>KVKK kapsamında veri sorumlusu:</p>
+        <p>
+          <strong>Resmî Unvan:</strong> [RESMÎ UNVAN]<br />
+          <strong>İşletme/Marka Adı:</strong> Aydınlar Av Bayii<br />
+          <strong>Adres:</strong> Pelitli, Mehmet Akif Ersoy Cd. No:10/C, 61080 Ortahisar/Trabzon<br
+          />
+          <strong>Telefon:</strong> 0549 477 01 61<br />
+          <strong>E-posta:</strong> merhaba@aydinlaravbayi.com
+        </p>
+        <p>olarak faaliyet göstermektedir.</p>
+      </section>
+
+      <section aria-labelledby="islenen-veriler">
+        <h2 id="islenen-veriler">2. Hangi Kişisel Veriler İşlenebilir?</h2>
+        <p>
+          Web sitesi üzerinden üyelik, kullanıcı hesabı, çevrim içi sipariş, ödeme veya iletişim
+          formu aracılığıyla doğrudan kişisel veri toplanmamaktadır.
+        </p>
+        <p>Bununla birlikte aşağıdaki durumlarda sınırlı ölçüde kişisel veri işlenebilir:</p>
+        <p>
+          <strong>İletişim verileri:</strong> Telefon, e-posta, WhatsApp veya Instagram aracılığıyla
+          bizimle iletişim kurmanız halinde, tercih ettiğiniz iletişim kanalına bağlı olarak adınız,
+          telefon numaranız, e-posta adresiniz, sosyal medya kullanıcı bilgileriniz ve tarafınızca iletilen
+          mesajın içeriği.
+        </p>
+        <p>
+          <strong>Teknik bağlantı verileri:</strong> İnternet sitesinin barındırılması, güvenliğinin
+          sağlanması ve teknik olarak sunulabilmesi kapsamında IP adresi, erişim tarihi ve saati, talep
+          edilen sayfa, tarayıcı veya cihazla ilgili sınırlı teknik bilgiler hizmet sağlayıcılar tarafından
+          işlenebilir.
+        </p>
+        <p>
+          Özel nitelikli kişisel verilerinizi veya iletişim talebiniz bakımından gerekli olmayan
+          kişisel bilgilerinizi bizimle paylaşmamanızı rica ederiz.
+        </p>
+      </section>
+
+      <section aria-labelledby="isleme-amaclari">
+        <h2 id="isleme-amaclari">3. Kişisel Verilerin İşlenme Amaçları</h2>
+        <p>Kişisel verileriniz, ilgili olduğu ölçüde;</p>
+        <ul>
+          <li>tarafınızdan iletilen soru ve taleplerin cevaplandırılması,</li>
+          <li>mağaza, ürün grupları, çalışma saatleri ve hizmetler hakkında bilgi verilmesi,</li>
+          <li>iletişim süreçlerinin yürütülmesi,</li>
+          <li>talep edilmesi halinde satış öncesi iletişim süreçlerinin yürütülmesi,</li>
+          <li>
+            internet sitesinin güvenli, kesintisiz ve teknik olarak sağlıklı biçimde sunulması,
+          </li>
+          <li>bilgi ve sistem güvenliğinin sağlanması,</li>
+          <li>
+            hukuki yükümlülüklerin yerine getirilmesi ve gerektiğinde bir hakkın tesisi,
+            kullanılması veya korunması
+          </li>
+        </ul>
+        <p>amaçlarıyla işlenebilir.</p>
+        <p>
+          Kişisel verileriniz reklam amacıyla satılmaz veya veri ticareti amacıyla üçüncü kişilere
+          aktarılmaz.
+        </p>
+      </section>
+
+      <section aria-labelledby="toplama-yontemi">
+        <h2 id="toplama-yontemi">4. Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebebi</h2>
+        <p>Kişisel veriler;</p>
+        <ul>
+          <li>internet sitesini ziyaret etmeniz sırasında kullanılan teknik altyapı,</li>
+          <li>telefon görüşmeleri,</li>
+          <li>tarafınızca gönderilen e-postalar,</li>
+          <li>WhatsApp üzerinden başlattığınız görüşmeler,</li>
+          <li>Instagram veya diğer açık iletişim kanalları</li>
+        </ul>
+        <p>aracılığıyla elektronik veya fiziki yollarla elde edilebilir.</p>
+        <p>
+          İletişim taleplerinin yanıtlanmasına ilişkin işlemler, KVKK'nın 5'inci maddesinin ikinci
+          fıkrasının (f) bendinde yer alan, ilgili kişinin temel hak ve özgürlüklerine zarar
+          vermemek kaydıyla veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu
+          olması şartına dayanabilir.
+        </p>
+        <p>
+          Bir ürün veya hizmete ilişkin sözleşme kurulması veya sözleşme öncesi talebinizle doğrudan
+          bağlantılı işlemler KVKK'nın 5'inci maddesinin ikinci fıkrasının (c) bendi kapsamında
+          gerçekleştirilebilir.
+        </p>
+        <p>
+          Hukuki bir yükümlülüğün yerine getirilmesi gereken durumlarda ilgili işlemler KVKK'nın
+          5'inci maddesinin ikinci fıkrasının (ç) bendine; bir hakkın tesisi, kullanılması veya
+          korunması gereken durumlarda ise aynı fıkranın (e) bendine dayanabilir.
+        </p>
+        <p>
+          Açık rıza gerektiren ayrı bir kişisel veri işleme faaliyeti gerçekleştirilmesi halinde,
+          açık rıza talebi bu aydınlatma metninden ayrı olarak sunulur.
+        </p>
+      </section>
+
+      <section aria-labelledby="veri-aktarimi">
+        <h2 id="veri-aktarimi">5. Kişisel Verilerin Aktarılması</h2>
+        <p>Kişisel verileriniz, işleme amacıyla sınırlı olmak üzere;</p>
+        <ul>
+          <li>internet sitesi ve teknik altyapı hizmet sağlayıcılarına,</li>
+          <li>iletişim için tarafınızca tercih edilen hizmet sağlayıcılarına,</li>
+          <li>e-posta ve benzeri iletişim altyapısı sağlayıcılarına,</li>
+          <li>hukuken gerekli olması halinde yetkili kamu kurum ve kuruluşlarına,</li>
+          <li>
+            bir hakkın tesisi, kullanılması veya korunmasının gerekli olduğu durumlarda yetkili
+            danışmanlara ve ilgili taraflara
+          </li>
+        </ul>
+        <p>aktarılabilir.</p>
+        <p>
+          WhatsApp, Instagram, Google Maps veya benzeri üçüncü taraf hizmetlere geçiş yapmanız
+          halinde bu hizmet sağlayıcıların kendi gizlilik koşulları ve veri işleme uygulamaları da
+          geçerli olabilir.
+        </p>
+        <p>
+          Yurt dışındaki bir hizmet sağlayıcıya kişisel veri aktarımı söz konusu olması halinde
+          aktarım, KVKK'nın 9'uncu maddesinde düzenlenen yurt dışına veri aktarım şartları dikkate
+          alınarak gerçekleştirilir.
+        </p>
+        <p>
+          <strong>Not:</strong> İnternet sitesinin production ortamında kullanılacak hosting hizmeti
+          ve buna ilişkin yurt dışı veri aktarım mekanizması, site yayına alınmadan önce veri sorumlusu
+          tarafından ayrıca doğrulanmalıdır.
+        </p>
+      </section>
+
+      <section aria-labelledby="saklama">
+        <h2 id="saklama">6. Verilerin Saklanması</h2>
+        <p>
+          Kişisel veriler, işlenmelerini gerektiren amaç için gerekli olan süre boyunca ve ilgili
+          mevzuatta öngörülen saklama süreleriyle sınırlı olarak muhafaza edilir.
+        </p>
+        <p>
+          İşleme amacının ortadan kalkması ve verinin saklanmasını gerektiren başka bir hukuki sebep
+          bulunmaması halinde kişisel veriler ilgili mevzuata uygun olarak silinir, yok edilir veya
+          anonim hale getirilir.
+        </p>
+      </section>
+
+      <section aria-labelledby="haklariniz">
+        <h2 id="haklariniz">7. KVKK Kapsamındaki Haklarınız</h2>
+        <p>
+          KVKK'nın 11'inci maddesi kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme,
+          işlenen verileriniz hakkında bilgi talep etme, işleme amacını ve amaca uygun kullanılıp
+          kullanılmadığını öğrenme, verilerin aktarıldığı üçüncü kişileri öğrenme, eksik veya yanlış
+          verilerin düzeltilmesini isteme ve şartları oluştuğunda verilerin silinmesini veya yok
+          edilmesini talep etme dahil olmak üzere Kanun'da belirtilen haklara sahipsiniz.
+        </p>
+        <p>
+          Bu haklarınıza ilişkin taleplerinizi Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında
+          Tebliğ'de belirtilen yöntemlerden biriyle veri sorumlusuna iletebilirsiniz.
+        </p>
+        <p>Yazılı başvurular:</p>
+        <address>
+          <strong>[RESMÎ UNVAN]</strong><br />
+          Pelitli, Mehmet Akif Ersoy Cd. No:10/C<br />
+          61080 Ortahisar/Trabzon
+        </address>
+        <p>adresine iletilebilir.</p>
+        <p>
+          Elektronik posta ile yapılacak KVKK başvurularında, mevzuatın öngördüğü durumlarda daha
+          önce veri sorumlusuna bildirilen ve veri sorumlusu sisteminde kayıtlı bulunan e-posta
+          adresinin kullanılması gerekmektedir.
+        </p>
+        <p>İletişim e-posta adresimiz:</p>
+        <p><strong>merhaba@aydinlaravbayi.com</strong></p>
+        <p>
+          Başvurular, KVKK ve ilgili mevzuatta belirtilen süreler içerisinde değerlendirilerek
+          sonuçlandırılır.
+        </p>
+      </section>
+
+      <section aria-labelledby="metnin-guncellenmesi">
+        <h2 id="metnin-guncellenmesi">8. Metnin Güncellenmesi</h2>
+        <p>
+          Bu aydınlatma metni, internet sitesinde kullanılan hizmetlerin, veri işleme
+          faaliyetlerinin veya ilgili mevzuatın değişmesi halinde güncellenebilir.
+        </p>
+        <p>
+          Güncel metin her zaman internet sitesindeki <strong>KVKK Aydınlatma Metni</strong>
+          sayfasında yayımlanır.
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

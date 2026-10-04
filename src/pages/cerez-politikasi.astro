@@ -1,14 +1,191 @@
 ---
-import LegalDraftPage from '../components/LegalDraftPage.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/siteConfig.js';
 ---
 
-<LegalDraftPage
-  title="Çerez Politikası"
-  description="Sitede kullanılan çerezler ve üçüncü taraf teknolojileri için bilgilendirme altyapısı."
-  requiredItems={[
-    'Zorunlu ve isteğe bağlı çerezlerin güncel envanteri',
-    'Analytics etkinleştirilecekse sağlayıcı, amaç ve saklama bilgileri',
-    'Google Maps ve YouTube gibi üçüncü taraf içeriklerin veri işleme etkileri',
-    'Tercih ve onay yönetimi yöntemi',
-  ]}
-/>
+<BaseLayout
+  title={`Çerez Politikası | ${siteConfig.name}`}
+  description="Aydınlar Av Bayii internet sitesinde kullanılan çerezler ve benzer teknolojiler hakkında bilgi."
+  compactFooter
+  noindex
+>
+  <article class="legal-page">
+    <header class="legal-page-header">
+      <div class="container legal-page-container">
+        <span class="eyebrow light">Yasal Bilgilendirme</span>
+        <h1>Çerez Politikası</h1>
+        <p>Son Güncelleme: <time datetime="2026-10-05">5 Ekim 2026</time></p>
+      </div>
+    </header>
+
+    <div class="container legal-page-container legal-page-content">
+      <p>
+        Bu Çerez Politikası, Aydınlar Av Bayii internet sitesinde kullanılan çerezler ve benzer
+        teknolojiler hakkında bilgi vermek amacıyla hazırlanmıştır.
+      </p>
+
+      <section aria-labelledby="cerez-nedir">
+        <h2 id="cerez-nedir">1. Çerez Nedir?</h2>
+        <p>
+          Çerezler, bir internet sitesi ziyaret edildiğinde tarayıcı aracılığıyla kullanıcının
+          cihazında saklanabilen küçük veri dosyalarıdır.
+        </p>
+        <p>
+          Çerezler; internet sitesinin çalışması, tercihlerin hatırlanması, güvenliğin sağlanması,
+          kullanımın ölçülmesi veya reklam ve pazarlama gibi farklı amaçlarla kullanılabilir.
+        </p>
+      </section>
+
+      <section aria-labelledby="cerez-kullanimi">
+        <h2 id="cerez-kullanimi">2. Bu Site Çerez Kullanıyor mu?</h2>
+        <p>
+          Mevcut internet sitesi kodunda kullanıcı hesabı, oturum sistemi, alışveriş sepeti, reklam
+          sistemi veya kullanıcıları siteler arasında takip eden pazarlama altyapısı
+          bulunmamaktadır.
+        </p>
+        <p>
+          Site tarafından doğrudan oluşturulan reklam veya pazarlama amaçlı birinci taraf çerezler
+          kullanılmamaktadır.
+        </p>
+        <p>
+          Site kodunda kullanıcı tercihlerini takip etmek amacıyla <code>localStorage</code> veya
+          <code>sessionStorage</code> tabanlı bir takip mekanizması da kullanılmamaktadır.
+        </p>
+        <p>
+          Bununla birlikte, internet sitesinin sunulmasında kullanılan hosting altyapısı veya
+          ziyaretçinin isteği üzerine yüklenen üçüncü taraf hizmetler kendi teknik verilerini veya
+          gerekli teknolojilerini kullanabilir.
+        </p>
+      </section>
+
+      <section aria-labelledby="hosting-kayitlari">
+        <h2 id="hosting-kayitlari">3. Hosting ve Teknik Kayıtlar</h2>
+        <p>
+          İnternet sitesinin barındırıldığı altyapı, sitenin kullanıcılara ulaştırılması ve
+          güvenliğinin sağlanması amacıyla IP adresi, erişim tarihi ve saati, talep edilen sayfa ve
+          benzeri teknik bağlantı bilgilerini işleyebilir.
+        </p>
+        <p>
+          Bu tür teknik kayıtlar klasik anlamda tarayıcıya bırakılan bir çerez olmak zorunda
+          değildir.
+        </p>
+        <p>
+          Hosting sağlayıcısının kullandığı teknolojiler ve veri işleme faaliyetleri sağlayıcının
+          kendi koşullarına tabi olabilir.
+        </p>
+      </section>
+
+      <section aria-labelledby="google-maps">
+        <h2 id="google-maps">4. Google Maps</h2>
+        <p>
+          İnternet sitesinde mağaza konumunu göstermek amacıyla Google Maps bağlantısı veya harita
+          içeriği kullanılabilir.
+        </p>
+        <p>
+          Google Maps içeriğinin site içerisinde doğrudan yüklenmesi halinde tarayıcınız Google'ın
+          sunucularına bağlanabilir. Bu bağlantı sırasında Google tarafından teknik bilgiler
+          işlenebilir ve kullanıcının tarayıcı veya Google hesabı durumuna bağlı olarak çerezler
+          veya benzer teknolojiler kullanılabilir.
+        </p>
+        <p>
+          Bu nedenle harita içeriğinin, mümkün olduğunca yalnızca kullanıcının açıkça haritayı
+          görüntülemeyi seçmesinden sonra yüklenmesi tercih edilmektedir.
+        </p>
+        <p>
+          Google Maps'in kendi çerez ve gizlilik uygulamaları Google tarafından belirlenmektedir.
+        </p>
+      </section>
+
+      <section aria-labelledby="analitik">
+        <h2 id="analitik">5. Analitik</h2>
+        <p>
+          İnternet sitesinin kod altyapısı, isteğe bağlı olarak Plausible uyumlu bir web analitiği
+          sisteminin etkinleştirilmesine olanak sağlamaktadır.
+        </p>
+        <p>Analitik sistemi etkin değilse bu amaçla herhangi bir analitik betiği yüklenmez.</p>
+        <p>
+          Plausible Analytics kullanılması halinde sağlayıcı tarafından açıklanan mevcut teknik
+          yapıya göre tarayıcı çerezi, localStorage veya kalıcı ziyaretçi tanımlayıcısı
+          kullanılmamaktadır.
+        </p>
+        <p>
+          Analitik sisteminde veya sağlayıcıda değişiklik yapılması halinde bu politika da
+          güncellenir.
+        </p>
+      </section>
+
+      <section aria-labelledby="whatsapp-instagram">
+        <h2 id="whatsapp-instagram">6. WhatsApp ve Instagram</h2>
+        <p>
+          WhatsApp ve Instagram bağlantıları site içerisinde gömülü takip eklentileri olarak değil,
+          harici bağlantılar şeklinde kullanılmaktadır.
+        </p>
+        <p>
+          Bu nedenle yalnızca bağlantının sitede bulunması Meta tarafından site cihazınıza çerez
+          bırakıldığı anlamına gelmez.
+        </p>
+        <p>
+          Ancak bağlantıya tıklayarak WhatsApp, Instagram veya ilgili başka bir Meta hizmetine
+          geçtiğinizde bu platformların kendi çerez ve gizlilik uygulamaları geçerli hale gelir.
+        </p>
+      </section>
+
+      <section aria-labelledby="cerez-tercihleri">
+        <h2 id="cerez-tercihleri">7. Çerez Tercihleri</h2>
+        <p>
+          Mevcut sitede reklam veya davranışsal pazarlama amacıyla kullanılan isteğe bağlı birinci
+          taraf çerezler bulunmadığından, yalnızca görünüşte bir tercih sunan gereksiz bir “tüm
+          çerezleri kabul et” mekanizması kullanılmamaktadır.
+        </p>
+        <p>
+          Gelecekte açık rıza gerektiren analitik, reklam, pazarlama veya benzeri teknolojilerin
+          eklenmesi halinde;
+        </p>
+        <ul>
+          <li>gerekli olmayan teknolojiler kullanıcı tercihi alınmadan önce çalıştırılmaz,</li>
+          <li>kabul etme ve reddetme seçenekleri açık biçimde sunulur,</li>
+          <li>kullanıcıların tercihini daha sonra değiştirebilmesine imkân sağlanır,</li>
+          <li>bu Çerez Politikası kullanılan teknolojilerin gerçek envanteriyle güncellenir.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="tarayici-ayarlari">
+        <h2 id="tarayici-ayarlari">8. Tarayıcı Ayarları</h2>
+        <p>
+          Tarayıcınız üzerinden çerezleri görüntüleyebilir, silebilir veya belirli internet
+          sitelerinin çerez oluşturmasını engelleyebilirsiniz.
+        </p>
+        <p>
+          Çerez yönetimi yöntemleri kullanılan tarayıcıya göre değişmektedir. Ayrıntılı bilgi için
+          kullandığınız tarayıcının gizlilik ve çerez ayarlarını inceleyebilirsiniz.
+        </p>
+      </section>
+
+      <section aria-labelledby="politika-guncelleme">
+        <h2 id="politika-guncelleme">9. Politikanın Güncellenmesi</h2>
+        <p>
+          İnternet sitesinde kullanılan hizmetler veya teknolojiler değiştiğinde bu Çerez Politikası
+          güncellenebilir.
+        </p>
+        <p>
+          Güncel sürüm her zaman internet sitesindeki <strong>Çerez Politikası</strong> sayfasında yayımlanır.
+        </p>
+      </section>
+
+      <section aria-labelledby="cerez-iletisim">
+        <h2 id="cerez-iletisim">10. İletişim</h2>
+        <p>Çerezler ve internet sitesindeki gizlilik uygulamalarıyla ilgili sorularınız için:</p>
+        <address>
+          <strong>Aydınlar Av Bayii</strong><br />
+          Pelitli, Mehmet Akif Ersoy Cd. No:10/C<br />
+          61080 Ortahisar/Trabzon
+        </address>
+        <p>
+          <strong>Telefon:</strong> 0549 477 01 61<br />
+          <strong>E-posta:</strong>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
