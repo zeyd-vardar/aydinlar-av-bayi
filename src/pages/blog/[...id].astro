@@ -19,13 +19,27 @@ export async function getStaticPaths() {
 const { post, allPosts } = Astro.props;
 const { Content, headings } = await render(post);
 const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
-const related = allPosts
-  .filter((item) => item.id !== post.id && item.data.mainCategory === post.data.mainCategory)
-  .sort(
-    (a, b) =>
-      Number(b.data.subCategory === post.data.subCategory) -
-      Number(a.data.subCategory === post.data.subCategory),
-  )
+const sharedTerms = (left: string[], right: string[]) => {
+  const rightSet = new Set(right.map((value) => value.toLocaleLowerCase('tr-TR')));
+  return left.filter((value) => rightSet.has(value.toLocaleLowerCase('tr-TR'))).length;
+};
+const categoryPosts = allPosts
+  .filter((item) => item.data.mainCategory === post.data.mainCategory)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'tr'));
+const currentIndex = categoryPosts.findIndex((item) => item.id === post.id);
+const previousPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : undefined;
+const nextPost =
+  currentIndex < categoryPosts.length - 1 ? categoryPosts[currentIndex + 1] : undefined;
+const related = categoryPosts
+  .filter((item) => item.id !== post.id)
+  .map((item) => ({
+    item,
+    score:
+      Number(item.data.subCategory === post.data.subCategory) * 20 +
+      sharedTerms(item.data.tags, post.data.tags) * 4 +
+      sharedTerms(item.data.keywords, post.data.keywords) * 2,
+  }))
+  .sort((a, b) => b.score - a.score || a.item.data.title.localeCompare(b.item.data.title, 'tr'))
   .slice(0, 5);
 const published = formatTurkishDate(post.data.publishedAt);
 const updated = formatTurkishDate(post.data.updatedAt);
@@ -142,6 +156,33 @@ const crumbs = [
           >
         </aside>
         {
+          (previousPost || nextPost) && (
+            <nav
+              class="article-pagination"
+              aria-label="Yazılar arasında gezinme"
+            >
+              {previousPost ? (
+                <a
+                  href={withBase(
+                    getBlogPostPath(previousPost.data.mainCategory, previousPost.data.slug),
+                  )}
+                >
+                  <span>← Önceki yazı</span>
+                  <strong>{previousPost.data.title}</strong>
+                </a>
+              ) : (
+                <span />
+              )}
+              {nextPost && (
+                <a href={withBase(getBlogPostPath(nextPost.data.mainCategory, nextPost.data.slug))}>
+                  <span>Sonraki yazı →</span>
+                  <strong>{nextPost.data.title}</strong>
+                </a>
+              )}
+            </nav>
+          )
+        }
+        {
           post.data.sources.length > 0 && (
             <section
               class="article-sources"
@@ -168,5 +209,5 @@ const crumbs = [
       </div>
     </div>
   </article>
-  <RelatedArticles posts={related} />
+  <RelatedArticles posts={related.map(({ item }) => item)} />
 </BaseLayout>

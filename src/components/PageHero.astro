@@ -1,5 +1,5 @@
 ---
-import { withBase } from '../utils/paths';
+import { responsiveImageSrcSet, withBase } from '../utils/paths';
 
 const {
   eyebrow,
@@ -8,14 +8,23 @@ const {
   image = '/images/hero-fishing.webp',
   position = 'center',
 } = Astro.props;
+const imageDimensions: Record<string, { width: number; height: number }> = {
+  '/images/hero-fishing.webp': { width: 1920, height: 1080 },
+  '/images/hunting-banner.webp': { width: 1920, height: 800 },
+  '/images/store-interior.webp': { width: 1400, height: 933 },
+  '/images/category-atlas.webp': { width: 2000, height: 711 },
+};
+const dimensions = imageDimensions[image] ?? { width: 1920, height: 1080 };
 ---
 
 <section class="page-hero">
   <img
     src={withBase(image)}
+    srcset={responsiveImageSrcSet(image, [768, 1280], dimensions.width)}
+    sizes="100vw"
     alt=""
-    width="1920"
-    height="1080"
+    width={dimensions.width}
+    height={dimensions.height}
     style={`object-position:${position}`}
     loading="eager"
     fetchpriority="high"

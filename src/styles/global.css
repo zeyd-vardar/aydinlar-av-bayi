@@ -79,7 +79,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #a9600b;
+  color: #8d4e07;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.2em;
@@ -470,21 +470,32 @@ h3 {
 .hero-pagination {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 0;
 }
 .hero-pagination button {
-  width: 24px;
-  height: 4px;
+  position: relative;
+  width: 44px;
+  height: 44px;
   padding: 0;
   border: 0;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.38);
+  background: transparent;
   cursor: pointer;
+}
+.hero-pagination button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 4px;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.52);
   transition:
     width 0.25s ease,
     background-color 0.25s ease;
 }
-.hero-pagination button[aria-current='true'] {
+.hero-pagination button[aria-current='true']::before {
   width: 38px;
   background: white;
 }
@@ -809,7 +820,7 @@ h3 {
   margin: 0 auto;
   font-size: 0.74rem;
   line-height: 1.5;
-  color: #7b837d;
+  color: #626b65;
 }
 .contact-band {
   display: grid;
@@ -1965,7 +1976,7 @@ h3 {
 }
 .home-knowledge-head p {
   margin: 0;
-  color: #69726b;
+  color: #606a63;
 }
 .home-knowledge-links {
   display: grid;
@@ -1989,7 +2000,7 @@ h3 {
   background: white;
 }
 .home-knowledge-links span {
-  color: #8b938c;
+  color: #606961;
   font-size: 0.65rem;
 }
 .home-knowledge-links strong {
@@ -2042,6 +2053,41 @@ h3 {
 .article-context-links a:hover {
   border-color: #9ba89d;
   background: white;
+}
+.article-pagination {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+.article-pagination a {
+  display: flex;
+  min-height: 96px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+  background: white;
+}
+.article-pagination a:last-child {
+  text-align: right;
+}
+.article-pagination a:hover {
+  border-color: #9ba89d;
+  background: #f7f5ef;
+}
+.article-pagination span {
+  color: #788078;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.article-pagination strong {
+  font-size: 0.84rem;
+  line-height: 1.35;
 }
 .article-sources h2 {
   font-size: 1.7rem;
@@ -2315,6 +2361,32 @@ h3 {
   }
 }
 @media (max-width: 720px) {
+  .category-image {
+    background-image: url('/images/category-atlas-1280.webp');
+  }
+  .product-image {
+    background-image:
+      linear-gradient(180deg, transparent 50%, rgba(6, 10, 8, 0.32)),
+      url('/images/category-atlas-1280.webp');
+  }
+  .hunt-banner {
+    background-image: url('/images/hunting-banner-768.webp');
+  }
+  .map-placeholder {
+    background-image:
+      linear-gradient(180deg, rgba(17, 31, 22, 0.25), rgba(9, 17, 12, 0.68)),
+      url('/images/hero-fishing-768.webp');
+  }
+  .knowledge-hero {
+    background-image:
+      linear-gradient(110deg, rgba(28, 26, 23, 0.96), rgba(42, 38, 33, 0.76)),
+      url('/images/hero-fishing-768.webp');
+  }
+  .compact-footer {
+    background-image:
+      linear-gradient(90deg, rgba(28, 26, 23, 0.96), rgba(28, 26, 23, 0.74)),
+      url('/images/hero-fishing-768.webp');
+  }
   .container {
     width: min(100% - 28px, 1180px);
   }
@@ -2365,10 +2437,10 @@ h3 {
     height: 38px;
   }
   .hero-pagination button {
-    width: 15px;
+    width: 44px;
   }
   .hero-pagination button[aria-current='true'] {
-    width: 26px;
+    width: 44px;
   }
   .hero-actions .btn {
     width: 100%;
@@ -2669,6 +2741,15 @@ h3 {
   }
   .article-context-links {
     grid-template-columns: 1fr;
+  }
+  .article-pagination {
+    grid-template-columns: 1fr;
+  }
+  .article-pagination > span {
+    display: none;
+  }
+  .article-pagination a:last-child {
+    text-align: left;
   }
   .related-articles a {
     grid-template-columns: 1fr auto;

@@ -1,0 +1,16 @@
+---
+const domain = import.meta.env.PUBLIC_ANALYTICS_DOMAIN?.trim();
+const scriptUrl =
+  import.meta.env.PUBLIC_ANALYTICS_SCRIPT_URL?.trim() || 'https://plausible.io/js/script.js';
+---
+
+{
+  domain && (
+    <script
+      is:inline
+      defer
+      data-domain={domain}
+      src={scriptUrl}
+    />
+  )
+}

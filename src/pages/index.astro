@@ -4,7 +4,7 @@ import CategoryCard from '../components/CategoryCard.astro';
 import Icon from '../components/Icon.astro';
 import { categories } from '../data/categories.js';
 import { brandGroups } from '../data/brands.js';
-import { withBase } from '../utils/paths';
+import { responsiveImageSrcSet, withBase } from '../utils/paths';
 const brands = [...new Set(brandGroups.flatMap((group) => group.brands))];
 const features = [
   ['shield', 'Güvenilir Markalar', 'Dünyaca ünlü markalar tek çatı altında.'],
@@ -101,6 +101,8 @@ const heroSlides = [
             <img
               class:list={['hero-image', slide.imageClass]}
               src={withBase(slide.image)}
+              srcset={responsiveImageSrcSet(slide.image, [768, 1280], slide.width)}
+              sizes="100vw"
               alt={slide.alt}
               width={slide.width}
               height={slide.height}
@@ -250,6 +252,8 @@ const heroSlides = [
         <img
           class="store-visual"
           src={withBase('/images/aydinlar-magaza.webp')}
+          srcset={responsiveImageSrcSet('/images/aydinlar-magaza.webp', [768, 1280], 1682)}
+          sizes="(max-width: 720px) calc(100vw - 28px), 1180px"
           alt="Aydınlar Av Bayii mağazasının turuncu tabelalı gerçek dış cephesi"
           width="1682"
           height="784"

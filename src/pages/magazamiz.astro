@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import { withBase } from '../utils/paths';
+import { responsiveImageSrcSet, withBase } from '../utils/paths';
 const crumbs = [
   { name: 'Ana Sayfa', url: '/' },
   { name: 'Mağazamız', url: '/magazamiz' },
@@ -59,6 +59,12 @@ const items = [
             >
               <img
                 src={withBase(item.src)}
+                srcset={responsiveImageSrcSet(
+                  item.src,
+                  item.width >= 960 ? [480, 960] : [480],
+                  item.width,
+                )}
+                sizes="(max-width: 720px) calc(100vw - 28px), (max-width: 1180px) 50vw, 580px"
                 alt={`Aydınlar Av Bayii mağazasından ${index + 1}. görünüm`}
                 width={item.width}
                 height={item.height}
