@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/siteConfig.js';
+
+interface Props {
+  title: string;
+  description: string;
+  requiredItems: string[];
+}
+
+const { title, description, requiredItems } = Astro.props;
+---
+
+<BaseLayout
+  title={`${title} | ${siteConfig.name}`}
+  description={description}
+  compactFooter
+  noindex
+>
+  <article class="legal-page">
+    <header class="legal-page-header">
+      <div class="container legal-page-container">
+        <span class="eyebrow light">Yasal Bilgilendirme</span>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </div>
+    </header>
+    <div class="container legal-page-container legal-page-content">
+      <aside
+        class="legal-draft-note"
+        role="note"
+      >
+        <strong>Yayın öncesi doğrulama gerekli</strong>
+        <p>
+          Bu sayfa yalnızca teknik altyapı amacıyla hazırlanmıştır. İşletmeye özel nihai metin,
+          yayın öncesinde işletme ve yetkili hukuk danışmanı tarafından doğrulanmalıdır.
+        </p>
+      </aside>
+      <section aria-labelledby="legal-required-title">
+        <h2 id="legal-required-title">Nihai metinde ele alınması gereken bilgiler</h2>
+        <ul>
+          {requiredItems.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+      <section aria-labelledby="legal-contact-title">
+        <h2 id="legal-contact-title">İletişim</h2>
+        <p>
+          Yasal metinlerle ilgili talepler için <a href={`mailto:${siteConfig.email}`}
+            >{siteConfig.email}</a
+          > adresinden iletişime geçebilirsiniz.
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

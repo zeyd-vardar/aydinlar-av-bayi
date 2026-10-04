@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://zeyd-vardar.github.io/aydinlar-av-bayi/sitemap-index.xml

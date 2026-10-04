@@ -5,9 +5,9 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { extname, join, relative, sep } from 'node:path';
 
 const site = process.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
-const base = process.env.PUBLIC_BASE_PATH;
+const configuredBase = process.env.PUBLIC_BASE_PATH?.trim();
+const base = configuredBase && configuredBase !== '/' ? configuredBase : undefined;
 const basePath = base ? `/${base.replace(/^\/+|\/+$/g, '')}` : '';
-const siteLastUpdated = new Date('2026-10-04');
 
 function getBlogLastmodDates(directory) {
   const dates = new Map();
@@ -33,16 +33,7 @@ function getBlogLastmodDates(directory) {
   return dates;
 }
 
-const lastmodDates = new Map([
-  ['/', siteLastUpdated],
-  ['/blog/', siteLastUpdated],
-  ['/hakkimizda/', siteLastUpdated],
-  ['/iletisim/', siteLastUpdated],
-  ['/magazamiz/', siteLastUpdated],
-  ['/markalar/', siteLastUpdated],
-  ['/urun-gruplari/', siteLastUpdated],
-  ...getBlogLastmodDates('src/content/blog'),
-]);
+const blogLastmodDates = getBlogLastmodDates('src/content/blog');
 
 function getLocalPath(url) {
   const pathname = new URL(url).pathname;
@@ -57,14 +48,25 @@ export default defineConfig({
   base,
   output: 'static',
   outDir: './dist/client',
+  trailingSlash: 'always',
   compressHTML: false,
   redirects: {
-    '/galeri': `${basePath}/magazamiz`,
+    '/galeri': `${basePath}/magazamiz/`,
   },
   integrations: [
     sitemap({
+      filter(page) {
+        const path = getLocalPath(page);
+        return ![
+          '/404/',
+          '/cerez-politikasi/',
+          '/gizlilik-politikasi/',
+          '/kvkk-aydinlatma-metni/',
+        ].includes(path);
+      },
       serialize(item) {
-        item.lastmod = lastmodDates.get(getLocalPath(item.url)) ?? siteLastUpdated;
+        const lastmod = blogLastmodDates.get(getLocalPath(item.url));
+        if (lastmod) item.lastmod = lastmod;
         return item;
       },
     }),

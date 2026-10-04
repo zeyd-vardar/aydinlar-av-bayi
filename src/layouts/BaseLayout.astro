@@ -22,6 +22,7 @@ interface Props {
   articleTags?: string[];
   includeLocalBusiness?: boolean;
   includeWebSite?: boolean;
+  noindex?: boolean;
 }
 const {
   title,
@@ -38,8 +39,12 @@ const {
   articleTags = [],
   includeLocalBusiness = false,
   includeWebSite = false,
+  noindex = false,
 } = Astro.props;
-const canonical = new URL(Astro.url.pathname, siteConfig.url);
+const canonicalPath = Astro.url.pathname.endsWith('/')
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const canonical = new URL(canonicalPath, siteConfig.url);
 const imageUrl = new URL(withBase(image), siteConfig.url);
 const socialImageDetails: Record<
   string,
@@ -62,29 +67,25 @@ const logoImage = {
 const localBusiness = {
   '@context': 'https://schema.org',
   '@type': 'SportingGoodsStore',
+  '@id': `${siteConfig.url}#store`,
   name: siteConfig.name,
-  legalName: siteConfig.name,
-  alternateName: 'Trabzon Av Bayi',
   description: siteConfig.tagline,
   url: siteConfig.url,
   telephone: siteConfig.phoneHref,
+  email: siteConfig.email,
   image: imageUrl.href,
   logo: logoImage,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C',
-    postalCode: '61080',
-    addressLocality: 'Ortahisar',
-    addressRegion: 'Trabzon',
-    addressCountry: 'TR',
+    ...siteConfig.addressDetails,
   },
   hasMap: siteConfig.mapUrl,
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '08:30',
-      closes: '20:30',
+      opens: siteConfig.openingHours.opens,
+      closes: siteConfig.openingHours.closes,
     },
   ],
   sameAs: Object.values(siteConfig.socials).filter((url) => url !== '#'),
@@ -92,9 +93,10 @@ const localBusiness = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${siteConfig.url}#website`,
   name: siteConfig.name,
-  alternateName: 'Trabzon Av Bayi',
   url: siteConfig.url,
+  publisher: { '@id': `${siteConfig.url}#store` },
 };
 const breadcrumbSchema = breadcrumbs.length
   ? {
@@ -122,11 +124,23 @@ const breadcrumbSchema = breadcrumbs.length
       name="theme-color"
       content="#292826"
     />
+    <meta
+      name="referrer"
+      content="strict-origin-when-cross-origin"
+    />
     <title>{title}</title>
     <meta
       name="description"
       content={description}
     />
+    {
+      noindex && (
+        <meta
+          name="robots"
+          content="noindex, follow"
+        />
+      )
+    }
     <link
       rel="canonical"
       href={canonical}
@@ -135,6 +149,10 @@ const breadcrumbSchema = breadcrumbs.length
       rel="icon"
       type="image/svg+xml"
       href={withBase('/favicon.svg')}
+    />
+    <link
+      rel="apple-touch-icon"
+      href={withBase(siteConfig.logoPath)}
     />
     <meta
       property="og:type"

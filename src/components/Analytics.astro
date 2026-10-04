@@ -1,11 +1,22 @@
 ---
+import { siteConfig } from '../data/siteConfig.js';
+
 const domain = import.meta.env.PUBLIC_ANALYTICS_DOMAIN?.trim();
-const scriptUrl =
+const configuredScriptUrl =
   import.meta.env.PUBLIC_ANALYTICS_SCRIPT_URL?.trim() || 'https://plausible.io/js/script.js';
+const isCurrentDomain = domain && new URL(siteConfig.url).hostname === domain;
+let scriptUrl: string | undefined;
+
+try {
+  const parsedScriptUrl = new URL(configuredScriptUrl);
+  if (parsedScriptUrl.protocol === 'https:') scriptUrl = parsedScriptUrl.href;
+} catch {
+  scriptUrl = undefined;
+}
 ---
 
 {
-  domain && (
+  domain && isCurrentDomain && scriptUrl && (
     <script
       is:inline
       defer

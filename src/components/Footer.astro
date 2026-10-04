@@ -4,6 +4,11 @@ import Icon from './Icon.astro';
 import { withBase } from '../utils/paths';
 const year = new Date().getFullYear();
 const { compact = false } = Astro.props;
+const legalLinks = [
+  { href: withBase('/gizlilik-politikasi'), label: 'Gizlilik Politikası' },
+  { href: withBase('/kvkk-aydinlatma-metni'), label: 'KVKK Aydınlatma Metni' },
+  { href: withBase('/cerez-politikasi'), label: 'Çerez Politikası' },
+];
 ---
 
 {
@@ -40,7 +45,7 @@ const { compact = false } = Astro.props;
           <a
             href={siteConfig.socials.instagram}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             aria-label="Instagram hesabımız"
           >
             <Icon
@@ -50,6 +55,14 @@ const { compact = false } = Astro.props;
           </a>
         </div>
       </div>
+      <nav
+        class="container footer-legal"
+        aria-label="Yasal bilgi bağlantıları"
+      >
+        {legalLinks.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </nav>
     </footer>
   ) : (
     <footer class="site-footer">
@@ -108,7 +121,7 @@ const { compact = false } = Astro.props;
               <a
                 href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 WhatsApp
               </a>
@@ -121,10 +134,17 @@ const { compact = false } = Astro.props;
               <a
                 href={siteConfig.mapUrl}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 Mağaza Konumunu Görüntüle
               </a>
+            </li>
+            <li>
+              <Icon
+                name="mail"
+                size={18}
+              />
+              <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             </li>
           </ul>
         </div>
@@ -141,7 +161,7 @@ const { compact = false } = Astro.props;
             <a
               href={siteConfig.socials.instagram}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               aria-label="Instagram hesabımız"
             >
               <Icon
@@ -156,7 +176,11 @@ const { compact = false } = Astro.props;
         <span>
           © {year} {siteConfig.name}. Tüm hakları saklıdır.
         </span>
-        <span>Doğaya saygıyla.</span>
+        <nav aria-label="Yasal bilgi bağlantıları">
+          {legalLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
       </div>
     </footer>
   )

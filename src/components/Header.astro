@@ -2,7 +2,8 @@
 import { navLinks, siteConfig } from '../data/siteConfig.js';
 import Icon from './Icon.astro';
 import { withBase } from '../utils/paths';
-const current = Astro.url.pathname;
+const comparablePath = (path: string) => path.replace(/\/+$/, '') || '/';
+const current = comparablePath(Astro.url.pathname);
 const storePath = withBase('/magazamiz');
 const headerLinks = navLinks.filter((link) => link.href !== storePath);
 ---
@@ -35,7 +36,7 @@ const headerLinks = navLinks.filter((link) => link.href !== storePath);
         headerLinks.map((link) => (
           <a
             href={link.href}
-            aria-current={current === link.href ? 'page' : undefined}
+            aria-current={current === comparablePath(link.href) ? 'page' : undefined}
           >
             {link.label}
           </a>
@@ -45,7 +46,7 @@ const headerLinks = navLinks.filter((link) => link.href !== storePath);
     <a
       class="btn btn-gold nav-cta"
       href={storePath}
-      aria-current={current === storePath ? 'page' : undefined}
+      aria-current={current === comparablePath(storePath) ? 'page' : undefined}
       >Mağazamız <Icon
         name="arrow"
         size={17}
@@ -73,7 +74,7 @@ const headerLinks = navLinks.filter((link) => link.href !== storePath);
         headerLinks.map((link) => (
           <a
             href={link.href}
-            aria-current={current === link.href ? 'page' : undefined}
+            aria-current={current === comparablePath(link.href) ? 'page' : undefined}
           >
             {link.label}
           </a>
@@ -82,7 +83,7 @@ const headerLinks = navLinks.filter((link) => link.href !== storePath);
       <a
         class="btn btn-gold"
         href={storePath}
-        aria-current={current === storePath ? 'page' : undefined}
+        aria-current={current === comparablePath(storePath) ? 'page' : undefined}
         ><Icon
           name="arrow"
           size={18}
@@ -122,6 +123,12 @@ const headerLinks = navLinks.filter((link) => link.href !== storePath);
     menuButton.addEventListener('click', () => {
       const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
       setMenuOpen(!isOpen);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || menuButton.getAttribute('aria-expanded') !== 'true') return;
+      setMenuOpen(false);
+      menuButton.focus();
     });
   }
 </script>

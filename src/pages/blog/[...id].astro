@@ -9,7 +9,7 @@ import { formatTurkishDate, getBlogPostPath, slugifyTurkish } from '../../utils/
 import { withBase } from '../../utils/paths';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
 
   return posts.map((post) => ({
     params: { id: getBlogPostPath(post.data.mainCategory, post.data.slug).replace('/blog/', '') },
@@ -44,7 +44,10 @@ const related = categoryPosts
 const published = formatTurkishDate(post.data.publishedAt);
 const updated = formatTurkishDate(post.data.updatedAt);
 const articlePath = getBlogPostPath(post.data.mainCategory, post.data.slug);
-const articleUrl = new URL(Astro.url.pathname, siteConfig.url).href;
+const articlePathname = Astro.url.pathname.endsWith('/')
+  ? Astro.url.pathname
+  : `${Astro.url.pathname}/`;
+const articleUrl = new URL(articlePathname, siteConfig.url).href;
 const conciseSeoTitles: Record<string, string> = {
   'turkiye-de-ruhsatsiz-atesli-silah-bulundurmak-veya-tasimak-yasal-midir':
     'Ruhsatsız Silah Taşımak Yasal mı?',
@@ -66,10 +69,17 @@ const articleSchema = {
   headline: post.data.title,
   description: post.data.description,
   image: new URL(withBase(post.data.image), siteConfig.url).href,
-  author: { '@type': 'Organization', name: post.data.author },
+  author: {
+    '@type': 'Organization',
+    '@id': `${siteConfig.url}#organization`,
+    name: post.data.author,
+    url: siteConfig.url,
+  },
   publisher: {
     '@type': 'Organization',
+    '@id': `${siteConfig.url}#organization`,
     name: siteConfig.name,
+    url: siteConfig.url,
     logo: {
       '@type': 'ImageObject',
       url: logoUrl,
@@ -144,8 +154,8 @@ const crumbs = [
               class="official-notice"
               role="note"
             >
-              <strong>Resmî bilgi notu</strong>
-              <p>Güncel resmi düzenlemeyi kontrol edin.</p>
+              <strong>Mevzuat uyarısı</strong>
+              <p>Güncel bilgi için yetkili kurumların resmî kaynaklarını kontrol edin.</p>
             </aside>
           )
         }<div class="blog-prose"><Content /></div>

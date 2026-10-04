@@ -18,6 +18,7 @@ const blog = defineCollection({
     image: z.string(),
     imageAlt: z.string(),
     readingTime: z.number().int().positive(),
+    draft: z.boolean().default(false),
     officialNotice: z.boolean().default(false),
     sources: z
       .array(

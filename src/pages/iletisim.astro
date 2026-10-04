@@ -23,9 +23,18 @@ const message = encodeURIComponent('Merhaba, ürünleriniz hakkında bilgi almak
     image="/images/store-interior.webp"
     position="center 45%"
   />
-  <section class="section">
+  <section
+    class="section"
+    aria-labelledby="contact-details-title"
+  >
     <div class="container contact-grid">
       <div>
+        <h2
+          class="sr-only"
+          id="contact-details-title"
+        >
+          İletişim Bilgileri
+        </h2>
         <div class="contact-cards">
           <div class="contact-card">
             <Icon name="phone" /><div>
@@ -36,7 +45,7 @@ const message = encodeURIComponent('Merhaba, ürünleriniz hakkında bilgi almak
               <h3>WhatsApp</h3><a
                 href={`https://wa.me/${siteConfig.whatsapp}?text=${message}`}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 >WhatsApp ile İletişime Geç</a
               >
             </div>
@@ -46,7 +55,7 @@ const message = encodeURIComponent('Merhaba, ürünleriniz hakkında bilgi almak
                 class="map-text-link"
                 href={siteConfig.mapUrl}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 >Konumu Google Maps'te aç</a
               >
             </div>
@@ -70,19 +79,19 @@ const message = encodeURIComponent('Merhaba, ürünleriniz hakkında bilgi almak
             class="btn btn-gold"
             href={siteConfig.mapUrl}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             ><Icon name="pin" /> Yol Tarifi Al</a
           ><a
             class="btn btn-whatsapp"
             href={`https://wa.me/${siteConfig.whatsapp}?text=${message}`}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             ><Icon name="whatsapp" /> WhatsApp</a
           ><a
             class="btn btn-instagram"
             href={siteConfig.socials.instagram}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             ><Icon name="instagram" /> Instagram</a
           >
         </div>
@@ -96,7 +105,7 @@ const message = encodeURIComponent('Merhaba, ürünleriniz hakkında bilgi almak
           class="map-directions"
           href={siteConfig.mapUrl}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           ><Icon
             name="pin"
             size={17}

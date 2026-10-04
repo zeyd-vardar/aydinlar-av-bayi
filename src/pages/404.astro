@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/paths';
+---
+
+<BaseLayout
+  title="Sayfa Bulunamadı | Aydınlar Av Bayii"
+  description="Aradığınız sayfa bulunamadı."
+  compactFooter
+  noindex
+>
+  <section class="error-page">
+    <div class="container error-page-content">
+      <span
+        class="error-code"
+        aria-hidden="true"
+        >404</span
+      >
+      <h1>Aradığınız sayfa bulunamadı.</h1>
+      <p>Bağlantı değişmiş veya sayfa kaldırılmış olabilir.</p>
+      <nav aria-label="Yararlı bağlantılar">
+        <a
+          class="btn btn-dark"
+          href={withBase('/')}
+          >Ana Sayfa</a
+        >
+        <a
+          class="btn btn-outline-dark"
+          href={withBase('/urun-gruplari')}
+          >Ürün Grupları</a
+        >
+        <a
+          class="btn btn-outline-dark"
+          href={withBase('/blog')}
+          >Blog</a
+        >
+        <a
+          class="btn btn-outline-dark"
+          href={withBase('/iletisim')}
+          >İletişim</a
+        >
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

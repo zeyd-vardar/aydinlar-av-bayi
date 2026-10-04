@@ -12,6 +12,7 @@ author: "Aydınlar Av Bayii"
 image: "/images/hunting-banner.jpg"
 imageAlt: "Doğada avcılık ekipmanlarıyla outdoor kullanıcı"
 readingTime: 1
+draft: true
 officialNotice: true
 sources: [{"institution":"Emniyet Genel Müdürlüğü","page":"Silah ruhsat işlemleri ve mevzuat","url":"https://www.egm.gov.tr/"}]
 ---
