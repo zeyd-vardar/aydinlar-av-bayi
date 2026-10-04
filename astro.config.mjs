@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { readdirSync, readFileSync } from 'node:fs';
 import { extname, join, relative, sep } from 'node:path';
 
-const site = process.env.PUBLIC_SITE_URL ?? 'https://aydinlaravbayii.com';
+const site = process.env.PUBLIC_SITE_URL ?? 'https://www.trabzonavbayi.com';
 const base = process.env.PUBLIC_BASE_PATH;
 const siteLastUpdated = new Date('2026-10-03');
 
@@ -25,10 +25,7 @@ function getBlogLastmodDates(directory) {
     const updatedAt = source.match(/^updatedAt:\s*["']?([^"'\r\n]+)["']?\s*$/m)?.[1];
     if (!updatedAt) continue;
 
-    const slug = relative('src/content/blog', entryPath)
-      .split(sep)
-      .join('/')
-      .replace(/\.md$/, '');
+    const slug = relative('src/content/blog', entryPath).split(sep).join('/').replace(/\.md$/, '');
     dates.set(`/blog/${slug}/`, new Date(updatedAt));
   }
 
@@ -59,6 +56,7 @@ export default defineConfig({
   base,
   output: 'static',
   outDir: './dist/client',
+  compressHTML: false,
   redirects: {
     '/galeri': '/magazamiz',
   },

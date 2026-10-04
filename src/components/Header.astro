@@ -94,16 +94,26 @@ const headerLinks = navLinks.filter((link) => link.href !== '/magazamiz');
 
 <script>
   const header = document.querySelector('[data-header]');
-  const toggle = document.querySelector('[data-menu-toggle]');
-  const menu = document.querySelector<HTMLElement>('[data-mobile-menu]');
-  const setScrolled = () => header?.classList.toggle('scrolled', window.scrollY > 24);
-  setScrolled();
-  window.addEventListener('scroll', setScrolled, { passive: true });
-  toggle?.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    toggle.setAttribute('aria-label', open ? 'Menüyü aç' : 'Menüyü kapat');
-    if (menu) menu.hidden = open;
-    document.body.classList.toggle('menu-open', !open);
-  });
+  const menuButton = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const mobileMenu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+
+  if (header) {
+    const updateHeaderStyle = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    updateHeaderStyle();
+    window.addEventListener('scroll', updateHeaderStyle, { passive: true });
+  }
+
+  if (menuButton && mobileMenu) {
+    const setMenuOpen = (isOpen: boolean) => {
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Menüyü kapat' : 'Menüyü aç');
+      mobileMenu.hidden = !isOpen;
+      document.body.classList.toggle('menu-open', isOpen);
+    };
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      setMenuOpen(!isOpen);
+    });
+  }
 </script>

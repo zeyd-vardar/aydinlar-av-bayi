@@ -111,28 +111,26 @@ const heroSlides = [
               )}
               <p>{slide.text}</p>
               <div class="hero-actions">
-                <>
-                  <a
-                    class="btn btn-light"
-                    href={slide.href}
-                  >
-                    {slide.cta}{' '}
-                    <Icon
-                      name="arrow"
-                      size={18}
-                    />
-                  </a>
-                  <a
-                    class="btn btn-outline"
-                    href="/magazamiz"
-                  >
-                    Mağazamız{' '}
-                    <Icon
-                      name="arrow"
-                      size={18}
-                    />
-                  </a>
-                </>
+                <a
+                  class="btn btn-light"
+                  href={slide.href}
+                >
+                  {slide.cta}{' '}
+                  <Icon
+                    name="arrow"
+                    size={18}
+                  />
+                </a>
+                <a
+                  class="btn btn-outline"
+                  href="/magazamiz"
+                >
+                  Mağazamız{' '}
+                  <Icon
+                    name="arrow"
+                    size={18}
+                  />
+                </a>
               </div>
             </div>
           </article>
@@ -317,100 +315,115 @@ const heroSlides = [
         {
           features.map(([icon, title, text]) => (
             <article class="feature">
-              <>
-                <span class="feature-icon">
-                  <Icon
-                    name={icon}
-                    size={28}
-                  />
-                </span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </>
+              <span class="feature-icon">
+                <Icon
+                  name={icon}
+                  size={28}
+                />
+              </span>
+              <h3>{title}</h3>
+              <p>{text}</p>
             </article>
           ))
         }
       </div>
     </div>
   </section>
-</BaseLayout>
+  <script>
+    function initializeHeroCarousel() {
+      const carousel = document.querySelector<HTMLElement>('[data-hero-carousel]');
+      if (!carousel) return;
 
-<script>
-  const carousel = document.querySelector<HTMLElement>('[data-hero-carousel]');
-  const track = carousel?.querySelector<HTMLElement>('[data-hero-track]');
-  const slides = Array.from(carousel?.querySelectorAll<HTMLElement>('[data-hero-slide]') ?? []);
-  const dots = Array.from(carousel?.querySelectorAll<HTMLButtonElement>('[data-hero-dot]') ?? []);
-  const previous = carousel?.querySelector<HTMLButtonElement>('[data-hero-prev]');
-  const next = carousel?.querySelector<HTMLButtonElement>('[data-hero-next]');
-  const status = carousel?.querySelector<HTMLElement>('[data-hero-status]');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let activeIndex = 0;
-  let autoplay: number | undefined;
-  let pointerStart: number | undefined;
+      const track = carousel.querySelector<HTMLElement>('[data-hero-track]');
+      const slides = [...carousel.querySelectorAll<HTMLElement>('[data-hero-slide]')];
+      if (!track || slides.length === 0) return;
 
-  const showSlide = (index: number, announce = false) => {
-    if (!track || slides.length === 0) return;
-    activeIndex = (index + slides.length) % slides.length;
-    track.style.transform = `translate3d(-${activeIndex * 100}%, 0, 0)`;
-    slides.forEach((slide, slideIndex) => {
-      const active = slideIndex === activeIndex;
-      slide.setAttribute('aria-hidden', String(!active));
-      if (active) slide.removeAttribute('inert');
-      else slide.setAttribute('inert', '');
-    });
-    dots.forEach((dot, dotIndex) => {
-      if (dotIndex === activeIndex) dot.setAttribute('aria-current', 'true');
-      else dot.removeAttribute('aria-current');
-    });
-    if (announce && status)
-      status.textContent = slides[activeIndex]?.getAttribute('aria-label') ?? '';
-  };
+      const dots = [...carousel.querySelectorAll<HTMLButtonElement>('[data-hero-dot]')];
+      const previousButton = carousel.querySelector<HTMLButtonElement>('[data-hero-prev]');
+      const nextButton = carousel.querySelector<HTMLButtonElement>('[data-hero-next]');
+      const status = carousel.querySelector<HTMLElement>('[data-hero-status]');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let activeIndex = 0;
+      let autoplayTimer: number | undefined;
+      let pointerStartX: number | undefined;
 
-  const stopAutoplay = () => {
-    window.clearTimeout(autoplay);
-    autoplay = undefined;
-  };
-  const startAutoplay = () => {
-    stopAutoplay();
-    if (reduceMotion || document.hidden) return;
-    autoplay = window.setTimeout(() => {
-      showSlide(activeIndex + 1);
+      const showSlide = (index: number, announce = false) => {
+        activeIndex = (index + slides.length) % slides.length;
+        track.style.transform = `translate3d(-${activeIndex * 100}%, 0, 0)`;
+
+        slides.forEach((slide, index) => {
+          const isActive = index === activeIndex;
+          slide.setAttribute('aria-hidden', String(!isActive));
+          slide.toggleAttribute('inert', !isActive);
+        });
+
+        dots.forEach((dot, index) => {
+          if (index === activeIndex) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+
+        if (announce && status) {
+          status.textContent = slides[activeIndex].getAttribute('aria-label') ?? '';
+        }
+      };
+
+      const stopAutoplay = () => {
+        window.clearTimeout(autoplayTimer);
+        autoplayTimer = undefined;
+      };
+
+      const startAutoplay = () => {
+        stopAutoplay();
+        if (prefersReducedMotion || document.hidden) return;
+
+        autoplayTimer = window.setTimeout(() => {
+          showSlide(activeIndex + 1);
+          startAutoplay();
+        }, 5000);
+      };
+
+      const selectSlide = (index: number) => {
+        showSlide(index, true);
+        startAutoplay();
+      };
+
+      previousButton?.addEventListener('click', () => selectSlide(activeIndex - 1));
+      nextButton?.addEventListener('click', () => selectSlide(activeIndex + 1));
+      dots.forEach((dot, index) => dot.addEventListener('click', () => selectSlide(index)));
+
+      carousel.addEventListener('focusin', stopAutoplay);
+      carousel.addEventListener('focusout', (event) => {
+        if (!carousel.contains(event.relatedTarget as Node | null)) startAutoplay();
+      });
+      carousel.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') selectSlide(activeIndex - 1);
+        if (event.key === 'ArrowRight') selectSlide(activeIndex + 1);
+      });
+      carousel.addEventListener('pointerdown', (event) => {
+        if ((event.target as HTMLElement).closest('a, button')) return;
+        pointerStartX = event.clientX;
+      });
+      carousel.addEventListener('pointerup', (event) => {
+        if (pointerStartX === undefined) return;
+
+        const swipeDistance = event.clientX - pointerStartX;
+        pointerStartX = undefined;
+        if (Math.abs(swipeDistance) > 48) {
+          selectSlide(activeIndex + (swipeDistance < 0 ? 1 : -1));
+        }
+      });
+      carousel.addEventListener('pointercancel', () => {
+        pointerStartX = undefined;
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopAutoplay();
+        else startAutoplay();
+      });
+
+      showSlide(0);
       startAutoplay();
-    }, 5000);
-  };
-  const selectSlide = (index: number) => {
-    showSlide(index, true);
-    startAutoplay();
-  };
+    }
 
-  previous?.addEventListener('click', () => selectSlide(activeIndex - 1));
-  next?.addEventListener('click', () => selectSlide(activeIndex + 1));
-  dots.forEach((dot, index) => dot.addEventListener('click', () => selectSlide(index)));
-  carousel?.addEventListener('focusin', stopAutoplay);
-  carousel?.addEventListener('focusout', (event) => {
-    if (!carousel.contains((event as FocusEvent).relatedTarget as Node | null)) startAutoplay();
-  });
-  carousel?.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') selectSlide(activeIndex - 1);
-    if (event.key === 'ArrowRight') selectSlide(activeIndex + 1);
-  });
-  carousel?.addEventListener('pointerdown', (event) => {
-    if ((event.target as HTMLElement).closest('a, button')) return;
-    pointerStart = event.clientX;
-  });
-  carousel?.addEventListener('pointerup', (event) => {
-    if (pointerStart === undefined) return;
-    const distance = event.clientX - pointerStart;
-    pointerStart = undefined;
-    if (Math.abs(distance) > 48) selectSlide(activeIndex + (distance < 0 ? 1 : -1));
-  });
-  carousel?.addEventListener('pointercancel', () => {
-    pointerStart = undefined;
-  });
-  document.addEventListener('visibilitychange', () =>
-    document.hidden ? stopAutoplay() : startAutoplay(),
-  );
-
-  showSlide(0);
-  startAutoplay();
-</script>
+    initializeHeroCarousel();
+  </script>
+</BaseLayout>

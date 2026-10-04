@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogSearch from '../../components/blog/BlogSearch.astro';
+import { getBlogPostPath, slugifyTurkish } from '../../utils/blog';
 
 const categoryOrder = ['Balıkçılık', 'Avcılık', 'Kampçılık'] as const;
 const posts = (await getCollection('blog')).sort((a, b) =>
@@ -20,14 +21,6 @@ const groups = categoryOrder.map((mainCategory) => {
     })),
   };
 });
-const slugify = (value: string) =>
-  value
-    .toLocaleLowerCase('tr-TR')
-    .replace(/ı/g, 'i')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
 const crumbs = [
   { name: 'Ana Sayfa', url: '/' },
   { name: 'BLOG', url: '/blog' },
@@ -60,23 +53,21 @@ const crumbs = [
         groups.map((group) => (
           <section
             class="knowledge-main"
-            id={slugify(group.mainCategory)}
-            data-main-category={slugify(group.mainCategory)}
+            id={slugifyTurkish(group.mainCategory)}
+            data-main-category={slugifyTurkish(group.mainCategory)}
           >
             <div class="knowledge-main-heading">
-              <>
-                <span>Bilgi Alanı</span>
-                <h2>{group.mainCategory}</h2>
-                <p>
-                  {group.subCategories.reduce((total, item) => total + item.posts.length, 0)} başlık
-                </p>
-              </>
+              <span>Bilgi Alanı</span>
+              <h2>{group.mainCategory}</h2>
+              <p>
+                {group.subCategories.reduce((total, item) => total + item.posts.length, 0)} başlık
+              </p>
             </div>
             <div class="knowledge-subtopics">
               {group.subCategories.map((grouping, index) => (
                 <details
                   open={index < 2}
-                  id={`${slugify(group.mainCategory)}-${slugify(grouping.subCategory)}`}
+                  id={`${slugifyTurkish(group.mainCategory)}-${slugifyTurkish(grouping.subCategory)}`}
                 >
                   <summary>
                     <span>{grouping.subCategory}</span>
@@ -85,7 +76,7 @@ const crumbs = [
                   <ul>
                     {grouping.posts.map((post) => (
                       <li>
-                        <a href={`/blog/${slugify(post.data.mainCategory)}/${post.data.slug}`}>
+                        <a href={getBlogPostPath(post.data.mainCategory, post.data.slug)}>
                           <span>{post.data.title}</span>
                           <b aria-hidden="true">→</b>
                         </a>

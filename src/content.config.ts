@@ -24,7 +24,7 @@ const blog = defineCollection({
         z.object({
           institution: z.string(),
           page: z.string(),
-          url: z.string().url(),
+          url: z.url(),
         }),
       )
       .default([]),

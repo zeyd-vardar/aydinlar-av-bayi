@@ -1,11 +1,11 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getBlogPostPath } from '../../utils/blog';
+
 interface Props {
   posts: CollectionEntry<'blog'>[];
 }
 const { posts } = Astro.props;
-const categorySlug = (value: string) =>
-  value === 'Balıkçılık' ? 'balikcilik' : value === 'Avcılık' ? 'avcilik' : 'kampcilik';
 ---
 
 <div
@@ -56,13 +56,11 @@ const categorySlug = (value: string) =>
             ...post.data.keywords,
           ].join(' ')}
         >
-          <a href={`/blog/${categorySlug(post.data.mainCategory)}/${post.data.slug}`}>
-            <>
-              <span>
-                {post.data.mainCategory} / {post.data.subCategory}
-              </span>
-              <strong>{post.data.title}</strong>
-            </>
+          <a href={getBlogPostPath(post.data.mainCategory, post.data.slug)}>
+            <span>
+              {post.data.mainCategory} / {post.data.subCategory}
+            </span>
+            <strong>{post.data.title}</strong>
           </a>
         </li>
       ))
@@ -86,63 +84,75 @@ const categorySlug = (value: string) =>
 
 <script>
   const root = document.querySelector<HTMLElement>('[data-blog-discovery]');
-  const input = root?.querySelector<HTMLInputElement>('[data-blog-search-input]');
-  const form = root?.querySelector<HTMLFormElement>('[data-blog-search-form]');
-  const empty = root?.querySelector<HTMLElement>('[data-blog-empty]');
-  const summary = root?.querySelector<HTMLElement>('[data-results-summary]');
-  const reset = root?.querySelector<HTMLButtonElement>('[data-reset-search]');
-  const resultsRoot = root?.querySelector<HTMLElement>('[data-search-results]');
-  const results = [...(root?.querySelectorAll<HTMLElement>('[data-search-result]') ?? [])];
-  const directory = document.querySelector<HTMLElement>('[data-knowledge-directory]');
-  const categorySections = [...document.querySelectorAll<HTMLElement>('[data-main-category]')];
-  const normalize = (value: string) =>
-    value
-      .toLocaleLowerCase('tr-TR')
-      .replace(/ı/g, 'i')
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
-  const apply = (updateUrl = true) => {
-    const query = input?.value.trim() ?? '';
-    const normalizedQuery = normalize(query);
-    let count = 0;
-    results.forEach((result) => {
-      const show =
-        Boolean(normalizedQuery) &&
-        normalize(result.dataset.search ?? '').includes(normalizedQuery);
-      result.hidden = !show;
-      if (show) count += 1;
+
+  if (root) {
+    const input = root.querySelector<HTMLInputElement>('[data-blog-search-input]');
+    const form = root.querySelector<HTMLFormElement>('[data-blog-search-form]');
+    const emptyState = root.querySelector<HTMLElement>('[data-blog-empty]');
+    const summary = root.querySelector<HTMLElement>('[data-results-summary]');
+    const resetButton = root.querySelector<HTMLButtonElement>('[data-reset-search]');
+    const resultsList = root.querySelector<HTMLElement>('[data-search-results]');
+    const results = [...root.querySelectorAll<HTMLElement>('[data-search-result]')];
+    const directory = document.querySelector<HTMLElement>('[data-knowledge-directory]');
+    const categorySections = [...document.querySelectorAll<HTMLElement>('[data-main-category]')];
+
+    const normalizeText = (value: string) =>
+      value
+        .toLocaleLowerCase('tr-TR')
+        .replace(/ı/g, 'i')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+
+    const updateSearch = (updateUrl = true) => {
+      const query = input?.value.trim() ?? '';
+      const normalizedQuery = normalizeText(query);
+      let matchCount = 0;
+
+      results.forEach((result) => {
+        const searchText = normalizeText(result.dataset.search ?? '');
+        const matches = normalizedQuery !== '' && searchText.includes(normalizedQuery);
+        result.hidden = !matches;
+        if (matches) matchCount += 1;
+      });
+
+      if (directory) directory.hidden = normalizedQuery !== '';
+      if (resultsList) resultsList.hidden = normalizedQuery === '';
+      if (emptyState) emptyState.hidden = normalizedQuery === '' || matchCount > 0;
+      if (summary) {
+        summary.hidden = normalizedQuery === '';
+        summary.textContent = `“${query}” için ${matchCount} içerik bulundu.`;
+      }
+
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        if (query) url.searchParams.set('q', query);
+        else url.searchParams.delete('q');
+        history.replaceState({}, '', url);
+      }
+    };
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      updateSearch();
     });
-    if (directory) directory.hidden = Boolean(normalizedQuery);
-    if (resultsRoot) resultsRoot.hidden = !normalizedQuery;
-    if (empty) empty.hidden = !normalizedQuery || count > 0;
-    if (summary) {
-      summary.hidden = !normalizedQuery;
-      summary.textContent = `“${query}” için ${count} içerik bulundu.`;
-    }
-    if (updateUrl) {
-      const url = new URL(window.location.href);
-      query ? url.searchParams.set('q', query) : url.searchParams.delete('q');
-      history.replaceState({}, '', url);
-    }
-  };
-  form?.addEventListener('submit', (event) => {
-    event.preventDefault();
-    apply();
-  });
-  input?.addEventListener('input', () => apply());
-  reset?.addEventListener('click', () => {
-    if (input) input.value = '';
-    apply();
-    input?.focus();
-  });
-  const params = new URLSearchParams(window.location.search);
-  const initialQuery = params.get('q') ?? '';
-  const initialCategory = params.get('category');
-  if (input) input.value = initialQuery;
-  if (initialCategory) {
-    categorySections.forEach((section) => {
-      section.hidden = section.dataset.mainCategory !== initialCategory;
+    input?.addEventListener('input', () => updateSearch());
+    resetButton?.addEventListener('click', () => {
+      if (!input) return;
+      input.value = '';
+      updateSearch();
+      input.focus();
     });
+
+    const searchParams = new URLSearchParams(window.location.search);
+    const initialQuery = searchParams.get('q') ?? '';
+    const selectedCategory = searchParams.get('category');
+
+    if (input) input.value = initialQuery;
+    if (selectedCategory) {
+      categorySections.forEach((section) => {
+        section.hidden = section.dataset.mainCategory !== selectedCategory;
+      });
+    }
+    if (initialQuery) updateSearch(false);
   }
-  if (initialQuery) apply(false);
 </script>

@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PUBLIC_SITE_URL: https://aydinlaravbayii.com
+      PUBLIC_SITE_URL: https://trabzonavbayi.com
     steps:
       - name: Kaynağı al
         uses: actions/checkout@v4

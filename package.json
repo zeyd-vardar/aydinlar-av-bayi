@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build && node scripts/create-worker.mjs",
+    "build": "astro check && astro build && node scripts/format-sitemaps.mjs && node scripts/create-worker.mjs",
     "preview": "astro preview",
     "format": "prettier --write .",
     "format:check": "prettier --check ."

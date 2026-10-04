@@ -28,28 +28,21 @@ const crumbs = [
         class:list={['catalog-block', { alt: index % 2 === 1 }]}
       >
         <div class="container">
-          <>
-            <div class="catalog-title">
-              <>
-                <div>
-                  <>
-                    <span class="eyebrow">{group.eyebrow}</span>
-                    <h2>{group.title}</h2>
-                  </>
-                </div>
-                <p>
-                  Başlangıç seviyesinden deneyimli kullanıcılara kadar farklı beklentilere hitap
-                  eden {group.title.toLocaleLowerCase('tr-TR')} ürünlerini mağazamızda
-                  inceleyebilirsiniz.
-                </p>
-              </>
+          <div class="catalog-title">
+            <div>
+              <span class="eyebrow">{group.eyebrow}</span>
+              <h2>{group.title}</h2>
             </div>
-            <ul class="catalog-items">
-              {group.items.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </>
+            <p>
+              Başlangıç seviyesinden deneyimli kullanıcılara kadar farklı beklentilere hitap eden
+              {group.title.toLocaleLowerCase('tr-TR')} ürünlerini mağazamızda inceleyebilirsiniz.
+            </p>
+          </div>
+          <ul class="catalog-items">
+            {group.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
         </div>
       </section>
     ))

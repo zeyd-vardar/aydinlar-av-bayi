@@ -5,23 +5,13 @@ import BlogBreadcrumb from '../../components/blog/BlogBreadcrumb.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
 import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import { siteConfig } from '../../data/siteConfig.js';
-
-const categorySlugFor = (value: string) => {
-  if (value === 'Balıkçılık') return 'balikcilik';
-  if (value === 'Avcılık') return 'avcilik';
-  return 'kampcilik';
-};
+import { formatTurkishDate, getBlogPostPath, slugifyTurkish } from '../../utils/blog';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  const categorySlugForPath = (value: string) => {
-    if (value === 'Balıkçılık') return 'balikcilik';
-    if (value === 'Avcılık') return 'avcilik';
-    return 'kampcilik';
-  };
 
   return posts.map((post) => ({
-    params: { id: `${categorySlugForPath(post.data.mainCategory)}/${post.data.slug}` },
+    params: { id: getBlogPostPath(post.data.mainCategory, post.data.slug).replace('/blog/', '') },
     props: { post, allPosts: posts },
   }));
 }
@@ -36,17 +26,9 @@ const related = allPosts
       Number(a.data.subCategory === post.data.subCategory),
   )
   .slice(0, 5);
-const published = post.data.publishedAt.toLocaleDateString('tr-TR', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-});
-const updated = post.data.updatedAt.toLocaleDateString('tr-TR', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-});
-const articlePath = `/blog/${categorySlugFor(post.data.mainCategory)}/${post.data.slug}`;
+const published = formatTurkishDate(post.data.publishedAt);
+const updated = formatTurkishDate(post.data.updatedAt);
+const articlePath = getBlogPostPath(post.data.mainCategory, post.data.slug);
 const articleUrl = new URL(articlePath, siteConfig.url).href;
 const seoTitle =
   post.data.title.length > 48 ? post.data.title : `${post.data.title} | Aydınlar Av Bayi`;
@@ -68,12 +50,7 @@ const articleSchema = {
   articleSection: `${post.data.mainCategory} / ${post.data.subCategory}`,
   keywords: post.data.keywords.join(', '),
 };
-const categorySlug = post.data.mainCategory
-  .toLocaleLowerCase('tr-TR')
-  .replace(/ı/g, 'i')
-  .normalize('NFD')
-  .replace(/[\u0300-\u036f]/g, '')
-  .replaceAll(' ', '-');
+const categorySlug = slugifyTurkish(post.data.mainCategory);
 const crumbs = [
   { name: 'Ana Sayfa', url: '/' },
   { name: 'BLOG', url: '/blog' },
@@ -133,10 +110,8 @@ const crumbs = [
               class="official-notice"
               role="note"
             >
-              <>
-                <strong>Resmî bilgi notu</strong>
-                <p>Güncel resmi düzenlemeyi kontrol edin.</p>
-              </>
+              <strong>Resmî bilgi notu</strong>
+              <p>Güncel resmi düzenlemeyi kontrol edin.</p>
             </aside>
           )
         }<div class="blog-prose"><Content /></div>{
@@ -145,23 +120,21 @@ const crumbs = [
               class="article-sources"
               aria-labelledby="sources-title"
             >
-              <>
-                <h2 id="sources-title">Kaynaklar</h2>
-                <ul>
-                  {post.data.sources.map((source) => (
-                    <li>
-                      <a
-                        href={source.url}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      >
-                        <strong>{source.institution}</strong>
-                        <span>{source.page}</span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </>
+              <h2 id="sources-title">Kaynaklar</h2>
+              <ul>
+                {post.data.sources.map((source) => (
+                  <li>
+                    <a
+                      href={source.url}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <strong>{source.institution}</strong>
+                      <span>{source.page}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </section>
           )
         }
