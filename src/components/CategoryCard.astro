@@ -14,12 +14,13 @@ const { category } = Astro.props;
     aria-label={`${category.title} görseli`}
   ></span>
   <span class="category-shade"></span>
-  <span class="category-copy"
-    ><span><strong>{category.title}</strong></span><span class="circle-arrow"
-      ><Icon
+  <span class="category-copy">
+    <span><strong>{category.title}</strong></span>
+    <span class="circle-arrow">
+      <Icon
         name="arrow"
         size={17}
-      /></span
-    ></span
-  >
+      />
+    </span>
+  </span>
 </a>

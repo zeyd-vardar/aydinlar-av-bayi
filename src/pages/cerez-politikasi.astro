@@ -78,40 +78,35 @@ import { siteConfig } from '../data/siteConfig.js';
       <section aria-labelledby="google-maps">
         <h2 id="google-maps">4. Google Maps</h2>
         <p>
-          İnternet sitesinde mağaza konumunu göstermek amacıyla Google Maps bağlantısı veya harita
-          içeriği kullanılabilir.
+          İnternet sitesinde mağaza konumunu göstermek amacıyla Google Maps bağlantılarının yanı
+          sıra, İletişim sayfasında Google Maps iframe'i kullanılmaktadır.
         </p>
         <p>
-          Google Maps içeriğinin site içerisinde doğrudan yüklenmesi halinde tarayıcınız Google'ın
-          sunucularına bağlanabilir. Bu bağlantı sırasında Google tarafından teknik bilgiler
-          işlenebilir ve kullanıcının tarayıcı veya Google hesabı durumuna bağlı olarak çerezler
-          veya benzer teknolojiler kullanılabilir.
+          Harita alanı tarayıcınız tarafından yüklendiğinde Google'ın sunucularına bağlanabilir. Bu
+          bağlantı sırasında Google tarafından teknik bilgiler işlenebilir ve kullanıcının tarayıcı
+          veya Google hesabı durumuna bağlı olarak çerezler veya benzer teknolojiler kullanılabilir.
         </p>
         <p>
-          Bu nedenle harita içeriğinin, mümkün olduğunca yalnızca kullanıcının açıkça haritayı
-          görüntülemeyi seçmesinden sonra yüklenmesi tercih edilmektedir.
+          Harita iframe'i <i>lazy loading</i> ile kullanılır; harita alanı görüntülenmeye yaklaştığında
+          ayrıca bir tercih beklenmeksizin yüklenebilir.
         </p>
         <p>
           Google Maps'in kendi çerez ve gizlilik uygulamaları Google tarafından belirlenmektedir.
         </p>
       </section>
 
-      <section aria-labelledby="analitik">
-        <h2 id="analitik">5. Analitik</h2>
+      <section aria-labelledby="youtube">
+        <h2 id="youtube">5. YouTube</h2>
         <p>
-          İnternet sitesinin kod altyapısı, isteğe bağlı olarak Plausible uyumlu bir web analitiği
-          sisteminin etkinleştirilmesine olanak sağlamaktadır.
-        </p>
-        <p>Analitik sistemi etkin değilse bu amaçla herhangi bir analitik betiği yüklenmez.</p>
-        <p>
-          Plausible Analytics kullanılması halinde sağlayıcı tarafından açıklanan mevcut teknik
-          yapıya göre tarayıcı çerezi, localStorage veya kalıcı ziyaretçi tanımlayıcısı
-          kullanılmamaktadır.
+          Hakkımızda sayfasında, <code>youtube-nocookie.com</code> alan adı üzerinden sunulan bir YouTube
+          iframe'i kullanılmaktadır.
         </p>
         <p>
-          Analitik sisteminde veya sağlayıcıda değişiklik yapılması halinde bu politika da
-          güncellenir.
+          Video alanı tarayıcınız tarafından yüklendiğinde Google'ın sunucularıyla bağlantı
+          kurulabilir. Video oynatıldığında veya YouTube hizmetiyle etkileşime geçtiğinizde
+          YouTube/Google tarafından çerezler ya da benzer teknolojiler kullanılabilir.
         </p>
+        <p>Video iframe'i <i>lazy loading</i> ile kullanılmaktadır.</p>
       </section>
 
       <section aria-labelledby="whatsapp-instagram">
@@ -138,8 +133,8 @@ import { siteConfig } from '../data/siteConfig.js';
           çerezleri kabul et” mekanizması kullanılmamaktadır.
         </p>
         <p>
-          Gelecekte açık rıza gerektiren analitik, reklam, pazarlama veya benzeri teknolojilerin
-          eklenmesi halinde;
+          Gelecekte açık rıza gerektiren reklam, pazarlama veya benzeri teknolojilerin eklenmesi
+          halinde;
         </p>
         <ul>
           <li>gerekli olmayan teknolojiler kullanıcı tercihi alınmadan önce çalıştırılmaz,</li>

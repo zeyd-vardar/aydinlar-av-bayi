@@ -1,14 +1,3 @@
-export const brands = [
-  'Shimano',
-  'Daiwa',
-  'Okuma',
-  'Rapala',
-  'Huğlu',
-  'ATA Arms',
-  'Naturehike',
-  'Nurgaz',
-];
-
 export const brandGroups = [
   {
     id: 'balikcilik',

@@ -6,6 +6,7 @@ import TableOfContents from '../../components/blog/TableOfContents.astro';
 import RelatedArticles from '../../components/blog/RelatedArticles.astro';
 import { siteConfig } from '../../data/siteConfig.js';
 import { formatTurkishDate, getBlogPostPath, slugifyTurkish } from '../../utils/blog';
+import { serializeJsonLd } from '../../utils/jsonLd';
 import { withBase } from '../../utils/paths';
 
 export async function getStaticPaths() {
@@ -121,7 +122,7 @@ const crumbs = [
   <script
     slot="head"
     type="application/ld+json"
-    set:html={JSON.stringify(articleSchema)}
+    set:html={serializeJsonLd(articleSchema)}
   />
   <article class="blog-article">
     <header class="article-header">
@@ -130,12 +131,16 @@ const crumbs = [
           mainCategory={post.data.mainCategory}
           subCategory={post.data.subCategory}
           title={post.data.title}
-        /><span class="eyebrow light">{post.data.mainCategory} · {post.data.subCategory}</span><h1>
+        />
+        <span class="eyebrow light">{post.data.mainCategory} · {post.data.subCategory}</span>
+        <h1>
           {post.data.title}
-        </h1><p class="article-intro">{post.data.description}</p><div class="article-meta">
-          <span>{post.data.author}</span><span>{published}</span><span
-            >{post.data.readingTime} dk okuma</span
-          >
+        </h1>
+        <p class="article-intro">{post.data.description}</p>
+        <div class="article-meta">
+          <span>{post.data.author}</span>
+          <span>{published}</span>
+          <span>{post.data.readingTime} dk okuma</span>
         </div>
       </div>
     </header>
@@ -148,7 +153,8 @@ const crumbs = [
         )
       }
       <div class="article-main">
-        <div class="article-updated">Yayın: {published} · Son güncelleme: {updated}</div>{
+        <div class="article-updated">Yayın: {published} · Son güncelleme: {updated}</div>
+        {
           post.data.officialNotice && (
             <aside
               class="official-notice"
@@ -158,19 +164,20 @@ const crumbs = [
               <p>Güncel bilgi için yetkili kurumların resmî kaynaklarını kontrol edin.</p>
             </aside>
           )
-        }<div class="blog-prose"><Content /></div>
+        }
+        <div class="blog-prose"><Content /></div>
         <aside
           class="article-context-links"
           aria-label="İlgili bağlantılar"
         >
-          <a href={withBase(productGroup.href)}
-            >{productGroup.label}<span aria-hidden="true">→</span></a
-          >
-          <a href={withBase(`/blog#${categorySlug}`)}
-            >Diğer {post.data.mainCategory.toLocaleLowerCase('tr-TR')} rehberleri<span
-              aria-hidden="true">→</span
-            ></a
-          >
+          <a href={withBase(productGroup.href)}>
+            {productGroup.label}
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href={withBase(`/blog#${categorySlug}`)}>
+            Diğer {post.data.mainCategory.toLocaleLowerCase('tr-TR')} rehberleri
+            <span aria-hidden="true">→</span>
+          </a>
         </aside>
         {
           (previousPost || nextPost) && (

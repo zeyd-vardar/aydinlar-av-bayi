@@ -12,12 +12,16 @@ const subCategorySlug = slugifyTurkish(subCategory);
   aria-label="İçerik yolu"
 >
   <ol>
-    <li><a href={withBase('/')}>Ana Sayfa</a></li><li><a href={withBase('/blog')}>BLOG</a></li><li>
+    <li><a href={withBase('/')}>Ana Sayfa</a></li>
+    <li><a href={withBase('/blog')}>BLOG</a></li>
+    <li>
       <a href={withBase(`/blog?category=${categorySlug}`)}>{mainCategory}</a>
-    </li><li>
+    </li>
+    <li>
       <a href={withBase(`/blog?category=${categorySlug}#${categorySlug}-${subCategorySlug}`)}
         >{subCategory}</a
       >
-    </li><li aria-current="page">{title}</li>
+    </li>
+    <li aria-current="page">{title}</li>
   </ol>
 </nav>

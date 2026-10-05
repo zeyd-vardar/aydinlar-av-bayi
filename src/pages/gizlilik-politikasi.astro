@@ -88,22 +88,42 @@ import { siteConfig } from '../data/siteConfig.js';
       <section aria-labelledby="google-maps">
         <h2 id="google-maps">4. Google Maps</h2>
         <p>
-          Mağaza konumuna ulaşabilmeniz için Google Maps'e yönlendiren bağlantılar kullanılabilir.
+          Mağaza konumuna ulaşabilmeniz için Google Maps'e yönlendiren bağlantıların yanı sıra,
+          İletişim sayfasında Google Maps iframe'i kullanılmaktadır.
         </p>
         <p>
-          Harita içeriğinin site içerisinde görüntülenmesi halinde tarayıcınız Google'ın
-          sunucularıyla bağlantı kurabilir ve Google tarafından IP adresi, cihaz veya tarayıcıya
-          ilişkin teknik bilgiler gibi veriler işlenebilir.
+          Harita alanı tarayıcınız tarafından yüklendiğinde Google'ın sunucularıyla bağlantı
+          kurulabilir; Google tarafından IP adresi, cihaz veya tarayıcıya ilişkin teknik bilgiler
+          gibi veriler işlenebilir. Harita iframe'i, sayfa performansına yardımcı olmak amacıyla
+          <i>lazy loading</i> ile yüklenmektedir.
         </p>
         <p>
-          Gizliliğin korunması amacıyla üçüncü taraf harita içeriğinin mümkün olduğunca yalnızca
-          kullanıcının açıkça görüntülemeyi tercih etmesinden sonra yüklenmesi tercih edilmektedir.
+          Harita alanı görüntülenmeye yaklaştığında iframe ayrıca bir tercih beklenmeksizin
+          yüklenebilir. Bu sırada Google'ın çerez veya benzer teknolojileri kullanması, Google
+          hesabı ve tarayıcı ayarlarınıza bağlı olabilir.
         </p>
         <p>Google hizmetlerini kullandığınızda Google'ın kendi gizlilik koşulları geçerlidir.</p>
       </section>
 
+      <section aria-labelledby="youtube">
+        <h2 id="youtube">5. YouTube</h2>
+        <p>
+          Hakkımızda sayfasında, <code>youtube-nocookie.com</code> alan adı üzerinden sunulan bir YouTube
+          iframe'i kullanılmaktadır.
+        </p>
+        <p>
+          Video alanı tarayıcınız tarafından yüklendiğinde Google'ın sunucularıyla bağlantı
+          kurulabilir ve teknik bağlantı verileri işlenebilir. Video iframe'i de <i>lazy loading</i>
+          ile yüklenmektedir.
+        </p>
+        <p>
+          Video oynatıldığında veya YouTube hizmetiyle etkileşime geçtiğinizde YouTube/Google'ın
+          kendi gizlilik ve çerez uygulamaları geçerli olabilir.
+        </p>
+      </section>
+
       <section aria-labelledby="whatsapp-instagram">
-        <h2 id="whatsapp-instagram">5. WhatsApp ve Instagram</h2>
+        <h2 id="whatsapp-instagram">6. WhatsApp ve Instagram</h2>
         <p>İnternet sitesinde WhatsApp ve Instagram'a yönlendiren bağlantılar bulunmaktadır.</p>
         <p>
           Bu bağlantılar yalnızca kullanıcı tarafından tıklandığında ilgili harici hizmete
@@ -116,24 +136,6 @@ import { siteConfig } from '../data/siteConfig.js';
         <p>
           Aydınlar Av Bayii, üçüncü taraf platformların kendi sistemlerinde gerçekleştirdiği
           bağımsız veri işleme faaliyetlerini kontrol etmez.
-        </p>
-      </section>
-
-      <section aria-labelledby="web-analitigi">
-        <h2 id="web-analitigi">6. Web Analitiği</h2>
-        <p>
-          İnternet sitesinin teknik altyapısı gizlilik odaklı ve çerez kullanmayan analitik
-          sistemlerin kullanılmasına imkân verebilir.
-        </p>
-        <p>
-          Analitik hizmet etkinleştirilecek olması halinde, kullanılan sağlayıcı, işlenen veriler,
-          amaç ve veri saklama koşulları bu Gizlilik Politikası ve Çerez Politikası içerisinde
-          güncel şekilde açıklanır.
-        </p>
-        <p>
-          Ziyaretçileri reklam amacıyla siteler arasında takip eden analitik veya pazarlama
-          teknolojileri, gerekli hukuki değerlendirme ve kullanıcı tercih mekanizmaları sağlanmadan
-          etkinleştirilmez.
         </p>
       </section>
 

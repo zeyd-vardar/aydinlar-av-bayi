@@ -848,14 +848,6 @@ h3 {
 .contact-band p {
   color: #687169;
 }
-.contact-actions {
-  display: grid;
-  gap: 12px;
-}
-.contact-actions .btn {
-  justify-content: flex-start;
-}
-
 /* Inner pages */
 .page-hero {
   min-height: 500px;
@@ -1096,10 +1088,7 @@ h3 {
   margin: 0 0 12px;
 }
 .value-card p {
-  color: #69716b;
   font-size: 0.88rem;
-}
-.value-card p {
   color: rgba(255, 255, 255, 0.62);
 }
 .gallery-grid {
@@ -1500,8 +1489,7 @@ h3 {
 .blog-card-link,
 .blog-card-body,
 .blog-card-category,
-.blog-card-description,
-.blog-card-meta {
+.blog-card-description {
   display: block;
 }
 .blog-card-image {

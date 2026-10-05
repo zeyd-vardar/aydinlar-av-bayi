@@ -82,6 +82,45 @@ for (const file of inspectableFiles) {
         }
       }
 
+      const ids = [...content.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
+      const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
+      for (const id of new Set(duplicateIds)) {
+        errors.push(`${relativeFile}: yinelenen id bulundu: ${id}`);
+      }
+
+      for (const match of content.matchAll(/<img\b[^>]*>/g)) {
+        if (!/\balt="[^"]*"/.test(match[0]))
+          errors.push(`${relativeFile}: alt niteliği olmayan görsel bulundu`);
+      }
+
+      for (const match of content.matchAll(/<a\b[^>]*\btarget="_blank"[^>]*>/g)) {
+        const rel = match[0].match(/\brel="([^"]*)"/)?.[1].split(/\s+/) ?? [];
+        if (!rel.includes('noopener') || !rel.includes('noreferrer')) {
+          errors.push(`${relativeFile}: target="_blank" bağlantısında güvenli rel eksik`);
+        }
+      }
+
+      for (const match of content.matchAll(/<iframe\b[^>]*>/g)) {
+        const iframe = match[0];
+        const source = iframe.match(/\bsrc="([^"]+)"/)?.[1];
+        if (!source || !source.startsWith('https://'))
+          errors.push(`${relativeFile}: iframe HTTPS kaynağı kullanmıyor`);
+        if (!/\btitle="[^"]+"/.test(iframe))
+          errors.push(`${relativeFile}: iframe title niteliği eksik`);
+        if (!/\breferrerpolicy="[^"]+"/.test(iframe))
+          errors.push(`${relativeFile}: iframe referrerpolicy niteliği eksik`);
+      }
+
+      for (const match of content.matchAll(
+        /<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/g,
+      )) {
+        try {
+          JSON.parse(match[1]);
+        } catch {
+          errors.push(`${relativeFile}: geçersiz JSON-LD bulundu`);
+        }
+      }
+
       const canonicals = [...content.matchAll(/<link\s+rel="canonical"\s+href="([^"]+)"/g)];
       if (canonicals.length !== 1) {
         errors.push(`${relativeFile}: bir canonical bekleniyordu, bulunan: ${canonicals.length}`);

@@ -149,7 +149,10 @@ const { posts } = Astro.props;
     const selectedCategory = searchParams.get('category');
 
     if (input) input.value = initialQuery;
-    if (selectedCategory) {
+    const hasSelectedCategory = categorySections.some(
+      (section) => section.dataset.mainCategory === selectedCategory,
+    );
+    if (hasSelectedCategory) {
       categorySections.forEach((section) => {
         section.hidden = section.dataset.mainCategory !== selectedCategory;
       });

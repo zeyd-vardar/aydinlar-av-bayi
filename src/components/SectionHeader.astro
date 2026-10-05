@@ -9,5 +9,7 @@ const { eyebrow, title, text, align = 'left' } = Astro.props;
 ---
 
 <div class:list={['section-head', align]}>
-  <span class="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}
+  <span class="eyebrow">{eyebrow}</span>
+  <h2>{title}</h2>
+  {text && <p>{text}</p>}
 </div>
