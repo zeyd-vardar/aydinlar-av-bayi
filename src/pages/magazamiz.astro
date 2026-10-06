@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import GalleryLightbox from '../components/GalleryLightbox.astro';
 import PageHero from '../components/PageHero.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import { responsiveImageSrcSet, withBase } from '../utils/paths';
@@ -51,12 +52,13 @@ const items = [
       <div class="gallery-grid">
         {
           items.map((item, index) => (
-            <a
+            <button
               class={`gallery-item gallery-item-${index + 1}`}
-              href={withBase(item.src)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Mağazamızdan ${index + 1}. fotoğrafı aç`}
+              type="button"
+              aria-label={`Mağazamızdan ${index + 1}. fotoğrafı büyüt`}
+              data-lightbox-trigger
+              data-lightbox-src={withBase(item.src)}
+              data-lightbox-alt={`Aydınlar Av Bayii mağazasından ${index + 1}. görünüm`}
             >
               <img
                 src={withBase(item.src)}
@@ -72,10 +74,11 @@ const items = [
                 loading="lazy"
                 decoding="async"
               />
-            </a>
+            </button>
           ))
         }
       </div>
+      <GalleryLightbox />
     </div>
   </section>
 </BaseLayout>

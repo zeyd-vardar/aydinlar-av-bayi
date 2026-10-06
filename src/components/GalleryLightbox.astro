@@ -1,0 +1,126 @@
+<div data-gallery-lightbox>
+  <dialog
+    class="gallery-lightbox"
+    aria-label="Galeri görseli"
+    data-lightbox-dialog
+  >
+    <div class="lightbox-toolbar">
+      <span
+        aria-live="polite"
+        data-lightbox-status
+      ></span>
+      <div class="lightbox-zoom-controls">
+        <button
+          type="button"
+          aria-label="Uzaklaştır"
+          data-lightbox-zoom-out
+        >
+          −
+        </button>
+        <button
+          type="button"
+          aria-label="Yakınlaştır"
+          data-lightbox-zoom-in
+        >
+          +
+        </button>
+        <button
+          type="button"
+          aria-label="Görseli kapat"
+          data-lightbox-close
+        >
+          Kapat
+        </button>
+      </div>
+    </div>
+    <div class="lightbox-content">
+      <button
+        class="lightbox-nav"
+        type="button"
+        aria-label="Önceki görsel"
+        data-lightbox-previous
+      >
+        ‹
+      </button>
+      <div class="lightbox-image-frame">
+        <img
+          alt=""
+          data-lightbox-image
+        />
+      </div>
+      <button
+        class="lightbox-nav"
+        type="button"
+        aria-label="Sonraki görsel"
+        data-lightbox-next
+      >
+        ›
+      </button>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-gallery-lightbox]');
+
+  if (root) {
+    const dialog = root.querySelector<HTMLDialogElement>('[data-lightbox-dialog]');
+    const image = root.querySelector<HTMLImageElement>('[data-lightbox-image]');
+    const status = root.querySelector<HTMLElement>('[data-lightbox-status]');
+    const zoomIn = root.querySelector<HTMLButtonElement>('[data-lightbox-zoom-in]');
+    const zoomOut = root.querySelector<HTMLButtonElement>('[data-lightbox-zoom-out]');
+    const close = root.querySelector<HTMLButtonElement>('[data-lightbox-close]');
+    const previous = root.querySelector<HTMLButtonElement>('[data-lightbox-previous]');
+    const next = root.querySelector<HTMLButtonElement>('[data-lightbox-next]');
+    const triggers = [...document.querySelectorAll<HTMLButtonElement>('[data-lightbox-trigger]')];
+    let activeIndex = 0;
+    let scale = 1;
+
+    const updateZoom = () => {
+      if (!image || !zoomIn || !zoomOut) return;
+
+      image.style.transform = `scale(${scale})`;
+      zoomIn.disabled = scale >= 2.5;
+      zoomOut.disabled = scale <= 1;
+    };
+
+    const showImage = (index: number) => {
+      if (!image || !status || triggers.length === 0) return;
+
+      activeIndex = (index + triggers.length) % triggers.length;
+      const trigger = triggers[activeIndex];
+      image.src = trigger.dataset.lightboxSrc ?? '';
+      image.alt = trigger.dataset.lightboxAlt ?? '';
+      status.textContent = `${activeIndex + 1} / ${triggers.length}`;
+      scale = 1;
+      updateZoom();
+    };
+
+    triggers.forEach((trigger, index) => {
+      trigger.addEventListener('click', () => {
+        if (!dialog) return;
+        showImage(index);
+        dialog.showModal();
+      });
+    });
+
+    zoomIn?.addEventListener('click', () => {
+      scale = Math.min(scale + 0.25, 2.5);
+      updateZoom();
+    });
+    zoomOut?.addEventListener('click', () => {
+      scale = Math.max(scale - 0.25, 1);
+      updateZoom();
+    });
+    previous?.addEventListener('click', () => showImage(activeIndex - 1));
+    next?.addEventListener('click', () => showImage(activeIndex + 1));
+    close?.addEventListener('click', () => dialog?.close());
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog?.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showImage(activeIndex - 1);
+      if (event.key === 'ArrowRight') showImage(activeIndex + 1);
+    });
+  }
+</script>
