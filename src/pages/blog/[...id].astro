@@ -74,12 +74,14 @@ const articleSchema = {
     '@type': 'Organization',
     '@id': `${siteConfig.url}#organization`,
     name: post.data.author,
+    legalName: siteConfig.legalName,
     url: siteConfig.url,
   },
   publisher: {
     '@type': 'Organization',
     '@id': `${siteConfig.url}#organization`,
     name: siteConfig.name,
+    legalName: siteConfig.legalName,
     url: siteConfig.url,
     logo: {
       '@type': 'ImageObject',

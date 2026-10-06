@@ -14,14 +14,15 @@ import { siteConfig } from '../data/siteConfig.js';
       <div class="container legal-page-container">
         <span class="eyebrow light">Yasal Bilgilendirme</span>
         <h1>Çerez Politikası</h1>
-        <p>Son Güncelleme: <time datetime="2026-10-05">5 Ekim 2026</time></p>
+        <p>Son Güncelleme: <time datetime="2026-10-06">6 Ekim 2026</time></p>
       </div>
     </header>
 
     <div class="container legal-page-container legal-page-content">
       <p>
-        Bu Çerez Politikası, Aydınlar Av Bayii internet sitesinde kullanılan çerezler ve benzer
-        teknolojiler hakkında bilgi vermek amacıyla hazırlanmıştır.
+        Bu Çerez Politikası, {siteConfig.legalName} tarafından {siteConfig.name} markasıyla sunulan
+        internet sitesinde kullanılan çerezler ve benzer teknolojiler hakkında bilgi vermek amacıyla
+        hazırlanmıştır.
       </p>
 
       <section aria-labelledby="cerez-nedir">
@@ -171,12 +172,12 @@ import { siteConfig } from '../data/siteConfig.js';
         <h2 id="cerez-iletisim">10. İletişim</h2>
         <p>Çerezler ve internet sitesindeki gizlilik uygulamalarıyla ilgili sorularınız için:</p>
         <address>
-          <strong>Aydınlar Av Bayii</strong><br />
-          Pelitli, Mehmet Akif Ersoy Cd. No:10/C<br />
-          61080 Ortahisar/Trabzon
+          <strong>{siteConfig.legalName}</strong><br />
+          {siteConfig.addressDetails.streetAddress}<br />
+          {siteConfig.addressDetails.postalCode} {siteConfig.addressDetails.addressLocality}/{siteConfig.addressDetails.addressRegion}
         </address>
         <p>
-          <strong>Telefon:</strong> 0549 477 01 61<br />
+          <strong>Telefon:</strong> {siteConfig.phone}<br />
           <strong>E-posta:</strong>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </p>

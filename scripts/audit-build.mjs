@@ -7,7 +7,13 @@ const primaryOrigin = (process.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com
   /\/+$/,
   '',
 );
-const forbiddenValues = ['zeyd-vardar.github.io', 'aydinlarav.com', '/aydinlar-av-bayi/'];
+const forbiddenValues = ['zeyd-vardar.github.io', '/aydinlar-av-bayi/'];
+const forbiddenPatterns = [
+  {
+    pattern: /(?:https?:)?\/\/(?:www\.)?aydinlarav\.com\b/i,
+    label: 'aydinlarav.com URL',
+  },
+];
 const errors = [];
 
 async function walk(directory) {
@@ -60,6 +66,10 @@ for (const file of inspectableFiles) {
   for (const forbidden of forbiddenValues) {
     if (content.includes(forbidden))
       errors.push(`${relativeFile}: yasak production değeri bulundu: ${forbidden}`);
+  }
+  for (const { pattern, label } of forbiddenPatterns) {
+    if (pattern.test(content))
+      errors.push(`${relativeFile}: yasak production değeri bulundu: ${label}`);
   }
 
   if (file.endsWith('.html')) {

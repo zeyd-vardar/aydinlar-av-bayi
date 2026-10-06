@@ -44,7 +44,7 @@ GitHub Actions mevcut durumda test adresini kullanır. Repository variable olara
 - `aydinlarav.com` → `trabzonavbayi.com` path/query korumalı 301 yönlendirmesi
 - Gizlilik Politikası, KVKK Aydınlatma Metni ve Çerez Politikası nihai hukuk metinleri
 - Google Maps ve YouTube kullanımı için çerez/onay gereksinimi
-- Kurumsal e-posta adresinin (`merhaba@aydinlaravbayi.com`) aktifliği ve domain uyumu
+- Kurumsal e-posta adresinin (`info@aydinlarav.com`) aktifliği ve DNS e-posta kayıtları
 - Ana sayfadaki mağaza dış cephe görselinin gerçek işletme fotoğrafı olup olmadığı
 - Silah, tüfek, tabanca, ruhsat, av mevzuatı ve dönemsel yasak içeriklerinin uzman/hukuk incelemesi
 

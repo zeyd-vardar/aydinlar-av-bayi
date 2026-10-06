@@ -14,7 +14,7 @@ import { siteConfig } from '../data/siteConfig.js';
       <div class="container legal-page-container">
         <span class="eyebrow light">Yasal Bilgilendirme</span>
         <h1>KVKK Aydınlatma Metni</h1>
-        <p>Son Güncelleme: <time datetime="2026-10-05">5 Ekim 2026</time></p>
+        <p>Son Güncelleme: <time datetime="2026-10-06">6 Ekim 2026</time></p>
       </div>
     </header>
 
@@ -25,8 +25,8 @@ import { siteConfig } from '../data/siteConfig.js';
       >
         <strong>Yayın öncesi doğrulama gerekli</strong>
         <p>
-          Metindeki <strong>[RESMÎ UNVAN]</strong> alanı doldurulmalı; production ortamında kullanılacak
-          hosting hizmeti ve yurt dışı veri aktarım mekanizması doğrulanmalıdır.
+          Production ortamında kullanılacak hosting hizmeti ve buna ilişkin yurt dışı veri aktarım
+          mekanizması doğrulanmalıdır.
         </p>
       </aside>
 
@@ -39,12 +39,12 @@ import { siteConfig } from '../data/siteConfig.js';
         <h2 id="veri-sorumlusu">1. Veri Sorumlusu</h2>
         <p>KVKK kapsamında veri sorumlusu:</p>
         <p>
-          <strong>Resmî Unvan:</strong> [RESMÎ UNVAN]<br />
-          <strong>İşletme/Marka Adı:</strong> Aydınlar Av Bayii<br />
-          <strong>Adres:</strong> Pelitli, Mehmet Akif Ersoy Cd. No:10/C, 61080 Ortahisar/Trabzon<br
-          />
-          <strong>Telefon:</strong> 0549 477 01 61<br />
-          <strong>E-posta:</strong> merhaba@aydinlaravbayi.com
+          <strong>Resmî Unvan:</strong> {siteConfig.legalName}<br />
+          <strong>İşletme/Marka Adı:</strong> {siteConfig.name}<br />
+          <strong>Adres:</strong> {siteConfig.address}<br />
+          <strong>Telefon:</strong> {siteConfig.phone}<br />
+          <strong>E-posta:</strong>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </p>
         <p>olarak faaliyet göstermektedir.</p>
       </section>
@@ -190,9 +190,9 @@ import { siteConfig } from '../data/siteConfig.js';
         </p>
         <p>Yazılı başvurular:</p>
         <address>
-          <strong>[RESMÎ UNVAN]</strong><br />
-          Pelitli, Mehmet Akif Ersoy Cd. No:10/C<br />
-          61080 Ortahisar/Trabzon
+          <strong>{siteConfig.legalName}</strong><br />
+          {siteConfig.addressDetails.streetAddress}<br />
+          {siteConfig.addressDetails.postalCode} {siteConfig.addressDetails.addressLocality}/{siteConfig.addressDetails.addressRegion}
         </address>
         <p>adresine iletilebilir.</p>
         <p>
@@ -201,7 +201,7 @@ import { siteConfig } from '../data/siteConfig.js';
           adresinin kullanılması gerekmektedir.
         </p>
         <p>İletişim e-posta adresimiz:</p>
-        <p><strong>merhaba@aydinlaravbayi.com</strong></p>
+        <p><a href={`mailto:${siteConfig.email}`}><strong>{siteConfig.email}</strong></a></p>
         <p>
           Başvurular, KVKK ve ilgili mevzuatta belirtilen süreler içerisinde değerlendirilerek
           sonuçlandırılır.

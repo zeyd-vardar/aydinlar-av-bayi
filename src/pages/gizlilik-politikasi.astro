@@ -15,14 +15,14 @@ import { siteConfig } from '../data/siteConfig.js';
       <div class="container legal-page-container">
         <span class="eyebrow light">Yasal Bilgilendirme</span>
         <h1>Gizlilik Politikası</h1>
-        <p>Son Güncelleme: <time datetime="2026-10-05">5 Ekim 2026</time></p>
+        <p>Son Güncelleme: <time datetime="2026-10-06">6 Ekim 2026</time></p>
       </div>
     </header>
 
     <div class="container legal-page-container legal-page-content">
       <p>
-        Aydınlar Av Bayii olarak internet sitemizi ziyaret eden kişilerin gizliliğine önem
-        veriyoruz.
+        {siteConfig.legalName}, {siteConfig.name} markası olarak internet sitemizi ziyaret eden
+        kişilerin gizliliğine önem vermektedir.
       </p>
       <p>
         Bu Gizlilik Politikası, internet sitesini kullanırken hangi bilgilerin işlenebileceğini ve
@@ -210,13 +210,14 @@ import { siteConfig } from '../data/siteConfig.js';
         <h2 id="gizlilik-iletisim">13. İletişim</h2>
         <p>Gizlilik uygulamalarımız hakkında sorularınız için:</p>
         <address>
-          <strong>Aydınlar Av Bayii</strong><br />
-          Pelitli, Mehmet Akif Ersoy Cd. No:10/C<br />
-          61080 Ortahisar/Trabzon
+          <strong>{siteConfig.legalName}</strong><br />
+          {siteConfig.addressDetails.streetAddress}<br />
+          {siteConfig.addressDetails.postalCode} {siteConfig.addressDetails.addressLocality}/{siteConfig.addressDetails.addressRegion}
         </address>
         <p>
-          <strong>Telefon:</strong> 0549 477 01 61<br />
-          <strong>E-posta:</strong> merhaba@aydinlaravbayi.com
+          <strong>Telefon:</strong> {siteConfig.phone}<br />
+          <strong>E-posta:</strong>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </p>
       </section>
     </div>

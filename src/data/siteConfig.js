@@ -5,6 +5,7 @@ const siteUrl = new URL(import.meta.env.BASE_URL, siteOrigin).href;
 
 export const siteConfig = {
   name: 'Aydınlar Av Bayii',
+  legalName: 'Aydınlar Av Malzemeleri Pazarlama Limited Şirketi',
   shortName: 'AYDINLAR',
   tagline: 'Balıkçılık, avcılık ve outdoor dünyası',
   url: siteUrl,
@@ -13,7 +14,7 @@ export const siteConfig = {
   phone: '0549 477 01 61',
   phoneHref: '+905494770161',
   whatsapp: '905494770161',
-  email: 'merhaba@aydinlaravbayi.com',
+  email: 'info@aydinlarav.com',
   address: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C 61080 Ortahisar/Trabzon',
   addressDetails: {
     streetAddress: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C',
