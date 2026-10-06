@@ -1,0 +1,68 @@
+---
+import { withBase } from '../utils/paths';
+
+interface Product {
+  id: string;
+  name: string;
+  category: string;
+  image: string;
+  imageAlt: string;
+}
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  title: string;
+  text: string;
+  products: Product[];
+  emptyMessage: string;
+  tone?: 'paper' | 'cream';
+}
+
+const {
+  id,
+  eyebrow,
+  title,
+  text,
+  products,
+  emptyMessage,
+  tone = 'paper',
+} = Astro.props;
+---
+
+<section
+  class:list={['section', 'product-showcase', tone]}
+  aria-labelledby={`${id}-title`}
+>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 id={`${id}-title`}>{title}</h2>
+      <p>{text}</p>
+    </div>
+    {
+      products.length > 0 ? (
+        <ul class="product-showcase-grid" role="list">
+          {products.map((product) => (
+            <li class="product-showcase-card">
+              <img
+                src={withBase(product.image)}
+                alt={product.imageAlt}
+                width="720"
+                height="540"
+                loading="lazy"
+                decoding="async"
+              />
+              <div>
+                <p>{product.category}</p>
+                <h3>{product.name}</h3>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="product-showcase-empty">{emptyMessage}</p>
+      )
+    }
+  </div>
+</section>

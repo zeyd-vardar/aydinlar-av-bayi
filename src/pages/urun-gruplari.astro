@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import ProductShowcase from '../components/ProductShowcase.astro';
 import { categoryGroups } from '../data/categories.js';
+import { newProducts } from '../data/newProducts.js';
+import { recommendedProducts } from '../data/recommendedProducts.js';
 const crumbs = [
   { name: 'Ana Sayfa', url: '/' },
   { name: 'Ürün Grupları', url: '/urun-gruplari' },
@@ -20,6 +23,23 @@ const crumbs = [
     text="Balıkçılık, avcılık, outdoor ve kamp dünyası için özenle seçilmiş ürün gruplarını keşfedin."
     image="/images/category-atlas.webp"
     position="center"
+  />
+  <ProductShowcase
+    id="recommended-products"
+    eyebrow="Mağazadan Seçtiklerimiz"
+    title="Önerilen Ürünler"
+    text="Mağazamızın öne çıkan ürünlerini burada inceleyebilirsiniz."
+    products={recommendedProducts}
+    emptyMessage="Önerilen ürünler yakında burada yer alacak."
+    tone="cream"
+  />
+  <ProductShowcase
+    id="new-products"
+    eyebrow="Yeni Seçenekler"
+    title="Yeni Gelen Ürünler"
+    text="Mağazamıza yeni ulaşan ürünleri bu bölümden takip edebilirsiniz."
+    products={newProducts}
+    emptyMessage="Yeni gelen ürünler yakında burada yer alacak."
   />
   {
     categoryGroups.map((group, index) => (
