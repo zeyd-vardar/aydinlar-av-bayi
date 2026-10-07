@@ -15,24 +15,20 @@ interface Props {
   title: string;
   text: string;
   products: Product[];
+  section: 'recommended' | 'new';
   emptyMessage: string;
   tone?: 'paper' | 'cream';
 }
 
-const {
-  id,
-  eyebrow,
-  title,
-  text,
-  products,
-  emptyMessage,
-  tone = 'paper',
-} = Astro.props;
+const { id, eyebrow, title, text, products, section, emptyMessage, tone = 'paper' } = Astro.props;
+const productsApiUrl = import.meta.env.PUBLIC_PRODUCTS_API_URL?.trim() ?? '';
 ---
 
 <section
   class:list={['section', 'product-showcase', tone]}
   aria-labelledby={`${id}-title`}
+  data-product-showcase={section}
+  data-products-api={productsApiUrl}
 >
   <div class="container">
     <div class="section-head">
@@ -42,7 +38,10 @@ const {
     </div>
     {
       products.length > 0 ? (
-        <ul class="product-showcase-grid" role="list">
+        <ul
+          class="product-showcase-grid"
+          role="list"
+        >
           {products.map((product) => (
             <li class="product-showcase-card">
               <img
@@ -66,3 +65,73 @@ const {
     }
   </div>
 </section>
+
+<script>
+  interface PublicProduct {
+    id: string;
+    section: 'recommended' | 'new';
+    name: string;
+    category: string;
+    imageUrl: string;
+    imageAlt: string;
+  }
+
+  const showcases = [...document.querySelectorAll<HTMLElement>('[data-product-showcase]')];
+  const endpoint = showcases.find((item) => item.dataset.productsApi)?.dataset.productsApi;
+
+  if (endpoint) {
+    fetch(endpoint, { credentials: 'omit', headers: { Accept: 'application/json' } })
+      .then((response) => {
+        if (!response.ok) throw new Error('Product API request failed');
+        return response.json() as Promise<{ products?: PublicProduct[] }>;
+      })
+      .then(({ products = [] }) => {
+        for (const showcase of showcases) {
+          const sectionProducts = products.filter(
+            (product) => product.section === showcase.dataset.productShowcase,
+          );
+          if (!sectionProducts.length) continue;
+
+          const list = document.createElement('ul');
+          list.className = 'product-showcase-grid';
+          list.setAttribute('role', 'list');
+
+          for (const product of sectionProducts) {
+            let imageUrl: URL;
+            try {
+              imageUrl = new URL(product.imageUrl);
+            } catch {
+              continue;
+            }
+            if (imageUrl.protocol !== 'https:') continue;
+
+            const item = document.createElement('li');
+            item.className = 'product-showcase-card';
+            const image = document.createElement('img');
+            image.src = imageUrl.href;
+            image.alt = product.imageAlt;
+            image.width = 720;
+            image.height = 540;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            const copy = document.createElement('div');
+            const category = document.createElement('p');
+            category.textContent = product.category;
+            const name = document.createElement('h3');
+            name.textContent = product.name;
+            copy.append(category, name);
+            item.append(image, copy);
+            list.append(item);
+          }
+
+          if (!list.childElementCount) continue;
+          showcase
+            .querySelector('.product-showcase-grid, .product-showcase-empty')
+            ?.replaceWith(list);
+        }
+      })
+      .catch(() => {
+        // Backend geçici olarak kullanılamazsa statik boş durum görünmeye devam eder.
+      });
+  }
+</script>

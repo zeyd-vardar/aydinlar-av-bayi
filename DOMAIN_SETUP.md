@@ -5,9 +5,10 @@
 - Primary domain: `https://trabzonavbayi.com`
 - Redirect domain: `https://aydinlarav.com`
 - Canonical domain yalnızca `https://trabzonavbayi.com` olmalıdır.
-- `www.trabzonavbayi.com`, `http://trabzonavbayi.com` ve tüm `aydinlarav.com` sürümleri sunucu/domain sağlayıcısı tarafında `301 Permanent Redirect` ile primary domaine yönlendirilmelidir.
+- `www.trabzonavbayi.com` ve `http://trabzonavbayi.com` sürümleri primary domaine yönlendirilmelidir.
+- `aydinlarav.com` üzerinde `/panel`, `/panel/*`, `/api/admin/*`, `/api/public/products` ve `/healthz` yolları admin backend servisine iletilmelidir. Bu yolların dışındaki istekler `301 Permanent Redirect` ile primary domaine yönlendirilmelidir.
 - Yönlendirmelerde path ve query string korunmalıdır.
-- `aydinlarav.com` ayrı veya indekslenebilir bir site olarak yayınlanmamalıdır.
+- `aydinlarav.com` public ve indekslenebilir ikinci bir site olarak yayınlanmamalıdır. Panel yanıtları `noindex, nofollow` ve `no-store` başlıkları kullanır.
 
 Bu repository DNS kaydı, registrar yönlendirmesi, GitHub Pages Custom Domain ayarı veya `CNAME` dosyası oluşturmaz. Bunlar son kod incelemesinden sonra yetkili geliştirici tarafından yapılmalıdır.
 
@@ -33,7 +34,7 @@ GitHub Actions mevcut durumda test adresini kullanır. Repository variable olara
 
 - Production canonical, Open Graph, JSON-LD, robots ve sitemap URL'leri yalnızca `https://trabzonavbayi.com` kullanır.
 - Sitemap yalnızca primary domain URL'lerini içermelidir.
-- `aydinlarav.com` schema `sameAs` alanına veya canonical alternatifine eklenmemelidir.
+- `aydinlarav.com` schema `sameAs` alanına veya canonical alternatifine eklenmemelidir. Yalnızca ürünlerin okunacağı public API adresi bu domaini kullanabilir.
 - `https://trabzonavbayi.com/robots.txt` içindeki sitemap satırı `https://trabzonavbayi.com/sitemap-index.xml` olmalıdır.
 
 ## Yayın öncesi manuel doğrulamalar
@@ -41,7 +42,7 @@ GitHub Actions mevcut durumda test adresini kullanır. Repository variable olara
 - GitHub Pages Custom Domain ve DNS kayıtları
 - HTTPS sertifikası ve HTTP → HTTPS yönlendirmesi
 - `www` → non-`www` 301 yönlendirmesi
-- `aydinlarav.com` → `trabzonavbayi.com` path/query korumalı 301 yönlendirmesi
+- `aydinlarav.com` için panel/API yol istisnaları ve diğer yolların `trabzonavbayi.com` adresine path/query korumalı 301 yönlendirmesi
 - Gizlilik Politikası, KVKK Aydınlatma Metni ve Çerez Politikası nihai hukuk metinleri
 - Google Maps ve YouTube kullanımı için çerez/onay gereksinimi
 - Kurumsal e-posta adresinin (`info@aydinlarav.com`) aktifliği ve DNS e-posta kayıtları

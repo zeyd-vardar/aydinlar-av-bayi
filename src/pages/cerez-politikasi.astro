@@ -40,9 +40,8 @@ import { siteConfig } from '../data/siteConfig.js';
       <section aria-labelledby="cerez-kullanimi">
         <h2 id="cerez-kullanimi">2. Bu Site Çerez Kullanıyor mu?</h2>
         <p>
-          Mevcut internet sitesi kodunda kullanıcı hesabı, oturum sistemi, alışveriş sepeti, reklam
-          sistemi veya kullanıcıları siteler arasında takip eden pazarlama altyapısı
-          bulunmamaktadır.
+          Ziyaretçilere açık internet sitesinde kullanıcı hesabı, alışveriş sepeti, reklam sistemi
+          veya kullanıcıları siteler arasında takip eden pazarlama altyapısı bulunmamaktadır.
         </p>
         <p>
           Site tarafından doğrudan oluşturulan reklam veya pazarlama amaçlı birinci taraf çerezler
@@ -56,6 +55,13 @@ import { siteConfig } from '../data/siteConfig.js';
           Bununla birlikte, internet sitesinin sunulmasında kullanılan hosting altyapısı veya
           ziyaretçinin isteği üzerine yüklenen üçüncü taraf hizmetler kendi teknik verilerini veya
           gerekli teknolojilerini kullanabilir.
+        </p>
+        <p>
+          Yetkili personelin kullandığı, ziyaretçilere bağlantısı gösterilmeyen yönetici panelinde
+          başarılı giriş sonrasında yalnızca kimlik doğrulama ve güvenlik amacıyla zorunlu bir
+          oturum çerezi kullanılır. Bu çerez <code>HttpOnly</code>, <code>Secure</code> ve
+          <code>SameSite=Strict</code> nitelikleriyle oluşturulur; reklam veya ziyaretçi takibi için
+          kullanılmaz ve kalıcı “beni hatırla” işlevi içermez.
         </p>
       </section>
 
@@ -132,6 +138,10 @@ import { siteConfig } from '../data/siteConfig.js';
           Mevcut sitede reklam veya davranışsal pazarlama amacıyla kullanılan isteğe bağlı birinci
           taraf çerezler bulunmadığından, yalnızca görünüşte bir tercih sunan gereksiz bir “tüm
           çerezleri kabul et” mekanizması kullanılmamaktadır.
+        </p>
+        <p>
+          Yönetici panelindeki zorunlu oturum çerezi, panel güvenliği ve kimlik doğrulama için
+          gereklidir; isteğe bağlı reklam veya analitik çerezi değildir.
         </p>
         <p>
           Gelecekte açık rıza gerektiren reklam, pazarlama veya benzeri teknolojilerin eklenmesi

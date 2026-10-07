@@ -21,6 +21,7 @@ jobs:
       # PUBLIC_SITE_URL repository variable tanımlandığında custom domain build'i kökten çalışır.
       PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL || 'https://zeyd-vardar.github.io' }}
       PUBLIC_BASE_PATH: ${{ vars.PUBLIC_SITE_URL && '/' || '/aydinlar-av-bayi' }}
+      PUBLIC_PRODUCTS_API_URL: ${{ vars.PUBLIC_PRODUCTS_API_URL || '' }}
     steps:
       - name: Kaynağı al
         uses: actions/checkout@v4

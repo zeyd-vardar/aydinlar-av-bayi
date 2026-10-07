@@ -8,12 +8,7 @@ const primaryOrigin = (process.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com
   '',
 );
 const forbiddenValues = ['zeyd-vardar.github.io', '/aydinlar-av-bayi/'];
-const forbiddenPatterns = [
-  {
-    pattern: /(?:https?:)?\/\/(?:www\.)?aydinlarav\.com\b/i,
-    label: 'aydinlarav.com URL',
-  },
-];
+const allowedAydinlarAvPaths = new Set(['/api/public/products']);
 const errors = [];
 
 async function walk(directory) {
@@ -67,9 +62,11 @@ for (const file of inspectableFiles) {
     if (content.includes(forbidden))
       errors.push(`${relativeFile}: yasak production değeri bulundu: ${forbidden}`);
   }
-  for (const { pattern, label } of forbiddenPatterns) {
-    if (pattern.test(content))
-      errors.push(`${relativeFile}: yasak production değeri bulundu: ${label}`);
+  for (const match of content.matchAll(/https?:\/\/(?:www\.)?aydinlarav\.com[^\s"'<>]*/gi)) {
+    const url = new URL(match[0].replace(/&amp;.*$/, ''));
+    if (!allowedAydinlarAvPaths.has(url.pathname.replace(/\/$/, ''))) {
+      errors.push(`${relativeFile}: yasak production değeri bulundu: ${url.href}`);
+    }
   }
 
   if (file.endsWith('.html')) {
