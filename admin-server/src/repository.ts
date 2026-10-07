@@ -97,6 +97,10 @@ function mapStoreSettings(row: Record<string, unknown>): StoreSettings {
 export class Repository {
   constructor(private readonly pool: Pool) {}
 
+  async healthCheck() {
+    await this.pool.query('SELECT 1');
+  }
+
   async getAdminByEmail(email: string): Promise<Administrator | null> {
     const result = await this.pool.query('SELECT * FROM administrators WHERE email = $1', [email]);
     return result.rows[0] ? mapAdministrator(result.rows[0]) : null;

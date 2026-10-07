@@ -254,7 +254,14 @@ export async function buildServer(config: Config, repository: Repository) {
     return session;
   }
 
-  app.get('/healthz', async () => ({ status: 'ok' }));
+  app.get('/healthz', async (_request, reply) => {
+    try {
+      await repository.healthCheck();
+      return { status: 'ok', database: 'connected' };
+    } catch {
+      return reply.code(503).send({ status: 'unavailable', database: 'disconnected' });
+    }
+  });
   app.get('/panel/assets/panel.css', async (_request, reply) =>
     reply.type('text/css; charset=utf-8').send(panelCss),
   );

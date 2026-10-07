@@ -17,4 +17,4 @@ COPY public ./public
 COPY migrations ./migrations
 USER node
 EXPOSE 3001
-CMD ["node", "dist/src/index.js"]
+CMD ["npm", "start"]
