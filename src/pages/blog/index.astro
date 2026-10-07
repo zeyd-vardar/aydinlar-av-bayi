@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogSearch from '../../components/blog/BlogSearch.astro';
 import { getBlogPostPath, slugifyTurkish } from '../../utils/blog';
 import { withBase } from '../../utils/paths';
+import { getAllBlogPosts } from '../../utils/blogPosts';
 
 const categoryOrder = ['Balıkçılık', 'Avcılık', 'Kampçılık'] as const;
-const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) =>
+const posts = (await getAllBlogPosts()).sort((a, b) =>
   a.data.title.localeCompare(b.data.title, 'tr'),
 );
 const groups = categoryOrder.map((mainCategory) => {

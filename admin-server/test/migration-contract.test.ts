@@ -15,4 +15,16 @@ describe('database security contract', () => {
     assert.match(migration, /token_hash text NOT NULL UNIQUE/g);
     assert.doesNotMatch(migration, /password\s+text/i);
   });
+
+  it('creates the managed store, brand, product detail and blog fields', async () => {
+    const migration = await readFile(
+      join(process.cwd(), 'migrations/002_content_management.sql'),
+      'utf8',
+    );
+    assert.match(migration, /CREATE TABLE IF NOT EXISTS store_settings/);
+    assert.match(migration, /CREATE TABLE IF NOT EXISTS brands/);
+    assert.match(migration, /CREATE TABLE IF NOT EXISTS blog_posts/);
+    assert.match(migration, /ADD COLUMN IF NOT EXISTS description/);
+    assert.match(migration, /is_deleted boolean NOT NULL DEFAULT false/);
+  });
 });

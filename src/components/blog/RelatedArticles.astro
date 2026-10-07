@@ -1,10 +1,10 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { UnifiedBlogPost } from '../../utils/blogPosts';
 import { getBlogPostPath } from '../../utils/blog';
 import { withBase } from '../../utils/paths';
 
 interface Props {
-  posts: CollectionEntry<'blog'>[];
+  posts: UnifiedBlogPost[];
 }
 const { posts } = Astro.props;
 ---

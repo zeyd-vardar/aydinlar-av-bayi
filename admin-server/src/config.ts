@@ -30,6 +30,11 @@ const schema = z.object({
   SMTP_USER: z.string().optional(),
   SMTP_PASSWORD: z.string().optional(),
   SMTP_FROM: z.email().optional(),
+  GITHUB_REPOSITORY: z
+    .string()
+    .regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/)
+    .optional(),
+  GITHUB_DISPATCH_TOKEN: z.string().min(20).optional(),
 });
 
 export type Config = z.infer<typeof schema>;

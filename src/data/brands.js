@@ -1,4 +1,6 @@
-export const brandGroups = [
+import { getManagedContent } from './managedContent';
+
+const fallbackGroups = [
   {
     id: 'balikcilik',
     eyebrow: 'Olta ve su üstü ekipmanları',
@@ -63,3 +65,16 @@ export const brandGroups = [
     ],
   },
 ];
+
+const managedContent = await getManagedContent();
+const managedBrands = managedContent?.brands ?? [];
+
+export const brandGroups = managedContent
+  ? fallbackGroups.map((group) => ({
+      ...group,
+      brands: managedBrands
+        .filter((brand) => brand.category === group.id && brand.isActive)
+        .sort((a, b) => a.displayOrder - b.displayOrder || a.name.localeCompare(b.name, 'tr'))
+        .map((brand) => brand.name),
+    }))
+  : fallbackGroups;

@@ -13,6 +13,7 @@
     "migrate": "tsx src/commands/migrate.ts",
     "admin:seed": "tsx src/commands/seed-admin.ts",
     "admin:reset-password": "tsx src/commands/reset-admin-password.ts",
+    "blog:import": "tsx src/commands/import-blog.ts",
     "test": "node --import tsx --test test/**/*.test.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

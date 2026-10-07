@@ -7,6 +7,8 @@ interface Product {
   category: string;
   image: string;
   imageAlt: string;
+  description?: string;
+  features?: string[];
 }
 
 interface Props {
@@ -55,6 +57,14 @@ const productsApiUrl = import.meta.env.PUBLIC_PRODUCTS_API_URL?.trim() ?? '';
               <div>
                 <p>{product.category}</p>
                 <h3>{product.name}</h3>
+                {product.description && <p class="product-description">{product.description}</p>}
+                {product.features && product.features.length > 0 && (
+                  <ul class="product-features">
+                    {product.features.map((feature) => (
+                      <li>{feature}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </li>
           ))}
@@ -74,6 +84,8 @@ const productsApiUrl = import.meta.env.PUBLIC_PRODUCTS_API_URL?.trim() ?? '';
     category: string;
     imageUrl: string;
     imageAlt: string;
+    description: string;
+    features: string[];
   }
 
   const showcases = [...document.querySelectorAll<HTMLElement>('[data-product-showcase]')];
@@ -120,6 +132,22 @@ const productsApiUrl = import.meta.env.PUBLIC_PRODUCTS_API_URL?.trim() ?? '';
             const name = document.createElement('h3');
             name.textContent = product.name;
             copy.append(category, name);
+            if (product.description) {
+              const description = document.createElement('p');
+              description.className = 'product-description';
+              description.textContent = product.description;
+              copy.append(description);
+            }
+            if (product.features?.length) {
+              const features = document.createElement('ul');
+              features.className = 'product-features';
+              for (const value of product.features) {
+                const feature = document.createElement('li');
+                feature.textContent = value;
+                features.append(feature);
+              }
+              copy.append(features);
+            }
             item.append(image, copy);
             list.append(item);
           }

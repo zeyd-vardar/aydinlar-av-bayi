@@ -131,6 +131,29 @@ class FakeRepository {
   async createProduct() {}
   async updateProduct() {}
   async deleteProduct() {}
+  async getStoreSettings() {
+    return {
+      phone: '0549 477 01 61',
+      whatsapp: '905494770161',
+      address: 'Pelitli, Trabzon',
+      streetAddress: 'Pelitli',
+      postalCode: '61080',
+      addressLocality: 'Ortahisar',
+      addressRegion: 'Trabzon',
+      instagramUrl: 'https://www.instagram.com/aydinlarav/',
+      facebookUrl: '',
+      youtubeUrl: '',
+      hours: [{ days: 'Her gün', time: '08.30 – 20.30' }],
+      openingTime: '08:30',
+      closingTime: '20:30',
+    };
+  }
+  async listBrands() {
+    return [];
+  }
+  async listBlogPosts() {
+    return [];
+  }
 }
 
 function cookieFrom(response: { headers: Record<string, string | string[] | number | undefined> }) {
@@ -145,6 +168,25 @@ function csrfFrom(html: string) {
 }
 
 describe('authentication routes', () => {
+  it('serves public managed content without exposing administrator data', async () => {
+    const repository = new FakeRepository();
+    await repository.initialize();
+    const app = await buildServer(config, repository as unknown as Repository);
+    const response = await app.inject({
+      method: 'GET',
+      url: '/api/public/content',
+      headers: { origin: config.PUBLIC_SITE_ORIGIN },
+    });
+    assert.equal(response.statusCode, 200);
+    assert.equal(response.headers['access-control-allow-origin'], config.PUBLIC_SITE_ORIGIN);
+    const body = response.json();
+    assert.equal(body.siteSettings.phone, '0549 477 01 61');
+    assert.deepEqual(body.brands, []);
+    assert.deepEqual(body.blogPosts, []);
+    assert.equal(JSON.stringify(body).includes(repository.admin.passwordHash), false);
+    await app.close();
+  });
+
   it('rejects wrong credentials and rate-limited requests', async () => {
     const repository = new FakeRepository();
     await repository.initialize();

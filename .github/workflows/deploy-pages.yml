@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  repository_dispatch:
+    types: [content-updated]
 
 permissions:
   contents: read
@@ -22,6 +24,7 @@ jobs:
       PUBLIC_SITE_URL: ${{ vars.PUBLIC_SITE_URL || 'https://zeyd-vardar.github.io' }}
       PUBLIC_BASE_PATH: ${{ vars.PUBLIC_SITE_URL && '/' || '/aydinlar-av-bayi' }}
       PUBLIC_PRODUCTS_API_URL: ${{ vars.PUBLIC_PRODUCTS_API_URL || '' }}
+      PUBLIC_CONTENT_API_URL: ${{ vars.PUBLIC_CONTENT_API_URL || '' }}
     steps:
       - name: Kaynağı al
         uses: actions/checkout@v4

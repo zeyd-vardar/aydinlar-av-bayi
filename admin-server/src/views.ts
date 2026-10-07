@@ -1,4 +1,4 @@
-import type { Administrator, Product } from './types.js';
+import type { Administrator, BlogPost, Brand, Product, StoreSettings } from './types.js';
 
 function escapeHtml(value: unknown): string {
   return String(value ?? '')
@@ -30,7 +30,10 @@ function navigation(csrfToken: string) {
     <a class="panel-brand" href="/panel/dashboard">AYDINLAR <span>Yönetim</span></a>
     <nav aria-label="Yönetim menüsü">
       <a href="/panel/dashboard">Genel Bakış</a>
+      <a href="/panel/store">Mağaza Bilgileri</a>
+      <a href="/panel/brands">Markalar</a>
       <a href="/panel/products">Ürünler</a>
+      <a href="/panel/blog">Blog</a>
       <a href="/panel/change-password">Şifre Değiştir</a>
     </nav>
     <form method="post" action="/panel/logout">
@@ -151,6 +154,8 @@ export function dashboardView(
       <article><span>Toplam ürün</span><strong>${Number(stats.total_products ?? 0)}</strong></article>
       <article><span>Önerilen ürün</span><strong>${Number(stats.recommended_products ?? 0)}</strong></article>
       <article><span>Yeni gelen ürün</span><strong>${Number(stats.new_products ?? 0)}</strong></article>
+      <article><span>Marka</span><strong>${Number(stats.total_brands ?? 0)}</strong></article>
+      <article><span>Blog yazısı</span><strong>${Number(stats.total_blog_posts ?? 0)}</strong></article>
     </section>
     <section class="content-card detail-list">
       <p><span>Son ürün güncellemesi</span><strong>${escapeHtml(lastUpdate)}</strong></p>
@@ -202,6 +207,8 @@ export function productFormView(csrfToken: string, product?: Product, error?: st
           <option value="new" ${product?.section === 'new' ? 'selected' : ''}>Yeni Gelen Ürünler</option>
         </select></label>
         <label>Görsel açıklaması<input name="imageAlt" required maxlength="180" value="${escapeHtml(product?.imageAlt)}"><small>Ekran okuyucular ve erişilebilirlik için görseli kısa biçimde açıklayın.</small></label>
+        <label>Açıklama (isteğe bağlı)<textarea name="description" maxlength="1000" rows="4">${escapeHtml(product?.description)}</textarea></label>
+        <label>Özellikler (isteğe bağlı)<textarea name="features" maxlength="3000" rows="6" placeholder="Her satıra bir özellik">${escapeHtml(product?.features.join('\n'))}</textarea><small>Her satıra bir ürün özelliği yazın.</small></label>
         <label>Sıralama<input type="number" name="displayOrder" min="0" max="9999" value="${product?.displayOrder ?? 0}"></label>
         <label class="check-label"><input type="checkbox" name="isActive" value="true" ${(product?.isActive ?? true) ? 'checked' : ''}> Sitede yayınla</label>
         <label>Ürün görseli<input type="file" name="image" accept="image/jpeg,image/png,image/webp" ${editing ? '' : 'required'}><small>JPEG, PNG veya WebP; en fazla 5 MB.</small></label>
@@ -226,5 +233,131 @@ export function deleteProductView(csrfToken: string, product: Product) {
         <a href="/panel/products">Vazgeç</a>
       </div>
     </section>`,
+  );
+}
+
+export function storeSettingsView(csrfToken: string, settings: StoreSettings, notice?: string) {
+  const hours = settings.hours[0] ?? { days: '', time: '' };
+  return panelPage(
+    'Mağaza Bilgileri',
+    csrfToken,
+    `<section class="content-card narrow">
+      ${message(notice, 'success')}
+      <p>Buradaki bilgiler bir sonraki site derlemesinde iletişim alanlarına ve SEO verilerine uygulanır.</p>
+      <form method="post" action="/panel/store" class="stack-form">
+        <input type="hidden" name="csrfToken" value="${escapeHtml(csrfToken)}">
+        <label>Telefon<input name="phone" required maxlength="30" value="${escapeHtml(settings.phone)}"></label>
+        <label>WhatsApp numarası<input name="whatsapp" required inputmode="tel" maxlength="20" value="${escapeHtml(settings.whatsapp)}"></label>
+        <label>Açık adres<textarea name="address" required maxlength="300" rows="3">${escapeHtml(settings.address)}</textarea></label>
+        <label>Sokak adresi<input name="streetAddress" required maxlength="180" value="${escapeHtml(settings.streetAddress)}"></label>
+        <div class="form-grid">
+          <label>Posta kodu<input name="postalCode" required maxlength="10" value="${escapeHtml(settings.postalCode)}"></label>
+          <label>İlçe<input name="addressLocality" required maxlength="80" value="${escapeHtml(settings.addressLocality)}"></label>
+          <label>İl<input name="addressRegion" required maxlength="80" value="${escapeHtml(settings.addressRegion)}"></label>
+        </div>
+        <div class="form-grid">
+          <label>Günler<input name="hoursDays" required maxlength="80" value="${escapeHtml(hours.days)}"></label>
+          <label>Görünen saat metni<input name="hoursTime" required maxlength="80" value="${escapeHtml(hours.time)}"></label>
+          <label>Açılış<input type="time" name="openingTime" required value="${escapeHtml(settings.openingTime)}"></label>
+          <label>Kapanış<input type="time" name="closingTime" required value="${escapeHtml(settings.closingTime)}"></label>
+        </div>
+        <label>Instagram URL<input type="url" name="instagramUrl" maxlength="300" value="${escapeHtml(settings.instagramUrl)}"></label>
+        <label>Facebook URL<input type="url" name="facebookUrl" maxlength="300" value="${escapeHtml(settings.facebookUrl)}"></label>
+        <label>YouTube URL<input type="url" name="youtubeUrl" maxlength="300" value="${escapeHtml(settings.youtubeUrl)}"></label>
+        <button class="primary-button" type="submit">Bilgileri Kaydet ve Siteyi Güncelle</button>
+      </form>
+    </section>`,
+  );
+}
+
+const categoryLabels = { balikcilik: 'Balıkçılık', avcilik: 'Avcılık', kampcilik: 'Kampçılık' };
+
+export function brandsView(csrfToken: string, brands: Brand[], notice?: string) {
+  const rows = brands.length
+    ? brands
+        .map(
+          (brand) => `<tr>
+            <td><strong>${escapeHtml(brand.name)}</strong></td>
+            <td>${categoryLabels[brand.category]}</td><td>${brand.displayOrder}</td>
+            <td>${brand.isActive ? 'Yayında' : 'Gizli'}</td>
+            <td class="actions"><a href="/panel/brands/${brand.id}/edit">Düzenle</a><a class="danger-link" href="/panel/brands/${brand.id}/delete">Sil</a></td>
+          </tr>`,
+        )
+        .join('')
+    : '<tr><td colspan="5">Henüz marka eklenmedi.</td></tr>';
+  return panelPage(
+    'Markalar',
+    csrfToken,
+    `${message(notice, 'success')}<div class="toolbar"><a class="primary-button" href="/panel/brands/new">Yeni Marka Ekle</a></div><section class="content-card table-wrap"><table><thead><tr><th>Marka</th><th>Kategori</th><th>Sıra</th><th>Durum</th><th>İşlem</th></tr></thead><tbody>${rows}</tbody></table></section>`,
+  );
+}
+
+export function brandFormView(csrfToken: string, brand?: Brand, error?: string) {
+  const editing = Boolean(brand);
+  return panelPage(
+    editing ? 'Markayı Düzenle' : 'Yeni Marka Ekle',
+    csrfToken,
+    `<section class="content-card narrow">${message(error)}<form method="post" action="${editing ? `/panel/brands/${brand?.id}` : '/panel/brands'}" class="stack-form"><input type="hidden" name="csrfToken" value="${escapeHtml(csrfToken)}"><label>Marka adı<input name="name" required maxlength="100" value="${escapeHtml(brand?.name)}"></label><label>Kategori<select name="category"><option value="balikcilik" ${brand?.category === 'balikcilik' ? 'selected' : ''}>Balıkçılık</option><option value="avcilik" ${brand?.category === 'avcilik' ? 'selected' : ''}>Avcılık</option><option value="kampcilik" ${brand?.category === 'kampcilik' ? 'selected' : ''}>Kampçılık</option></select></label><label>Sıralama<input type="number" name="displayOrder" min="0" max="9999" value="${brand?.displayOrder ?? 0}"></label><label class="check-label"><input type="checkbox" name="isActive" value="true" ${(brand?.isActive ?? true) ? 'checked' : ''}> Sitede yayınla</label><button class="primary-button" type="submit">${editing ? 'Değişiklikleri Kaydet' : 'Markayı Ekle'}</button></form></section>`,
+  );
+}
+
+export function deleteBrandView(csrfToken: string, brand: Brand) {
+  return panelPage(
+    'Markayı Sil',
+    csrfToken,
+    `<section class="content-card narrow"><h2>${escapeHtml(brand.name)}</h2><p>Bu markayı kalıcı olarak silmek istediğinize emin misiniz?</p><div class="confirm-actions"><form method="post" action="/panel/brands/${brand.id}/delete"><input type="hidden" name="csrfToken" value="${escapeHtml(csrfToken)}"><button class="danger-button" type="submit">Markayı Sil</button></form><a href="/panel/brands">Vazgeç</a></div></section>`,
+  );
+}
+
+export function blogPostsView(csrfToken: string, posts: BlogPost[], notice?: string) {
+  const rows = posts.length
+    ? posts
+        .map(
+          (post) =>
+            `<tr><td><strong>${escapeHtml(post.title)}</strong><small>${escapeHtml(post.slug)}</small></td><td>${escapeHtml(post.mainCategory)}</td><td>${post.isPublished ? 'Yayında' : 'Taslak'}</td><td class="actions"><a href="/panel/blog/${post.id}/edit">Düzenle</a><a class="danger-link" href="/panel/blog/${post.id}/delete">Sil</a></td></tr>`,
+        )
+        .join('')
+    : '<tr><td colspan="4">Henüz yönetilen blog yazısı yok. Mevcut yazılar içe aktarma komutuyla panele eklenebilir.</td></tr>';
+  return panelPage(
+    'Blog',
+    csrfToken,
+    `${message(notice, 'success')}<div class="toolbar"><a class="primary-button" href="/panel/blog/new">Yeni Yazı Ekle</a></div><section class="content-card table-wrap"><table><thead><tr><th>Başlık</th><th>Kategori</th><th>Durum</th><th>İşlem</th></tr></thead><tbody>${rows}</tbody></table></section>`,
+  );
+}
+
+export function blogPostFormView(csrfToken: string, post?: BlogPost, error?: string) {
+  const editing = Boolean(post);
+  return panelPage(
+    editing ? 'Blog Yazısını Düzenle' : 'Yeni Blog Yazısı',
+    csrfToken,
+    `<section class="content-card editor-card">
+      ${message(error)}
+      <form method="post" action="${editing ? `/panel/blog/${post?.id}` : '/panel/blog'}" class="stack-form">
+        <input type="hidden" name="csrfToken" value="${escapeHtml(csrfToken)}">
+        <label>Kategori<select name="mainCategory">
+          <option value="Balıkçılık" ${post?.mainCategory === 'Balıkçılık' ? 'selected' : ''}>Balıkçılık</option>
+          <option value="Avcılık" ${post?.mainCategory === 'Avcılık' ? 'selected' : ''}>Avcılık</option>
+          <option value="Kampçılık" ${post?.mainCategory === 'Kampçılık' ? 'selected' : ''}>Kampçılık</option>
+        </select></label>
+        <label>Alt kategori<input name="subCategory" required maxlength="100" value="${escapeHtml(post?.subCategory ?? 'Genel Rehberler')}"></label>
+        <label>Başlık<input name="title" required maxlength="180" value="${escapeHtml(post?.title)}"></label>
+        <label>Kısa açıklama<textarea name="description" required maxlength="320" rows="3">${escapeHtml(post?.description)}</textarea></label>
+        <label>İçerik<textarea name="content" required maxlength="100000" rows="22" placeholder="Blog içeriğini buraya yazın. Başlık için ##, liste için - kullanabilirsiniz.">${escapeHtml(post?.content)}</textarea></label>
+        <label>Etiketler<input name="tags" maxlength="500" value="${escapeHtml(post?.tags.join(', '))}" placeholder="balıkçılık, kamış, başlangıç"></label>
+        <label>Kapak görseli yolu veya HTTPS URL<input name="image" required maxlength="500" value="${escapeHtml(post?.image ?? '/images/hero-fishing.jpg')}"></label>
+        <label>Görsel açıklaması<input name="imageAlt" required maxlength="180" value="${escapeHtml(post?.imageAlt ?? 'Doğa ve outdoor görünümü')}"></label>
+        <label class="check-label"><input type="checkbox" name="isPublished" value="true" ${(post?.isPublished ?? true) ? 'checked' : ''}> Yayınla</label>
+        <label class="check-label"><input type="checkbox" name="officialNotice" value="true" ${post?.officialNotice ? 'checked' : ''}> Mevzuat uyarısını göster</label>
+        <button class="primary-button" type="submit">${editing ? 'Değişiklikleri Kaydet' : 'Yazıyı Ekle'}</button>
+      </form>
+    </section>`,
+  );
+}
+
+export function deleteBlogPostView(csrfToken: string, post: BlogPost) {
+  return panelPage(
+    'Blog Yazısını Sil',
+    csrfToken,
+    `<section class="content-card narrow"><h2>${escapeHtml(post.title)}</h2><p>Bu yazıyı panel listesinden ve siteden kaldırmak istediğinize emin misiniz?</p><div class="confirm-actions"><form method="post" action="/panel/blog/${post.id}/delete"><input type="hidden" name="csrfToken" value="${escapeHtml(csrfToken)}"><button class="danger-button" type="submit">Yazıyı Kaldır</button></form><a href="/panel/blog">Vazgeç</a></div></section>`,
   );
 }

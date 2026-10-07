@@ -1,16 +1,18 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogBreadcrumb from '../../components/blog/BlogBreadcrumb.astro';
 import TableOfContents from '../../components/blog/TableOfContents.astro';
 import RelatedArticles from '../../components/blog/RelatedArticles.astro';
+import ManagedBlogContent from '../../components/blog/ManagedBlogContent.astro';
 import { siteConfig } from '../../data/siteConfig.js';
 import { formatTurkishDate, getBlogPostPath, slugifyTurkish } from '../../utils/blog';
 import { serializeJsonLd } from '../../utils/jsonLd';
 import { withBase } from '../../utils/paths';
+import { getAllBlogPosts } from '../../utils/blogPosts';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getAllBlogPosts();
 
   return posts.map((post) => ({
     params: { id: getBlogPostPath(post.data.mainCategory, post.data.slug).replace('/blog/', '') },
@@ -18,7 +20,9 @@ export async function getStaticPaths() {
   }));
 }
 const { post, allPosts } = Astro.props;
-const { Content, headings } = await render(post);
+const rendered = post.kind === 'local' ? await render(post.entry) : null;
+const Content = rendered?.Content;
+const headings = rendered?.headings ?? [];
 const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 const sharedTerms = (left: string[], right: string[]) => {
   const rightSet = new Set(right.map((value) => value.toLocaleLowerCase('tr-TR')));
@@ -167,7 +171,15 @@ const crumbs = [
             </aside>
           )
         }
-        <div class="blog-prose"><Content /></div>
+        <div class="blog-prose">
+          {
+            post.kind === 'managed' ? (
+              <ManagedBlogContent content={post.content} />
+            ) : (
+              Content && <Content />
+            )
+          }
+        </div>
         <aside
           class="article-context-links"
           aria-label="İlgili bağlantılar"

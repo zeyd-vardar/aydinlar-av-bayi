@@ -9,6 +9,11 @@ const legalLinks = [
   { href: withBase('/kvkk-aydinlatma-metni'), label: 'KVKK Aydınlatma Metni' },
   { href: withBase('/cerez-politikasi'), label: 'Çerez Politikası' },
 ];
+const socialLinks = [
+  { name: 'instagram' as const, label: 'Instagram', url: siteConfig.socials.instagram },
+  { name: 'facebook' as const, label: 'Facebook', url: siteConfig.socials.facebook },
+  { name: 'youtube' as const, label: 'YouTube', url: siteConfig.socials.youtube },
+].filter((item) => item.url);
 ---
 
 {
@@ -42,17 +47,19 @@ const legalLinks = [
         </nav>
         <div class="compact-social">
           <span>Sosyal Medya Hesaplarımız</span>
-          <a
-            href={siteConfig.socials.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram hesabımız"
-          >
-            <Icon
-              name="instagram"
-              size={16}
-            />
-          </a>
+          {socialLinks.map((social) => (
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${social.label} hesabımız`}
+            >
+              <Icon
+                name={social.name}
+                size={16}
+              />
+            </a>
+          ))}
         </div>
       </div>
       <nav
@@ -158,17 +165,19 @@ const legalLinks = [
           ))}
           <div class="socials">
             <span>Sosyal Medya Hesaplarımız</span>
-            <a
-              href={siteConfig.socials.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram hesabımız"
-            >
-              <Icon
-                name="instagram"
-                size={16}
-              />
-            </a>
+            {socialLinks.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${social.label} hesabımız`}
+              >
+                <Icon
+                  name={social.name}
+                  size={16}
+                />
+              </a>
+            ))}
           </div>
         </div>
       </div>

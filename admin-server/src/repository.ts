@@ -3,8 +3,12 @@ import type {
   Administrator,
   AuditContext,
   AuthenticatedSession,
+  BlogPost,
+  Brand,
+  BrandCategory,
   Product,
   ProductSection,
+  StoreSettings,
 } from './types.js';
 
 function mapAdministrator(row: Record<string, unknown>): Administrator {
@@ -30,10 +34,63 @@ function mapProduct(row: Record<string, unknown>): Product {
     imageKey: String(row.image_key),
     imageUrl: String(row.image_url),
     imageAlt: String(row.image_alt),
+    description: String(row.description ?? ''),
+    features: Array.isArray(row.features) ? row.features.map(String) : [],
     displayOrder: Number(row.display_order),
     isActive: Boolean(row.is_active),
     createdAt: new Date(String(row.created_at)),
     updatedAt: new Date(String(row.updated_at)),
+  };
+}
+
+function mapBrand(row: Record<string, unknown>): Brand {
+  return {
+    id: String(row.id),
+    category: row.category as BrandCategory,
+    name: String(row.name),
+    displayOrder: Number(row.display_order),
+    isActive: Boolean(row.is_active),
+  };
+}
+
+function mapBlogPost(row: Record<string, unknown>): BlogPost {
+  return {
+    id: String(row.id),
+    slug: String(row.slug),
+    title: String(row.title),
+    description: String(row.description),
+    mainCategory: row.main_category as BlogPost['mainCategory'],
+    subCategory: String(row.sub_category),
+    content: String(row.content),
+    tags: Array.isArray(row.tags) ? row.tags.map(String) : [],
+    keywords: Array.isArray(row.keywords) ? row.keywords.map(String) : [],
+    image: String(row.image),
+    imageAlt: String(row.image_alt),
+    readingTime: Number(row.reading_time),
+    isPublished: Boolean(row.is_published),
+    isDeleted: Boolean(row.is_deleted),
+    officialNotice: Boolean(row.official_notice),
+    sources: Array.isArray(row.sources) ? (row.sources as BlogPost['sources']) : [],
+    publishedAt: new Date(String(row.published_at)),
+    updatedAt: new Date(String(row.updated_at)),
+  };
+}
+
+function mapStoreSettings(row: Record<string, unknown>): StoreSettings {
+  return {
+    phone: String(row.phone),
+    whatsapp: String(row.whatsapp),
+    address: String(row.address),
+    streetAddress: String(row.street_address),
+    postalCode: String(row.postal_code),
+    addressLocality: String(row.address_locality),
+    addressRegion: String(row.address_region),
+    instagramUrl: String(row.instagram_url ?? ''),
+    facebookUrl: String(row.facebook_url ?? ''),
+    youtubeUrl: String(row.youtube_url ?? ''),
+    hours: Array.isArray(row.hours) ? (row.hours as StoreSettings['hours']) : [],
+    openingTime: String(row.opening_time).slice(0, 5),
+    closingTime: String(row.closing_time).slice(0, 5),
   };
 }
 
@@ -308,8 +365,9 @@ export class Repository {
   async createProduct(product: Omit<Product, 'createdAt' | 'updatedAt'>) {
     await this.pool.query(
       `INSERT INTO products
-        (id, section, name, category, image_key, image_url, image_alt, display_order, is_active)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+        (id, section, name, category, image_key, image_url, image_alt, description, features,
+         display_order, is_active)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
       [
         product.id,
         product.section,
@@ -318,6 +376,8 @@ export class Repository {
         product.imageKey,
         product.imageUrl,
         product.imageAlt,
+        product.description,
+        JSON.stringify(product.features),
         product.displayOrder,
         product.isActive,
       ],
@@ -328,7 +388,8 @@ export class Repository {
     await this.pool.query(
       `UPDATE products SET
          section = $2, name = $3, category = $4, image_key = $5, image_url = $6,
-         image_alt = $7, display_order = $8, is_active = $9, updated_at = now()
+         image_alt = $7, description = $8, features = $9, display_order = $10,
+         is_active = $11, updated_at = now()
        WHERE id = $1`,
       [
         product.id,
@@ -338,6 +399,8 @@ export class Repository {
         product.imageKey,
         product.imageUrl,
         product.imageAlt,
+        product.description,
+        JSON.stringify(product.features),
         product.displayOrder,
         product.isActive,
       ],
@@ -348,12 +411,166 @@ export class Repository {
     await this.pool.query('DELETE FROM products WHERE id = $1', [id]);
   }
 
+  async getStoreSettings(): Promise<StoreSettings> {
+    const result = await this.pool.query('SELECT * FROM store_settings WHERE id = 1');
+    if (!result.rows[0]) throw new Error('Store settings are missing');
+    return mapStoreSettings(result.rows[0]);
+  }
+
+  async updateStoreSettings(settings: StoreSettings) {
+    await this.pool.query(
+      `UPDATE store_settings SET
+         phone = $1, whatsapp = $2, address = $3, street_address = $4, postal_code = $5,
+         address_locality = $6, address_region = $7, instagram_url = $8, facebook_url = $9,
+         youtube_url = $10, hours = $11, opening_time = $12, closing_time = $13,
+         updated_at = now()
+       WHERE id = 1`,
+      [
+        settings.phone,
+        settings.whatsapp,
+        settings.address,
+        settings.streetAddress,
+        settings.postalCode,
+        settings.addressLocality,
+        settings.addressRegion,
+        settings.instagramUrl,
+        settings.facebookUrl,
+        settings.youtubeUrl,
+        JSON.stringify(settings.hours),
+        settings.openingTime,
+        settings.closingTime,
+      ],
+    );
+  }
+
+  async listBrands(activeOnly = false): Promise<Brand[]> {
+    const result = await this.pool.query(
+      `SELECT * FROM brands ${activeOnly ? 'WHERE is_active = true' : ''}
+       ORDER BY category, display_order, name`,
+    );
+    return result.rows.map(mapBrand);
+  }
+
+  async getBrand(id: string): Promise<Brand | null> {
+    const result = await this.pool.query('SELECT * FROM brands WHERE id = $1', [id]);
+    return result.rows[0] ? mapBrand(result.rows[0]) : null;
+  }
+
+  async createBrand(brand: Brand) {
+    await this.pool.query(
+      `INSERT INTO brands (id, category, name, display_order, is_active)
+       VALUES ($1, $2, $3, $4, $5)`,
+      [brand.id, brand.category, brand.name, brand.displayOrder, brand.isActive],
+    );
+  }
+
+  async updateBrand(brand: Brand) {
+    await this.pool.query(
+      `UPDATE brands SET category = $2, name = $3, display_order = $4,
+       is_active = $5, updated_at = now() WHERE id = $1`,
+      [brand.id, brand.category, brand.name, brand.displayOrder, brand.isActive],
+    );
+  }
+
+  async deleteBrand(id: string) {
+    await this.pool.query('DELETE FROM brands WHERE id = $1', [id]);
+  }
+
+  async listBlogPosts(publishedOnly = false, includeDeleted = false): Promise<BlogPost[]> {
+    const conditions = [
+      publishedOnly ? 'is_published = true' : '',
+      includeDeleted ? '' : 'is_deleted = false',
+    ].filter(Boolean);
+    const result = await this.pool.query(
+      `SELECT * FROM blog_posts ${conditions.length ? `WHERE ${conditions.join(' AND ')}` : ''}
+       ORDER BY main_category, title`,
+    );
+    return result.rows.map(mapBlogPost);
+  }
+
+  async getBlogPost(id: string): Promise<BlogPost | null> {
+    const result = await this.pool.query('SELECT * FROM blog_posts WHERE id = $1', [id]);
+    return result.rows[0] ? mapBlogPost(result.rows[0]) : null;
+  }
+
+  async getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+    const result = await this.pool.query('SELECT * FROM blog_posts WHERE slug = $1', [slug]);
+    return result.rows[0] ? mapBlogPost(result.rows[0]) : null;
+  }
+
+  async createBlogPost(post: BlogPost) {
+    await this.pool.query(
+      `INSERT INTO blog_posts
+       (id, slug, title, description, main_category, sub_category, content, tags, keywords, image,
+        image_alt, reading_time, is_published, is_deleted, official_notice, sources,
+        published_at, updated_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)`,
+      [
+        post.id,
+        post.slug,
+        post.title,
+        post.description,
+        post.mainCategory,
+        post.subCategory,
+        post.content,
+        JSON.stringify(post.tags),
+        JSON.stringify(post.keywords),
+        post.image,
+        post.imageAlt,
+        post.readingTime,
+        post.isPublished,
+        post.isDeleted,
+        post.officialNotice,
+        JSON.stringify(post.sources),
+        post.publishedAt,
+        post.updatedAt,
+      ],
+    );
+  }
+
+  async updateBlogPost(post: BlogPost) {
+    await this.pool.query(
+      `UPDATE blog_posts SET slug = $2, title = $3, description = $4, main_category = $5,
+       sub_category = $6, content = $7, tags = $8, keywords = $9, image = $10,
+       image_alt = $11, reading_time = $12, is_published = $13, is_deleted = false,
+       official_notice = $14, sources = $15, published_at = $16, updated_at = now()
+       WHERE id = $1`,
+      [
+        post.id,
+        post.slug,
+        post.title,
+        post.description,
+        post.mainCategory,
+        post.subCategory,
+        post.content,
+        JSON.stringify(post.tags),
+        JSON.stringify(post.keywords),
+        post.image,
+        post.imageAlt,
+        post.readingTime,
+        post.isPublished,
+        post.officialNotice,
+        JSON.stringify(post.sources),
+        post.publishedAt,
+      ],
+    );
+  }
+
+  async deleteBlogPost(id: string) {
+    await this.pool.query(
+      'UPDATE blog_posts SET is_deleted = true, is_published = false, updated_at = now() WHERE id = $1',
+      [id],
+    );
+  }
+
   async dashboardStats() {
     const result = await this.pool.query(
       `SELECT
          count(*)::integer AS total_products,
          count(*) FILTER (WHERE section = 'recommended')::integer AS recommended_products,
          count(*) FILTER (WHERE section = 'new')::integer AS new_products,
+         (SELECT count(*)::integer FROM brands) AS total_brands,
+         (SELECT count(*)::integer FROM blog_posts) AS total_blog_posts,
          max(updated_at) AS last_update
        FROM products`,
     );

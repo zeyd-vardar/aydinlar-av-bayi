@@ -89,7 +89,7 @@ const localBusiness = {
       closes: siteConfig.openingHours.closes,
     },
   ],
-  sameAs: Object.values(siteConfig.socials).filter((url) => url !== '#'),
+  sameAs: Object.values(siteConfig.socials).filter(Boolean),
 };
 const websiteSchema = {
   '@context': 'https://schema.org',

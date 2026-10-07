@@ -1,7 +1,15 @@
 import { withBase } from '../utils/paths';
+import { getManagedContent } from './managedContent';
 
 const siteOrigin = import.meta.env.PUBLIC_SITE_URL ?? 'https://trabzonavbayi.com';
 const siteUrl = new URL(import.meta.env.BASE_URL, siteOrigin).href;
+
+const managedSettings = (await getManagedContent())?.siteSettings;
+const address =
+  managedSettings?.address ?? 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C 61080 Ortahisar/Trabzon';
+const mapQuery = encodeURIComponent(address);
+const phone = managedSettings?.phone ?? '0549 477 01 61';
+const phoneDigits = phone.replace(/\D/g, '').replace(/^0/, '90');
 
 export const siteConfig = {
   name: 'Aydınlar Av Bayii',
@@ -11,25 +19,30 @@ export const siteConfig = {
   url: siteUrl,
   logoPath: '/images/brand/aydinlar-av-bayii-deer-silhouette.png',
   logo: { width: 471, height: 512, type: 'image/png' },
-  phone: '0549 477 01 61',
-  phoneHref: '+905494770161',
-  whatsapp: '905494770161',
+  phone,
+  phoneHref: `+${phoneDigits}`,
+  whatsapp: managedSettings?.whatsapp ?? '905494770161',
   email: 'info@aydinlarav.com',
-  address: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C 61080 Ortahisar/Trabzon',
+  address,
   addressDetails: {
-    streetAddress: 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C',
-    postalCode: '61080',
-    addressLocality: 'Ortahisar',
-    addressRegion: 'Trabzon',
+    streetAddress: managedSettings?.streetAddress ?? 'Pelitli, Mehmet Akif Ersoy Cd. No:10/C',
+    postalCode: managedSettings?.postalCode ?? '61080',
+    addressLocality: managedSettings?.addressLocality ?? 'Ortahisar',
+    addressRegion: managedSettings?.addressRegion ?? 'Trabzon',
     addressCountry: 'TR',
   },
-  mapUrl:
-    'https://www.google.com/maps/search/?api=1&query=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon',
-  mapEmbedUrl:
-    'https://www.google.com/maps?q=Pelitli%2C%20Mehmet%20Akif%20Ersoy%20Cd.%20No%3A10%2FC%2C%2061080%20Ortahisar%2FTrabzon&output=embed',
-  hours: [{ days: 'Her gün', time: '08.30 – 20.30' }],
-  openingHours: { opens: '08:30', closes: '20:30' },
-  socials: { instagram: 'https://www.instagram.com/aydinlarav/' },
+  mapUrl: `https://www.google.com/maps/search/?api=1&query=${mapQuery}`,
+  mapEmbedUrl: `https://www.google.com/maps?q=${mapQuery}&output=embed`,
+  hours: managedSettings?.hours ?? [{ days: 'Her gün', time: '08.30 – 20.30' }],
+  openingHours: {
+    opens: managedSettings?.openingTime ?? '08:30',
+    closes: managedSettings?.closingTime ?? '20:30',
+  },
+  socials: {
+    instagram: managedSettings?.instagramUrl ?? 'https://www.instagram.com/aydinlarav/',
+    facebook: managedSettings?.facebookUrl ?? '',
+    youtube: managedSettings?.youtubeUrl ?? '',
+  },
 };
 
 export const navLinks = [

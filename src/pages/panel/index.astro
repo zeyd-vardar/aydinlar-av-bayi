@@ -97,8 +97,12 @@ const canonical = new URL(withBase('/panel/'), siteConfig.url).href;
             <a
               href="#dashboard-preview"
               aria-current="page"
-            >Genel Bakış</a>
+              >Genel Bakış</a
+            >
+            <a href="#store-preview">Mağaza Bilgileri</a>
+            <a href="#brands-preview">Markalar</a>
             <a href="#products-preview">Ürünler</a>
+            <a href="#blog-preview">Blog</a>
             <span>Şifre Değiştir</span>
           </nav>
           <span class="logout-preview">Çıkış Yap</span>
@@ -113,6 +117,8 @@ const canonical = new URL(withBase('/panel/'), siteConfig.url).href;
             <article><span>Toplam ürün</span><strong>0</strong></article>
             <article><span>Önerilen ürün</span><strong>0</strong></article>
             <article><span>Yeni gelen ürün</span><strong>0</strong></article>
+            <article><span>Marka</span><strong>36</strong></article>
+            <article><span>Blog yazısı</span><strong>—</strong></article>
           </div>
           <div class="content-card detail-list">
             <p><span>Son ürün güncellemesi</span><strong>Henüz ürün yok</strong></p>
@@ -133,6 +139,33 @@ const canonical = new URL(withBase('/panel/'), siteConfig.url).href;
               <p>Önerilen ve yeni gelen ürünler bu alandan yönetilecek.</p>
             </div>
           </section>
+
+          <div class="module-grid">
+            <section
+              class="content-card module-preview"
+              id="store-preview"
+            >
+              <span>Mağaza Bilgileri</span>
+              <h3>Adres, telefon, saatler ve sosyal medya</h3>
+              <p>Tüm iletişim bilgileri tek formdan düzenlenir ve site güncellemesi başlatılır.</p>
+            </section>
+            <section
+              class="content-card module-preview"
+              id="brands-preview"
+            >
+              <span>Markalar</span>
+              <h3>Marka ekle, düzenle veya kaldır</h3>
+              <p>Balıkçılık, avcılık ve kampçılık markaları ana sayfayla birlikte güncellenir.</p>
+            </section>
+            <section
+              class="content-card module-preview"
+              id="blog-preview"
+            >
+              <span>Blog</span>
+              <h3>Kategori seçerek yeni yazı oluştur</h3>
+              <p>Başlık, kısa açıklama, içerik, etiket ve yayın durumu yönetilebilir.</p>
+            </section>
+          </div>
         </div>
       </section>
     </main>
@@ -151,7 +184,13 @@ const canonical = new URL(withBase('/panel/'), siteConfig.url).href;
     --line: #d9d8d1;
     --gold: #b9781d;
     font-family:
-      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
   }
 
   * {
@@ -330,7 +369,7 @@ const canonical = new URL(withBase('/panel/'), siteConfig.url).href;
     text-decoration: none;
   }
 
-  .sidebar nav a[aria-current="page"] {
+  .sidebar nav a[aria-current='page'] {
     color: white;
     background: var(--forest-soft);
   }
@@ -365,6 +404,29 @@ const canonical = new URL(withBase('/panel/'), siteConfig.url).href;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
+  }
+
+  .module-grid {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .module-preview {
+    scroll-margin-top: 24px;
+  }
+
+  .module-preview > span {
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .module-preview h3 {
+    margin: 10px 0 6px;
   }
 
   .stats-grid article,
@@ -458,6 +520,10 @@ const canonical = new URL(withBase('/panel/'), siteConfig.url).href;
     }
 
     .stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .module-grid {
       grid-template-columns: 1fr;
     }
 

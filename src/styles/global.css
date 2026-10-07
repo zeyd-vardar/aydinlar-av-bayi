@@ -938,6 +938,22 @@ h3 {
   margin: 0;
   font-size: 1.2rem;
 }
+.product-showcase-card .product-description {
+  margin: 10px 0 0;
+  color: #59635c;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+  text-transform: none;
+}
+.product-features {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: #59635c;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
 .product-showcase-empty {
   max-width: 560px;
   margin: 0;

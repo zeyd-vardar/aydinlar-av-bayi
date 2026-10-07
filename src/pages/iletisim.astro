@@ -12,7 +12,7 @@ const message = encodeURIComponent('Merhaba, ürünleriniz hakkında bilgi almak
 
 <BaseLayout
   title="İletişim ve Yol Tarifi | Aydınlar Av Bayii Trabzon"
-  description="Aydınlar Av Bayii'nin Ortahisar, Trabzon adresini, telefon ve WhatsApp bilgilerini, her gün 08.30–20.30 çalışma saatlerini ve yol tarifini görüntüleyin."
+  description={`Aydınlar Av Bayii'nin ${siteConfig.addressDetails.addressLocality}, ${siteConfig.addressDetails.addressRegion} adresini, telefon, WhatsApp, çalışma saatleri ve yol tarifini görüntüleyin.`}
   breadcrumbs={crumbs}
   compactFooter
 >
