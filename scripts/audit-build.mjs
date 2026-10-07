@@ -182,6 +182,7 @@ for (const excludedPath of [
   '/cerez-politikasi/',
   '/gizlilik-politikasi/',
   '/kvkk-aydinlatma-metni/',
+  '/panel/',
   '/blog/avcilik/silah-ruhsati-bilgileri-blogda-sabit-yazilmali-mi/',
 ]) {
   if (sitemapLocations.includes(`${primaryOrigin}${excludedPath}`))
