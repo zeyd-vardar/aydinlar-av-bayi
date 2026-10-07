@@ -62,7 +62,6 @@ export default defineConfig({
           '/cerez-politikasi/',
           '/gizlilik-politikasi/',
           '/kvkk-aydinlatma-metni/',
-          '/panel/',
         ].includes(path);
       },
       serialize(item) {
